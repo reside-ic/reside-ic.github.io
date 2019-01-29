@@ -1,4 +1,4 @@
-baseurl = "https://reside-ic.github.io"
+baseurl = "https://reside-ic.github.io/"
 theme = "cocoa-eh"
 builddrafts = true
 canonifyurls = true
