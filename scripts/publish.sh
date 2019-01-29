@@ -11,7 +11,7 @@ git add .
 git commit -m "publish"
 
 echo "-------------------------------------------"
-echo 'Pushing to gh-pages'
+echo 'Pushing to master'
 
 sed -i 's/public/ /g' .gitignore
 
