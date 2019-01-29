@@ -12,4 +12,13 @@ git commit -m "publish"
 
 echo "-------------------------------------------"
 echo 'Pushing to gh-pages'
-git subtree push --prefix public origin gh-pages
+
+sed -i 's/public/ /g' .gitignore
+
+git add .
+git commit -m "Edit .gitignore to publish"
+
+git push origin `git subtree split --prefix public`:gh-pages --force
+
+git reset HEAD~
+git checkout .gitignore
