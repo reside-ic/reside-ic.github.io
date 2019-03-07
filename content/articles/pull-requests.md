@@ -35,7 +35,7 @@ Our pull request review process is an ongoing work-in-progress.  This document o
    * does it work when run locally? (not possible for all components)
    * how are the tests?  is all new code tested?
    * are there obvious inefficiencies (if appropriate)
-   * for web apps, check that they render properly
+   * for web apps, check that they render properly, fulfil the pre-agreed design if existent, an are otherwise user-friendly and consistent with our style conventions
    * is it documented, and are odd bits of code well commented if they can't be simplified
 
 ### The process
