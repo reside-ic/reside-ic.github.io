@@ -84,6 +84,7 @@ Expected time to initial response is 1/2 a day to 1 day (the review might not be
 #### Outstanding issues
 
 * We would benefit from a style guide, probably one per language
+* We would benefit from a code of conduct to maintain the constructive communication we have within the team [RESIDE-11](https://vimc.myjetbrains.com/youtrack/issue/RESIDE-11)
 * It would be nice if we could get TeamCity to report to github and all CI to report to YouTrack
 * It is not clear who should review, and we don't have guidelines for this
 * It's not generally clear when requesting multiple reviewers if *all* should apporove or *any* should approve, and then who should do the merge.  If requesting multiple reviewers please be clear about what you would like from them
