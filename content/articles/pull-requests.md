@@ -10,6 +10,7 @@ Our pull request review process is an ongoing work-in-progress.  This document o
 #### First the author:
 
 1. Check your branch name carefully as this cannot be modified once the PR is opened
+1. Make sure that you have only one PR worth of changes on this branch (small, contained and conceptually distinct)
 1. Make sure tests are passing on any CI systems used (TeamCity, travis, appveyor)
 1. Create PR (github's [draft PR](https://github.blog/2019-02-14-introducing-draft-pull-requests/) feature here is nice if you think it might not quite be ready)
 1. Write a paragraph explaining why the PR is being made.  For bug fixes and small features this might be very small.
@@ -37,6 +38,7 @@ Our pull request review process is an ongoing work-in-progress.  This document o
    * are there obvious inefficiencies (if appropriate)
    * for web apps, check that they render properly, fulfil the pre-agreed design if existent, an are otherwise user-friendly and consistent with our style conventions
    * is it documented, and are odd bits of code well commented if they can't be simplified
+   * would the new functionality introduced make for a nice blog post? (e.g., does the PR introduce or bring together new technologies for us, does it solve a tricky or interesting new problem, or did it raise contentious questions of behaviour, difficulties in testing?)
 
 ### The process
 
@@ -80,6 +82,8 @@ Expected time to initial response is 1/2 a day to 1 day (the review might not be
 * All code should be reviewed eventually
 * The process is expected to be constructive.  Reviewers must always be polite, and authors must take suggested improvements in good faith
 * Many suggestions will not be incorporated into the PR in question but may become new tickets
+  - this can be directly suggested by a reviewer or by the author in response to review.
+  - check the issue backlog first to make sure that an existing ticket does not cover the extra work
 
 #### Outstanding issues
 
