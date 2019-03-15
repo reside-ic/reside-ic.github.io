@@ -14,7 +14,7 @@ through rate, uptime etc), and secondly those measuring the productivity of the 
 improvements to those systems (story point burndown, number of open bugs, feature leadtime). 
 
 The first category could 
-have immediate business consequences - eg affecting a client's decision on whether to renew a contract, or whether a 
+have immediate business consequences - e.g. affecting a client's decision on whether to renew a contract, or whether a 
 contractual uptime obligation was being met. The second category reflects how effectively the team is able to meet 
 ongoing business requirements, and can typically highlight broader issues in the business culture, team dynamics or 
 technology - as any dev will know who has ever fire-fought heroically to keep a failing service running, only to be 
