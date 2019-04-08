@@ -5,6 +5,29 @@ title = "Pull Request review process"
 
 Our pull request review process is an ongoing work-in-progress.  This document outlines the timeline, expectations, general points and ongoing issues.  Some of it is particular to how we work (using YouTrack and TeamCity in addition to GitHub) but it may be of use to others.
 
+### Expectations
+
+What the different parties expect to get out of the PR review process
+
+#### Author
+
+All authors appreciate feedback on:
+
+* What have I done wrong, or what could I do better?
+* What have I overlooked? Are there corner cases I have missed?
+* What tests are missing?
+* Is my code readable and idiomatic?
+* For UI code, how is the look and feel?
+
+Expected time to initial response is 1/2 a day to 1 day (the review might not be completed in this time, but this should be indicated).  Once the review process is started, re-review is expected to be quicker as it should address ever-smaller issues.
+
+#### Reviewer
+
+* Explanations and descriptions should be provided for nontrivial sections
+* Smaller is better.  400 lines is a ballpark figure
+* CI should be passing before the review is assigned
+* Each PR should be conceptually distinct
+
 ### The timeline
 
 #### First the author:
@@ -17,7 +40,7 @@ Our pull request review process is an ongoing work-in-progress.  This document o
 1. Check through the diff to make sure that it seems sensible
 1. Comment directly into the PR on any points of oddness that require explanation additional to code comments
 1. Split the PR into multiple smaller PRs if it is too large
-1. Choose a reviewer and assign them on github
+1. Choose a reviewer and assign them on github (based on current or desired familiarity with language and codebase) - if necessary assign multiple reviewers if you need different people to look at different aspects.
 1. Update YouTrack, if the project uses it
    - Copy the PR URL as a comment
    - Set yourself as `Implementer`
@@ -27,6 +50,8 @@ Our pull request review process is an ongoing work-in-progress.  This document o
 #### Then the reviewer
 
 1. Check that you are an appropriate reviewer
+   * do you feel confident to carry out what the author is asking? Do you understand the project and programming language enough, and can you understand the changes proposed sufficiently to meaningfully engage - not necessarily at an expert level, but to affirm that the PR seems sensible and beneficial.
+   * And if you feel you are not the appropriate reviewer, then consider pairing with the author and talking through the code, as a good alternative to declining the review
 1. Look for:
    * does the code meet a need or requirement (should be clear between the ticket and the PR paragraph)
    * formatting, line lengths and lint issues
@@ -50,29 +75,6 @@ Our pull request review process is an ongoing work-in-progress.  This document o
   1. updates ticket to unassign themselves and move state to "Completed" or "Ready to deploy" as appropriate
   1. check that `master` still works on CI
 
-
-### Expectations
-
-What the different parties expect to get out of the PR review process
-
-#### Author
-
-All authors appreciate feedback on:
-
-* What have I done wrong, or what could I do better?
-* What have I overlooked? Are there corner cases I have missed?
-* What tests are missing?
-* Is my code readable and idiomatic?
-* For UI code, how is the look and feel?
-
-Expected time to initial response is 1/2 a day to 1 day (the review might not be completed in this time, but this should be indicated).  Once the review process is started, re-review is expected to be quicker as it should address ever-smaller issues.
-
-#### Reviewer
-
-* Explanations and descriptions should be provided for nontrivial sections
-* Smaller is better.  400 lines is a ballpark figure
-* CI should be passing before the review is assigned
-* Each PR should be conceptually distinct
 
 #### General
 
