@@ -3,10 +3,14 @@ date = "2015-08-22"
 title = "About"
 +++
 
-_With this theme, it is possible to add small sections that only contains one page like this. It will automatically appears in the header, at the end._
+Research Software for Infectious Disease Epidemiology - we are a team of 7 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
 
-Along with [Ford Prefect](https://en.wikipedia.org/wiki/Ford_Prefect_\(character\)), Dent barely escapes the Earth's destruction as it is demolished to make way for a *hyperspace bypass*. Arthur spends the next several years, still wearing his dressing gown, helplessly launched from crisis to crisis while trying to straighten out his lifestyle.  
- 
-> He rather enjoys tea, but seems to have trouble obtaining it in the far reaches of the galaxy.  
- 
-In time, he learns how to fly and carves a niche for himself as a sandwich-maker.
+## The team
+
+* [Alex Hill](http://www.alexandra-hill.com/)
+* [Emma Russell](https://github.com/EmmaLRussell)
+* [James Thompson](https://github.com/JamesThompson1729)
+* [Martin Eden](https://github.com/martineden)
+* [Rich FitzJohn](https://richfitz.github.io)
+* [Robert Ashton](https://github.com/r-ash)
+* [Wes Hinsley](https://github.com/weshinsley)
