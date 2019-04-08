@@ -2,6 +2,4 @@
 title = "Home"
 +++
 
-_This is the home page. It will display the blog section if there is one, and a text before._
-
-Hey ! Welcome to the **Cocoa Enhanced theme**. Here are some articles :
+Research Software for Infectious Disease Epidemiology - we are a team of 7 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
