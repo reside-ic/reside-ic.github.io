@@ -23,7 +23,7 @@ r <- 0.5
 
 which generates [this big pile of json](https://gist.github.com/richfitz/f3f618c45c8f5c0a52a7441ec15595b4#file-logistic-json).  But at this point we never have to check again if the equations "make sense" and we can just compile out the target code in a much more robotic fashion.
 
-Doing this has enabled creation of an R backend (compiling R to R), which should make getting started with odin a lot easier, and we've got started with a JavaScript target ([`odin.js`](https://github.com/mrc-ide/odin.js)), which may get rolled into the main package, which would allow the creation of fully client-side models - see an [example of a simple SIR model here](https://mrc-ide.github.io/odin.js/simple/)
+Doing this has enabled creation of an R backend (compiling R to R), which should make getting started with odin a lot easier, and we've got started with a JavaScript target ([`odin.js`](https://github.com/mrc-ide/odin.js)), which may get rolled into the main package, which would allow the creation of fully client-side models - see an [example of a simple SIR model here](https://mrc-ide.github.io/odin.js/simple/).
 
 This release also fixes a number of long standing nuisances (see the [`NEWS.md`](https://github.com/mrc-ide/odin/blob/master/NEWS.md#odin-020) for details), but from the point of view of end users should seem almost unchanged.
 
@@ -35,4 +35,4 @@ drat:::add("mrc-ide")
 install.packages("odin")
 ```
 
-and get started with [the tutorial](https://mrc-ide.github.io/odin/articles/odin.html)
+and get started with [the tutorial](https://mrc-ide.github.io/odin/articles/odin.html).
