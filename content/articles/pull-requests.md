@@ -93,7 +93,7 @@ Expected time to initial response is 1/2 a day to 1 day (the review might not be
 * We would benefit from a code of conduct to maintain the constructive communication we have within the team [RESIDE-11](https://vimc.myjetbrains.com/youtrack/issue/RESIDE-11)
 * It would be nice if we could get TeamCity to report to github and all CI to report to YouTrack
 * It is not clear who should review, and we don't have guidelines for this
-* It's not generally clear when requesting multiple reviewers if *all* should apporove or *any* should approve, and then who should do the merge.  If requesting multiple reviewers please be clear about what you would like from them
+* It's not generally clear when requesting multiple reviewers if *all* should approve or *any* should approve, and then who should do the merge.  If requesting multiple reviewers please be clear about what you would like from them
 * We still need better processes for reviewing data imports
 * Sometimes it may be more efficient for the reviewer to update a PR - for nontrivial cases, the reviewer can create a PR into the original PR
 * If escalation to face-to-face happens too often it might suggest we should have pair programmed.
