@@ -7,7 +7,7 @@ best: false
 
 After a rather long period of gestation, yesterday I merged in a [long-running rewrite of odin](https://github.com/mrc-ide/odin/pull/156).  This is a major rework of odin which lays the groundwork for future improvements later this year.
 
-Odin is our package for working with differential equations at a high level - it includes support for the sort of "structured [compartmental models](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology)" that we use a lot in the department, compiling these to C for efficient execution.  Over the last few years of development the code had become increasingly complicated and difficult to extend as new features had been added on top of previous features.
+[Odin](https://mrc-ide.github.io/odin) is our package for working with differential equations at a high level - it includes support for the sort of "structured [compartmental models](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology)" that we use a lot in the department, compiling these to C for efficient execution.  Over the last few years of development the code had become increasingly complicated and difficult to extend as new features had been added on top of previous features.
 
 At the [epirecipes](https://www.turing.ac.uk/events/epirecipes) event last year an attendee asked me "what does odin use as an [intermediate representation](https://en.wikipedia.org/wiki/Intermediate_representation)?" and I had no answer because it just compiled R directly to C which meant there was no real point where validation stopped and compilation began.  This turned out to be the insight I needed.
 
