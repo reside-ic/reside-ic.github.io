@@ -4,4 +4,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
 
+<!-- Twitter metadata -->
+  
+{{ if .Params.twitterImg }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.twitterImg }}" >
+{{ else }}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}img/logo.png" >
+{{ end }}
+
+{{ if eq .URL "/" }}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="website">
+<meta property="description" content="{{ .Site.Params.Description }}">
+<meta property="og:description" content="{{ .Site.Params.Description }}">
+
+{{ else }}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+{{ $Summary := .Summary }}
+<meta property="description" content="{{ $Summary }}">
+<meta property="og:description" content="{{ $Summary }}">
+{{ end }}
 
