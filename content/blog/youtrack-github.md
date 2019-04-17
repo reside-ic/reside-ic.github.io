@@ -17,7 +17,8 @@ An issue moves through 5 states before deployment:
 1. issue created
 1. issue in progress
 1. review requested
-1. review submitted
+1. review submitted - either changes are requested and issue moves back to step 2, or code is merged and issue proceeds 
+to step 5
 1. issue ready for deploy
  
 In the web development team we use an [Agile board](https://en.wikipedia.org/wiki/File:Scrum_task_board.jpg) in YouTrack 
