@@ -9,8 +9,8 @@ Like most technical teams we use an issue tracker to manage our work. Our tool o
 this is [YouTrack](https://www.jetbrains.com/youtrack/). We also make extensive use of GitHub and to synchronise our 
 workflow across the two platforms we name our git branches with YouTrack ticket ids, so every pull request 
 corresponds to a ticket. This naming convention makes it easier to track work in progress across the two platforms, 
-plus the script we use to deploy our software can use git to look at which branches have been merged in and then 
-auto-update the corresponding YouTrack tickets once the code is deployed. 
+plus the custom tool we use to deploy our software can use git to look at which branches have been merged in and auto-update
+the corresponding YouTrack tickets.
 
 An issue moves through 5 states before deployment:
 
