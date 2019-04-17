@@ -1,6 +1,6 @@
 ---
 author: "Alex Hill"
-date: 2019-04-17
+date: 2019-04-24
 title: Integrating YouTrack and GitHub workflows
 best: false
 ---
