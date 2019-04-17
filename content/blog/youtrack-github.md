@@ -29,7 +29,8 @@ an issue is waiting for us to review it, or changes to our code have been reques
 This is a small Flask app that accepts payloads from GitHub whenever a pull request related action is taken and uses the 
 [YouTrack API](https://www.jetbrains.com/help/youtrack/standalone/General-REST-API.html) to update the relevant ticket. 
 A small config file maps GitHub users to YouTrack users, so that when a code review is requested on GitHub, the YouTrack
-ticket gets assigned to the relevant person. Similarly when code changes are requested the 
-ticket gets assigned back to the author.
+ticket gets assigned to the relevant person and marked as "Submitted". Similarly when code changes are requested the 
+ticket gets assigned back to the author and marked as "Reopened". When a pull request is merged the ticket gets marked 
+as "Ready to deploy".
 
 Code and a full README for the webhook can be found at: https://github.com/vimc/youtrack-integration
