@@ -23,7 +23,7 @@ An issue moves through 5 states before deployment:
 In the web development team we use an Agile board in YouTrack to track an issue through these states and to know whether 
 an issue is waiting for us to review it, or changes to our code have been requested; others who are not using an Agile
  board prefer to monitor GitHub. Given the diversity of our team some divergence of workflows is inevitable, so rather 
- than trying to force everyone into the same habits I wrote a [webhook](https://developer.github.com/webhooks/) to 
+ than trying to force everyone into the same habits we decided to use a [webhook](https://developer.github.com/webhooks/) to 
  automatically keep tickets and branches in sync.
 
 This is a small Flask app that accepts payloads from GitHub whenever a pull request related action is taken and uses the 
