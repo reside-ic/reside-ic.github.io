@@ -5,7 +5,7 @@ title: Integrating YouTrack and GitHub workflows
 best: false
 ---
 
-Like most technical teams we make extensive use of issue tracking software to manage our work. Our tool of choice for
+Like most technical teams we use an issue tracker to manage our work. Our tool of choice for
 this is [YouTrack](https://www.jetbrains.com/youtrack/). We also make extensive use of GitHub and to synchronise our 
 workflow across the two platforms we name our git branches with YouTrack ticket ids, so every pull request 
 corresponds to a ticket. This naming convention makes it easier to track work in progress across the two platforms, 
