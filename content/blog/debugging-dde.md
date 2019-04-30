@@ -25,37 +25,39 @@ b>0
 Both a>0 and b>0!
 ```
 
-This, simplified, was a situation we were in when 
-[DDE](https://github.com/mrc-ide/dde) 0.9.0 was compiled, but only on Windows,
+If `a` and `b` are both above zero, then why didn't the while-loop do any
+iteration; why didn't we see `Inside loop` in the output?
+
+This was a situation we were in with
+[DDE](https://github.com/mrc-ide/dde) 0.9.0, but only on Windows,
 and only when compiled with 32-bit gcc. With 64-bits, or linux, the loop
 behaved itself perfectly.
 
-But this is almost the end of the story. It began with a failing appveyor test
-on a trivial line of code. [DDE](https://github.com/mrc-ide/dde) is a package 
-that *solves ordinary differential equations (ODEs), 
+But this is almost the end of the story. The issue was first caught by
+a test that failed in [Appveyor](https://www.appveyor.com/), which we use
+for continuous integration tests in Windows. [DDE](https://github.com/mrc-ide/dde) 
+is a package that *solves ordinary differential equations (ODEs), 
 delay differential equations (DDEs) and discrete-time difference (or recursion) 
-equations, perhaps involving delays* - and all its tests and worked fine,
-except one. The test that produced different output for 32-bit than for 
-64-bit was about the simplest case possible: a function that always returns `1`.
+equations, perhaps involving delays* - and all its tests were passing
+except one: about the simplest case possible, a function that always returns `1`.
 
-```
+```R
   deriv <- function(t, y, p) { 1 }
   dde::dopri(0, c(0, 1), deriv, 0)
 ```
 
-For the two timesteps, `0` and `1`, on 64-bit, it correctly returned `(1,1)`; 
-on 32-bit, it returned `(1,0)`.
+On 64-bit, it correctly returned `(1,1)`; on 32-bit, it returned `(1,0)`.
 
 ## Primary Approaches
 
-At first, we wondered if it was a memory issue that only surfaced on 32-bit. 
-So we checked beyond doubt that `sizeof(size_t)` is `4` on 32-bit, but `8` on 
-64-bit, as are all pointers. All good. Other types were the same for all 
-platforms. But there were no obvious violations; Valgrind on linux picked up
-nothing.
+At first, we wondered if it was a memory issue specific to 32-bit. 
+We confirmed that `sizeof(size_t)` is `4` on 32-bit, but `8` on 
+64-bit, as are all pointers. Other types were the same across platforms. 
+But there were no obvious violations; [Valgrind](www.valgrind.org) on linux 
+picked up nothing.
 
-Resorting to random black-box bashing: `dde:dopri(0, c(0, 1.121), deriv, 0)`
-and smaller numbers failed the test. `dde:dopri(0, c(0, 1.122), deriov, 0)` and
+Resorting to random black-box-bashing: `dde:dopri(0, c(0, 1.121), deriv, 0)`
+and smaller numbers failed the test. `dde:dopri(0, c(0, 1.122), deriv, 0)` and
 larger numbers all passed. Eureka? Nope - a mysterious red herring, alas.
 
 In the real-life code, the `(a>0)` and `(b>0)` were a bit more complicated -
@@ -66,27 +68,28 @@ to have met the criteria for looping in retrospect, as we were seeing.
 ## Secondary Flailings
 
 The next level of desperation involved dumping every member of the object at
-intervals with `Rprintf`. This revealed some corruption at the end of the code, 
-surely evidence of some bad memory writes! Wrong again - they were tracked down
-to different, but very acceptable behaviour as the object had already been 
-freed and deconstructed by then, so could rightly return undefined values.
+intervals with `Rprintf`. This revealed some apparent corruption -
+surely evidence of some bad memory writes! Wrong again. This time it was
+a bug in my debugging, as the object had been freed by then so could rightly
+return undefined values.
 
-But this did expose a genuine difference between platforms in a variable; 
-narrowed down to the `while` loop above, which terminated early (or didn't 
-get entered at all), under certain 32-bit circumstances. Printing things within
-the loop - or sometimes before it - sometimes changed the behaviour and made
-things work, but it would be poor form to submit a PR that claims to fix a functional
-problem by printing a ton of waffle before-hand.
+However, printing everything at regular points eventually did expose a genuine
+difference between platforms in one index variable; its value seemed to differ
+across platforms immediately after the `while` loop above, which must have 
+terminated early (or didn't get entered at all), under certain 32-bit 
+circumstances. Printing things within the loop - or before it - somtimes changed
+the behaviour and made things work, but it would be poor form to submit a PR 
+that claims to fix a functional problem by printing a ton of waffle before-hand.
 
-My github commit titles around this time are telling. **Total Confusion Reigns** 
-towards **Wits' End** and later a  **Deeper Confusion** that's somehow worse than the 
-previous *total* one. Eventually, as hope ebbed away, the crucial summit arrived 
-at a commit aptly named **Another bizarre effort**.
+My [github commit](https://github.com/mrc-ide/dde/commits/i14_win32) titles around this 
+time are telling. **Total Confusion Reigns** towards **Wits' End** and later 
+a  **Deeper Confusion** that's somehow worse than the previous *total* one. Eventually, 
+as hope ebbed away, the crucial summit arrived at a commit aptly named **Another bizarre effort**.
 
 The question now moves from "why *doesn't* it work" to, "why *does* it":-
 
 ```
-cond = (a>0) && (b>0);
+bool cond = (a>0) && (b>0);
 while (((a>0) && (b>0)) || cond) {
   // a and b may get changed
   cond = (a>0) && (b>0);
@@ -94,7 +97,7 @@ while (((a>0) && (b>0)) || cond) {
 
 ```
 The syntax is surely equivalent to the code at the top, if 
-more wordy with some redundency. A good PR might recommend
+more wordy with some redundancy. A good PR might recommend
 cleaning it up back into the code at the top. Nevertheless,
 looking at `a` and `b` twice for each decision caused correct entry and exit
 of the loop, and the appveyor tests passed fully.
@@ -121,7 +124,7 @@ a bit earlier (which produces the right answer), I might have doubted gcc
 sooner. Or would I? Faulty compiler optimisations and memory usage bugs can
 have similar side effects; both can do strange things when the code is tickled 
 by an innocuous print command. Both can disappear when you turn optimisation off. 
-(User memory bugs can also disappear only when you turn optimisation on...)
+(User memory bugs can also seemingly disappear when you turn optimisation on...)
 
 We briefly looked at the assembler code produced by the compiler, (`-S` on the 
 gcc command line. It helps if the fragments of code you're comparing have
@@ -130,20 +133,24 @@ while we could tell the code was different with `-O1`, it would take a
 special kind of assembler programmer to show us why exactly the behaviour
 changed as it did.
 
-## Conclusion
-
 In the end, we cleaned up my bizarre effort slightly, using a variable some
 distance away in terms of scope to decide loop iterations, which produced both
 better-looking code, and coaxed the compiler away from its more outlandish
 optimisations.
 
-But what to say about all this? Well, debugging this sort of code is hard, and
-sometimes unpredictable. It would be better if debugging tools for the
-R/C combination were more readily available on Windows. It may help if
-Rtools used a more recent gcc compiler (4.9.3 comes from June 2015).
+## Conclusion
+
+So what to say about all this? Firstly, where there is platform-dependent 
+code, running CI tests on multiple platforms and architectures is essential.
+Without that, we might have been chasing this issue blindly from a user
+report after release. 
+
+Secondly, debugging this sort of code is hard anyway, and the tools for 
+debugging the R/C combination on Windows are limited. And thirdly, Rtools
+could consider using a more recent gcc compiler (4.9.3 comes from June 2015).
 
 But until then; on the bright side it's solid character-building stuff, and
-eventually common sense and simple debugging tests prevail, along with
+common sense and simple debugging tests do eventually prevail, along with
 patience and occasional prayer. On the other hand, since the gcc used in Rtools
 3.5 is necessarily the same as the toolchain used for building R itself on
 windows, perhaps we're all doomed. But only in 32-bits. Probably.
