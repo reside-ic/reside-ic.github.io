@@ -115,7 +115,7 @@ changed the behaviour of the loop, breaking the simple test. It didn't optimise
 the loop away entirely, since all the many
 other tests worked consistently throughout the saga; it caused a subtle and rare
 change in behaviour - and only for 32-bits. If I had edited `%USERPROFILE%\Documents\.R\Makevars`
-and set
+and set the Rtools-specific [flags for gcc](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) like this:
 ```
 CFLAGS=-O0 -g -std=gnu99 -Wall
 ```
