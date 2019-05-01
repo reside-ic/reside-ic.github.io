@@ -1,6 +1,6 @@
 ---
 author: "Wes Hinsley"
-date: 2019-04-29
+date: 2019-05-01
 title: Debugging at the edge of reason
 best: false
 ---
