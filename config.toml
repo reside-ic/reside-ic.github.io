@@ -7,9 +7,8 @@ languageCode = "en-US"
 layoutdir = "layouts"
 publishdir = "public"
 title = "Reside-IC"
-disqusshortname = ""
 pluralizelisttitles = false
-disqusShortname = "reside-ic"
+DisqusShortname = "reside-ic"
 
 [permalinks]
 blog = "blog/:slug/"
