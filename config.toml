@@ -9,11 +9,14 @@ publishdir = "public"
 title = "Reside-IC"
 disqusshortname = ""
 pluralizelisttitles = false
+disqusShortname = "reside-ic"
 
 [permalinks]
 blog = "blog/:slug/"
 
 [params]
+share = true
+share_on_googleplus = false
 dateform = "Jan 2, 2006"
 dateformfull = "Mon Jan 2 2006 15:04:05 MST"
 description = "Research software for infectious disease epidemiology at Imperial College"
