@@ -1,7 +1,7 @@
 ---
 author: "Rich FitzJohn"
 date: 2019-05-20
-title: vaultr 1.0.1
+title: vaultr 1.0.2
 best: false
 ---
 
