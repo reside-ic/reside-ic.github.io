@@ -35,6 +35,14 @@ A high-level approach to make using encryption from R more accessible; the `cyph
 
 (This is also an [rOpenSci](https://ropensci.org/) package.)
 
+### `dde` - an R package for solving delay differential equations
+
+The `dde` package solves delay differential equations (DDEs), which are an extension to ordinary differential equations (ODEs) where the derivatives depend not only on the current state but also on the state at some point in the model's past.  They turn up modelling contexts (e.g., the number of people bitten by mosquitos 10 days ago).
+
+* [Package webpage](https://mrc-ide.github.io/dde)
+* [CRAN page](https://cran.r-project.org/package=dde)
+* Blog posts: [debugging](/blog/debugging-at-the-edge-of-reason/)
+
 ### `odin` - high level differential equations
 
 A "domain specific language", hosted in R, for representing and compiling ordinary differential equations.  `odin` provides a language that has the same syntax as R but compiles to C (or to R or JavaScript) in order to represent equations at a high level but allow high-performance solutions.  Currently `odin` is being used within the department for research on malaria, measles, HIV and flu.
