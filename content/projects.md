@@ -48,7 +48,7 @@ The R package [`vaultr`](https://vimc.github.io/vaultr) is a client for [HashiCo
 
 * [Package webpage](https://vimc.github.io/vaultr)
 * [CRAN page](https://cran.r-project.org/package=vaultr)
-* Blog posts: [announcement](/blog/vaultr-1.0.1/)
+* Blog posts: [announcement](/blog/vaultr-1.0.2/)
 
 ## Public Engagement Tools
 
