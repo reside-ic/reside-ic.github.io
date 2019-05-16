@@ -49,3 +49,12 @@ The R package [`vaultr`](https://vimc.github.io/vaultr) is a client for [HashiCo
 * [Package webpage](https://vimc.github.io/vaultr)
 * [CRAN page](https://cran.r-project.org/package=vaultr)
 * Blog posts: [announcement](/blog/vaultr-1.0.1/)
+
+## Public Engagement Tools
+
+We have a collection of tools for use in science festivals, public engagement events and internal socials, where we explore epidemiological ideas with games and hands-on experiments.
+
+* [Barcode epidemic](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Barcode_Epidemic) - where an epidemic is spread by passing unqiue QR codes.
+* [Microbit epidemic](https://www.github.com/mrc-ide/public-events-barcode-epidemic) - where an epidemic is transmitted over Microbit radio
+* Zombie Spatial Simulator [original](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Zombie_Sim_I) and [simplified](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Zombie_Sim_II) - visualisationg an individual-based spatial epidemic.
+* [Herd Immunity](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Herd_Immunity) - explore vaccination efects in an epidemic simulated by bouncing balls off each other.
