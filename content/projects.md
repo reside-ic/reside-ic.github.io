@@ -41,7 +41,7 @@ The `dde` package solves delay differential equations (DDEs), which are an exten
 
 * [Package webpage](https://mrc-ide.github.io/dde)
 * [CRAN page](https://cran.r-project.org/package=dde)
-* Blog posts: [debugging](/blog/debugging-at-the-edge-of-reason/)
+* Blog posts: [announcement](/blog/dde-1.0.0/), [debugging](/blog/debugging-at-the-edge-of-reason/)
 
 ### `odin` - high level differential equations
 
