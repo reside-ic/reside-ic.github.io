@@ -5,7 +5,7 @@ title: dde 1.0.0
 best: false
 ---
 
-Last week we released the first official version of [`dde`](https://mrc-ide.github.io/dde/) to [available on CRAN](https://cran.r-project.org/package=dde).  This package implements a method for solving [delay differential equations](https://en.wikipedia.org/wiki/Delay_differential_equation), which we use with [`odin`](https://mrc-ide.github.io/odin) to model disease dynamics.
+Last week we released the first official version of [`dde`](https://mrc-ide.github.io/dde/), which is now [available on CRAN](https://cran.r-project.org/package=dde).  This package implements a method for solving [delay differential equations](https://en.wikipedia.org/wiki/Delay_differential_equation), which we use with [`odin`](https://mrc-ide.github.io/odin) to model disease dynamics.
 
 With ordinary differential equations, you express the system of equations as *dy/dt = f(y(t), t)*; the rate of change of the system depends on the current state of the system and the current time, but with delay differential equations *dy/dt* also depends on *y(t - tau)*.  In general these are hard to solve numerically but there is a large class of useful equations with constant delays that are both interesting and tractable.
 
