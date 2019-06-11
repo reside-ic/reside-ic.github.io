@@ -1,7 +1,7 @@
 ---
 author: "Alex Hill"
-date: 2019-05-31
-title: jQuery TreeTables 1.0.0
+date: 2019-06-11
+title: jQuery TreeTables 1.1.1
 best: false
 ---
 
@@ -18,7 +18,7 @@ identical to that of DataTables.
 E.g.
 
 ```
- const organisationData = [
+        const organisationData = [
             {tt_key: 1, tt_parent: 0, name: "CEO"},
             {tt_key: 2, tt_parent: 1, name: "CTO"},
             {tt_key: 3, tt_parent: 2, name: "developer"},
