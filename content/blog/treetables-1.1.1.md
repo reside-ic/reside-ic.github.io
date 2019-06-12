@@ -5,17 +5,22 @@ title: jQuery TreeTables 1.1.1
 best: false
 ---
 
+<img src="/img/treetables.gif" alt="Gif of plugin in use" />
+
 We just released a new npm package [TreeTables](https://www.npmjs.com/package/treetables)
  for displaying tree data when using jQuery
-[DataTables](https://datatables.net/)
+[DataTables](https://datatables.net/).
 
 DataTables is a powerful and extremely well established plugin for
-displaying tabular data, but has no native support for tree data.
+displaying tabular data, but has no native support for 
+[tree (nested) data](https://en.wikipedia.org/wiki/Tree_(data_structure)).
+Examples of tree data include family trees, phylogenetic trees, 
+and organisational hierarchies.
 
 The TreeTables plugin adds that support with an interface that is almost
 identical to that of DataTables. 
 
-E.g.
+Basic usage:
 
 ```
         const organisationData = [
@@ -37,6 +42,11 @@ E.g.
 ```
 
 <img src="/img/treetable-screenshot.png" alt="Screenshot of plugin in use" />
+
+Features include:
+* toggling individual rows open and closed
+* expanding or collapsing all rows
+* arbitrarily deeply nested data
 
 Read the full documentation and download instructions on [npm](https://www.npmjs.com/package/treetables)
 or [GitHub](https://github.com/reside-ic/TreeTables)
