@@ -20,6 +20,12 @@ and organisational hierarchies.
 The TreeTables plugin adds that support with an interface that is almost
 identical to that of DataTables. 
 
+Features include:
+
+* toggling individual rows open and closed
+* expanding or collapsing all rows
+* arbitrarily deeply nested data
+
 Basic usage:
 
 ```
@@ -41,12 +47,6 @@ Basic usage:
         });
 ```
 
-<img src="/img/treetable-screenshot.png" alt="Screenshot of plugin in use" />
-
-Features include:
-* toggling individual rows open and closed
-* expanding or collapsing all rows
-* arbitrarily deeply nested data
 
 Read the full documentation and download instructions on [npm](https://www.npmjs.com/package/treetables)
 or [GitHub](https://github.com/reside-ic/TreeTables)
