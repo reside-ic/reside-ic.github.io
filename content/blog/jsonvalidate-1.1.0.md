@@ -4,7 +4,7 @@ date: 2019-06-25T07:38:50+01:00
 draft: true
 ---
 
-[JSON](https://www.w3schools.com/js/js_json_intro.asp) is useful as a data-interchange format, due to the massive popularity of javascript recently.  It's objectively not the best format for anything, being verbose (but not as bad as XML), awkward to write, and lacking in rich types.  However, basically every language supports reading and writing JSON now, so it makes a nice lowest common denominator.
+[JSON](https://www.w3schools.com/js/js_json_intro.asp) is useful as a data-interchange format, due to the massive popularity of javascript.  Basically every language supports reading and writing JSON now, so it makes a nice lowest common denominator.
 
 When generating JSON from an application, it is useful to be able to describe how the data is structured - so if we return output like
 
