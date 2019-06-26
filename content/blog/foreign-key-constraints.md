@@ -5,15 +5,15 @@ title: Querying for foreign key constraints
 best: false
 ---
 
-Over the past few months we've been developing a tool to assist with database import from R. As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier. We want to be able to take a list of data frames in R and append those to the relevant tables in the database automatically. Doing so requires knowledge of the foreign key constraints. This blog post covers how to query PostgreSQL and SQLite databases to retrieve that information. 
+Over the past few months we've been developing a [tool to assist with database import from R](https://github.com/vimc/dettl). As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier. We want to be able to take a list of data frames in R and append those to the relevant tables in the database automatically. Doing so requires knowledge of the foreign key constraints. This blog post covers how to query PostgreSQL and SQLite databases to retrieve that information. 
 
 ## PostgreSQL
 
-Postgres databases capture schema metadata within catalogs. These catalogs are just regular tables which we can query as normal. We're going to use three different tables to extract constraint metadata in a readable form:
+Postgres databases capture schema metadata within [catalogs](https://www.postgresql.org/docs/9.2/catalogs-overview.html). These catalogs are just regular tables which we can query as normal. We're going to use three different tables to extract constraint metadata in a readable form:
 
-* `pg_constraint` - contains data about constraints of different types (check, primary key, unique, foreign key and exclusion) for all tables
-* `pg_class` - contains data about tables in the database (it also has information about other relations e.g. sequences, views etc. but we're only interested in the tables here)
-* `pg_attribute` - contains information about table columns with one entry for every column of every table in the database
+* [`pg_constraint`](https://www.postgresql.org/docs/9.2/catalog-pg-constraint.html) - contains data about constraints of different types (check, primary key, unique, foreign key and exclusion) for all tables
+* [`pg_class`](https://www.postgresql.org/docs/9.2/catalog-pg-class.html) - contains data about tables in the database (it also has information about other relations e.g. sequences, views etc. but we're only interested in the tables here)
+* [`pg_attribute`](https://www.postgresql.org/docs/9.2/catalog-pg-attribute.html) - contains information about table columns with one entry for every column of every table in the database
 
 From these the fields we are most interested in are:
 
@@ -141,11 +141,11 @@ Note in particular that `constraint_table` and `constraint_column` are identical
 
 ## SQLite
 
-SQLite does not have catalog tables like postgres so we need a slightly different appraoch for extracting foreign key constraints. We can use `PRAGMA` statements instead to query the database metadata. The `PRAGMA` statement we will use is `PRAGMA foreign_key_list('table_name')` which retrieves foreign key information for a single table. Unfortunately there isn't a way to get foreign keys constraints for all tables at once so we need to do some work up front to get the list of tables and then loop over this to retrieve the foreign key constraints for each of the tables in turn.
+SQLite does not have catalog tables like postgres so we need a slightly different appraoch for extracting foreign key constraints. We can use [`PRAGMA`](https://www.sqlite.org/pragma.html) statements instead to query the database metadata. The `PRAGMA` statement we will use is [`PRAGMA foreign_key_list('table_name')`](https://www.sqlite.org/pragma.html#pragma_foreign_key_list) which retrieves foreign key information for a single table. Unfortunately there isn't a way to get foreign keys constraints for all tables at once so we need to do some work up front to get the list of tables and then loop over this to retrieve the foreign key constraints for each of the tables in turn.
 
 The `PRAGMA` statement can be called using `PRAGMA foreign_key_list('table_name')` or if using `sqlite3` `SELECT * FROM pragma_foreign_key_list('table_name')`. We will use the second form as this allows us to `SELECT` the specific columns we're interested in.
 
-Firstly we need to know our list of tables. This can be retrieved from the `sqlite_master` table using `SELECT tbl_name FROM sqlite_master WHERE type = 'table';`.
+Firstly we need to know our list of tables. This can be retrieved from the [`sqlite_master`](https://www.sqlite.org/faq.html#q7) table using `SELECT tbl_name FROM sqlite_master WHERE type = 'table';`.
 
 For each returned table we now need to use the `PRAGMA` to get the foreign keys:
 ```
@@ -189,7 +189,7 @@ FROM  pragma_foreign_key_list('address') AS pragma;
 
 ```
 
-Running with `.headers ON` returns:
+Running with [`.headers ON`](https://sqlite.org/cli.html#special_commands_to_sqlite3_dot_commands_) returns:
 ```
 constraint_table|constraint_column|referenced_table|referenced_column
 address|region|region|name
