@@ -5,7 +5,7 @@ title: Querying for foreign key constraints
 best: false
 ---
 
-Over the past few months we've been developing a tool to assist with database import from R. As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier. We want to be able to take a list of data frames in R and append those to the relevant tables in the database automatically. Doing so requires knowledge of the foreign key constraints, this blog post covers how to query PostgreSQL and SQLite databases to retrieve that information. 
+Over the past few months we've been developing a tool to assist with database import from R. As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier. We want to be able to take a list of data frames in R and append those to the relevant tables in the database automatically. Doing so requires knowledge of the foreign key constraints. This blog post covers how to query PostgreSQL and SQLite databases to retrieve that information. 
 
 ## PostgreSQL
 
@@ -110,7 +110,7 @@ Which returns the desired result:
 
 ```
 
-We're restricting the query to only return foreign key constraints but removing the `WHERE` clause will show all constraint types. Care should be taken in interpreting these when constraints are on multiple columns. For example a unique constraint on two separate columns and a multi-column constraint will return similar results, the difference would only be seen in the `constraint_name` and `definition`.  We can demonstrate this by creating two new tables:
+We're restricting the query to only return foreign key constraints but removing the `WHERE` clause will show all constraint types. Care should be taken in interpreting these when constraints are on multiple columns. For example a unique constraint on two separate columns and a multi-column constraint will return similar results; the difference would only be seen in the `constraint_name` and `definition`.  We can demonstrate this by creating two new tables:
 
 ```
 CREATE TABLE table_with_one_unique (
