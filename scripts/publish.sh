@@ -8,6 +8,8 @@ fi
 
 echo "-------------------------------------------"
 echo 'Compiling site'
+
+export HUGO_USE_ANALYTICS=true
 hugo
 
 PUBLIC=public
