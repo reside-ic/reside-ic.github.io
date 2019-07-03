@@ -2,6 +2,7 @@
 title: "We're hiring: R/C++/Malaria Developer"
 date: 2019-07-03T07:57:16+01:00
 author: RESIDE
+slug: "hiring-2019-malaria-developer"
 ---
 
 [We are hiring!](https://www.imperial.ac.uk/jobs/description/MED01335/senior-research-software-engineer/).  We're looking for a developer to join [our team](/about/) to work with [the malaria modelling research group](https://www.imperial.ac.uk/malaria-modelling) on developing simulation models that will be used to investigate the impact of interventions to prevent the spread of malaria.
