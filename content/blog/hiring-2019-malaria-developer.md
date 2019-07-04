@@ -5,7 +5,7 @@ author: RESIDE
 slug: "hiring-2019-malaria-developer"
 ---
 
-[We are hiring!](https://www.imperial.ac.uk/jobs/description/MED01335/senior-research-software-engineer/).  We're looking for a developer to join [our team](/about/) to work with [the malaria modelling research group](https://www.imperial.ac.uk/malaria-modelling) on developing simulation models that will be used to investigate the impact of interventions to prevent the spread of malaria.
+[We are hiring!](https://www.imperial.ac.uk/jobs/description/MED01335/senior-research-software-engineer/)  We're looking for a developer to join [our team](/about/) to work with [the malaria modelling research group](https://www.imperial.ac.uk/malaria-modelling) on developing simulation models that will be used to investigate the impact of interventions to prevent the spread of malaria.
 
 No prior experience with malaria or epidemiology is needed as you'll be working closely with a friendly team of computational researchers.  You'll work with the rest of our RSE team who will help you gather requirements from the researchers, understand the existing code, and review your code.  You'll also work with us as we plan other projects within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis).
 
