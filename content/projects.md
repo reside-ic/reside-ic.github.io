@@ -58,6 +58,16 @@ The `dde` package solves delay differential equations (DDEs), which are an exten
 * [CRAN page](https://cran.r-project.org/package=dde)
 * Blog posts: [announcement](/blog/dde-1.0.0/), [debugging](/blog/debugging-at-the-edge-of-reason/)
 
+### `jsonvalidate` - JSON schema validation for R
+
+[JSON schemas](https://json-schema.org/) provide a mechanism for validating that JSON conforms to an expected structure.  This R package wraps two popular JSON schema libraries written in javascript - [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) and [`ajv`](https://github.com/epoberezkin/ajv).
+
+* [Package website](https://ropensci.github.io/jsonvalidate)
+* Blog posts [1.1.0](/blog/jsonvalidate-1.1.0)
+* [CRAN page](https://cran.r-project.org/package=jsonvalidate)
+
+(This is also an [rOpenSci](https://ropensci.org/) package.)
+
 ### `odin` - high level differential equations
 
 A "domain specific language", hosted in R, for representing and compiling ordinary differential equations.  `odin` provides a language that has the same syntax as R but compiles to C (or to R or JavaScript) in order to represent equations at a high level but allow high-performance solutions.  Currently `odin` is being used within the department for research on malaria, measles, HIV and flu.
