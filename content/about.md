@@ -10,7 +10,10 @@ Research Software for Infectious Disease Epidemiology - we are a team of 7 resea
 * [Alex Hill](http://www.alexandra-hill.com/)
 * [Emma Russell](https://github.com/EmmaLRussell)
 * [James Thompson](https://github.com/JamesThompson1729)
-* [Martin Eden](https://github.com/martineden)
 * [Rich FitzJohn](https://richfitz.github.io)
 * [Robert Ashton](https://github.com/r-ash)
 * [Wes Hinsley](https://github.com/weshinsley)
+
+## Alumni
+
+* [Martin Eden](https://github.com/martineden)
