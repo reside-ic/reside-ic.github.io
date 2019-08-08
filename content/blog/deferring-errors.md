@@ -151,3 +151,7 @@ defer_errors({
 ```
 
 A slightly tidied version of this code is available in a [micro R package `defer`](https://github.com/reside-ic/defer).
+
+This sort of approach might be useful when there is a large upfront cost that you don't want to pay on each verification cycle (e.g., loading a large file, uploading a file to a server etc).  On the other hand, if validation *should* stop after a set of errors, this pattern might make things more complicated - for example errors generated checking that column names are distinct will likely be nonsensical in the case where a table does not contain column names!
+
+For the validation case, there is an R package [`assertr`](https://github.com/ropensci/assertr#what-does-it-look-like) that can collect assertion errors in a pattern like the above, though it does not use a restart approach.
