@@ -77,27 +77,19 @@ as in it will throw an error and prevent continuing beyond this statement within
 
 
 ```r
-message("will be printed")
+local({
+  message("will be printed")
+  deferrable_error("something bad happened")
+  message("will not be reached")
+})
 ```
 
 ```
 ## will be printed
 ```
 
-```r
-deferrable_error("something bad happened")
-```
-
 ```
 ## Error: something bad happened
-```
-
-```r
-message("will not be reached")
-```
-
-```
-## will not be reached
 ```
 
 In order to actually defer the error, we need to add a calling handler that will intercept the `deferrable_error` and invoke the `continue_deferrable_error` restart (which will mean that executation will continue):
@@ -141,7 +133,7 @@ check_positive <- function(x) {
 }
 ```
 
-Running a block of code that throws only `deferrable_error` (and not `stop`) will reach the bottom of the block and thow
+Running a block of code that throws only `deferrable_error` (and not `stop`) will reach the bottom of the block and thow 
 
 
 ```r
