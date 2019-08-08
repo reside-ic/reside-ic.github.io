@@ -92,7 +92,7 @@ local({
 ## Error: something bad happened
 ```
 
-In order to actually defer the error, we need to add a calling handler that will intercept the `deferrable_error` and invoke the `continue_deferrable_error` restart (which will mean that executation will continue):
+In order to actually defer the error, we need to add a calling handler that will intercept the `deferrable_error` and invoke the `continue_deferrable_error` restart (which will mean that execution will continue):
 
 
 ```r
@@ -107,7 +107,7 @@ defer_errors <- function(expr, call = FALSE) {
     })
 
   if (length(errors) > 0L) {
-    stop(sprintf("%d %s occured:\n%s",
+    stop(sprintf("%d %s occurred:\n%s",
                  length(errors),
                  ngettext(length(errors), "error", "errors"),
                  paste0("  - ", errors, collapse = "\n")),
@@ -118,7 +118,7 @@ defer_errors <- function(expr, call = FALSE) {
 }
 ```
 
-So when an error of `deferrable_error` occurs, `withCallingHandlers` invokes the handler which collects the error up for later, then involkes the restart (registered by the error itself) which does nothing but _somehow_ signals that we can continue.
+So when an error of `deferrable_error` occurs, `withCallingHandlers` invokes the handler which collects the error up for later, then invokes the restart (registered by the error itself) which does nothing but _somehow_ signals that we can continue.
 
 So, `defer_errors` is a function that will accept a code block as its argument, and will accumulate errors into an internal list, throwing if at least one error was observed.  An ordinary error will throw straight away.
 
@@ -133,7 +133,7 @@ check_positive <- function(x) {
 }
 ```
 
-Running a block of code that throws only `deferrable_error` (and not `stop`) will reach the bottom of the block and thow 
+Running a block of code that throws only `deferrable_error` (and not `stop`) will reach the bottom of the block and throw
 
 
 ```r
@@ -145,7 +145,7 @@ defer_errors({
 ```
 
 ```
-## Error: 2 errors occured:
+## Error: 2 errors occurred:
 ##   - got a negative number: -1
 ##   - got a negative number: -2
 ```
