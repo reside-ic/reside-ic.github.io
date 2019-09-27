@@ -1,6 +1,6 @@
 ---
 author: "Emma Russell"
-date: 2019-09-23
+date: 2019-09-27
 title: All carrot, no stick - virtuous circles and useful tools
 ---
 
@@ -10,7 +10,7 @@ A vicious circle of software use might go something like this:
 to design their own workflow to get a task done. This workflow starts off with the best of intentions, but really only 
 exists in the user's head. Consequently, as time goes on, as deadlines threaten, corners are cut. Next, the cutting of 
 those corners becomes habitual, and the workflow degenerates. Essential outputs are still produced, but steps ensuring 
-transparency and validation may become confused or omitted. Good intentions becomes a distant, guilty memory.* 
+transparency and validation may become confused or omitted. Good intentions become a distant, guilty memory.* 
 
 The corresponding virtuous circle might be:
 
@@ -34,12 +34,13 @@ files, of the sort which Guttenberg could have published on his first printing p
 computational output, "the paper is advertising, not scholarship", and is fundamentally incomplete without also providing 
 the means for readers to reproduce the computation themselves.
 
-Anna Krystalli of Sheffield University presented [rrtools](https://github.com/benmarwick/rrtools), which enables the 
+[Anna Krystalli](https://annakrystalli.me) of [Sheffield University](https://rse.shef.ac.uk) presented 
+[rrtools](https://github.com/benmarwick/rrtools), which enables the 
 generation of a compendium (a collection of digital assets associated with paper) as an R package. These assets might 
 include csv files of input data, R code and tests, and the content of the paper itself. Rrtools offers a clear structure 
 in the configuration it expects from a compendium project - it's easy for the user to see what they need to fill in 
 without having to remember it, and some data can be auto-filled in from the user's profile. Rrtools also offers users a 
-host of nifty automation features to streamline the workflow, such as adding citations, dependencies and license, 
+host of nifty automation features to streamline the workflow, such as adding citations, dependencies and licence, 
 auto-generating boilerplate parts of a readme file, and more technical tasks, like creating a github repo, setting up 
 continuous integration with Travis, and even creating a dockerfile which Travis can build and push to dockerhub.
 
@@ -50,7 +51,7 @@ paper - reviewers and readers as well as authors. Like rrtools, the paper is aug
 under development to make engaging with all these assets together seamless and transparent - for example the ability to 
 click on a plot in a paper, see the code which generated it, and potentially edit the code and instantly see the plot 
 update inline, all without leaving the browser. Research which can be engaged with in this way isn't just easily 
-reproducible, it's easily mutatable too. Tools like this may increase good practice by harnessing the value it adds, 
+reproducible, it's easily mutable too. Tools like this may increase good practice by harnessing the value it adds, 
 increasing their usage and driving adoption of the technology as a standard. 
 
 These approaches don't just apply to publication. Our own [dettl](https://vimc.github.io/dettl/) package was developed 
@@ -59,22 +60,23 @@ into our databases. The code to perform these imports was formerly written from 
 reference to the structure of previous imports, and tended to be monolithic, difficult to review and untested. Dettl ("disinfect 
 your workflow!") encourages a cleaner approach by providing methods for a staged approach, separated into Extract, 
 Transform and Load steps, each of which incorporate running a suite of tests, and where each step must succeed (pass all tests)
- before the next can be attempted. Users of the package need put no effort into writing code with a good structure, or 
- remembering to write a full test suite. 
+ before the next can be attempted. Users of the package are provided with a clear structure for workflow (coding and testing), 
+ in which programming efforts will be directed towards clear decoupling of the parts of the import, and the rewards are 
+ more straightforward reviewing and re-use. 
 
 [Orderly](https://vimc.github.io/orderly/), another RESIDE project, provides an infrastructure for producing reports or 
 analyses by running code against specified inputs and collecting outputs. It shares this basic collection of code and 
-data with the publishing tools described above. However, Orderly is not focussed on publication, and offers additional 
+data with the publishing tools described above. However, Orderly is not focused on publication, and offers additional 
 reporting features such as the ability to introduce dependencies between reports by using the outputs of one report as 
 inputs to another, and the automatic versioning of reports every time they are run. Like rrtools, good practice in 
 reproducible results is built into the structure of the Orderly package, and like reproducible articles, further value 
-in given to users in the form of the Orderly Web front end which provides clarity and transparency, through visibility 
+is given to users in the form of the [Orderly Web](https://github.com/vimc/orderly-web) front end which provides clarity and transparency, through visibility 
 of reports, their inputs, outputs and versioning information, and administrator features for assigning report-level permissions. 
-The users viewing the reports are often not the authors of the report code, but may be reviewers or other stakeholders.  
+The users viewing the reports are often not the authors of the report code, but may be funders or other stakeholders.  
 
 All these tools incorporate beneficial practices into their basic structure, providing a virtuous template for achieving 
 clarity, completeness and separation of concerns, without requiring users to think about how to achieve these things 
-themselves. Further incentives to ensure continued use of the the tools can be provided through automation of tedious tasks, 
+themselves. Further incentives to ensure continued use of the tools can be provided through automation of tedious tasks, 
 and features to make review and engagement easier, both for primary users and those in other roles.
 
 But is there a danger that these tools are too prescriptive - that they might impose an idea of 'best practice' on users 
