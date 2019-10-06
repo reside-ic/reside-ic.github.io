@@ -127,10 +127,12 @@ then...
 
 Now all my friends suddenly seem to like Haggis. And Cheese too. Or do they? A bit more exploring 
 reveals that my friends in the `data.table` like absolutely everything in the universe. Even mushrooms.
-This may or may not be true in reality, but it is definitely not what I wanted the subset to do.
+And NULL too. This may or may not be true in reality, but it is definitely not what I wanted the subset to do.
 
-It turns out here, that with a `data.table`, subsetting does not behave as expected if I write
-in the form `data[data$thing == thing, ]`. If I change my `who_likes` function to this:-
+What's happening is: when I write 
+`data[data$food == food, ]`, then `data.table` interprets the right-hand `food` as being
+the column in `data`, rather than the argument to `who_likes`. 
+If instead I write:-
 
 ```
 who_likes <- function(x) {
@@ -138,8 +140,10 @@ who_likes <- function(x) {
 }
 ```
 
-then all works as I expected. It is another feature of a kind, but does seem surprising;
-looking through my previous code I have quite a number of examples where the most natural
+then all works as I expected. And if I (oddly) changed `x` to `name`, then data.table
+would perform comparison between columns, returnig zero rows.
+
+Looking through my previous code I have quite a number of examples where the most natural
 thing to write would be `data[data$country == country, ]` or `data[data$id == id, ]`. Luckily
 I did so only with data-frames. I have not yet found any warnings I can switch on,
 should I forget about this issue in the future. Again.
