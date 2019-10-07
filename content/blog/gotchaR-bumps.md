@@ -70,7 +70,8 @@ use of the dollar sign, but not on a quoted variable name. Moreover, setting the
 warnPartialMatchAttr = TRUE
 warnPartialMatchDollar = TRUE
 warnPartialMatchArgs = TRUE
-``` in `.Rprofile` will throw a warning every time R does a partial-match. This seems like
+```
+in `.Rprofile` will throw a warning every time R does a partial-match. This seems like
 it might save a world of pain, although casting my mind back to various projects where I have
 frivolously talked about `list$thing` and `list$thing_name` and `list$thing_id` still makes me
 shudder a little. 
