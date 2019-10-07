@@ -93,7 +93,7 @@ who_likes <- function(food) {
 }
 ```
 
-This is very nice. So if I have a haggis and wonder what to do with it[^1].
+This is very nice. So if I have a haggis and wonder what to do with it[^1] :-
 ```
 > who_likes("Haggis")
   name   food
