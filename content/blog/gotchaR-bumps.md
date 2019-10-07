@@ -81,11 +81,11 @@ in code for other packages we rely upon...
 
 ## data.table vs data.frame
 
-So I collected some more data for my colleagues, and I put it in a `data.frame` like this.
+So I collected some more data[^1] for my colleagues, and I put it in a `data.frame` like this.
 ```
 data <- data.frame(
   name = c("Alex", "Emma", "James", "Rich", "Rob"),
-  food = c("Oysters", "Haggis", "Goose", "Cheese", "Celery"),
+  food = c("Oysters", "Haggis", "Goose", "Cheese", "Pie Barm"),
   stringsAsFactors = FALSE)
 
 who_likes <- function(food) {
@@ -93,7 +93,7 @@ who_likes <- function(food) {
 }
 ```
 
-This is very nice. So if I have a haggis and wonder what to do with it[^1] :-
+This is very nice. So if I have a haggis and wonder what to do with it[^2] :-
 ```
 > who_likes("Haggis")
   name   food
@@ -110,12 +110,12 @@ However... if I edit just my first line from `data.frame(...)` to `data.table(..
 
 ```
 > who_likes("Haggis")
-  name    food
-1 Alex Oysters
-2 Emma  Haggis
-3 James  Goose
-4 Rich  Cheese
-5 Rob   Celery
+  name      food
+1 Alex   Oysters
+2 Emma    Haggis
+3 James    Goose
+4 Rich    Cheese
+5 Rob   Pie Barm
 ```
 
 Now all my friends suddenly seem to like Haggis. And Cheese too. Or do they? A bit more exploring 
@@ -154,4 +154,5 @@ you're in hell, this is a map for you." I'm not sure I'd go quite that far in de
 experiences, but maybe being vaguely aware of some of the banana-skins in advance might be good
 preparation to avoid some future diversions...
 
-[^1]: Emma doesn't actually like haggis, and if I offered it, she would know _exactly_ what to do with it.
+[^1]: For the unenlightened, this is a [Pie Barm](https://www.theguardian.com/commentisfree/2017/mar/09/pie-barm-twitter-wigan-kebab)
+[^2]: Emma doesn't actually like haggis, and if I offered it, she would know _exactly_ what to do with it.
