@@ -19,7 +19,7 @@ aren't going to happen on their own...
 # The dodgy dollar?
 
 Here is a piece of code, in which I incrementally ask my friends what their favourite
-fruit is. I decided to use generic variables names, so that later on, I can maybe ask them
+fruit is. I decided to use generic variable names, so that later on, I can maybe ask them
 what's their favourite vegetable, or pet, or something. This sort of knowledge, I feel, is 
 essential for being a good considerate colleague. I start writing some code to process
 my friends' replies:-
@@ -33,7 +33,7 @@ for (f in c("Apple", "Banana", "Cherry")) {
 }
 ```
 
-So, now I can head to Tescos with a list of my colleague's favourite fruits.
+So, now I can head to Tesco with a list of my colleague's favourite fruits.
 
 ```
 > data$thing
