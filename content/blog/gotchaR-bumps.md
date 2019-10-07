@@ -106,7 +106,7 @@ be a good idea, since it's just a higher performance version of `data.frame`, ri
 also in very common use. (To be clear, the performance increase is indeed very worthwhile for large
 datasets).
 
-However... if I swap in the `data.table` by only changing `data <- data.frame(...)` to `data <- data.table(...)` then...
+However... if I edit just my first line from `data.frame(...)` to `data.table(...)` then...
 
 ```
 > who_likes("Haggis")
