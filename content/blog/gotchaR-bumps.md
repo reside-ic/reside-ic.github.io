@@ -142,7 +142,7 @@ who_likes <- function(x) {
 ```
 
 then all works as I expected. And if I (oddly) changed `x` to `name`, then data.table
-would perform comparison between columns, returnig zero rows.
+would perform comparison between columns, returning zero rows.
 
 Looking through my previous code I have quite a number of examples where the most natural
 thing to write would be `data[data$country == country, ]` or `data[data$id == id, ]`. Luckily
