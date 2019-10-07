@@ -154,5 +154,5 @@ you're in hell, this is a map for you." I'm not sure I'd go quite that far in de
 experiences, but maybe being vaguely aware of some of the banana-skins in advance might be good
 preparation to avoid some future diversions...
 
-[^1]: For the unenlightened, this is a [Pie Barm](https://www.theguardian.com/commentisfree/2017/mar/09/pie-barm-twitter-wigan-kebab)
+[^1]: For the unenlightened, this is a [Pie Barm](https://i.redd.it/apafjv07jdm11.jpg) and [here](https://www.theguardian.com/commentisfree/2017/mar/09/pie-barm-twitter-wigan-kebab) is an article in praise of its merits.
 [^2]: Emma doesn't actually like haggis, and if I offered it, she would know _exactly_ what to do with it.
