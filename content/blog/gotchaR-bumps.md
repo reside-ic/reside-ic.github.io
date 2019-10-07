@@ -77,7 +77,7 @@ frivolously talked about `list$thing` and `list$thing_name` and `list$thing_id` 
 shudder a little. 
 
 Also having set these options, I occasionally see warnings popping up about auto-completion
-in code for other libraries we rely upon...
+in code for other packages we rely upon...
 
 ## data.table vs data.frame
 
@@ -93,7 +93,7 @@ who_likes <- function(food) {
 }
 ```
 
-This is very nice. So if I have a haggis and wonder what to do with it:
+This is very nice. So if I have a haggis and wonder what to do with it[^1].
 ```
 > who_likes("Haggis")
   name   food
@@ -106,7 +106,7 @@ be a good idea, since it's just a higher performance version of `data.frame`, ri
 also in very common use. (To be clear, the performance increase is indeed very worthwhile for large
 datasets).
 
-However... if I swap in the `data.table` by only changing `data <- data.frame(...` to `data <- data.table(...` then...
+However... if I swap in the `data.table` by only changing `data <- data.frame(...)` to `data <- data.table(...)` then...
 
 ```
 > who_likes("Haggis")
@@ -153,3 +153,5 @@ the perfectly named Patrick Burns. The preface begins "If you are using R and th
 you're in hell, this is a map for you." I'm not sure I'd go quite that far in describing my 
 experiences, but maybe being vaguely aware of some of the banana-skins in advance might be good
 preparation to avoid some future diversions...
+
+[^1]: Emma doesn't actually like haggis, and if I offered it, she would know _exactly_ what to do with it.
