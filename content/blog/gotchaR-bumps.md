@@ -54,7 +54,7 @@ cannot answer this for sure, but looking at the programming issue, they tell me 
 feature of R in a way. 
 
 The first time I read from `data$thing`, it doesn't exist 
-in the list, and R lexically auto-completes it into `data$thing_type` - hence the 
+in the list, and R auto-completes it into `data$thing_type` - hence the 
 "Fruit". It doesn't auto-complete on the assignment side though, so after the first
 loop iteration, `data$thing` exists, and things continue normally. 
 
@@ -64,7 +64,7 @@ would only remove the (non-existent) `thing` from list, because that's what NULL
 with lists does.
 
 So what should I instead do? One option is to replace my inner loop with
-` data$thing <- c(data[['thing']], f)`, because the auto-completion is activated on the 
+`data$thing <- c(data[['thing']], f)`, because the auto-completion is activated on the 
 use of the dollar sign, but not on a quoted variable name. Moreover, setting these options:
 ```
 warnPartialMatchAttr = TRUE
@@ -83,9 +83,10 @@ in code for other libraries we rely upon...
 
 So I collected some more data for my colleagues, and I put it in a `data.frame` like this.
 ```
-data <- data.frame(stringsAsFactors = FALSE,
+data <- data.frame(
   name = c("Alex", "Emma", "James", "Rich", "Rob"),
-  food = c("Oysters", "Haggis", "Goose", "Cheese", "Celery"))
+  food = c("Oysters", "Haggis", "Goose", "Cheese", "Celery"),
+  stringsAsFactors = FALSE)
 
 who_likes <- function(food) {
   data[data$food == food, ]
@@ -105,16 +106,7 @@ be a good idea, since it's just a higher performance version of `data.frame`, ri
 also in very common use. (To be clear, the performance increase is indeed very worthwhile for large
 datasets).
 
-However... if I swap in the `data.table` by only changing 
-```
-data <- data.frame(stringsAsFactors = FALSE
-```
-to
-```
-data <- data.table(stringsAsFactors = FALSE
-```
-
-then...
+However... if I swap in the `data.table` by only changing `data <- data.frame(...` to `data <- data.table(...` then...
 
 ```
 > who_likes("Haggis")
