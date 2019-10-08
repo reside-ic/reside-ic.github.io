@@ -1,6 +1,6 @@
 ---
 author: "Wes Hinsley"
-date: 2019-10-05
+date: 2019-10-08
 title: gotchaR - Bumps in the road for the learneR driver.
 best: false
 ---
