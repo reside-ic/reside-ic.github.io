@@ -88,6 +88,6 @@ The R package [`vaultr`](https://vimc.github.io/vaultr) is a client for [HashiCo
 We have a collection of tools for use in science festivals, public engagement events and internal socials, where we explore epidemiological ideas with games and hands-on experiments.
 
 * [Barcode epidemic](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Barcode_Epidemic) - where an epidemic is spread by passing unqiue QR codes.
-* [Microbit epidemic](https://www.github.com/mrc-ide/public-events-barcode-epidemic) - where an epidemic is transmitted over Microbit radio
+* [Microbit epidemic](https://www.github.com/mrc-ide/public-events-microbit-epidemic) - where an epidemic is transmitted over Microbit radio
 * Zombie Spatial Simulator [original](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Zombie_Sim_I) and [simplified](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Zombie_Sim_II) - visualisation of an individual-based spatial epidemic.
 * [Herd Immunity](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Herd_Immunity) - explore vaccination efects in an epidemic simulated by bouncing balls off each other.
