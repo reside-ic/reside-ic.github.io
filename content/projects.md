@@ -74,6 +74,8 @@ A "domain specific language", hosted in R, for representing and compiling ordina
 
 * [Package webpage](https://mrc-ide.github.io/odin)
 * Blog posts: [0.2.0](/blog/odin-0.2.0/)
+* [CRAN page](https://cran.r-project.org/package=odin)
+* [UseR! talk](https://www.youtube.com/watch?v=R0GHyFd3k8Q)
 
 ### `orderly` - lightweight reproducible reporting
 
