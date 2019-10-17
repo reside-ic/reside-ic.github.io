@@ -62,7 +62,7 @@ The `dde` package solves delay differential equations (DDEs), which are an exten
 
 [JSON schemas](https://json-schema.org/) provide a mechanism for validating that JSON conforms to an expected structure.  This R package wraps two popular JSON schema libraries written in javascript - [`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid) and [`ajv`](https://github.com/epoberezkin/ajv).
 
-* [Package website](https://ropensci.github.io/jsonvalidate)
+* [Package webpage](https://docs.ropensci.org/jsonvalidate)
 * Blog posts [1.1.0](/blog/jsonvalidate-1.1.0)
 * [CRAN page](https://cran.r-project.org/package=jsonvalidate)
 
