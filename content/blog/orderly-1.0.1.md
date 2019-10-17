@@ -1,7 +1,7 @@
 ---
 author: "Rich FitzJohn"
-date: 2019-11-01
-title: orderly 1.0.0
+date: 2019-10-18
+title: orderly 1.0.1 released to CRAN
 ---
 
 We are pleased to announce the first public release of [`orderly`](https://vimc.github.io/orderly), our reproducible reporting framework, implemented as an R package and now available on CRAN.
@@ -35,7 +35,7 @@ Core features include:
 * completely agnostic as to the sort of analyses that are run within a report, requiring no changes to most source code
 * all inputs and outputs are automatically hashed and (along with information on all loaded R packages and the current session) stored alongside the outputs and in a [database](https://vimc.github.io/orderly/schema)
 * a simple directory layout that is designed to minimise git conflicts and streamline collaboration
-* a web front-end, which can be used to create a user-friendly interface to the system and support a centralised workflow (see [the "remote" vignette](https://vimc.github.io/orderly/articles/remote.html))
+* a [web front-end](https://github.com/vimc/orderly-web), OrderlyWeb, which can be used to create a user-friendly interface to the system and support a centralised workflow (see [the "remote" vignette](https://vimc.github.io/orderly/articles/remote.html))
 
 We take backward compatibility very seriously and have developed a system for safely migrating any changes to the internal formats used, including running these migrations against reference data during automated testing.
 
@@ -45,4 +45,4 @@ Install `orderly` from CRAN with
 install.packages("orderly")
 ```
 
-[^1]: Currently this file is in yaml format because that suits our workflows, but it would be straightforward to replace this with either a special R function or even generate the configuration automatically for stereotyped uses like compiling markdown files.
+[^1]: Currently this file is in yaml format because that suits our workflows, but it would be straightforward to replace this with either a special R function or even generate the configuration automatically (and transparently) for stereotyped uses like compiling markdown files.
