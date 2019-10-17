@@ -6,7 +6,9 @@ title: orderly 1.0.1 released to CRAN
 
 We are pleased to announce the first public release of [`orderly`](https://vimc.github.io/orderly), our reproducible reporting framework, implemented as an R package and now available on CRAN.
 
-The `orderly` package was designed to help with a common pattern in reporting where a report might be run multiple times (over say a number of weeks or months) and where the inputs to the report might change.  In our case at [VIMC](https://www.vaccineimpact.org) this is analysis of impact of vaccines, but this pattern exists in many fields.  When reports are run multiple times they will inevitably vary, but we want to understand **why** they vary - was it a change in the analysis code, in the input data, or in some other dependency of the report?  Critically, we want it to always be completely clear that a given set of inputs belongs to a given set of outputs, without relying on any discipline from the end-user.
+The `orderly` package was designed to help with a common pattern in reporting, where a piece of analysis might be run multiple times (over say a number of weeks or months) and where the inputs to the analysis might change.  Any piece of analysis has numerous inputs (data & metadata, source code & packages) and changes in any of these might change the results of the analysis.
+
+In our case at [VIMC](https://www.vaccineimpact.org) this is analysis of impact of vaccines, but this pattern exists in many fields.  When reports are run multiple times they will inevitably vary, but we want to understand **why** they vary - was it a change in the analysis code, in the input data, or in some other dependency of the report?  Critically, we want it to always be completely clear that a given set of inputs belongs to a given set of outputs, without relying on any discipline from the end-user.
 
 The principle idea in `orderly` is that if the user lists the required inputs and expected outputs of an analysis, then we can automate many tasks.  The user must write a small configuration file[^1] like
 
@@ -24,7 +26,7 @@ artefacts:
 
 indicating the script to be run, any additional files needed to run the script, and the files that will be produced by running the script.  After that, orderly imposes no strong restrictions on what goes into `script.R`.  As such it is designed to accept R analyses that might have started life as standalone analyses as much as ones that were developed specifically for use within `orderly`.
 
-The basic idea is described in more detail [on the `orderly` web page](https://vimc.github.io/orderly/) and in the [introductory vignette](https://vimc.github.io/orderly/articles/orderly.html).
+The basic idea is described in more detail [on the package web page](https://vimc.github.io/orderly/) and in the [introductory vignette](https://vimc.github.io/orderly/articles/orderly.html).
 
 We have borrowed ideas from version control of source files to create a system where multiple versions of analyses can be compared side-by-side and where outputs of an analysis are always stored alongside their inputs.  We have used `orderly` in two large collaborative projects since 2017 and continue to actively improve the package.
 
