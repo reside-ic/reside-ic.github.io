@@ -12,7 +12,7 @@ An incomplete list of some projects that we have worked on within our RSE group.
 The [Vaccine Impact Modelling Consortium](https://www.vaccineimpact.org/) coordinates the work of several research groups modelling the impact of vaccination programmes worldwide.  We provide the technical infrastructure for this project, including
 
 * a web-based system for collecting, verifying and storing many gigabytes of modelling results
-* a reproducible-research system for the project scientists to work with this data
+* a reproducible-research system, [orderly](#orderly-lightweight-reproducible-reporting) for the project scientists to work with this data
 * interactive data visualisation
 * a web-based system for disseminating results
 
@@ -74,6 +74,15 @@ A "domain specific language", hosted in R, for representing and compiling ordina
 
 * [Package webpage](https://mrc-ide.github.io/odin)
 * Blog posts: [0.2.0](/blog/odin-0.2.0/)
+
+### `orderly` - lightweight reproducible reporting
+
+A lightweight system for reproduducible reporting, in R. Composed of [an R package, `orderly`](https://github.com/vimc/orderly) and [a web application, OrderlyWeb](https://github.com/vimc/OrderlyWeb), `orderly` makes it straightforward to associate analyses with their inputs, version outputs and organise and distribute everything with a user-friendly front-end. The researcher-friendly framework makes very few restrictions on how analyses are carried out.
+
+* [Package webpage](https://vimc.github.io/orderly)
+* [CRAN page](https://cran.r-project.org/package=orderly)
+* [Web application](https://github.com/vimc/OrderlyWeb)
+* Blog posts: [1.0.1](/blog/orderly-1.0.1-is-on-cran)
 
 ### `vaultr` - an R client for Vault
 
