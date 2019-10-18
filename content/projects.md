@@ -84,7 +84,7 @@ A lightweight system for reproduducible reporting, in R. Composed of [an R packa
 * [Package webpage](https://vimc.github.io/orderly)
 * [CRAN page](https://cran.r-project.org/package=orderly)
 * [Web application](https://github.com/vimc/OrderlyWeb)
-* Blog posts: [1.0.1](/blog/orderly-1.0.1-is-on-cran)
+* Blog posts: [1.0.1](/blog/orderly-1.0.1-released-to-cran/)
 
 ### `vaultr` - an R client for Vault
 
