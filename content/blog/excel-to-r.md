@@ -3,13 +3,13 @@ title: "Experiments in transforming Excel into R"
 date: 2019-11-18
 ---
 
-Last week was the [Health Economics in R Hackathon](https://n8thangreen.wixsite.com/hermes-hack-london), bringing together health economists, epidemiologists and software engineers.
+Last week was the [Health Economics in R Hackathon](https://n8thangreen.wixsite.com/hermes-hack-london), bringing together health economists, epidemiologists and research software engineers.
 
-We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a [decision tree model](https://en.wikipedia.org/wiki/Decision_tree) in Excel, the analyst might want to carry out a [sensitivity analysis](https://en.wikipedia.org/wiki/Sensitivity_analysis) vary the models' parameters seeing how the outcomes vary.  Doing this requires knowledge of [Visual Basic](https://en.wikipedia.org/wiki/Visual_Basic_for_Applications) and reportedly is quite slow to run.  We wanted to create a proof-of-concept package that would take an excel model like this and convert it into an R function, where it could be more easily manipulable.
+We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a [decision tree model](https://en.wikipedia.org/wiki/Decision_tree) in Excel, the analyst might want to carry out a [sensitivity analysis](https://en.wikipedia.org/wiki/Sensitivity_analysis), varying the models' parameters to see how the model outcomes vary.  Doing this requires knowledge of [Visual Basic](https://en.wikipedia.org/wiki/Visual_Basic_for_Applications) and reportedly is quite slow to run.  We wanted to create a proof-of-concept package that would take an Excel model like this and convert it into an R function, where it could be more easily manipulable, *accelerating* the researchers' ability to do their work.
 
 This does not present a complete solution by any means (it _was_ a hackathon)!  But it's a proof-of-concept for an idea that might be worth pursuing.
 
-First, it's worth thinking about what it *means* to "compute a spreadsheet".  In our brainstorming session we tried to home in on the problem - what is the analyst actually trying to do, and how would they do it?  The basic idea is that they would modify some cells that represent parameters and then the spreadsheet recomputes ([spreadsheets fundamentally representing a form of reactive programming](https://stenci.la/blog/introducing-sheets/)) to change other cells that represent inputs.  So we have a mapping of inputs to outputs, which seems an awful lot like a function.
+First, it's worth thinking about what it *means* to "compute a spreadsheet".  In our brainstorming session we tried to home in on the problem - what is the analyst actually trying to do, and how would they do it?  The basic idea is that they would modify some cells that represent parameters and then the spreadsheet recomputes ([spreadsheets fundamentally representing a form of reactive programming](https://stenci.la/blog/introducing-sheets/)) to change other cells that represent outputs.  So we have a mapping of inputs to outputs, which seems an awful lot like a function.
 
 While clever approaches could be developed to automatically determine inputs and outputs, we allowed specifying of inputs and outputs as a set of Excel cell references (using [`cellranger`](https://github.com/rsheets/cellranger)) on a particular sheet, with a hint as to where to find a label as a row/column offset:
 
@@ -65,8 +65,8 @@ s2.C40: s2.E34 * s2.E37 + +s2.E53 * s2.E50 => 71.9069064748202
   71.90691  500.00000   67.58273 1342.00000    0.00000 1342.00000    0.00000
 ```
 
-This is just a proof of concept, but this could enable a sensitivity analysis for an existing excel workbook in a few lines of code.
+This is just a proof of concept, but this could enable a sensitivity analysis for an existing Excel workbook in a few lines of code.
 
-There are few more details in the [package README](https://github.com/HealthEconomicsHackathon/xlerate#xlerate) and a lot of actual implementation to make this do anything really useful (such as work with more than just basic arithmetic operations and `SUM`).
+There are a few more details in the [package README](https://github.com/HealthEconomicsHackathon/xlerate#xlerate), though there remains a lot of implementation remaining to make this do anything really useful (such as work with more than just basic arithmetic operations and `SUM`). If you find this *exhilarating* let us know :)
 
-[^1]: Curious readers may wonder _how_ one can get formulae from excel workbooks.  A couple of years ago, [Jenny Bryan](https://jennybryan.org) and I had a go at some tools for [reading all the gory details out of excel spreadsheets](https://github.com/rsheets/rexcel) - I resurrected that project for this experiment. In the meantime in transpires that someone else has done a nice job with [`tidyxl`](https://nacnudus.github.io/tidyxl/) which will be used instead if `xlerate` is developed any further.
+[^1]: Curious readers may wonder _how_ one can get formulae from Excel workbooks.  A couple of years ago, [Jenny Bryan](https://jennybryan.org) and I had a go at some tools for [reading all the gory details out of Excel spreadsheets](https://github.com/rsheets/rexcel) - I resurrected that project for this experiment. In the meantime it transpires that someone else has done a nice job with [`tidyxl`](https://nacnudus.github.io/tidyxl/) which will be used instead if `xlerate` is developed any further.
