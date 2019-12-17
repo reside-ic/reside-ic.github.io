@@ -8,7 +8,6 @@ We've spent the last few months developing [Naomi](/projects/#naomi) - a web app
  an HIV model developed by researchers at GIDA in association with UNAIDS. To support the West African
  countries who are the users of Naomi we are providing two language modes - French and English. 
  
- 
  The front-end of the app is written in [Vue.js](https://vuejs.org/) and makes use of [Vuex](https://vuex.vuejs.org/),
  a [flux](https://facebook.github.io/flux/) library for Vue. There are two ways we could have implemented
  translations in Vue - with components or directives. We opted for the latter; I'll explain why and how!
@@ -165,10 +164,12 @@ const translate = {
 Vue.directive('translate', translate);
 ```
 
-This is the code for a directive that just translates text. The directive we created is able to 
+The above is the code for a directive that just translates text. The directive we created is able to 
 translate arbitrary attributes of an element as per:
 
 ```<input v-translate:placeholder="'email'" />```
 
 You can see the full (typescript) code for the final directive
- [here](https://github.com/mrc-ide/hint/blob/master/src/app/static/src/app/directives/translate.ts)
+ [here](https://github.com/mrc-ide/hint/blob/master/src/app/static/src/app/directives/translate.ts).
+ 
+ I hope this is useful for anyone else trying to achieve something similar in their Vue app!
