@@ -7,11 +7,14 @@ title: A custom directive for translations in Vue.js
 We've spent the last few months developing [Naomi](/projects/#naomi) - a web app for interfacing with
  an HIV model developed by researchers at GIDA in association with UNAIDS. To support the West African
  countries who are the users of Naomi we are providing two language modes - French and English. 
+ 
+ 
+ The front-end of the app is written in [Vue.js](https://vuejs.org/) and makes use of [Vuex](https://vuex.vuejs.org/),
+ a [flux](https://facebook.github.io/flux/) library for Vue. There are two ways we could have implemented
+ translations in Vue - with components or directives. We opted for the latter; I'll explain why and how!
 
-
-## Components vs directives
-The front-end of the app is written in [Vue.js](https://vuejs.org/) and makes use of [Vuex](https://vuex.vuejs.org/), 
-a [flux](https://facebook.github.io/flux/) implementation for Vue. Vue, like React, is a framework for writing components. 
+### Components vs directives
+Vue, like React, is a framework for writing components. 
 A component looks like a custom HTML element, but has special behaviour attached to it by Vue.
 Vuex provides helper functions that allow
 components to subscribe to changes in the store, so it's pretty straight-forward to define a component that will
