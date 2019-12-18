@@ -5,15 +5,15 @@ title: A custom directive for translations in Vue.js
 ---
 
 We've spent the last few months developing [Naomi](/projects/#naomi) - a web app for interfacing with
- an HIV model developed by researchers at GIDA in association with UNAIDS. To support the West African
- countries who are the users of Naomi we are providing two language modes - French and English. 
+ an HIV model developed by researchers at [GIDA](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) 
+ in association with [UNAIDS](https://www.unaids.org/en). To support the West African countries who are the users of Naomi we are providing two language modes - French and English. 
  
  The front-end of the app is written in [Vue.js](https://vuejs.org/) and makes use of [Vuex](https://vuex.vuejs.org/),
  a [flux](https://facebook.github.io/flux/) library for Vue. There are two ways we could have implemented
  translations in Vue - with components or directives. We opted for the latter; I'll explain why and how!
 
 ### Components vs directives
-Vue, like React, is a framework for writing components. 
+Vue, like [React](https://reactjs.org/), is a framework for writing components. 
 A component looks like a custom HTML element, but has special behaviour attached to it by Vue.
 Vuex provides helper functions that allow
 components to subscribe to changes in the store, so it's pretty straight-forward to define a component that will
@@ -37,18 +37,28 @@ you'd end up with an interface something like:
 </translated-input>
 ```
 
-But unlike React and more like Angular, Vue is also a framework of directives. A directive looks 
-like a custom attribute on an HTML element and defines some behaviour on that element. It would be much
-less intrusive if we could define a custom directive that would translate any part of an existing element.
-The desired interface would be:
+But unlike React and more like [Angular](https://angular.io/), Vue is also a framework of 
+[directives](https://012.vuejs.org/guide/directives.html). A directive looks 
+like a custom attribute on an HTML element and defines some behaviour on that element. 
+
+For example, some standard Vue directives control visibility and text content:
+
+```<span v-if="hasError" v-text="message"></span>```
+
+Directives can also require arguments, for example the `click` argument here:
+
+```<button v-on:click="submitHandler">Submit</button>```
+
+Our custom translate directive could look very similar to `v-text` but also take an optional argument 
+indicating which attribute of the element we want translated: 
 
 ```
 <h3 v-translate="'welcomeMessage'"></h3>
 <input type="text" v-translate:placeholder="'email'" name="myEmailInput" value="" />
 ```
 
-This is clearly a much nicer interface, but is not as straight-forward to implement. This blog will describe
-how we did it!
+This interface is both less intrusive and more flexible than the component approach, but is not as 
+straight-forward to implement. This blog will describe how we did it!
 
 ### Storing and updating the user's chosen language
 In Vuex all app state is held
@@ -57,23 +67,38 @@ in a central "store", which is then the ideal place to keep track of what langua
 ```
 const store = new Vuex.Store({
     state: {
-        language: "en     
+        language: "en" 
     } 
 })
 ```
 
 For performing the translations we have used [i18next](https://www.i18next.com/), which is intialised
  with a language and the available translations. When the user selects a new language we fire off a Vuex
-  action that updates both i18next and the language in our store state.
+  [action](https://vuex.vuejs.org/guide/actions.html) that updates both i18next and the language in our store state.
+ 
  
  ```
- await i18next.changeLanguage(newLanguage);
- commit({type: "CHANGE_LANGUAGE", payload: newLanguage})
+const store = new Vuex.Store({
+  state: { 
+    language: "en" 
+  },
+  mutations: {
+    updateLanguage (state, newLanguage) {
+      state.language = newLanguage
+    }
+  },
+  actions: {
+    async changeLanguage (context, newLanguage) {
+      await i18next.changeLanguage(newLanguage);
+      context.commit('updateLanguage', newLanguage)
+    }
+  }
+})
 ```
 
 ### Listening for changes
 
-Listening for changes in a component is easy, it's baked into the framework. A simple translation component
+Were we to use a component, listening for changes would be easy - it's baked into the framework. A simple translation component
 that just translates text and renders it in a span looks like this:
 
 ```
@@ -121,7 +146,9 @@ export default {
 ```
 
 But there is no directive hook that will fire when *store state* changes, i.e. our language. So we'll have to manage
-a subscription to the store ourselves. We can set up such a subscription on `bind`:
+a subscription to the store ourselves. 
+Vuex exposes a method on the store for doing this: [watch](https://vuex.vuejs.org/api/#watch).
+We can add our watcher on `bind`:
 
 ```
 bind(el, binding) {
@@ -132,7 +159,8 @@ bind(el, binding) {
 }
 ```
 
-We have to be careful to remove the subscription when the element is destroyed, to prevent a proliferation 
+The `store.watch` function returns an "unwatch" function, which removes the watcher when it is called.
+We have to be careful to do so when the element is destroyed, to prevent a proliferation 
 of watchers. We can do this on `unbind`:
 
 ```
