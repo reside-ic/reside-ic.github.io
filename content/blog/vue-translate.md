@@ -200,4 +200,6 @@ translate arbitrary attributes of an element as per:
 You can see the full (typescript) code for the final directive
  [here](https://github.com/mrc-ide/hint/blob/master/src/app/static/src/app/directives/translate.ts).
  
+A minimal example of the directive in action can be seen in this fiddle: https://jsfiddle.net/alexhill/kra06n2s/
+ 
  I hope this is useful for anyone else trying to achieve something similar in their Vue app!
