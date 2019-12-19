@@ -1,6 +1,6 @@
 ---
 author: "Alex Hill"
-date: 2019-12-17
+date: 2019-12-19
 title: A custom directive for translations in Vue.js
 ---
 
