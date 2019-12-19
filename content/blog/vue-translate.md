@@ -43,28 +43,33 @@ like a custom attribute on an HTML element and defines some behaviour on that el
 
 For example, some standard Vue directives control visibility and text content:
 
-```<span v-if="hasError" v-text="message"></span>```
+```
+<span v-if="hasError" v-text="message"></span>
+```
 
 Directives can also require arguments, for example the `click` argument here:
 
-```<button v-on:click="submitHandler">Submit</button>```
+```
+<button v-on:click="submitHandler">Submit</button>
+```
 
 Our custom translate directive could look very similar to `v-text` but also take an optional argument 
 indicating which attribute of the element we want translated: 
 
 ```
 <h3 v-translate="'welcomeMessage'"></h3>
-<input type="text" v-translate:placeholder="'email'" name="myEmailInput" value="" />
+<input type="text" v-translate:placeholder="'email'" name="myEmailInput" />
 ```
 
-This interface is both less intrusive and more flexible than the component approach, but is not as 
+This interface is both less intrusive as it doesn't require adding extra elements,
+ and more flexible than the component approach, but is not as 
 straight-forward to implement. This blog will describe how we did it!
 
 ### Storing and updating the user's chosen language
 In Vuex all app state is held
 in a central "store", which is then the ideal place to keep track of what language the user has selected.
 
-```
+```js
 const store = new Vuex.Store({
     state: {
         language: "en" 
@@ -77,7 +82,25 @@ For performing the translations we have used [i18next](https://www.i18next.com/)
   [action](https://vuex.vuejs.org/guide/actions.html) that updates both i18next and the language in our store state.
  
  
- ```
+ ```js
+const locales = {
+ en: {
+    welcomeMessage: "Welcome!"
+ },
+ fr: {
+    welcomeMessage: "Bienvenue!"
+ }
+};
+
+i18next.init({
+  lng: "en",
+  resources: {
+    en: {translation: locales.en},
+    fr: {translation: locales.fr}
+  },
+  fallbackLng: "en"
+ });
+
 const store = new Vuex.Store({
   state: { 
     language: "en" 
@@ -150,7 +173,7 @@ a subscription to the store ourselves.
 Vuex exposes a method on the store for doing this: [watch](https://vuex.vuejs.org/api/#watch).
 We can add our watcher on `bind`:
 
-```
+```js
 bind(el, binding) {
      el.innerHTML = i18next.t(binding.value, {lng: store.state.language});
      el.__lang_unwatch__ = store.watch(state => state.language, lng => {
@@ -182,12 +205,12 @@ update(el, binding) {
 
 Then we register our directive and it's good to go:
 
-```
+```js
 const translate = {
     bind: bind,
     update: update,
     unbind: unbind
-}
+};
 
 Vue.directive('translate', translate);
 ```
@@ -195,7 +218,9 @@ Vue.directive('translate', translate);
 The above is the code for a directive that just translates text. The directive we created is able to 
 translate arbitrary attributes of an element as per:
 
-```<input v-translate:placeholder="'email'" />```
+```
+<input v-translate:placeholder="'email'" />
+```
 
 You can see the full (typescript) code for the final directive
  [here](https://github.com/mrc-ide/hint/blob/master/src/app/static/src/app/directives/translate.ts).
