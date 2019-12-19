@@ -3,6 +3,8 @@ author: "Alex Hill"
 date: 2019-06-11
 title: jQuery TreeTables 1.1.1
 best: false
+tags: 
+ - Javascript
 ---
 
 <img src="/img/treetables.gif" alt="Gif of plugin in use" />

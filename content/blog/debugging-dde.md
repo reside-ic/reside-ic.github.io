@@ -3,6 +3,9 @@ author: "Wes Hinsley"
 date: 2019-05-01
 title: Debugging at the edge of reason
 best: false
+tags:
+ - R
+ - compilers
 ---
 
 What do you do if this code...

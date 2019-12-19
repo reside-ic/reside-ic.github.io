@@ -3,6 +3,9 @@ author: "Alex Hill"
 date: 2019-04-24
 title: Integrating YouTrack and GitHub workflows
 best: false
+tags:
+ - DevOps
+ - Agile
 ---
 
 Like most technical teams we use an issue tracker to manage our work. Our tool of choice for

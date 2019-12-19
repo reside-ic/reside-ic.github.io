@@ -3,6 +3,9 @@ author: "Rich FitzJohn"
 date: 2019-05-20
 title: dde 1.0.0
 best: false
+tags: 
+ - dde
+ - R
 ---
 
 Last week we released the first public version of [`dde`](https://mrc-ide.github.io/dde/).  This package implements a method for solving [delay differential equations](https://en.wikipedia.org/wiki/Delay_differential_equation), which we use with [`odin`](https://mrc-ide.github.io/odin) to model disease dynamics.

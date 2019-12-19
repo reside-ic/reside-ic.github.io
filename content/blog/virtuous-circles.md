@@ -2,6 +2,8 @@
 author: "Emma Russell"
 date: 2019-09-27
 title: All carrot, no stick - virtuous circles and useful tools
+tags:
+ - reproducible research
 ---
 
 A vicious circle of software use might go something like this: 

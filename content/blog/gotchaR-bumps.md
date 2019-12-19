@@ -3,6 +3,8 @@ author: "Wes Hinsley"
 date: 2019-10-08
 title: gotchaR - Bumps in the road for the learneR driver.
 best: false
+tags:
+ - R
 ---
 
 I am about 3 years into the journey of learning R. There is a lot to get used to,

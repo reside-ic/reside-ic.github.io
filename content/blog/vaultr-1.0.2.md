@@ -3,6 +3,9 @@ author: "Rich FitzJohn"
 date: 2019-05-16
 title: vaultr 1.0.2
 best: false
+tags:
+ - R
+ - security
 ---
 
 We are pleased to announce the first public release of `vaultr`, our R client for [HashiCorp's "vault"](https://vaultproject.io), a system for storing secrets and sensitive data and enabling these secrets to be used in applications.

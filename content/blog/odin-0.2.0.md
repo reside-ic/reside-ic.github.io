@@ -3,6 +3,9 @@ author: "Rich FitzJohn"
 date: 2019-04-09
 title: odin 0.2.0
 best: false
+tags:
+ - R
+ - odin
 ---
 
 After a rather long period of gestation, yesterday I merged in a [long-running rewrite of odin](https://github.com/mrc-ide/odin/pull/156).  This is a major rework of odin which lays the groundwork for future improvements later this year.
