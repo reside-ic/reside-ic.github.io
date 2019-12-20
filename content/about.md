@@ -7,12 +7,26 @@ Research Software for Infectious Disease Epidemiology - we are a team of 7 resea
 
 ## The team
 
-* [Alex Hill](http://www.alexandra-hill.com/)
-* [Emma Russell](https://github.com/EmmaLRussell)
-* [James Thompson](https://github.com/JamesThompson1729)
-* [Rich FitzJohn](https://richfitz.github.io)
-* [Robert Ashton](https://github.com/r-ash)
-* [Wes Hinsley](https://github.com/weshinsley)
+{{< team >}}
+{{< person name="Alex Hill"img="alex.jpg" url="http://www.alexandra-hill.com/">}}
+Alex bio here
+{{< /person >}}
+{{< person name="Emma Russell" bio="" img="logo.png" url="https://github.com/EmmaLRussell">}}
+Emma bio here
+{{< /person >}}
+{{< person name="James Thompson" bio="" img="logo.png" url="https://github.com/JamesThompson1729">}}
+James bio here
+{{< /person >}}
+{{< person name="Rich FitzJohn" bio="" img="logo.png" url="https://richfitz.github.io">}}
+Rich bio here
+{{< /person >}}
+{{< person name="Rob Ashton" bio="" img="logo.png" url="https://github.com/r-ash">}}
+Rob bio here
+{{< /person >}}
+{{< person name="Wes Hinsley" bio="" img="logo.png" url="https://github.com/weshinsley">}}
+Wes bio here
+{{< /person >}}
+{{< /team >}}
 
 ## Alumni
 
