@@ -2,6 +2,8 @@
 author: "Alex Hill"
 date: 2020-01-02
 title: My most used keyboard shortcuts
+tags:
+ - workflow
 ---
 
 Anyone who uses a computer for a significant amount of time each day should 
