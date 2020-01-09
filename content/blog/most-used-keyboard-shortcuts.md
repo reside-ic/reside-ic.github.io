@@ -1,6 +1,6 @@
 ---
 author: "Alex Hill"
-date: 2020-01-02
+date: 2020-01-09
 title: My most used keyboard shortcuts
 tags:
  - workflow
