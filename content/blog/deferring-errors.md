@@ -2,6 +2,8 @@
 author: "Rich FitzJohn"
 date: 2019-08-09
 title: Deferring errors with R
+tags:
+ - R
 ---
 
 How do you run a block of code and collect up all the errors in order to report them back in a batch?  This is the sort of thing that might turn up in a validation exercise where we want to check a number of properties of the provided data and then report back in one go all the errors so that the user can fix multiple problems at each upload attempt.

@@ -3,6 +3,9 @@ author: "Rob Ashton"
 date: 2019-08-09
 title: Querying for foreign key constraints
 best: false
+tags:
+ - SQL
+ - Postgres
 ---
 
 Over the past few months we've been developing a [tool to assist with database import from R](https://github.com/vimc/dettl). As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier. 

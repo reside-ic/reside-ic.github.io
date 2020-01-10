@@ -3,6 +3,9 @@ author: "Rich FitzJohn"
 date: 2019-04-15
 title: cinterpolate 1.0.0
 best: false
+tags:
+ - cinterpolate
+ - R
 ---
 
 Last week we released the first official version of [`cinterpolate`](https://mrc-ide.github.io/cinterpolate/) to [available on CRAN](https://cran.r-project.org/package=cinterpolate).  This package provides a minimal set of interpolation methods (piecewise constant, linear and spline) designed to be compatible with R's builtin [`approx`](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/approxfun.html) and [`spline`](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/splinefun.html) functions, but but callable from C. It will primarily be of interest to people writing R packages that include C or C++.

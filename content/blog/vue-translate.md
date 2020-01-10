@@ -2,6 +2,10 @@
 author: "Alex Hill"
 date: 2019-12-19
 title: A custom directive for translations in Vue.js
+tags:
+ - Javascript
+ - Vue
+ - Vuex
 ---
 
 We've spent the last few months developing [Naomi](/projects/#naomi) - a web app for interfacing with

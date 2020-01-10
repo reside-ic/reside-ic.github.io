@@ -3,6 +3,8 @@ author: "Emma Russell"
 date: 2019-04-08
 title: Metrics at Imperial*
 best: false
+tags:
+ - DevOps
 ---
 
 What metrics should a software team be recording to measure their performance? Should these metrics have a different 

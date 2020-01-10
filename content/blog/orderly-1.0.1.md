@@ -2,6 +2,9 @@
 author: "Rich FitzJohn"
 date: 2019-10-18
 title: orderly 1.0.1 released to CRAN
+tags:
+ - orderly
+ - reproducible research
 ---
 
 We are pleased to announce the first public release of [`orderly`](https://vimc.github.io/orderly), our reproducible reporting framework, implemented as an R package and now available on CRAN.

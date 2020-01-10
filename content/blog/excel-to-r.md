@@ -1,6 +1,9 @@
 ---
 title: "Experiments in transforming Excel into R"
 date: 2019-11-19
+tags:
+ - R
+ - Excel
 ---
 
 Last week was the [Health Economics in R Hackathon](https://n8thangreen.wixsite.com/hermes-hack-london), bringing together health economists, epidemiologists and research software engineers.
