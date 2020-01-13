@@ -1,3 +1,7 @@
+.column {
+    max-width: 900px !important;
+}
+
 .team {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +10,7 @@
 }
 
 .person {
-    width: 200px;
+    width: 269px;
     text-align: center;
 }
 
@@ -23,6 +27,7 @@
 
 .person p {
     text-align: center !important;
+    font-size: 0.875em;
 }
 
 .text-muted {
