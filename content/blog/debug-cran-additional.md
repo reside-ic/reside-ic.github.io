@@ -203,7 +203,7 @@ RDvalgrind -d valgrind -e 'tools::testInstalledPackage("dde")'
 cat dde-tests/testthat.Rout
 ```
 
-which is what [is documented to work](https://www.stats.ox.ac.uk/pub/bdr/memtests/README.txt) did not yield the error.  But with a bit of poking based on the `Command:` line in the above valgrind output I got some success with:
+did not yield the error.  But with a bit of poking based on the `Command:` line in the above valgrind output I got some success with:
 
 ```
 (cd dde/tests && RDvalgrind -d valgrind -f testthat.R --no-readline --vanilla)
