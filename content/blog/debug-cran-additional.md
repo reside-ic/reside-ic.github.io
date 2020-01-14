@@ -47,7 +47,7 @@ First, I started the container with
 docker run -v $PWD:/src:ro -it --rm --security-opt seccomp=unconfined wch1/r-debug
 ```
 
-then, in that container, I prepared the R library in that container using the R binary that was built with the undefined behaviour checkers enabled:
+then, in that container, I prepared the R library using the R binary that was built with the undefined behaviour checkers enabled:
 
 ```
 RDcsan -e 'install.packages(c("deSolve", "knitr", "ring", "microbenchmark", "rmarkdown", "testthat", "devtools", "roxygen2"))'
