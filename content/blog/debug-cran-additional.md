@@ -111,7 +111,9 @@ The relevant bit of C looks like:
   }
 ```
 
-When triggered (the second assignment to `idx0`), we have (approximately) `t0 = 11`, `t1 = 12` and `t = 0.02` which falls outside of the range of times, so the expression `(t - t0) / (t1 - t0) / (n - 1)` is negative and that's the undefined behaviour.
+This is an optimisation to seed a binary search for a value close to `t` in an array of values from `t0` and `t1` - we assume that the values between `t0` and `t1` are roughly evenly spaced and linearly interpolate between them to get a likely enough index for `t`, which we store as `idx0`.
+
+When the undefined behaviour error is triggered (the second assignment to `idx0`), we have (approximately) `t0 = 11`, `t1 = 12` and `t = 0.02` which falls outside of the range of times, so the expression `(t - t0) / (t1 - t0) / (n - 1)` is negative and that's the undefined behaviour because it falls outside of the valid values for a `size_t` (typically an `unsigned long`).
 
 We can guard against this either by checking that `t` lies within `(t0, t1)` before doing the second assignment:
 
