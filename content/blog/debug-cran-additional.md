@@ -1,6 +1,6 @@
 ---
-title: "Debuging and Fixing CRAN's 'Additional Checks' errors"
-date: 2020-01-27
+title: "Debugging and Fixing CRAN's 'Additional Checks' errors"
+date: 2020-01-16
 draft: true
 tags:
  - dde
@@ -285,7 +285,7 @@ taking about 10s, which is fast as far as using valgrind goes.  The code causing
     }
 ```
 
-which is a nasty enough bit of book-keeping.  But the problem is that the while condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking `tcrit[obj->tcrit_idx]` because it is out of range, which is precicely what the "invalid read" error valgrind reported was.  The fixed code looks like
+which is a nasty enough bit of book-keeping.  But the problem is that the while condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking `tcrit[obj->tcrit_idx]` because it is out of range, which is precisely what the "invalid read" error valgrind reported was.  The fixed code looks like
 
 ```
     double t0 = obj->sign * times[0];
@@ -372,4 +372,4 @@ and an additional `UNPROTECT`.  See commit [`72b7e60`](https://github.com/mrc-id
 
 ## Conclusions
 
-This was all a bit tedious, but these were all errors in the package that could have resulted in crashes that would have been much more tedious to debug, especially as they would likely have turned up essentially non-determinstically as R's garbage collector was triggered.
+This was all a bit tedious, but these were all errors in the package that could have resulted in crashes that would have been much more tedious to debug, especially as they would likely have turned up essentially non-determinstically as R's garbage collector was triggered.  It took longer to replicate all these errors locally than to fix them, but doing this was worthwhile because it removed the guesswork as to whether they were actually fixed.
