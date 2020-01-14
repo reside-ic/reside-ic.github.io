@@ -25,8 +25,8 @@ James bio here
 {{< person name="Rich FitzJohn" img="rich.jpg" url="https://richfitz.github.io">}}
 Rich was a computational biologist for 15 years before deciding that catalysing research through software was more fun than doing it himself. He's interested in making reproducibility easier and more accessible while letting scientists focus more on science than engineering. Outside of work he enjoys rock climbing and hiking.
 {{< /person >}}
-{{< person name="Rob Ashton" img="logo.png" url="https://github.com/r-ash">}}
-Rob bio here
+{{< person name="Rob Ashton" img="rob.jpg" url="https://github.com/r-ash">}}
+Rob started his software career as a web developer in healthcare. He now writes code to try and assist researchers in managing, scaling and communicating their research code. When not in front of a screen Rob like to spend his time riding his bicycle and thinking about pie barms.
 {{< /person >}}
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
 Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
