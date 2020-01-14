@@ -4,13 +4,11 @@ date: 2020-01-27
 draft: true
 ---
 
-R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.
-
-However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it's not always obvious to start. Thankfully, there are docker images to help!
+R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.  However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it's not always obvious to start.
 
 This blog post documents the process I used in clearing three issues from our [`dde`](https://mrc-ide.github.io/dde/) package (which implements a simple solver for delay differential equations - the astute blog reader may recognise it from [previous debugging efforts](https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/)).
 
-This blog post also serves as a place for me to find this information next time I need it and is written with the hope that it helps someone else with their debugging and package repairing chores.  It was written while I debugged each problem and is verbose.
+This blog post also serves as a place for me to find this information next time I need it and is written with the hope that it helps someone else with their debugging and package repairing chores.  It was written while I debugged each problem, and is probably only of interest if you face a similar problem, in which case I hope the verbosity is useful.
 
 ## Undefined behaviour
 
@@ -84,14 +82,54 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior dopri.c:745:21 in
 End test: failure to fetch history
 ```
 
-so we know where the error is triggered from!
+so we know where the error is triggered from!  (Note that the UB checker only seems to report the error the *first time* it occurs in a session - it's quite possible this is tuneable though.)
 
-(Note that the UB checker only seems to report the error the *first time* it occurs in a session - it's quite possible this is tuneable though.)
+With a little surgery, a standalone script that reproduces the error is:
+
+```
+res <- dde:::shlib(system.file("examples/seir.c", package = "dde"), "dde_")
+y0 <- c(1e7 - 1, 0, 1, 0)
+times <- seq(0, 30, length.out = 301)
+dde::dopri(y0, times, "seir", numeric(),
+           atol = 1e-7, rtol = 1e-7, n_history = 2L,
+           dllname = "dde_seir", return_history = FALSE)
+```
+
+and we can trigger the error in the instrumented copy of R by running `RDcsan -f /src/bug.R` in ~12s which is a bit less tedious than running the full suite. However, most of the debugging can be done in the plain copy.  I compiled the package with optimisation turned off and debugging symbols enabled (`CFLAGS = -g -O0`), ran R with `R -d gdb` and created a breakpoint with `break dopri.c:745` after loading the package.
+
+The relevant bit of C looks like:
+
+```
+  size_t idx0 = 0;
+  if (n > 0) {
+    const double
+      t0 = ((double*) ring_buffer_tail(obj->history))[idx_t],
+      t1 = ((double*) ring_buffer_tail_offset(obj->history, n - 1))[idx_t];
+    idx0 = min_size((t - t0) / (t1 - t0) / (n - 1), n - 1);
+  }
+```
+
+When triggered (the second assignment to `idx0`), we have (approximately) `t0 = 11`, `t1 = 12` and `t = 0.02` which falls outside of the range of times, so the expression `(t - t0) / (t1 - t0) / (n - 1)` is negative and that's the undefined behaviour.
+
+We can guard against this either by checking that `t` lies within `(t0, t1)` before doing the second assignment:
+
+```
+  size_t idx0 = 0;
+  if (n > 0) {
+    const double
+      t0 = ((double*) ring_buffer_tail(obj->history))[idx_t],
+      t1 = ((double*) ring_buffer_tail_offset(obj->history, n - 1))[idx_t];
+    if ((t0 - t) * (t1 - t) < 0) {
+      idx0 = (t - t0) / (t1 - t0) / (n - 1);
+    }
+  }
+```
+
+With this fix in place, the UBSAN checks pass without incident.  See `8c384bb` for details.
 
 ## Valgrind
 
 [Valgrind](https://valgrind.org/) finds memory errors and is one of my favourite tools for working out why something crashes.  My (probably grossly oversimplified) understanding is that it runs a program with a layer that checks all memory accesses for correctness (alignment, bounds etc).  Unsurprisingly this makes things very slow to run.
-
 
 ```
 ==42439== Memcheck, a memory error detector
