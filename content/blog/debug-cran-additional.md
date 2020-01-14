@@ -1,7 +1,10 @@
 ---
-title: "Debug Cran Additional"
+title: "Debuging and Fixing CRAN's 'Additional Checks' errors"
 date: 2020-01-27
 draft: true
+tags:
+ - dde
+ - R
 ---
 
 R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.  However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it's not always obvious to start.
@@ -125,7 +128,7 @@ We can guard against this either by checking that `t` lies within `(t0, t1)` bef
   }
 ```
 
-With this fix in place, the UBSAN checks pass without incident.  See `8c384bb` for details.
+With this fix in place, the UBSAN checks pass without incident.  See [`8c384bb`](https://github.com/mrc-ide/dde/commit/8c384bb8bcc0f2513fa955ce4951b65cefb0dfa1) for details.
 
 ## Valgrind
 
@@ -292,7 +295,7 @@ which is a nasty enough bit of book-keeping.  But the problem is that the while 
     }
 ```
 
-and is in `07f876a`.
+and is in [`07f876a`](https://github.com/mrc-ide/dde/commit/07f876a9d71c455c5b9ee94ef6e706adb2f830d4).
 
 ## rchk
 
@@ -365,4 +368,8 @@ because the `SEXP` produced by `ScalarInteger(obj->n)` could have been reclaimed
     setAttrib(history, install("n"), r_n);
 ```
 
-and an additional `UNPROTECT`.  See commit `72b7e60b6f4b15262d95afdda21341d0b38ea84d` for the full details.
+and an additional `UNPROTECT`.  See commit [`72b7e60`](https://github.com/mrc-ide/dde/commit/72b7e60b6f4b15262d95afdda21341d0b38ea84d) for the full details.
+
+## Conclusions
+
+This was all a bit tedious, but these were all errors in the package that could have resulted in crashes that would have been much more tedious to debug, especially as they would likely have turned up essentially non-determinstically as R's garbage collector was triggered.
