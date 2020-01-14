@@ -1,7 +1,6 @@
 ---
 title: "Debugging and Fixing CRAN's 'Additional Checks' errors"
 date: 2020-01-16
-draft: true
 tags:
  - dde
  - R
