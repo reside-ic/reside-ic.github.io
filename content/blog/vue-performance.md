@@ -1,7 +1,7 @@
 ---
 author: "Alex Hill"
-date: 2020-03-01
-title: Handling long arrays performantly in Vuejs
+date: 2020-01-01
+title: Handling long arrays performantly in Vue
 tags:
  - Vue
  - Javascript
@@ -9,14 +9,14 @@ tags:
 ---
 
 
-## TLDR;
+## TL;DR
 Use `Object.freeze` on large objects that don't have to be reactive. If you want to know a bit more about why this works 
 and how big a performance gain it is, read on.
 
 ## Context
 
-Reactive JavaScript frameworks like Vuejs are amazing for developing Single Page Apps like the one in our project 
-[Naomi](/projects/#naomi). Everything is connected as if by magic - when data changes, the UI updates. But that magic 
+Reactive JavaScript frameworks like [Vue.js](https://vuejs.org/) are amazing for developing Single Page Apps like the one 
+in our project [Naomi](/projects/#naomi). Everything is connected as if by magic - when data changes, the UI updates. But that magic 
 has overheads associated with it that need to be understood to optimise for performance where large-ish datasets are 
 being handled. We found when using Vue naively that our app couldn't handle a 10MB dataset performantly, but 
 understanding how reactivity works in Vue helped us to find the fix.
@@ -61,7 +61,7 @@ it became clear what was going on.
 is that every object (in this case, every item in the array) is having an "observer" property added to it, this is an 
  instance of the [Dep](https://github.com/vuejs/vue/blob/2.6/src/core/observer/dep.js#L13) class,
 and then having reactive getter and setter functions added for every property: 
-https://github.com/vuejs/vue/blob/2.6/src/core/observer/index.js#L135 *
+https://github.com/vuejs/vue/blob/2.6/src/core/observer/index.js#L135 [^1] 
 
 The upshot being that the 4MB array was growing by an order of magnitude. 
 
@@ -81,6 +81,5 @@ item in the array now takes a much more reasonable 0.1ms. That's 3 orders of mag
 
 <img src="/img/performance2.png" alt="Screenshot of performance profile after freezing large objects">
 
-* The `addDep` function that was taking up so much time when I profiled the app is called whenever a getter 
-  is invoked (via `dep.depend()` [here](https://github.com/vuejs/vue/blob/2.6/src/core/observer/index.js#L163)) 
+[^1]: The `addDep` function that was taking up so much time when I profiled the app is called whenever a getter is invoked (via `dep.depend()` [here](https://github.com/vuejs/vue/blob/2.6/src/core/observer/index.js#L163)) 
 
