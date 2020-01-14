@@ -6,11 +6,11 @@ tags:
  - R
 ---
 
-R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.  However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it's not always obvious to start.
+R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.  However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it's not always obvious how or where to start.
 
 This blog post documents the process I used in clearing three issues from our [`dde`](https://mrc-ide.github.io/dde/) package (which implements a simple solver for delay differential equations - the astute blog reader may recognise it from [previous debugging efforts](https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/)).
 
-Package authors (or at least I) typically find out about these problems when getting an email from CRAN but they may have been live for some time and are listed as an "Additional issues" section on a packages [check page](https://cran.r-project.org/web/checks/check_results_dde.html) - however, this is shown only when there is a problem!
+Package authors (or at least I) typically find out about these problems when getting an email from CRAN but they may have been live for some time and are listed in an "Additional issues" section on a package's [check page](https://cran.r-project.org/web/checks/check_results_dde.html) - however, this is shown only when there is a problem!
 
 This blog post also serves as a place for me to find this information next time I need it and is written with the hope that it helps someone else with their debugging and package repairing chores.  It was written while I debugged each problem, and is probably only of interest if you face a similar problem, in which case I hope the verbosity is useful.
 
@@ -113,7 +113,7 @@ The relevant bit of C looks like:
   }
 ```
 
-This is an optimisation to seed a binary search for a value close to `t` in an array of values from `t0` and `t1` - we assume that the values between `t0` and `t1` are roughly evenly spaced and linearly interpolate between them to get a likely enough index for `t`, which we store as `idx0`.
+This is an optimisation to seed a binary search for a value close to `t` in an array of values from `t0` to `t1` - we assume that the values between `t0` and `t1` are roughly evenly spaced and linearly interpolate between them to get a likely enough index for `t`, which we store as `idx0`.
 
 When the undefined behaviour error is triggered (the second assignment to `idx0`), we have (approximately) `t0 = 11`, `t1 = 12` and `t = 0.02` which falls outside of the range of times, so the expression `(t - t0) / (t1 - t0) / (n - 1)` is negative and that's the undefined behaviour because it falls outside of the valid values for a `size_t` (typically an `unsigned long`).
 
@@ -209,7 +209,7 @@ which is what [is documented to work](https://www.stats.ox.ac.uk/pub/bdr/memtest
 (cd dde/tests && RDvalgrind -d valgrind -f testthat.R --no-readline --vanilla)
 ```
 
-which shows the invalid read, along side some less interesting output.  Using the `LocationReporter` again was better still:
+which shows the invalid read, alongside some less interesting output.  Using the `LocationReporter` again was better still:
 
 ```
 RDvalgrind -d valgrind -e 'devtools::test("dde", reporter = testthat::LocationReporter)'
@@ -288,7 +288,7 @@ taking about 10s, which is fast as far as using valgrind goes.  The code causing
     }
 ```
 
-which is a nasty enough bit of book-keeping.  But the problem is that the while condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking `tcrit[obj->tcrit_idx]` because it is out of range, which is precisely what the "invalid read" error valgrind reported was.  The fixed code looks like
+which is a nasty enough bit of book-keeping.  But the problem is that the while condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking up `tcrit[obj->tcrit_idx]` because it is out of range, which is precisely what the "invalid read" error valgrind reported was.  The fixed code looks like
 
 ```
     double t0 = obj->sign * times[0];
