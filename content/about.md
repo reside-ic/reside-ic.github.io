@@ -9,13 +9,15 @@ Research Software for Infectious Disease Epidemiology - we are a team of 7 resea
 
 {{< team >}}
 {{< person name="Alex Hill"img="alex.jpg" url="http://www.alexandra-hill.com/">}}
-Alex learnt to code after finishing her logic PhD back in 2013 and has worked as a full-stack web developer in a range of 
+Alex learnt to code after finishing her logic PhD in 2013 and has worked as a full-stack web developer in a range of 
 industries since then. Her favourite language these days is Kotlin but she has a soft spot for Javascript.
-When not writing code she's often found gigging as a professional hula hooper (yes, that's a thing!) or messing around 
+When not writing code she can often be found gigging as a professional hula hooper (yes, that's a thing!) or messing around 
 with her DJ decks.
 {{< /person >}}
-{{< person name="Emma Russell" img="logo.png" url="https://github.com/EmmaLRussell">}}
-Emma bio here
+{{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
+Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
+in start-ups in the wild West Country before bringing her considerable web development expertise to RESIDE.
+Outside of work she spends time singing with two choirs and sometimes making stained glass.
 {{< /person >}}
 {{< person name="James Thompson" img="logo.png" url="https://github.com/JamesThompson1729">}}
 James bio here
