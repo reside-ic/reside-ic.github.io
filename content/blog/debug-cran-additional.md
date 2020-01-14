@@ -1,0 +1,288 @@
+---
+title: "Debug Cran Additional"
+date: 2020-01-27
+draft: true
+---
+
+R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.
+
+However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it's not always obvious to start. Thankfully, there are docker images to help!
+
+This blog post documents the process I used in clearing three issues from our [`dde`](https://mrc-ide.github.io/dde/) package (which implements a simple solver for delay differential equations - the astute blog reader may recognise it from [previous debugging efforts](https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/)).
+
+This blog post also serves as a place for me to find this information next time I need it and is written with the hope that it helps someone else with their debugging and package repairing chores.  It was written while I debugged each problem and is verbose.
+
+## Undefined behaviour
+
+The package had an issue where a unit test was doing something that was [Undefined Behaviour](https://en.wikipedia.org/wiki/Undefined_behavior).  The information we get from CRAN to debug this error is:
+
+```
+> test_check("dde")
+dopri.c:745:21: runtime error: -12.7138 is outside the range of representable values of type 'unsigned long'
+    #0 0x7f030d7b378d in dopri_find_time /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/dopri.c:745:21
+    #1 0x7f030d7b387e in ylag_1 /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/dopri.c:769:24
+    #2 0x7f030d2c51e0 in ylag_1 /data/gannet/ripley/R/packages/tests-clang-SAN/dde.Rcheck/dde/include/dde/dde.c:15:10
+    #3 0x7f030d2c51e0 in seir /tmp/RtmpNf9ol1/working_dir/RtmpgC6Usd/file82255939016e/seir.c:13:18
+    #4 0x7f030d7afca4 in dopri_eval /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/dopri.c:822:3
+    #5 0x7f030d7b89ef in dopri5_step /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/dopri_5.c:75:3
+    #6 0x7f030d7abbfe in dopri_step /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/dopri.c:253:5
+    #7 0x7f030d7abbfe in dopri_integrate /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/dopri.c:377:5
+    #8 0x7f030d7d6118 in r_dopri /data/gannet/ripley/R/packages/tests-clang-SAN/dde/src/r_dopri.c:176:3
+    #9 0x6f93f9 in R_doDotCall /data/gannet/ripley/R/svn/R-devel/src/main/dotcode.c:744:17
+    ...
+    #276 0x52349e in do_lapply /data/gannet/ripley/R/svn/R-devel/src/main/apply.c:70:8
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior dopri.c:745:21 in
+══ testthat results  ═══════════════════════════════════════════════════════════
+[ OK: 507 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 0 ]
+```
+
+(eliding just the uninformative part of the stack trace).  So we know where in the C source the error comes from (`dopri.c:745`) but not the values that are passed to that code to trigger it.  And to be sure that we've eliminated it we need to be able to replicate it locally.
+
+To trigger this, I used the [`wch1/r-debug`](https://hub.docker.com/r/wch1/r-debug) docker container as I've had success with this in the past.  There are also containers from the [rocker project](https://www.rocker-project.org/) that a similar approach will likely work with, such as [`rocker/r-devel-ubsan-clang`](https://hub.docker.com/r/rocker/r-devel-ubsan-clang).
+
+First, I started the container with
+
+```
+docker run -v $PWD:/src:ro -it --rm --security-opt seccomp=unconfined wch1/r-debug
+```
+
+then, in that container, I prepared the R library in that container using the R binary that was built with the undefined behaviour checkers enabled:
+
+```
+RDcsan -e 'install.packages(c("deSolve", "knitr", "ring", "microbenchmark", "rmarkdown", "testthat", "devtools", "roxygen2"))'
+cp -r /src /dde
+```
+
+Running
+
+```
+RDcsan CMD INSTALL --preclean --install-tests /dde
+RDcsan -e 'tools::testInstalledPackage("dde")'
+cat dde-tests/testthat.Rout
+```
+
+showed the same output as CRAN reported - confirming I could replicate the error but still obscuring which test triggered it.  In the end I ran the tests with the most verbose reporter:
+
+```
+RDcsan -e 'devtools::test("dde", reporter = testthat::LocationReporter)'
+```
+
+which produces
+
+```
+Start test: failure to fetch history
+dopri.c:745:21: runtime error: -12.7138 is outside the range of representable values of type 'unsigned long'
+    #0 0x7f472e7aa95a in dopri_find_time /dde/src/dopri.c:745:21
+    #1 0x7f472e7ab097 in ylag_1 /dde/src/dopri.c:769:24
+    #2 0x7f472cded83a in ylag_1 /dde/inst/include/dde/dde.c:15:10
+...
+    #250 0x7f474672e010 in getvar /tmp/r-source/src/main/eval.c:5128:14
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior dopri.c:745:21 in
+  test-dde.R#269:1 [success]
+End test: failure to fetch history
+```
+
+so we know where the error is triggered from!
+
+(Note that the UB checker only seems to report the error the *first time* it occurs in a session - it's quite possible this is tuneable though.)
+
+## Valgrind
+
+[Valgrind](https://valgrind.org/) finds memory errors and is one of my favourite tools for working out why something crashes.  My (probably grossly oversimplified) understanding is that it runs a program with a layer that checks all memory accesses for correctness (alignment, bounds etc).  Unsurprisingly this makes things very slow to run.
+
+
+```
+==42439== Memcheck, a memory error detector
+==42439== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==42439== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==42439== Command: /data/blackswan/ripley/R/R-devel-vg/bin/exec/R -f testthat.R --restore --save --no-readline --vanilla
+==42439==
+
+...
+
+> library(testthat)
+> library(dde)
+>
+> test_check("dde")
+==42439== Invalid read of size 8
+==42439==    at 0x48C5A50: dopri_data_reset (packages/tests-vg/dde/src/dopri.c:196)
+==42439==    by 0x48C6906: dopri_integrate (packages/tests-vg/dde/src/dopri.c:294)
+==42439==    by 0x48CB338: r_dopri (packages/tests-vg/dde/src/r_dopri.c:176)
+==42439==    by 0x49B695: R_doDotCall (svn/R-devel/src/main/dotcode.c:744)
+==42439==    by 0x49BFD4: do_dotcall (svn/R-devel/src/main/dotcode.c:1280)
+==42439==    by 0x4D181C: bcEval (svn/R-devel/src/main/eval.c:7054)
+==42439==    by 0x4E8197: Rf_eval (svn/R-devel/src/main/eval.c:688)
+==42439==    by 0x4E9D56: R_execClosure (svn/R-devel/src/main/eval.c:1853)
+==42439==    by 0x4EAB33: Rf_applyClosure (svn/R-devel/src/main/eval.c:1779)
+==42439==    by 0x4E8363: Rf_eval (svn/R-devel/src/main/eval.c:811)
+==42439==    by 0x4ECD01: do_set (svn/R-devel/src/main/eval.c:2920)
+==42439==    by 0x4E85E4: Rf_eval (svn/R-devel/src/main/eval.c:763)
+==42439==  Address 0x195135c0 is 1,760 bytes inside a block of size 7,960 alloc'd
+==42439==    at 0x483880B: malloc (/builddir/build/BUILD/valgrind-3.15.0/coregrind/m_replacemalloc/vg_replace_malloc.c:309)
+==42439==    by 0x5223E0: GetNewPage (svn/R-devel/src/main/memory.c:946)
+==42439==    by 0x52418B: Rf_allocVector3 (svn/R-devel/src/main/memory.c:2784)
+==42439==    by 0x4A4388: Rf_allocVector (svn/R-devel/src/include/Rinlinedfuns.h:593)
+==42439==    by 0x4A4388: duplicate1 (svn/R-devel/src/main/duplicate.c:345)
+==42439==    by 0x4E893F: EnsureLocal (svn/R-devel/src/main/eval.c:2048)
+==42439==    by 0x4D2AE5: bcEval (svn/R-devel/src/main/eval.c:7146)
+==42439==    by 0x4E8197: Rf_eval (svn/R-devel/src/main/eval.c:688)
+==42439==    by 0x4E9D56: R_execClosure (svn/R-devel/src/main/eval.c:1853)
+==42439==    by 0x4EAB33: Rf_applyClosure (svn/R-devel/src/main/eval.c:1779)
+==42439==    by 0x4E8363: Rf_eval (svn/R-devel/src/main/eval.c:811)
+==42439==    by 0x178CF77B: C_deriv_func (/tmp/RtmpTufyR0/R.INSTALLb7ae410bb7bc/deSolve/src/call_lsoda.c:127)
+==42439==    by 0x179012CA: dstoda_ (/tmp/RtmpTufyR0/R.INSTALLb7ae410bb7bc/deSolve/src/opkda1.f:4200)
+==42439==
+══ testthat results  ═══════════════════════════════════════════════════════════
+[ OK: 507 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 0 ]
+```
+
+(eliding only the R startup and valgrind summary).  Again, not a great deal to work with!
+
+A copy of R instrumented with valgrind (improving debugging a bit) is also in the same docker image as above:
+
+```
+docker run -v $PWD:/src:ro -it --rm --security-opt seccomp=unconfined wch1/r-debug
+```
+
+```
+RDvalgrind -e 'install.packages(c("deSolve", "knitr", "ring", "microbenchmark", "rmarkdown", "testthat", "devtools", "roxygen2"))'
+cp -r /src /dde
+```
+
+Unfortunately, and surprisingly, running:
+
+```
+RDvalgrind CMD INSTALL --preclean --install-tests /dde
+RDvalgrind -d valgrind -e 'tools::testInstalledPackage("dde")'
+cat dde-tests/testthat.Rout
+```
+
+which is what [is documented to work](https://www.stats.ox.ac.uk/pub/bdr/memtests/README.txt) did not yield the error.  But with a bit of poking based on the `Command:` line in the above valgrind output I got some success with:
+
+```
+(cd dde/tests && RDvalgrind -d valgrind -f testthat.R --no-readline --vanilla)
+```
+
+which showsd the invalid read, along side some less interesting output.  Using the `LocationReporter` again was better still:
+
+```
+RDvalgrind -d valgrind -e 'devtools::test("dde", reporter = testthat::LocationReporter)'
+```
+
+showed
+
+```
+Start test: critical times
+  test-ode.R#224:1 [success]
+  test-ode.R#225:1 [success]
+  test-ode.R#226:1 [success]
+  test-ode.R#228:1 [success]
+  test-ode.R#233:1 [success]
+==5262== Invalid read of size 8
+==5262==    at 0x180FD558: dopri_data_reset (dopri.c:196)
+==5262==    by 0x180FD8CF: dopri_integrate (dopri.c:294)
+==5262==    by 0x1810481B: r_dopri (r_dopri.c:176)
+==5262==    by 0x4F30D5F: R_doDotCall (dotcode.c:744)
+==5262==    by 0x4F3A8E5: do_dotcall (dotcode.c:1280)
+==5262==    by 0x4F8AD8C: bcEval (eval.c:7054)
+==5262==    by 0x4F7670A: Rf_eval (eval.c:688)
+==5262==    by 0x4F79442: R_execClosure (eval.c:1853)
+==5262==    by 0x4F790F6: Rf_applyClosure (eval.c:1779)
+==5262==    by 0x4F76EF5: Rf_eval (eval.c:811)
+==5262==    by 0x4F7D07C: do_set (eval.c:2920)
+==5262==    by 0x4F76B5B: Rf_eval (eval.c:763)
+==5262==  Address 0x17cde210 is 1,520 bytes inside a block of size 7,960 alloc'd
+==5262==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5262==    by 0x4FCAE13: GetNewPage (memory.c:946)
+==5262==    by 0x4FD9ED8: Rf_allocVector3 (memory.c:2784)
+==5262==    by 0x4FBE3B9: Rf_allocVector (Rinlinedfuns.h:593)
+==5262==    by 0x4EBD407: do_lapply (apply.c:46)
+==5262==    by 0x4FE2024: do_internal (names.c:1379)
+==5262==    by 0x4F8AFFB: bcEval (eval.c:7074)
+==5262==    by 0x4F7670A: Rf_eval (eval.c:688)
+==5262==    by 0x4F79442: R_execClosure (eval.c:1853)
+==5262==    by 0x4F790F6: Rf_applyClosure (eval.c:1779)
+==5262==    by 0x4F8A9D3: bcEval (eval.c:7022)
+==5262==    by 0x4F7670A: Rf_eval (eval.c:688)
+==5262==
+  test-ode.R#238:1 [success]
+  test-ode.R#243:1 [success]
+End test: critical times
+```
+
+So we again know the location of the error and can reproduce it.
+
+## rchk
+
+These are the results of static analysis tools (see [details on CRAN](https://raw.githubusercontent.com/kalibera/cran-checks/master/rchk/README.txt)) and the output this time is fairly standalone:
+
+```
+Package dde version 1.0.0
+Package built using 77519/R 4.0.0; x86_64-pc-linux-gnu; 2019-12-05 05:52:35 UTC; unix
+Checked with rchk version 490627e4fb8e93244230dbbd61455730aa43c328
+More information at https://github.com/kalibera/cran-checks/blob/master/rchk/PROTECT.md
+
+Suspicious call (two or more unprotected arguments) to Rf_setAttrib at r_difeq_cleanup dde/src/r_difeq.c:227
+Suspicious call (two or more unprotected arguments) to Rf_setAttrib at r_dopri_cleanup dde/src/r_dopri.c:403
+Suspicious call (two or more unprotected arguments) to Rf_setAttrib at r_dopri_cleanup dde/src/r_dopri.c:422
+
+Function r_ylag
+  [UP] unprotected variable r_y while calling allocating function r_indices dde/src/r_dopri.c:315
+  [UP] unprotected variable r_y while calling allocating function ylag_vec dde/src/r_dopri.c:315
+
+Function r_yprev
+  [UP] unprotected variable r_y while calling allocating function r_indices dde/src/r_difeq.c:161
+```
+
+```
+docker pull rhub/ubuntu-rchk
+docker run --rm -it -v $PWD:/src:ro -v ~/.Rprofile:/home/docker/.Rprofile -w /home/docker rhub/ubuntu-rchk
+R -e 'install.packages(c("deSolve", "ring"))'
+cp -r /src dde
+rchk.sh dde
+```
+
+which produces the same errors as observed in the report.
+
+These changes all turned out to be fairly straightforward and unambiguous errors.  For example the code
+
+```
+    r_y = PROTECT(allocVector(REALSXP, ni));
+    if (ni == 1) {
+      REAL(r_y)[0] = yprev_1(step, r_index(r_idx, n));
+    } else {
+      r_y = allocVector(REALSXP, ni);
+      yprev_vec(step, r_indices(r_idx, n), ni, REAL(r_y));
+    }
+```
+
+produced the warning
+
+```
+[UP] unprotected variable r_y while calling allocating function r_indices dde/src/r_difeq.c:161
+```
+
+It turns out the second `r_y` was vestigial and should be deleted.  It was dangerous because it was not protected and the function `r_indices` did an allocation so the memory underlying this second `r_y` could have been reclaimed.
+
+Similarly, the call
+
+```
+    setAttrib(history, install("n"), ScalarInteger(obj->n));
+```
+
+produced the warning
+
+```
+Suspicious call (two or more unprotected arguments) to Rf_setAttrib at r_difeq_cleanup dde/src/r_difeq.c:227
+```
+
+because the `SEXP` produced by `ScalarInteger(obj->n)` could have been reclaimed when the `install` is run (and these could be evaluated in any order the compiler fancies).  This was replaced with
+
+```
+    SEXP r_n = PROTECT(ScalarInteger(obj->n));
+    setAttrib(history, install("n"), r_n);
+```
+
+and an additional `UNPROTECT`.  See commit `72b7e60b6f4b15262d95afdda21341d0b38ea84d` for the full details.
