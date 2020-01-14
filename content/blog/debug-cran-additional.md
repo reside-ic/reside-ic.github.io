@@ -322,9 +322,15 @@ Function r_yprev
   [UP] unprotected variable r_y while calling allocating function r_indices dde/src/r_difeq.c:161
 ```
 
+To debug this I used a container created by the amazing [r-hub](https://builder.r-hub.io/) project, [`rhub/ubuntu-rchk`](https://hub.docker.com/r/rhub/ubuntu-rchk)
+
 ```
-docker pull rhub/ubuntu-rchk
 docker run --rm -it -v $PWD:/src:ro -v ~/.Rprofile:/home/docker/.Rprofile -w /home/docker rhub/ubuntu-rchk
+```
+
+Inside the container I ran:
+
+```
 R -e 'install.packages(c("deSolve", "ring"))'
 cp -r /src dde
 rchk.sh dde
