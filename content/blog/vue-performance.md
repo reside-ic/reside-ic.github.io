@@ -1,7 +1,7 @@
 ---
 author: "Alex Hill"
-date: 2020-01-01
-title: Handling long arrays performantly in Vue
+date: 2020-01-14
+title: Handling long arrays performantly in Vue.js
 tags:
  - Vue
  - Javascript
