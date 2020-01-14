@@ -10,6 +10,8 @@ R packages that are published on CRAN are tested every night on a variety of pla
 
 This blog post documents the process I used in clearing three issues from our [`dde`](https://mrc-ide.github.io/dde/) package (which implements a simple solver for delay differential equations - the astute blog reader may recognise it from [previous debugging efforts](https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/)).
 
+Package authors (or at least I) typically find out about these problems when getting an email from CRAN but they may have been live for some time and are listed as an "Additional issues" section on a packages [check page](https://cran.r-project.org/web/checks/check_results_dde.html) - however, this is shown only when there is a problem!
+
 This blog post also serves as a place for me to find this information next time I need it and is written with the hope that it helps someone else with their debugging and package repairing chores.  It was written while I debugged each problem, and is probably only of interest if you face a similar problem, in which case I hope the verbosity is useful.
 
 ## Undefined behaviour
@@ -133,7 +135,7 @@ With this fix in place, the UBSAN checks pass without incident.  See [`8c384bb`]
 
 ## Valgrind
 
-[Valgrind](https://valgrind.org/) finds memory errors and is one of my favourite tools for working out why something crashes.  My (probably grossly oversimplified) understanding is that it runs a program with a layer that checks all memory accesses for correctness (alignment, bounds etc).  Unsurprisingly this makes things very slow to run.
+[Valgrind](https://valgrind.org/) finds memory errors and is one of my favourite tools for working out why something crashes.  My (probably grossly oversimplified) understanding is that it runs a program with a layer that checks all memory accesses for correctness (alignment, bounds etc).  Unsurprisingly this makes things very slow to run.  The information on the CRAN page was:
 
 ```
 ==42439== Memcheck, a memory error detector
@@ -300,7 +302,7 @@ and is in [`07f876a`](https://github.com/mrc-ide/dde/commit/07f876a9d71c455c5b9e
 
 ## rchk
 
-These are the results of static analysis tools (see [details on CRAN](https://raw.githubusercontent.com/kalibera/cran-checks/master/rchk/README.txt)) and the output this time is fairly standalone:
+These are the results of static analysis tools (see [details on CRAN](https://raw.githubusercontent.com/kalibera/cran-checks/master/rchk/README.txt)) and the information from CRAN this time is fairly helpful by itself:
 
 ```
 Package dde version 1.0.0
