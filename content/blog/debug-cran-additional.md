@@ -203,7 +203,7 @@ which is what [is documented to work](https://www.stats.ox.ac.uk/pub/bdr/memtest
 (cd dde/tests && RDvalgrind -d valgrind -f testthat.R --no-readline --vanilla)
 ```
 
-which showsd the invalid read, along side some less interesting output.  Using the `LocationReporter` again was better still:
+which shows the invalid read, along side some less interesting output.  Using the `LocationReporter` again was better still:
 
 ```
 RDvalgrind -d valgrind -e 'devtools::test("dde", reporter = testthat::LocationReporter)'
@@ -251,6 +251,48 @@ End test: critical times
 ```
 
 So we again know the location of the error and can reproduce it.
+
+Taking the same approach as above, I boiled down the test into a minimal script that could be run easily to trigger the problems:
+
+```
+target <- function(t, y, p) {
+  if (t <= 1) {
+    y
+  } else {
+    -5 * y
+  }
+}
+tt <- seq(0, 2, length.out = 200)
+res <- dde::dopri(1, tt, target, numeric(0), tcrit = rep(tt[[1]], 3))
+```
+
+which could be run like
+
+```
+RDvalgrind -d valgrind -f /src/bug-valgrind.R
+```
+
+taking about 10s, which is fast as far as using valgrind goes.  The code causing the problem was:
+
+```
+    double t0 = obj->sign * times[0];
+    while (obj->sign * tcrit[obj->tcrit_idx] <= t0 &&
+           obj->tcrit_idx < n_tcrit) {
+      obj->tcrit_idx++;
+    }
+```
+
+which is a nasty enough bit of book-keeping.  But the problem is that the while condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking `tcrit[obj->tcrit_idx]` because it is out of range, which is precicely what the "invalid read" error valgrind reported was.  The fixed code looks like
+
+```
+    double t0 = obj->sign * times[0];
+    while (obj->tcrit_idx < n_tcrit &&
+           obj->sign * tcrit[obj->tcrit_idx] <= t0) {
+      obj->tcrit_idx++;
+    }
+```
+
+and is in `07f876a`.
 
 ## rchk
 
