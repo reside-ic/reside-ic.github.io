@@ -28,8 +28,8 @@ Rich was a computational biologist for 15 years before deciding that catalysing 
 {{< person name="Rob Ashton" img="logo.png" url="https://github.com/r-ash">}}
 Rob bio here
 {{< /person >}}
-{{< person name="Wes Hinsley" img="logo.png" url="https://github.com/weshinsley">}}
-Wes bio here
+{{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
+Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
 {{< /person >}}
 {{< person name="Giovanni Charles" img="giovanni.jpg" url="https://github.com/giovannic">}}
 Giovanni is a computer scientist and health researcher. The former CTO of a health tech startup he now works
