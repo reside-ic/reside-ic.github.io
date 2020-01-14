@@ -20,13 +20,13 @@ Emma bio here
 {{< person name="James Thompson" img="logo.png" url="https://github.com/JamesThompson1729">}}
 James bio here
 {{< /person >}}
-{{< person name="Rich FitzJohn" img="logo.png" url="https://richfitz.github.io">}}
-Rich bio here
+{{< person name="Rich FitzJohn" img="rich.jpg" url="https://richfitz.github.io">}}
+Rich was a computational biologist for 15 years before deciding that catalysing research through software was more fun than doing it himself. He's interested in making reproducibility easier and more accessible while letting scientists focus more on science than engineering. Outside of work he enjoys rock climbing and hiking.
 {{< /person >}}
 {{< person name="Rob Ashton" img="logo.png" url="https://github.com/r-ash">}}
 Rob bio here
 {{< /person >}}
-{{< person name="Wes Hinsley" img="logo.jpg" url="https://github.com/weshinsley">}}
+{{< person name="Wes Hinsley" img="logo.png" url="https://github.com/weshinsley">}}
 Wes bio here
 {{< /person >}}
 {{< person name="Giovanni Charles" img="giovanni.jpg" url="https://github.com/giovannic">}}
