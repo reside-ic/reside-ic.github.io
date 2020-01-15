@@ -304,7 +304,9 @@ and is in [`07f876a`](https://github.com/mrc-ide/dde/commit/07f876a9d71c455c5b9e
 
 ## rchk
 
-These are the results of static analysis tools (see [details on CRAN](https://raw.githubusercontent.com/kalibera/cran-checks/master/rchk/README.txt)) and the information from CRAN this time is fairly helpful by itself:
+These are the results of static analysis tools (see [details on CRAN](https://raw.githubusercontent.com/kalibera/cran-checks/master/rchk/README.txt)).  There are a lot of things checked by this tool, but one of the main ones - and the one behind all the problems below - is `PROTECT`/`UNPROTECT` errors, where the package author has failed to correctly protect memory from being reclaimed by R's garbage collector.  See [this blog post by Tomas Kalibera ](https://developer.r-project.org/Blog/public/2019/04/18/common-protect-errors) for more background.
+
+Thankfully, the information from CRAN is helpful by itself:
 
 ```
 Package dde version 1.0.0
@@ -323,6 +325,8 @@ Function r_ylag
 Function r_yprev
   [UP] unprotected variable r_y while calling allocating function r_indices dde/src/r_difeq.c:161
 ```
+
+However, it is useful to recreate the errors locally so we can be sure that they are actually fixed.
 
 To debug this I used a container created by the amazing [r-hub](https://builder.r-hub.io/) project, [`rhub/ubuntu-rchk`](https://hub.docker.com/r/rhub/ubuntu-rchk)
 
