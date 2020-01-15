@@ -10,6 +10,8 @@
 }
 
 .person {
+    padding-left: 5px;
+    padding-right: 5px;
     width: 269px;
     text-align: center;
 }
