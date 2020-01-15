@@ -14,6 +14,8 @@ Package authors (or at least I) typically find out about these problems when get
 
 This blog post also serves as a place for me to find this information next time I need it and is written with the hope that it helps someone else with their debugging and package repairing chores.  It was written while I debugged each problem, and is probably only of interest if you face a similar problem, in which case I hope the verbosity is useful.
 
+There are three sections to this blog post - "Undefined behaviour", "valgrind" and "rchk" corresponding to three of the possible additional checks.  However, [there are more types still](https://cran.r-project.org/web/checks/check_issue_kinds.html), including testing with extremely new versions of gcc, alternative linear algebra implementations, and other diagnostic tools.
+
 ## Undefined behaviour
 
 The package had an issue where a unit test was doing something that was [Undefined Behaviour](https://en.wikipedia.org/wiki/Undefined_behavior).  The information we get from CRAN to debug this error is:
