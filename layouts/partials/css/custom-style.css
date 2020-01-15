@@ -1,0 +1,37 @@
+.column {
+    max-width: 900px !important;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.person {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 269px;
+    text-align: center;
+}
+
+.person .name {
+    font-weight: bold;
+}
+
+.person img {
+    width: 150px !important;
+    -webkit-border-radius: 150px !important;
+    border-radius: 150px !important;
+    margin: 0 !important;
+}
+
+.person p {
+    text-align: center !important;
+    font-size: 0.875em;
+}
+
+.text-muted {
+    color: #7b888b;
+}
