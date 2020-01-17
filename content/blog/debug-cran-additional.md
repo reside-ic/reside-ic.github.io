@@ -59,7 +59,7 @@ RDcsan -e 'install.packages(c("deSolve", "knitr", "ring", "microbenchmark", "rma
 cp -r /src /dde
 ```
 
-Running
+(`Rdcsan` is a version of R set up to use clang with the address and undefined behaviour sanitiser enabled - see [the image readme](https://github.com/wch/r-debug)).  Running
 
 ```
 RDcsan CMD INSTALL --preclean --install-tests /dde
