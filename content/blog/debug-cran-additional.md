@@ -290,7 +290,7 @@ taking about 10s, which is fast as far as using valgrind goes.  The code causing
     }
 ```
 
-which is a nasty enough bit of book-keeping.  But the problem is that the while condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking up `tcrit[obj->tcrit_idx]` because it is out of range, which is precisely what the "invalid read" error valgrind reported was.  The fixed code looks like
+which is a nasty enough bit of book-keeping.  But the problem is that the `while` condition's two clauses are in the wrong order - when `obj->tcrit_idx < n_tcrit` is `false` we *really* should not be looking up `tcrit[obj->tcrit_idx]` because it is out of range, which is precisely what the "invalid read" error valgrind reported was.  The fixed code looks like
 
 ```
     double t0 = obj->sign * times[0];
