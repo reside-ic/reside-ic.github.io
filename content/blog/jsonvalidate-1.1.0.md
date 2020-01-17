@@ -1,6 +1,7 @@
 ---
 title: "jsonvalidate 1.1.0"
 date: 2019-06-25T07:38:50+01:00
+author: Rich FitzJohn
 tags:
  - data
  - JSON
