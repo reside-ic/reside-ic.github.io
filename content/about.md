@@ -19,6 +19,11 @@ Emma started out coding laboratory process control for combinatorial chemistry, 
 in start-ups in the wild West Country before bringing her considerable web development expertise to RESIDE.
 Outside of work she spends time singing with two choirs and sometimes making stained glass.
 {{< /person >}}
+{{< person name="Giovanni Charles" img="giovanni.jpg" url="https://github.com/giovannic">}}
+Giovanni is a computer scientist and health researcher. The former CTO of a health tech startup he now works
+with the malaria group at Imperial developing individual-based malaria models in C++ and R. Outside of tech,
+he paints, makes music, is a keen runner and occasional philosophy reader.
+{{< /person >}}
 {{< person name="James Thompson" img="james.png" url="https://github.com/JamesThompson1729">}}
 James is a mathematician who ended up in software engineering after his academic career failed to launch. Since then he's worked at a tech firm in Cambridge and as a mathematical modeller for the civil service, before moving to Imperial where he works on data visualisation for the VIMC project. He has beaten a former british go champion (at go).
 {{< /person >}}
@@ -30,11 +35,6 @@ Rob started his software career as a web developer in healthcare. He now writes 
 {{< /person >}}
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
 Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
-{{< /person >}}
-{{< person name="Giovanni Charles" img="giovanni.jpg" url="https://github.com/giovannic">}}
-Giovanni is a computer scientist and health researcher. The former CTO of a health tech startup he now works
-with the malaria group at Imperial developing individual-based malaria models in C++ and R. Outside of tech, 
-he paints, makes music, is a keen runner and occasional philosophy reader.
 {{< /person >}}
 {{< /team >}}
 
