@@ -1,6 +1,7 @@
 ---
 title: "Experiments in transforming Excel into R"
 date: 2019-11-19
+author: Rich FitzJohn
 tags:
  - R
  - Excel

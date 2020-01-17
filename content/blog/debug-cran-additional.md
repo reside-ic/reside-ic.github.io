@@ -1,5 +1,6 @@
 ---
 title: "Debugging and Fixing CRAN's 'Additional Checks' errors"
+author: Rich FitzJohn
 date: 2020-01-17
 tags:
  - dde
