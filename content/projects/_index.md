@@ -25,15 +25,11 @@ how close they are to the [UNAIDS 90-90-90 target](https://www.unaids.org/en/res
 
 * [Paper describing the model](https://www.biorxiv.org/content/10.1101/532010v1)
 
-### Naomi
+### [Naomi](/projects/naomi)
 [https://naomi.unaids.org](https://naomi.unaids.org/)
 
 A web interface for a model estimating various HIV epidemic indicators at a regional level. For use by 
-countries in association with UNAIDS. The app is comprised of:
-
-* [an R API and R workers](https://github.com/mrc-ide/hintr), managed by a [Redis queue](https://github.com/mrc-ide/rrq)
-* [a Kotlin web server](https://github.com/mrc-ide/hint)
-* [a Vue.js front-end](https://github.com/mrc-ide/hint/tree/master/src/app/static)
+countries in association with UNAIDS. See [main article](/projects/naomi).
 
 ### Custom data collection app
 
