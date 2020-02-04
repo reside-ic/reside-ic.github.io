@@ -25,11 +25,9 @@ how close they are to the [UNAIDS 90-90-90 target](https://www.unaids.org/en/res
 
 * [Paper describing the model](https://www.biorxiv.org/content/10.1101/532010v1)
 
-### [Naomi](/projects/naomi)
-[https://naomi.unaids.org](https://naomi.unaids.org/)
+### Naomi
 
-A web interface for a model estimating various HIV epidemic indicators at a regional level. For use by 
-countries in association with UNAIDS. See [main article](/projects/naomi).
+A web interface for a model estimating various HIV epidemic indicators, see the [project page](naomi) for more information.
 
 ### Custom data collection app
 
