@@ -14,7 +14,7 @@ The app is comprised of:
 * [a Kotlin web server](https://github.com/mrc-ide/hint)
 * [a Vue.js front-end](https://github.com/mrc-ide/hint/tree/master/src/app/static)
 * Supported by
-   * [web application database](https://github.com/mrc-ide/hint-db)
+   * [a Postgres data base for the Kotlin web server](https://github.com/mrc-ide/hint-db)
    * [R i18n infrastructure](https://github.com/reside-ic/traduire)
    * [load balancing long-running jobs via a Redis queue](https://github.com/mrc-ide/rrq)
    * [deployment tool](https://github.com/mrc-ide/hint-deploy)
