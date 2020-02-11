@@ -1,8 +1,7 @@
 ---
-title: "Rslondonse 2020"
+title: "RSlondonSE 2020"
 date: 2020-02-11
 author: Rich FitzJohn
-draft: true
 tags:
   - Javascript
   - Vue
