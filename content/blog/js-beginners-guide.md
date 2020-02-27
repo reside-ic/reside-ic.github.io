@@ -88,7 +88,7 @@ It can add a lot of boilerplate code to your app, so it's not always the right s
 of mostly independent components, you almost certainly don't need it. If you have a complex, dynamic app with many components
  that need to share state, then it can be really useful.
 
-The Redux homepage suggests:
+The Redux homepage [suggests](https://redux.js.org/faq/general#when-should-i-use-redux):
 
 > In general, use Redux when you have reasonable amounts of data changing over time, you need a single source of truth, and you find
 > that approaches like keeping everything in a top-level React component's state are no longer sufficient.
