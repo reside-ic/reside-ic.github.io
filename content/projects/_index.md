@@ -52,6 +52,7 @@ A high-level approach to make using encryption from R more accessible; the `cyph
 
 * [Package webpage](https://ropensci.github.io/cyphr/)
 * [CRAN page](https://cran.r-project.org/package=cyphr)
+* Blog posts: [1.1.0](/blog/cyphr-1.1.0/)
 
 (This is also an [rOpenSci](https://ropensci.org/) package.)
 
