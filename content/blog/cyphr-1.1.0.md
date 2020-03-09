@@ -16,7 +16,7 @@ d <- cyphr::decrypt(read.csv("secret-input.csv"), key)
 cyphr::encrypt(write.csv(processed, "secret-output.csv"), key)
 ```
 
-using [modern encryption tecnologies](https://github.com/jeroen/sodium) and taking care of most of the details so that data is not inadvertently leaked.
+using [modern encryption technologies](https://github.com/jeroen/sodium) and taking care of most of the details so that data is not inadvertently leaked.
 
 This new version has lots of small features which improve the behaviour of its [collaborative data process](https://docs.ropensci.org/cyphr/articles/data.html)
 
