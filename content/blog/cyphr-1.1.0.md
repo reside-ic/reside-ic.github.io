@@ -1,8 +1,7 @@
 ---
 title: "cyphr 1.1.0"
-date: 2020-03-13
+date: 2020-03-10
 author: Rich
-draft: true
 tags:
  - R
  - reproducible research
