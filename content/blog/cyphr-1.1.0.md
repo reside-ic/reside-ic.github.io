@@ -9,7 +9,7 @@ tags:
 
 We have released a new version of our [cyphr](https://docs.ropensci.org/cyphr/) package, which makes data analysis workflows with R much easier.  The aim of the package is to make encrypted workflows as easy as:
 
-```r
+```
 d <- cyphr::decrypt(read.csv("secret-input.csv"), key)
 ...
 cyphr::encrypt(write.csv(processed, "secret-output.csv"), key)
