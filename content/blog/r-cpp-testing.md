@@ -1,6 +1,6 @@
 ---
 author: "Giovanni Charles"
-date: 2020-03-27
+date: 2020-03-30
 title: "Gotta catch 'em all"
 best: false
 tags:
