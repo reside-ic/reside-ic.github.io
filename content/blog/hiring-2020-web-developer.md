@@ -2,7 +2,7 @@
 title: "We're hiring: Full-stack web developer"
 date: 2020-04-06T11:50:00+01:00
 author: RESIDE
-slug: "hiring-2020-malaria-developer"
+slug: "hiring-2020-web-developer"
 tags:
  - hiring
 ---
