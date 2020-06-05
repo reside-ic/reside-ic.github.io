@@ -38,7 +38,9 @@ The code for this is not open due to the confidential nature of the survey.
 
 ### Outbreak response
 
-We provide technical and software support to outbreaks as part of the [MRC Centre for Global Infectious Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis), most notably during the 2018-2020 Ebola outbreak in the Democratic Republic of Congo and the [ongoing 2019-nCoV-SARS/COVID-19 pandemic](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/).
+We provide technical and software support to outbreaks as part of the [MRC Centre for Global Infectious Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis), most notably during the 2018-2020 Ebola outbreak in the Democratic Republic of Congo.
+
+We are currently heavily involved in the [ongoing 2019-nCoV-SARS/COVID-19 pandemic](covid), both in the UK and for other countries.
 
 This work involves a number of packages from the list below, notably [orderly and OrderlyWeb](#orderly-lightweight-reproducible-reporting), [cyphr](https://ropensci.github.io/cyphr/), and [odin](https://mrc-ide.github.io/odin), as well as working directly with scientists to keep them able to focus on their science through training, advice, HPC support and dealing with particularly nasty datasets.
 
