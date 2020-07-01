@@ -1,6 +1,6 @@
 ---
 author: "Emma Russell"
-date: 2020-05-30
+date: 2020-07-01
 title: "Shades of meaning: visualising geographical data with colour in a data-driven web application"
 best: false
 tags:
@@ -12,11 +12,11 @@ Colour and maps are two crucial aspects of data visualisation, and putting them 
 
 [{{< figure src="/img/cscale_smith_map.jpg" title="William Smith's geological map of 1815" >}}](https://www.nhm.ac.uk/discover/first-geological-map-of-britain.html)
  
-If data values are discrete, selecting the colours to use is straightforward - just choose an appropriate colour for each value. For continuous data, a colour scale is required, where any numeric value in the data range can be mapped to a colour, and where the gradations in colour are visually meaningful. (This type of map is known as a [choropleth](https://en.wikipedia.org/wiki/Choropleth_map).)
+If data values are discrete, selecting the colours to use is straightforward - just choose an appropriate colour for each value. For continuous data, a colour scale is required, where any numeric value in the data range can be mapped to a colour, and where the gradations in colour are visually meaningful. 
 
 This is fine for a pre-canned visualisation which can be tailored to the data, but trickier in dynamic applications with data whose extents are not known in advance. Pre-defining a colour scale which will be appropriate for all possible datasets can be problematic, as we discovered when we developed the web application part of the [Naomi](https://reside-ic.github.io/projects/naomi/) project for estimating district-level HIV indicators in sub-Saharan Africa.
 
-A key visualisation feature in this application are maps whose regions are coloured to show indicator values as shades on a colour scale. The application is designed so that metadata defining data formats and presentation originate in the research code. This metadata includes the colour scales which the maps use to display regional data.
+This app provides [choropleth](https://en.wikipedia.org/wiki/Choropleth_map) maps for users to see how epidemic indicators like disease prevalence vary by area. Choropleths are maps whose regions are coloured to show data values as shades on a colour scale. The application is designed so that metadata defining data formats and presentation originate in the research code. This metadata includes the colour scales which the maps use to display regional data.
 
 {{< figure src="/img/cscale_architecture.png" title="Naomi architecture" >}}
 
@@ -32,13 +32,13 @@ The relevant parts of the metadata for our choropleths are, for each indicator:
 
 {{< figure src="/img/cscale_choro.png" title="A choropleth in Naomi showing district-level ART (antiretroviral therapy) coverage using the interpolateViridis colour scale" >}}
 
-However we found that, while this approach was a powerful way for researchers to define how data should be visualised, it was not sufficiently flexible to give users the best results for all datasets.
+However we found that, while this approach was a powerful way for researchers to define how data should be visualised, it was not sufficiently flexible to give users the best results for all views of all datasets.
  
-The min-max ranges defined by metadata may not be wide enough to capture all values in a particular dataset, in which case all values which exceed that range will be assigned the same colour, and hence be indistinguishable. Conversely, if a default range is too wide, and all dataset values are clustered within one area of the scale, these may also be difficult to distinguish visually. 
+The min-max ranges defined by metadata may not be wide enough to capture all values in a particular view of a dataset, in which case all values which exceed that range will be assigned the same colour, and hence be indistinguishable. Conversely, if a default range is too wide, and all values are clustered within one area of the scale, these may also be difficult to distinguish visually. 
 
 {{< figure src="/img/cscale_wrong_scale.png" title="A choropleth with an inappropriate default scale: all areas appear as the same colour even though their values are different" >}}
 
-A relevant factor here is that our choropleth data is always a filtered subset of a full dataset, showing values for a particular age range, year, etc, where the user can change which filter set to display using drop-down controls. The metadata range provides a colour scale which is consistent - the same colour corresponds to the same value for each set of filter values. However we found that some filter sets would typically exhibit much narrower indicator ranges than the whole dataset, so that the map rendered could be of little use as a choropleth. 
+The reason why scales defined for a dataset are often inappropriate for a particular view of that data is that our choropleth data is always a filtered subset of a full dataset, providing a view of values for a particular age range, year, etc, where the user can change which filter set to display using drop-down controls. The metadata range provides a colour scale which is consistent - the same colour corresponds to the same value for each set of filter values. However we found that some filter sets would typically exhibit much narrower indicator ranges than the whole dataset, so that the map rendered could be of little use as a choropleth. 
 
 To solve these issues, we implemented a set of options allowing the user to control the colour range dynamically:
 
