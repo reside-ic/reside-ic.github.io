@@ -1,7 +1,6 @@
 ---
 title: "A warning about warning()"
-date: 2020-07-15
-draft: true
+date: 2020-07-06
 tags:
 - R
 ---
