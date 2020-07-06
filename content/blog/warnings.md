@@ -1,4 +1,5 @@
 ---
+author: "Rich FitzJohn"
 title: "A warning about warning()"
 date: 2020-07-06
 tags:
