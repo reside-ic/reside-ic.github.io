@@ -24,8 +24,8 @@ Giovanni is a computer scientist and health researcher. The former CTO of a heal
 with the malaria group at Imperial developing individual-based malaria models in C++ and R. Outside of tech,
 he paints, makes music, is a keen runner and occasional philosophy reader.
 {{< /person >}}
-{{< person name="James Thompson" img="james.png" url="https://github.com/JamesThompson1729">}}
-James is a mathematician who ended up in software engineering after his academic career failed to launch. Since then he's worked at a tech firm in Cambridge and as a mathematical modeller for the civil service, before moving to Imperial where he works on data visualisation for the VIMC project. He has beaten a former british go champion (at go).
+{{< person name="Nicolas Dolan" img="nick.jpg" url="https://github.com/Nicolas-Dolan">}}
+Nicolas previously worked in medical communications as a medical writer and prior to that edited for The Lancet medical journal. Wanting to take on a new challenge, he retrained at a software engineering immersive run by General Assembly. His hobbies include learning foreign languages and obsessing over artificial intelligence.
 {{< /person >}}
 {{< person name="Rich FitzJohn" img="rich.jpg" url="https://richfitz.github.io">}}
 Rich was a computational biologist for 15 years before deciding that catalysing research through software was more fun than doing it himself. He's interested in making reproducibility easier and more accessible while letting scientists focus more on science than engineering. Outside of work he enjoys rock climbing and hiking.
@@ -40,4 +40,5 @@ Wes is a computer engineer and scientist, with a Ph.D making tools for ocean mod
 
 ## Alumni
 
+* [James Thompson](https://github.com/JamesThompson1729)
 * [Martin Eden](https://github.com/martineden)
