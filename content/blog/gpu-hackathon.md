@@ -1,6 +1,6 @@
 ---
 author: "Rich FitzJohn"
-date: 2020-08-28
+date: 2020-08-25
 title: Sheffield/NVIDIA GPU hackathon
 tags:
  - cinterpolate
