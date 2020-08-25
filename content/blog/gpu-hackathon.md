@@ -49,7 +49,7 @@ Our SIRS model, which relies on samples from a binomial distribution, was more c
 
 With a lot of help from our mentors, and one of the people who has worked on the NVIDIA profiler, we managed to track down the problem. Due to the way we were dealing with divergence we needed to add `__syncwarp()` to bring threads that have come out of sync due to different numbers of iterations to successfully sample from the binomial distribution. Once we fixed that, our kernel was running in ~40ms and we were much happier. After a few more rounds of optimisation (moving to `float` rather than `double` and removing branches that were optimisations in CPU code but caused divergence on the GPU) we ended up with our kernel running in 15ms, a speedup of 130x.
 
-Translated to running our simulation from R, for very large simulations running a many steps, we now have GPU performance up to 500x faster than our serial CPU version.
+Translated to running our simulation from R, for very large simulations running many steps, we now have GPU performance up to 500x faster than our serial CPU version.
 
 {{< figure src="/img/gpu_sirs.png" title="Relative performance of GPU and CPU code for our 'SIRS' model, as we optimised the CUDA code with our mentors - commits are ordered from purple as oldest through to yellow as youngest. The panels run the models for increasing numbers of steps (10, 100, 1000, increasing the time spent on the GPU device relative to the overhead of copying data), and we ran our simulations with 2, 4, 8, ..., 65536 particles, shown on a log scale." >}}
 
