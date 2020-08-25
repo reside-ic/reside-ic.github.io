@@ -1,14 +1,13 @@
 ---
 author: "Rich FitzJohn"
-date: 2020-08-05
+date: 2020-08-28
 title: Sheffield/NVIDIA GPU hackathon
-best: false
 tags:
  - cinterpolate
  - R
 ---
 
-Last week we attended (virtually) a GPU hackathon hosted by Sheffield and NVIDIA, in order to learn how to create GPU-capable models to accelerate our simulations.
+Last month we attended (virtually) a GPU hackathon hosted by Sheffield and NVIDIA, in order to learn how to create GPU-capable models to accelerate our simulations.
 
 We are working as part of the centre [covid response](/projects/covid) on models of COVID-19 transmission within the UK. The epidemiologists working on the model are writing [stochastic compartmental models](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#Deterministic_versus_stochastic_epidemic_models) where populations are modelled as "Susceptible", "Exposed", "Infected", "Recovered", etc - movement between these compartments happens stochastically using a set of parameters. The model is a continuous time Markov chain (the next state only depends on the current state) which is solved by splitting each day into four equal time intervals. Parameters themselves are fit in an inference process, which involves running the model a many times. The core of this is both ["embarrassingly parallel"](https://en.wikipedia.org/wiki/Embarrassingly_parallel) and has the potential to use over 10^6 threads, and so we wanted to know if we could develop a system that could use the massive parallelism that GPUs might provide.
 
@@ -44,12 +43,18 @@ With that sorted out, we explored a variety of optimisations for improving our v
 
 Our SIRS model, which relies on samples from a binomial distribution, was more challenging to optimise, though closer to our real model and with more interesting calculations in the kernel. Our initial version was able to run at best 10x faster than the CPU (even after fixing our memory allocations), which we were a bit disappointed in because running the model on a 10-core CPU system is fairly straightforward.  For the parameters we were using to start optimising, our kernel was taking ~2s to run, vs 1ms for our optimised version of the volatility model!
 
+{{< figure src="/img/gpu_volatility.png" title="Relative performance of gpu and cpu code for our "volatlity" model, as we optimised the CUDA code with our mentors - commits are ordered from purple as oldest through to yellow as youngest" >}}
+
 With a lot of help from our mentors, and one of the people who has worked on the NVIDIA profiler, we managed to track down the problem. Due to the way we were dealing with divergence we needed to add `__syncwarp()` to bring threads that have come out of sync due to different numbers of iterations to successfully sample from the binomial distribution. Once we fixed that, our kernel was running in ~40ms and we were much happier. After a few more rounds of optimisation (moving to `float` rather than `double` and removing branches that were optimisations in CPU code but caused divergence on the GPU) we ended up with our kernel running in 15ms, a speedup of 130x.
 
 Translated to running our simulation from R, for very large simulations running a many steps, we now have GPU performance up to 500x faster than our serial CPU version.
 
+{{< figure src="/img/gpu_sirs.png" title="Relative performance of gpu and cpu code for our "SIRS" model, as we optimised the CUDA code with our mentors - commits are ordered from purple as oldest through to yellow as youngest" >}}
+
 There's a large gap between our toy models and our real system, and it's not entirely clear how our performance will translate. Our real model has *many* binomial draws within a step, and will do relatively large amounts of computation within a run before passing results back to R, so it's possible that it will be good. On the other hand, more variation in the parameters to the binomial random draws may increase the amount of divergence and we'll lose out. Unfortunately, to run our real model we need to refactor how our GPU implementation holds internal state, so it will be a while before we know.
 
-Where to next? We have a pretty good sense of the problems blocking running our full model on the GPU and will work over the coming months to remove this.  We're not convinced that this will definitely be worthwhile for models that rely heavily on binomial random numbers and other discrete distributions (Poisson, hypergeometric, etc) but for models that involve incorporating brownian motion our approach might provide a very high level approach to implement models that can be run massively in parallel.
+Where to next? We have a pretty good sense of the problems blocking running our full model on the GPU and will work over the coming months to remove this.  We're not convinced that this will definitely be worthwhile for models that rely heavily on binomial random numbers and other discrete distributions (Poisson, hypergeometric, etc) but for models that involve incorporating Brownian motion our approach might provide a very high level approach to implement models that can be run massively in parallel.
 
-We're very grateful to our mentors Paul Richmond and Rob Chisholm, both of the [Sheffield RSE group](https://rse.shef.ac.uk/) for helping us understand the issues in our model and optimising it.
+Our current implementation is only a proof-of-concept, and languishes [on a branch for the time being](https://github.com/mrc-ide/dust/tree/device-select-package), however over the winter we plan on converting this into a fully working system.
+
+We're very grateful to our mentors Paul Richmond and Rob Chisholm, both of the [Sheffield RSE group](https://rse.shef.ac.uk/) for helping us understand the issues in our model and optimising it, along with all the organisers of the hackathon!
