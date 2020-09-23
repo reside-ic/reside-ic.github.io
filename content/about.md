@@ -14,12 +14,12 @@ industries since then. Her favourite language these days is Kotlin but she has a
 When not writing code she can often be found gigging as a professional hula hooper (yes, that's a thing!) or messing around 
 with her DJ decks.
 {{< /person >}}
-{{< person name="Carol Brickley"img="ceeb.jpg" url="https://github.com/ceeb950">}}
+{{< person name="Carol Brickley"img="ceeb.jpeg" url="https://github.com/ceeb950">}}
 Carol started off her professional life with a BSc in physics from Imperial (1984) followed by an MPhil in nuclear engineering 
 and PhD in physics from the University of Bristol. She worked as a scientist for a few years and then decided to 
 go into scientific and technical software and has worked in this area ever since. She has worked mainly with C++, Java and python
-in both agile and waterfall environments and has experience of the whole lifecycle. She achieved the CITP (Certification of IT Professionals from the British Computing Society,
- BCS) in 2017. She has recently qualified as a Scrum Master holding a CSM from the Scrum Alliance.
+in both agile and waterfall environments and has experience of the whole lifecycle. She achieved the CITP (Certification of 
+IT Professionals from the British Computing Society, BCS) in 2017. She has recently qualified as a Scrum Master holding a CSM from the Scrum Alliance.
 {{< /person >}}
 {{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
 Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
