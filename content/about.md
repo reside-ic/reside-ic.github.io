@@ -3,7 +3,7 @@ date = "2015-08-22"
 title = "About"
 +++
 
-Research Software for Infectious Disease Epidemiology - we are a team of 7 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
+Research Software for Infectious Disease Epidemiology - we are a team of 8 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
 
 ## The team
 
@@ -13,6 +13,13 @@ Alex learnt to code after finishing her logic PhD in 2013 and has worked as a fu
 industries since then. Her favourite language these days is Kotlin but she has a soft spot for Javascript.
 When not writing code she can often be found gigging as a professional hula hooper (yes, that's a thing!) or messing around 
 with her DJ decks.
+{{< /person >}}
+{{< person name="Carol Brickley"img="ceeb.jpg" url="https://github.com/ceeb950">}}
+Carol started off her professional life with a BSc in physics from Imperial (1984) followed by an MPhil in nuclear engineering 
+and PhD in physics from the University of Bristol. She worked as a scientist for a few years and then decided to 
+go into scientific and technical software and has worked in this area ever since. She has worked mainly with C++, Java and python
+in both agile and waterfall environments and has experience of the whole lifecycle. She achieved the CITP (Certification of IT Professionals from the British Computing Society,
+ BCS) in 2017. She has recently qualified as a Scrum Master holding a CSM from the Scrum Alliance.
 {{< /person >}}
 {{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
 Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
