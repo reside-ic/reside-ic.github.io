@@ -15,11 +15,10 @@ When not writing code she can often be found gigging as a professional hula hoop
 with her DJ decks.
 {{< /person >}}
 {{< person name="Carol Brickley"img="ceeb.jpeg" url="https://github.com/ceeb950">}}
-Carol started off her professional life with a BSc in physics (1984) and MPhil in nuclear engineering from Imperial
-followed by a PhD in physics (University of Bristol). She went into scientific and technical software and has 
-worked in this area ever since. She has worked mainly with C++, Java and python, achieved CITP (Certification of 
-IT Professionals from the British Computing Society, BCS) and is a Scrum Master. 
-When not working she is into fitness training and walking and is a volunteer at her church working with children.
+Carol has a BSc (physics) and MPhil from Imperial and a PhD (physics) from Bristol. She then felt the lure of scientific 
+and technical software and has worked in this area ever since. Working mainly with C++, Java and python, she is a 
+Scrum Master and has a CITP, Certification of IT Professionals, from the BCS. 
+Interests are fitness training, walking and she volunteers as a childrens' worker at her church.
 {{< /person >}}
 {{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
 Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
