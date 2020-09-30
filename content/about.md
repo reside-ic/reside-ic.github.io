@@ -16,7 +16,7 @@ with her DJ decks.
 {{< /person >}}
 {{< person name="Carol Brickley"img="ceeb.jpeg" url="https://github.com/ceeb950">}}
 Carol started off her professional life with a BSc in physics (1984) and MPhil in nuclear engineering from Imperial
-followed by a PhD in physics from the University of Bristol. She went into scientific and technical software and has 
+followed by a PhD in physics (University of Bristol). She went into scientific and technical software and has 
 worked in this area ever since. She has worked mainly with C++, Java and python, achieved CITP (Certification of 
 IT Professionals from the British Computing Society, BCS) and is a Scrum Master. 
 When not working she is into fitness training and walking and is a volunteer at her church working with children.
