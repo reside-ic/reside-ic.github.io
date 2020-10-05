@@ -4,7 +4,7 @@ title = "About"
 +++
 
 Research Software for Infectious Disease Epidemiology - we are a team of 8 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
-
+ ~
 ## The team
 
 {{< team >}}
@@ -29,6 +29,9 @@ Outside of work she spends time singing with two choirs and sometimes making sta
 Giovanni is a computer scientist and health researcher. The former CTO of a health tech startup he now works
 with the malaria group at Imperial developing individual-based malaria models in C++ and R. Outside of tech,
 he paints, makes music, is a keen runner and occasional philosophy reader.
+{{< /person >}}
+{{< person name="Lekan Anifowoshe"img="lekan.jpeg" url="https://github.com/carbowizzy">}}
+Lekan completed his BSc in Information Technology at Eastern Mediterranean University,Cyprus and MSc in Information Technology with Business and Management from University of Sussex. He has years of experience working with different technologies and tools in public and private sectors. Before joining the team he worked as a Software Engineer/Database Manager with a cancer research group at Imperial College. If not coding, he enjoys watching and playing lawn tennis.
 {{< /person >}}
 {{< person name="Nicolas Dolan" img="nick.jpg" url="https://github.com/Nicolas-Dolan">}}
 Nicolas previously worked in medical communications as a medical writer and prior to that edited for The Lancet medical journal. Wanting to take on a new challenge, he retrained at a software engineering immersive run by General Assembly. His hobbies include learning foreign languages and obsessing over artificial intelligence.
