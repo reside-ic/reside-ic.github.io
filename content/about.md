@@ -33,6 +33,9 @@ he paints, makes music, is a keen runner and occasional philosophy reader.
 {{< person name="Lekan Anifowoshe"img="lekan.jpg" url="https://github.com/carbowizzy">}}
 Lekan has several years of experience in software engineering. He holds a BSc from Cyprus and Master degree from Sussex. Before joining the team, he worked with continuous update project(CUP) research group at Imperial. If not coding, he enjoys watching and playing lawn tennis.
 {{< /person >}}
+{{< person name="Mark Woodbridge"img="mark.jpg" url="https://github.com/mwoodbri">}}
+Mark studied Computer Science before starting his career as a Research Software Engineer. He joined the team from Imperial's Research Computing Service, having previously worked in the Faculty of Medicine. When not coding he enjoys travelling and spending time outdoors - ideally at the same time.
+{{< /person >}}
 {{< person name="Nicolas Dolan" img="nick.jpg" url="https://github.com/Nicolas-Dolan">}}
 Nicolas previously worked in medical communications as a medical writer and prior to that edited for The Lancet medical journal. Wanting to take on a new challenge, he retrained at a software engineering immersive run by General Assembly. His hobbies include learning foreign languages and obsessing over artificial intelligence.
 {{< /person >}}
