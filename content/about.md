@@ -14,12 +14,6 @@ industries since then. Her favourite language these days is Kotlin but she has a
 When not writing code she can often be found gigging as a professional hula hooper (yes, that's a thing!) or messing around 
 with her DJ decks.
 {{< /person >}}
-{{< person name="Carol Brickley"img="ceeb.jpeg" url="https://github.com/ceeb950">}}
-Carol has a BSc (physics) and MPhil from Imperial and a PhD (physics) from Bristol. She then felt the lure of scientific 
-and technical software and has worked in this area ever since. Working mainly with C++, Java and python, she is a 
-Scrum Master and has a CITP, Certification of IT Professionals, from the BCS. 
-Interests are fitness training, walking and she volunteers as a childrens' worker at her church.
-{{< /person >}}
 {{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
 Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
 in start-ups in the wild West Country before bringing her considerable web development expertise to RESIDE.
@@ -52,5 +46,6 @@ Wes is a computer engineer and scientist, with a Ph.D making tools for ocean mod
 
 ## Alumni
 
+* [Carol Brickley](https://github.com/ceeb950)
 * [James Thompson](https://github.com/JamesThompson1729)
 * [Martin Eden](https://github.com/martineden)
