@@ -8,11 +8,6 @@ tags:
 - Logging
 ---
 
-To-do
-
-- [ ] Architecture image?
-- [ ] More instructions e.g. Filebeat?
-
 # Introduction
 
 The [Elastic (ELK) Stack](https://www.elastic.co/what-is/elk-stack) is commonly used to centralise logs from across
