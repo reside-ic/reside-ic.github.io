@@ -11,6 +11,7 @@ tags:
 To-do
 
 - [ ] Architecture image?
+- [ ] More instructions e.g. Filebeat?
 
 # Introduction
 
