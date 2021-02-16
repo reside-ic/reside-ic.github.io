@@ -19,38 +19,43 @@ The [Elastic (ELK) Stack](https://www.elastic.co/what-is/elk-stack) is commonly 
 multiple servers, providing a single point of access to the aggregated messages. Its components are open source and can
 be self-hosted, albeit with some operational complexity. In this post we show how to set up a simple deployment, focused
 on logging from applications deployed in one or more Docker containers. We’ll do this by describing our setup and
-explaining a few of the choices that we’ve made so far - we’re still in the early days of exploring how Elasticsearch
-and Kibana can help to monitor applications and identify and resolve issues in our code.
+explaining a few of the choices that we’ve made so far: we’re still in the early days of exploring how Elasticsearch and
+Kibana can help to monitor applications and identify issues in our code.
 
 # Method
 
 The unofficial [docker-elk](https://github.com/deviantony/docker-elk) project provides a very helpful setup for running
-the stack itself in Docker, effectively simplifying deployment to `docker-compose up`. The key components are the log
-indexer (Elasticsearch) and the web interface (Kibana).
+ELK itself in Docker, effectively reducing deployment to running `docker-compose up`. The key components are the log
+indexer (Elasticsearch) and web interface (Kibana).
 
 The deployment steps are:
 
 1. Clone [docker-elk](https://github.com/deviantony/docker-elk)
-2. Make any desired changes to the configuration, such as those described below
-3. Do some one-time setup, as described in [README.md](https://github.com/deviantony/docker-elk/blob/main/README.md):
+2. Optional: make any desired changes to the configuration, such as those described below
+3. Perform some initialisation, as described
+   in [README.md](https://github.com/deviantony/docker-elk/blob/main/README.md):
+
   ```sh
   docker-compose up elasticsearch -d
   docker-compose exec -T elasticsearch bin/elasticsearch-setup-passwords auto --batch
   # Make a note of these passwords
   docker-compose down
   ```
+
 4. Bring up Elasticsearch and Kibana and create an index pattern:
+
   ```sh
   export KIBANA_PASSWORD=…
   docker-compose up -d
   docker-compose exec kibana curl -XPOST -D- 'http://localhost:5601/api/saved_objects/index-pattern' -H 'Content-Type: application/json' -u elastic:${ELASTIC_PASSWORD?} -d '{"attributes":{"title":"filebeat-*,journalbeat-*","timeFieldName":"@timestamp"}}'
   ```
+
 5. Send some logs to Elasticsearch (see below)
-6. Visit <http://localhost:5601> (assuming you’re not running a proxy - see below)
+6. Visit <http://localhost:5601> (assuming you’re not running a proxy - also see below)
 7. Log in using username `elastic` and the password you noted earlier
 8. View logs, create visualisations/alerts/dashboards etc
 
-We make some (optional)
+We make some
 [changes to the default configuration](https://github.com/deviantony/docker-elk/compare/main...reside-ic:main) as
 follows:
 
