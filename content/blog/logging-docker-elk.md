@@ -8,6 +8,7 @@ author: Mark Woodbridge date: 2021-02-15 title: Aggregating logs from services d
 ---
 
 To-do
+
 - [ ] Architecture image?
 
 # Introduction
@@ -78,7 +79,9 @@ This will give you a minimal setup - it’s worth ensuring the following for a r
 
 - Users/roles with access to Kibana are suitably restricted
 - Your Elasticsearch and Kibana Docker volumes are backed-up
-- Sensitive information is not logged by your applications (and thus centralised)
+- Sensitive information is either not logged by your applications or is shipped with suitable security (e.g.
+  [using SSL](https://www.elastic.co/guide/en/beats/filebeat/current/configuration-ssl.html)) and appropriately access
+  controlled. Obviously information such as credentials should never be logged.
 - Log messages are suitably structured, so they can be easily searched/filtered
 - Related containers/services share a common Docker Compose project name, Docker container tag etc, so that they can be
   grouped as one unit within Elasticsearch/Kibana.
