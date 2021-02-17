@@ -1,6 +1,6 @@
 ---
 author: Mark Woodbridge
-date: 2021-02-18
+date: 2021-02-17
 title: Aggregating logs from services deployed with Docker
 tags:
 - Docker
@@ -12,7 +12,10 @@ tags:
 
 If you're managing a number of applications across multiple servers then having easy access to their logs can make
 discovering and debugging issues much more efficient. Deploying a system to aggregate and visualise this information
-greatly reduces the need to identify and log into the relevant server(s) directly.
+greatly reduces the need to identify and log into the relevant server(s) directly, and enables more sophisticated
+analysis such as error tracing across systems (see [5 Good Reasons to Use a Log Server] for more).
+
+[5 Good Reasons to Use a Log Server]: https://dzone.com/articles/5-good-reasons-to-use-a-log-server
 
 The [Elastic (ELK) Stack](https://www.elastic.co/what-is/elk-stack) is commonly used for this purpose: centralising logs
 from multiple machines and providing a single point of access to the aggregated messages. Its components are open source
