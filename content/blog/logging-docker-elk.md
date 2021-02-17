@@ -1,6 +1,6 @@
 ---
 author: Mark Woodbridge
-date: 2021-02-15
+date: 2021-02-18
 title: Aggregating logs from services deployed with Docker
 tags:
 - Docker
@@ -10,18 +10,26 @@ tags:
 
 # Introduction
 
-The [Elastic (ELK) Stack](https://www.elastic.co/what-is/elk-stack) is commonly used to centralise logs from across
-multiple servers, providing a single point of access to the aggregated messages. Its components are open source and can
-be self-hosted, albeit with some operational complexity. In this post we show how to set up a simple deployment, focused
-on logging from applications deployed in one or more Docker containers. We’ll do this by describing our setup and
-explaining a few of the choices that we’ve made so far: we’re still in the early days of exploring how Elasticsearch and
-Kibana can help to monitor applications and identify issues in our code.
+If you're managing a number of applications across multiple servers then having easy access to their logs can make
+discovering and debugging issues much more efficient. Deploying a system to aggregate and visualise this information
+greatly reduces the need to identify and log into the relevant server(s) directly.
+
+The [Elastic (ELK) Stack](https://www.elastic.co/what-is/elk-stack) is commonly used for this purpose: centralising logs
+from multiple machines and providing a single point of access to the aggregated messages. Its components are open source
+and can be self-hosted, albeit with some operational complexity. In this post we show how to set up a simple deployment,
+focused on logging from applications deployed in one or more Docker containers. We’ll do this by describing our setup
+and explaining a few of the choices that we’ve made so far: we’re still in the early days of exploring how Elasticsearch
+and Kibana can help to monitor applications and identify issues in our code.
 
 # Method
 
 The unofficial [docker-elk](https://github.com/deviantony/docker-elk) project provides a very helpful setup for running
 ELK itself in Docker, effectively reducing deployment to running `docker-compose up`. The key components are the log
 indexer (Elasticsearch) and web interface (Kibana).
+
+The architecture we're aiming for is:
+
+{{< figure src="/img/logging.png" alt="Logging architecture diagram" >}}
 
 The deployment steps are:
 
@@ -37,12 +45,20 @@ The deployment steps are:
   docker-compose down
   ```
 
-4. Bring up Elasticsearch and Kibana and create an index pattern:
+4. Bring up Elasticsearch and Kibana:create an index pattern,
 
   ```sh
   export KIBANA_PASSWORD=…
   docker-compose up -d
-  docker-compose exec kibana curl -XPOST -D- 'http://localhost:5601/api/saved_objects/index-pattern' -H 'Content-Type: application/json' -u elastic:${ELASTIC_PASSWORD?} -d '{"attributes":{"title":"filebeat-*,journalbeat-*","timeFieldName":"@timestamp"}}'
+  ```
+
+5. Create an index pattern, telling Kibana which Elasticsearch indices to explore:
+
+  ```sh
+  docker-compose exec kibana curl -XPOST -D- 'http://localhost:5601/api/saved_objects/index-pattern' \
+    -H 'Content-Type: application/json' \
+    -u elastic:${ELASTIC_PASSWORD?} \
+    -d '{"attributes":{"title":"filebeat-*,journalbeat-*","timeFieldName":"@timestamp"}}'
   ```
 
 5. Send some logs to Elasticsearch (see below)
@@ -58,13 +74,15 @@ follows:
   expose [port 9300](https://discuss.elastic.co/t/what-are-ports-9200-and-9300-used-for/238578)
 - We’re not currently using the Elasticsearch keystore, so we’ve removed the bootstrap password
 - We’re using Filebeat and Journalbeat in their default configurations to send logs directly to Elasticsearch, so we
-  don’t need to run Logstash - which reduces operational complexity
+  don’t need to run Logstash - which reduces operational complexity. However, Logstash can easily be re-enabled or
+  replaced e.g. with [Fluentd](https://www.fluentd.org/).
 - We ensure that Elasticsearch and Kibana restart automatically if the Docker host is rebooted
 - We expose the Kibana web interface via SSL using
   a [separate Nginx proxy](https://github.com/reside-ic/logs/blob/main/docker-compose.override.yml) container, so we
   don’t need to expose port 5601 to the host
 - As we use [Vault](https://www.vaultproject.io/) for password management we pass the Kibana password as an environment
   variable rather than embedding it in the configuration file
+- Docker Compose automatically creates a bridged network for the relevant project, so we remove the redundant definition
 - We only use the non-commercial features of the stack
 
 Once you’ve got Elasticsearch up and running you can set up one or more [Beats](https://www.elastic.co/beats/) agents to
@@ -74,6 +92,9 @@ Docker `json-file` and `journald` logging drivers, so we use Filebeat and Journa
 documented [here](https://github.com/reside-ic/beats). Again, we use Vault for credential storage, but for a simple
 deployment you could store the secrets in a suitably secured Docker Compose `.env` file. These agents talk directly to
 Docker (via volumes and/or socket) so don’t need to be on the same Docker network as the relevant containers.
+
+For reference our complete setup is described in [reside-ic/logs](https://github.com/reside-ic/logs/), which includes
+`docker-elk` as a submodule.
 
 # Next steps
 
