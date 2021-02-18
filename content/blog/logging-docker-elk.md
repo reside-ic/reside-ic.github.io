@@ -48,7 +48,7 @@ The deployment steps are:
   docker-compose down
   ```
 
-4. Bring up Elasticsearch and Kibana:create an index pattern,
+4. Bring up Elasticsearch and Kibana:
 
   ```sh
   export KIBANA_PASSWORD=…
