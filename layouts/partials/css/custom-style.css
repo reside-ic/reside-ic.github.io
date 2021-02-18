@@ -35,3 +35,7 @@
 .text-muted {
     color: #7b888b;
 }
+
+div.main .content .markdown pre {
+    background-color: #f7f7f7 !important;
+}
