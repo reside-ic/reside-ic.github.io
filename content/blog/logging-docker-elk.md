@@ -1,6 +1,6 @@
 ---
 author: Mark Woodbridge
-date: 2021-02-17
+date: 2021-02-18
 title: Aggregating logs from services deployed with Docker
 tags:
 - Docker
