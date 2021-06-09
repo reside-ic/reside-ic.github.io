@@ -185,6 +185,6 @@ $3 = 60.2285919
 $4 = 60.2285576
 ```
 
-Eventually I worked out from this (and from pulling the values into a small standalone C++ program) that we were accumulating round-off error by incrementing `uu` by `du` each time.  I also added a fix to prevent us ever trying to move `ww` past the end of the iterator. The fix is [here](https://github.com/mrc-ide/dust/pull/238)
+Eventually I worked out from this (and from pulling the values into a small standalone C++ program) that we were accumulating round-off error by incrementing `uu` by `du` each time, which could be avoided if we computed `uu` as `uu0 + i * du`.  I also added a fix to prevent us ever trying to move `ww` past the end of the iterator. The fix is [here](https://github.com/mrc-ide/dust/pull/238)
 
 Usually with `valgrind` it's enough to see where the error occurs to find the memory issue. The approach here is useful when you need more information, and while awkward felt nice enough once I'd remembered how to do it. Hopefully next time I need to do this I'll remember this blog post exists.
