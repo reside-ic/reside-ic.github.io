@@ -8,7 +8,7 @@ tags:
  - debugging
 ---
 
-We've already written about debugging R packages with valgrind and gdb together [here](https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/). This post shows how to use them together so that you can use gdb to inspect the state of a program at the point where valgrind has noticed that there's an error.  The process is a bit weird, but does work!  This will likely only work on Linux (not windows or macOS).
+We've already written about debugging R packages with valgrind and gdb separately [here](https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/). This post shows how to use them together so that you can use gdb to inspect the state of a program at the point where valgrind has noticed that there's an error.  The process is a bit weird, but does work!  NB: This will likely only work on Linux (not windows or macOS).
 
 ## The problem
 
@@ -39,7 +39,7 @@ for (i in 1:20) {
 }
 ```
 
-This will crash deterministic ally on the 18th iteration through the loop.  Once we narrowed this down, we could see from valgrind where the error was coming from (running the script above with `R -d valgrind -f script.R`):
+This will crash deterministically on the 18th iteration through the loop.  Once we could reliable reproduce the error, we could see from valgrind where the error was coming from (running the script above with `R -d valgrind -f script.R`):
 
 ```
 ==70753==    at 0x14387DAB: void dust::filter::resample_weight<float>(std::vector<float, std::allocator<float> >::const_iterator, unsigned long, float, unsigned long, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >) (filter_tools.hpp:20)
