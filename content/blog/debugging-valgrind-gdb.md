@@ -14,7 +14,7 @@ We've already written about debugging R packages with valgrind and gdb separatel
 
 We noticed that as of 0.9.3 of `dust` we had a `std::bad_alloc` error when running models with the `float` type (rather than `double`). After a bit of narrowing it down we managed to reduce the problem to this bit of code:
 
-```
+```r
 sirs <- dust::dust_example("sirs")
 pars <- list(beta = 0.2, gamma = 0.1, alpha = 0.1, freq = 4)
 end <- 150 * 4
@@ -39,7 +39,7 @@ for (i in 1:20) {
 }
 ```
 
-This will crash deterministically on the 18th iteration through the loop.  Once we could reliable reproduce the error, we could see from valgrind where the error was coming from (running the script above with `R -d valgrind -f script.R`):
+This will crash deterministically on the 18th iteration through the loop.  Once we could reliably reproduce the error, we could see from valgrind where the error was coming from (running the script above with `R -d valgrind -f script.R`):
 
 ```
 ==70753==    at 0x14387DAB: void dust::filter::resample_weight<float>(std::vector<float, std::allocator<float> >::const_iterator, unsigned long, float, unsigned long, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >) (filter_tools.hpp:20)
@@ -53,7 +53,7 @@ This will crash deterministically on the 18th iteration through the loop.  Once 
 
 The top-left function there (`dust::filter::resample_weight`) looks like this:
 
-```
+```cpp
 template <typename real_t>
 void resample_weight(typename std::vector<real_t>::const_iterator w,
                      size_t n, real_t u, size_t offset,
@@ -79,7 +79,7 @@ and line 20 is the line with `ww += *w;` (see [the source](https://github.com/mr
 
 The problem was, it is not really obvious what is wrong at that point, or why it might be being triggered only when run with `float` version of that template.  We wanted to be able to inspect the values of variables at the point of the error.
 
-This is documented in [the valgrind docs](https://valgrind.org/docs/manual/manual-core-adv.html#manual-core-adv.gdbserver), and I'd done it a number of years ago.  First, start valgrind up with the argument `--vgdb-error=0` which starts some sort of server process that gdb can connect to, and sets it up to throw a signal on the first memory error
+This is documented in [the valgrind docs](https://valgrind.org/docs/manual/manual-core-adv.html#manual-core-adv.gdbserver), and I'd done it a number of years ago.  First, start valgrind up with the argument `--vgdb-error=0` which starts some sort of server process that gdb can connect to, and sets it up to throw a signal on the first memory error:
 
 ```
 R -d 'valgrind --vgdb-error=0' -f script.R
