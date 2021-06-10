@@ -194,4 +194,120 @@ Eventually I worked out from this (and from pulling the values into a small stan
 
 Usually with `valgrind` it's enough to see where the error occurs to find the memory issue. The approach here is useful when you need more information, and while awkward felt nice enough once I'd remembered how to do it. Hopefully next time I need to do this I'll remember this blog post exists.
 
+**Update**: [Jim Hester](https://www.jimhester.com/) (of RStudio fame) [points out on twitter](https://twitter.com/jimhester_/status/1402984558123884565) that he prefers using UBSAN/ASAN as they're faster than valgrind.  We've used ASAN in [previous debugging adventures]([here](https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/)) but I was curious to see how it went here. With the problem isolated into a small script it was fairly straightforward[^2]
+
+First, start up a docker container and mount, read-only, the source into that container:
+
+```
+docker run -v $PWD:/src:ro -it --rm \
+       --security-opt seccomp=unconfined \
+       wch1/r-debug
+```
+
+Then install the required packages:
+
+```
+RDsan -e 'install.packages(c("remotes", "decor")); remotes::install_deps("/src"); remotes::install_local("/src")'
+```
+
+(`decor` is listed separately here as it's only used in the on-demand compilation of models).  Running `RDsan` in place of `R -d valgrind` shows the memory error (in beautiful Technicolor):
+
+```
+RDsan -f /src/script.R
+```
+
+giving output
+
+```
+==765==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6140003061d0 at pc 0x7fffe7ccc580 bp 0x7fffffff59a0 sp 0x7fffffff5990
+READ of size 4 at 0x6140003061d0 thread T0
+    #0 0x7fffe7ccc57f in void dust::filter::resample_weight<float>(std::vector<float, std::allocator<float> >::const_iterator, unsigned long, float, unsigned long, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >) /usr/local/RDsan/lib/R/site-library/dust/include/dust/filter_tools.hpp:20
+    #1 0x7fffe7ca274c in dust::Dust<sirs>::resample(std::vector<float, std::allocator<float> > const&, std::vector<unsigned long, std::allocator<unsigned long> >&) /usr/local/RDsan/lib/R/site-library/dust/include/dust/dust.hpp:420
+    #2 0x7fffe7cadd54 in std::vector<sirs::real_t, std::allocator<sirs::real_t> > dust::filter::filter<sirs>(dust::Dust<sirs>*, dust::filter::filter_state_host<sirs::real_t>&, bool, std::vector<unsigned long, std::allocator<unsigned long> >) /usr/local/RDsan/lib/R/site-library/dust/include/dust/filter.hpp:63
+
+[...snip...]
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /usr/local/RDsan/lib/R/site-library/dust/include/dust/filter_tools.hpp:20 in void dust::filter::resample_weight<float>(std::vector<float, std::allocator<float> >::const_iterator, unsigned long, float, unsigned long, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+Shadow bytes around the buggy address:
+  0x0c2880058be0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c2880058bf0: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fa fa
+  0x0c2880058c00: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c2880058c10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c2880058c20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c2880058c30: 00 00 00 00 00 00 00 00 00 00[fa]fa fa fa fa fa
+  0x0c2880058c40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c2880058c50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c2880058c60: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c2880058c70: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c2880058c80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==765==ABORTING
+```
+
+This identifies exactly the same problematic bit of code as above, which is great.  It did look quite a bit faster than valgrind, but the original script ran through valgrind in a tolerable amount of time.
+
+To trigger gdb at this point required an additional tweak
+
+```
+ASAN_OPTIONS=abort_on_error=1 RDsan -d 'gdb -ex run' -f /src/script.R
+```
+
+which gives a backtrace (`gdb`'s `bt` command) of:
+
+```
+0x00007ffff606618b in raise () from /usr/lib/x86_64-linux-gnu/libc.so.6
+(gdb) bt
+#0  0x00007ffff606618b in raise () from /usr/lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007ffff6045859 in abort () from /usr/lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007ffff75c30b2 in ?? () from /usr/lib/x86_64-linux-gnu/libasan.so.6
+#3  0x00007ffff75ce76c in ?? () from /usr/lib/x86_64-linux-gnu/libasan.so.6
+#4  0x00007ffff75ae69c in ?? () from /usr/lib/x86_64-linux-gnu/libasan.so.6
+#5  0x00007ffff75adf5a in ?? () from /usr/lib/x86_64-linux-gnu/libasan.so.6
+#6  0x00007ffff75aec4b in __asan_report_load4 () from /usr/lib/x86_64-linux-gnu/libasan.so.6
+#7  0x00007fffe7ccc580 in dust::filter::resample_weight<float> (w=0, n=100, u=0.999940574, offset=0, idx=99)
+    at /usr/local/RDsan/lib/R/site-library/dust/include/dust/filter_tools.hpp:20
+#8  0x00007fffe7ca274d in dust::Dust<sirs>::resample (this=0x618000110480, weights=std::vector of length 100, capacity 100 = {...},
+    index=std::vector of length 100, capacity 100 = {...}) at /usr/local/RDsan/lib/R/site-library/dust/include/dust/dust.hpp:420
+#9  0x00007fffe7cadd55 in dust::filter::filter<sirs> (obj=0x618000110480, state=..., save_trajectories=false, step_snapshot=std::vector of length 0, capacity 0)
+    at /usr/local/RDsan/lib/R/site-library/dust/include/dust/filter.hpp:63
+#10 0x00007fffe7c8531e in dust::r::run_filter<sirs, dust::filter::filter_state_host<float> > (obj=0x618000110480, r_trajectories=..., r_snapshots=...,
+    step_snapshot=std::vector of length 0, capacity 0, save_trajectories=false) at /usr/local/RDsan/lib/R/site-library/dust/include/dust/interface.hpp:443
+#11 0x00007fffe7c61644 in dust::r::dust_filter<sirs, 0> (ptr=0x625006aeb9f8, save_trajectories=false, r_step_snapshot=..., device=false)
+    at /usr/local/RDsan/lib/R/site-library/dust/include/dust/interface.hpp:476
+[...snip...]
+```
+
+so we can do
+
+```
+(gdb) select 7
+(gdb) print u
+$1 = 0.999940574
+(gdb) print ww
+$2 = 60.2285576
+```
+
+and start to gather information in much the same way as before. Thanks Jim!
+
 [^1]: This stage is a bit mysterious but not very interesting - I noticed the problem on a larger set of code that was doing some benchmarking with models that used `float`s for the `real_t`.  With a crash that was reliable, I removed lines of code and calls to other packages until I had a small self-contained bit of code. This makes working with valgrind much easier.
+
+[^2]: Except for downloading the 5GB docker image, which took a long time over domestic broadband.
