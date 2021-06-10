@@ -8,11 +8,16 @@ tags:
  - debugging
 ---
 
-We've already written about debugging R packages with valgrind and gdb separately [here](https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/). This post shows how to use them together so that you can use gdb to inspect the state of a program at the point where valgrind has noticed that there's an error.  The process is a bit weird, but does work!  NB: This will likely only work on Linux (not windows or macOS).
+Many R packages use C or C++ code to power performance-critical sections of code. These langauges are easy to shoot yourself in the foot with, as seemingly innocuous code may cause crashes (or just junk output) by reading from memory that is uninitialised or out of range.  There are a couple of tools for helping diagnose this sort of issue:
+
+* "valgrind" is great for tracking down is sort of error as it highlights invalid memory accesses
+* "gdb" can be used to step through a program, or inspect the internal state after a crash
+
+We've already written about debugging R packages with valgrind and gdb separately [here](https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/). This post shows how to use them together so that you can use gdb to inspect the state of a program at the point where valgrind has noticed that there's an error.  The process is a bit weird, but does work!  NB: this will likely only work on Linux (not Windows or macOS).
 
 ## The problem
 
-We noticed that as of 0.9.3 of `dust` we had a `std::bad_alloc` error when running models with the `float` type (rather than `double`). After a bit of narrowing it down we managed to reduce the problem to this bit of code:
+We noticed that as of 0.9.3 of `dust` we had a `std::bad_alloc` error when running models with the `float` type (rather than `double`). After a bit of narrowing it down we managed to reduce the problem to this bit of code[^1]:
 
 ```r
 sirs <- dust::dust_example("sirs")
@@ -185,6 +190,8 @@ $3 = 60.2285919
 $4 = 60.2285576
 ```
 
-Eventually I worked out from this (and from pulling the values into a small standalone C++ program) that we were accumulating round-off error by incrementing `uu` by `du` each time, which could be avoided if we computed `uu` as `uu0 + i * du`.  I also added a fix to prevent us ever trying to move `ww` past the end of the iterator. The fix is [here](https://github.com/mrc-ide/dust/pull/238)
+Eventually I worked out from this (and from pulling the values into a small standalone C++ program) that we were accumulating round-off error by incrementing `uu` by `du` each time, which could be avoided if we computed `uu` as `uu0 + i * du`.  I also added a fix to prevent us ever trying to move `w` past the end of the iterator, or to return a value of `j` greater than `n` (one of which eventually caused the `bad_alloc`). The fix is [here](https://github.com/mrc-ide/dust/pull/238)
 
 Usually with `valgrind` it's enough to see where the error occurs to find the memory issue. The approach here is useful when you need more information, and while awkward felt nice enough once I'd remembered how to do it. Hopefully next time I need to do this I'll remember this blog post exists.
+
+[^1]: This stage is a bit mysterious but not very interesting - I noticed the problem on a larger set of code that was doing some benchmarking with models that used `float`s for the `real_t`.  With a crash that was reliable, I removed lines of code and calls to other packages until I had a small self-contained bit of code. This makes working with valgrind much easier.
