@@ -1,8 +1,7 @@
 ---
 author: "Rich FitzJohn"
 title: "Orderly 1.3.0 released to CRAN"
-date: 2021-06-21
-draft: true
+date: 2021-06-22
 tags:
  - orderly
  - reproducible research
