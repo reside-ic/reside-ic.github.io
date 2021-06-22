@@ -7,7 +7,7 @@ tags:
  - reproducible research
 ---
 
-After 18 months of heavy use within [VIMC](https://www.vaccineimpact.org/) and in the [COVID-19 modelling response](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/covid-19-response-team-2020-2021-report/), we have released orderly 1.3.0 to CRAN. This is a major update with many new features (more than 100 PRs since version 1.0.4 was published in early 2020).
+After 18 months of heavy use within [VIMC](https://www.vaccineimpact.org/) and in the [COVID-19 modelling response](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/covid-19-response-team-2020-2021-report/), we have released [orderly 1.3.0 to CRAN](https://cran.r-project.org/package=orderly). This is a major update with many new features (more than 100 PRs since version 1.0.4 was published in early 2020).
 
 Orderly is our [reproducible research framework](https://www.vaccineimpact.org/orderly/articles/orderly.html), designed to keep track of multiple versions of reports and allow researchers to automatically audit and roll back their data, or construct workflows around long running tasks.
 
