@@ -15,7 +15,7 @@ As part of our work on [naomi](../../projects/naomi) we've been asked to produce
 
 ## Code chunks
 
-The first method uses conditionally evaluated [code chunks](https://bookdown.org/yihui/rmarkdown/r-code.html). We can use R Markdown chunk options `include` and `eval` to hide ouput and stop a chunk from being evaluated. Combining with `results="asis"` this allows us to output text conditionally based on the `lang` parameter.
+The first method uses conditionally evaluated [code chunks](https://bookdown.org/yihui/rmarkdown/r-code.html). We can use R Markdown chunk options `include` and `eval` to hide output and stop a chunk from being evaluated. Combining with `results="asis"` this allows us to output text conditionally based on the `lang` parameter.
 
 ````r
 ---
