@@ -11,7 +11,7 @@ tags:
 
 ## Translating Rmd
 
-As part of our work on [naomi](../../projects/naomi) we've been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. R Markdown has no prescribed method for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets.
+As part of our work on [naomi](../../projects/naomi) we've been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. [R Markdown](https://rmarkdown.rstudio.com/docs/) has no prescribed method for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets.
 
 ## Code chunks
 
