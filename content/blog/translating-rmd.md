@@ -46,7 +46,7 @@ plot(runif(10), runif(10), main = "Points aléatoires")
 ```
 ````
 
-This has the advantage that the chunk will only be evaulated for the output language. This is particularly important if any of the plots we're generating take a long time to compute. The downside is the text needs be wrapped in calls to `cat` and the formatting of the text has to be done manually. For example we need to add the line break at the end of the text or the plot and text will appear on the same line. As everything is written as a code chunk this means RStudio syntax highlighting for the text is not available.
+This has the advantage that the chunk will only be evaluated for the output language. This is particularly important if any of the plots we're generating take a long time to compute. The downside is the text needs be wrapped in calls to `cat` and the formatting of the text has to be done manually. For example we need to add the line break at the end of the text or the plot and text will appear on the same line. As everything is written as a code chunk this means RStudio syntax highlighting for the text is not available.
 
 ## Custom blocks
 
