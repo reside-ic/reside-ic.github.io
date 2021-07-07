@@ -1,12 +1,12 @@
 ---
 author: "Rob Ashton"
 date: 2021-06-30
-title: Translating R Markdown
+title: R Markdown Internationalisation
 best: false
 tags:
  - R
  - rmarkdown
- - translation
+ - i18n
 ---
 
 As part of our work on [naomi](../../projects/naomi) we've been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. [R Markdown](https://rmarkdown.rstudio.com/docs/) has no built in support for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets each of which has advantages and trade offs around scalability, ease of maintenance and complexity.
@@ -104,7 +104,7 @@ To translate the title adding a YAML header within each custom block will not wo
 
 ## Tabset
 
-[R Markdown tabsets](https://bookdown.org/yihui/rmarkdown-cookbook/html-tabs.html#html-tabs) can be used to make multiple translations available in one document and enable users to switch between languages.
+[R Markdown tabsets](https://bookdown.org/yihui/rmarkdown-cookbook/html-tabs.html#html-tabs) can be used to make multiple languages available in one document and enable users to switch between languages.
 
 ````r
 ---
@@ -136,7 +136,7 @@ plot(runif(10), runif(10), main = "Points aléatoires")
 
 <img src="/img/translating-rmd.gif" alt="Translating R Markdown with tabset" />
 
-Like using custom blocks, a tabset lets us write R Markdown as we would for a single language. We can still take advantage of syntax highlighting in RStudio and R Markdown managing the formatting of text. Using `.tabset .tabset-dropdown` allows users to switch between translations in the output document via a dropdown menu. This has the same disadvantage as custom blocks, it runs all code and so will be slower than using code chunks.
+Like using custom blocks, a tabset lets us write R Markdown as we would for a single language. We can still take advantage of syntax highlighting in RStudio and R Markdown managing the formatting of text. Using `.tabset .tabset-dropdown` allows users to switch between languages in the output document via a dropdown menu. This has the same disadvantage as custom blocks, it runs all code and so will be slower than using code chunks.
 
 The main title of the document won't be translated here, but we can include a heading for each tab which will be translated. To achieve this we need to use HTML heading tags e.g. `<h1>` as if we try to use standard R Markdown `#` this will break the tabbing.
 
