@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cinterpolate on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/cinterpolate/</link>
+    <description>Recent content in cinterpolate on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/cinterpolate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cinterpolate 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</guid>
+      <description>Last week we released the first official version of cinterpolate to available on CRAN. This package provides a minimal set of interpolation methods (piecewise constant, linear and spline) designed to be compatible with R&amp;rsquo;s builtin approx and spline functions, but but callable from C. It will primarily be of interest to people writing R packages that include C or C++.
+When writing an R package with C or C++ extensions, you have to forgo many of the the functions that make operating in a high-level easy.</description>
+    </item>
+    
+  </channel>
+</rss>

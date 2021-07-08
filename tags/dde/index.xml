@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dde on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/dde/</link>
+    <description>Recent content in dde on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/dde/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging and Fixing CRAN&#39;s &#39;Additional Checks&#39; errors</title>
+      <link>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</guid>
+      <description>R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work. In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash. Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.</description>
+    </item>
+    
+    <item>
+      <title>dde 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/dde-1.0.0/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/dde-1.0.0/</guid>
+      <description>Last week we released the first public version of dde. This package implements a method for solving delay differential equations, which we use with odin to model disease dynamics.
+With ordinary differential equations, you express the system of equations as dy/dt = f(y(t), t); the rate of change of the system depends on the current state of the system and the current time, but with delay differential equations dy/dt also depends on y(t - τ), where τ is a length of time back into the past.</description>
+    </item>
+    
+  </channel>
+</rss>

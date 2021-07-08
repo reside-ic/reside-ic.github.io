@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>compilers on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/compilers/</link>
+    <description>Recent content in compilers on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging at the edge of reason</title>
+      <link>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</guid>
+      <description>What do you do if this code&amp;hellip;
+printf(&amp;quot;Before loop\n&amp;quot;); while ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) { printf(&amp;quot;Inside loop\n&amp;quot;); // Other loop code } if (a&amp;gt;0) printf(&amp;quot;a&amp;gt;0\n&amp;quot;); if (b&amp;gt;0) printf(&amp;quot;b&amp;gt;0\n&amp;quot;); if ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) printf(&amp;quot;Both a&amp;gt;0 and b&amp;gt;0!&amp;quot;); &amp;hellip;produces this output?
+Before loop a&amp;gt;0 b&amp;gt;0 Both a&amp;gt;0 and b&amp;gt;0! If a and b are both above zero, then why didn&amp;rsquo;t the while-loop do any iteration; why didn&amp;rsquo;t we see Inside loop in the output?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/devops/</link>
+    <description>Recent content in DevOps on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RSlondonSE 2020</title>
+      <link>https://reside-ic.github.io/blog/rslondonse-2020/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/rslondonse-2020/</guid>
+      <description>Last Thursday, almost all of RESIDE went to RSLondonSE, a small and friendly one-day meeting of RSEs.
+We presented two posters - in the first we outline the basic idea behind three common JavaScript frameworks (Angular, React and Vue.js) and reasons for choosing one over another. We will rework this poster as a more detailed blog post or article and also as a standalone seminar later this year.
+In the other poster, we present the ideas behind our Naomi project, where we developed a pattern for exposing research software &amp;ldquo;as a service&amp;rdquo; using HTTP APIs and a modern web front end (written in Vue.</description>
+    </item>
+    
+    <item>
+      <title>Integrating YouTrack and GitHub workflows</title>
+      <link>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</guid>
+      <description>Like most technical teams we use an issue tracker to manage our work. Our tool of choice for this is YouTrack. We also make extensive use of GitHub and to synchronise our workflow across the two platforms we name our git branches with YouTrack ticket ids, so every pull request corresponds to a ticket. This naming convention makes it easier to track work in progress across the two platforms, plus the custom tool we use to deploy our software can use git to look at which branches have been merged in and auto-update the corresponding YouTrack tickets.</description>
+    </item>
+    
+    <item>
+      <title>Metrics at Imperial*</title>
+      <link>https://reside-ic.github.io/blog/metrics-at-imperial/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/metrics-at-imperial/</guid>
+      <description>What metrics should a software team be recording to measure their performance? Should these metrics have a different focus for RSE teams in general, and ourselves in particular?
+In previous jobs in a more commercial setting, I had become accustomed to thinking about &amp;lsquo;metrics&amp;rsquo; in two broad categories - firstly those defining the performance and health of online systems (number of requests served, click through rate, uptime etc), and secondly those measuring the productivity of the team in making additions and improvements to those systems (story point burndown, number of open bugs, feature leadtime).</description>
+    </item>
+    
+  </channel>
+</rss>

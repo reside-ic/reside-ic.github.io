@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgres on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/postgres/</link>
+    <description>Recent content in Postgres on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Querying for foreign key constraints</title>
+      <link>https://reside-ic.github.io/blog/querying-for-foreign-key-constraints/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/querying-for-foreign-key-constraints/</guid>
+      <description>Over the past few months we&amp;rsquo;ve been developing a tool to assist with database import from R. As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier.
+We want to be able to take a list of data frames in R and append those to the relevant tables in the database automatically.</description>
+    </item>
+    
+  </channel>
+</rss>

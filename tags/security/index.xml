@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/security/</link>
+    <description>Recent content in security on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 16 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vaultr 1.0.2</title>
+      <link>https://reside-ic.github.io/blog/vaultr-1.0.2/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/vaultr-1.0.2/</guid>
+      <description>We are pleased to announce the first public release of vaultr, our R client for HashiCorp&amp;rsquo;s &amp;ldquo;vault&amp;rdquo;, a system for storing secrets and sensitive data and enabling these secrets to be used in applications.
+Vault (the server) is a little like a password manager (e.g., LastPass or Bitwarden) but designed for use within applications, rather than for storing personal passwords. With vault, you can have a central source of secrets and sensitive data (ssh keys, database passwords, ssl certificates) that can be used when deploying or using applications.</description>
+    </item>
+    
+  </channel>
+</rss>

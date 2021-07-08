@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Reside-IC</title>
+    <link>https://reside-ic.github.io/articles/</link>
+    <description>Recent content in Articles on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 05 Mar 2019 14:53:37 -0700</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pull Request review process</title>
+      <link>https://reside-ic.github.io/articles/pull-requests/</link>
+      <pubDate>Tue, 05 Mar 2019 14:53:37 -0700</pubDate>
+      
+      <guid>https://reside-ic.github.io/articles/pull-requests/</guid>
+      <description>Our pull request review process is an ongoing work-in-progress. This document outlines the timeline, expectations, general points and ongoing issues. Some of it is particular to how we work (using YouTrack and TeamCity in addition to GitHub) but it may be of use to others.
+Expectations What the different parties expect to get out of the PR review process
+Author All authors appreciate feedback on:
+ What have I done wrong, or what could I do better?</description>
+    </item>
+    
+  </channel>
+</rss>

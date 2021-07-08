@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vuex on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/vuex/</link>
+    <description>Recent content in Vuex on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A custom directive for translations in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/a-custom-directive-for-translations-in-vue.js/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/a-custom-directive-for-translations-in-vue.js/</guid>
+      <description>We&amp;rsquo;ve spent the last few months developing Naomi - a web app for interfacing with an HIV model developed by researchers at GIDA in association with UNAIDS. To support the West African countries who are the users of Naomi we are providing two language modes - French and English.
+The front-end of the app is written in Vue.js and makes use of Vuex, a flux library for Vue. There are two ways we could have implemented translations in Vue - with components or directives.</description>
+    </item>
+    
+  </channel>
+</rss>

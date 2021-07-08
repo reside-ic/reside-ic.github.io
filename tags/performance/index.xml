@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>performance on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/performance/</link>
+    <description>Recent content in performance on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Handling long arrays performantly in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</guid>
+      <description>TL;DR Use Object.freeze on large objects that don&amp;rsquo;t have to be reactive. If you want to know a bit more about why this works and how big a performance gain it is, read on.
+Context Reactive JavaScript frameworks like Vue.js are amazing for developing Single Page Apps like the one in our project Naomi. Everything is connected as if by magic - when data changes, the UI updates. But that magic has overheads associated with it that need to be understood to optimise for performance where large-ish datasets are being handled.</description>
+    </item>
+    
+  </channel>
+</rss>

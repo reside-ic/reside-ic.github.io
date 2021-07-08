@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/excel/</link>
+    <description>Recent content in Excel on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 19 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Experiments in transforming Excel into R</title>
+      <link>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</guid>
+      <description>Last week was the Health Economics in R Hackathon, bringing together health economists, epidemiologists and research software engineers.
+We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a decision tree model in Excel, the analyst might want to carry out a sensitivity analysis, varying the models&amp;rsquo; parameters to see how the model outcomes vary.</description>
+    </item>
+    
+  </channel>
+</rss>

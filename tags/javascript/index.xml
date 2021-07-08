@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 27 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Front-end Javascript Frameworks - A Beginner&#39;s Guide</title>
+      <link>https://reside-ic.github.io/blog/front-end-javascript-frameworks-a-beginners-guide/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/front-end-javascript-frameworks-a-beginners-guide/</guid>
+      <description>We&amp;rsquo;ve put together a little resource for RSEs (or anyone else!) who are writing browser based apps and want to be using the latest Javascript web technologies, but aren&amp;rsquo;t sure where to start.
+The full posterwas presented at RSLondonSouthEast on 6th February.
+Why use a framework? This StackOverflow blog is an excellent overview of the advantages and disadvantages of using a framework: Is it time for a front end framework?</description>
+    </item>
+    
+    <item>
+      <title>RSlondonSE 2020</title>
+      <link>https://reside-ic.github.io/blog/rslondonse-2020/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/rslondonse-2020/</guid>
+      <description>Last Thursday, almost all of RESIDE went to RSLondonSE, a small and friendly one-day meeting of RSEs.
+We presented two posters - in the first we outline the basic idea behind three common JavaScript frameworks (Angular, React and Vue.js) and reasons for choosing one over another. We will rework this poster as a more detailed blog post or article and also as a standalone seminar later this year.
+In the other poster, we present the ideas behind our Naomi project, where we developed a pattern for exposing research software &amp;ldquo;as a service&amp;rdquo; using HTTP APIs and a modern web front end (written in Vue.</description>
+    </item>
+    
+    <item>
+      <title>Handling long arrays performantly in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</guid>
+      <description>TL;DR Use Object.freeze on large objects that don&amp;rsquo;t have to be reactive. If you want to know a bit more about why this works and how big a performance gain it is, read on.
+Context Reactive JavaScript frameworks like Vue.js are amazing for developing Single Page Apps like the one in our project Naomi. Everything is connected as if by magic - when data changes, the UI updates. But that magic has overheads associated with it that need to be understood to optimise for performance where large-ish datasets are being handled.</description>
+    </item>
+    
+    <item>
+      <title>A custom directive for translations in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/a-custom-directive-for-translations-in-vue.js/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/a-custom-directive-for-translations-in-vue.js/</guid>
+      <description>We&amp;rsquo;ve spent the last few months developing Naomi - a web app for interfacing with an HIV model developed by researchers at GIDA in association with UNAIDS. To support the West African countries who are the users of Naomi we are providing two language modes - French and English.
+The front-end of the app is written in Vue.js and makes use of Vuex, a flux library for Vue. There are two ways we could have implemented translations in Vue - with components or directives.</description>
+    </item>
+    
+    <item>
+      <title>jQuery TreeTables 1.1.1</title>
+      <link>https://reside-ic.github.io/blog/jquery-treetables-1.1.1/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/jquery-treetables-1.1.1/</guid>
+      <description>We just released a new npm package TreeTables for displaying tree data when using jQuery DataTables.
+DataTables is a powerful and extremely well established plugin for displaying tabular data, but has no native support for tree (nested) data. Examples of tree data include family trees, phylogenetic trees, and organisational hierarchies.
+The TreeTables plugin adds that support with an interface that is almost identical to that of DataTables.
+Features include:
+ toggling individual rows open and closed expanding or collapsing all rows arbitrarily deeply nested data  Basic usage:</description>
+    </item>
+    
+  </channel>
+</rss>

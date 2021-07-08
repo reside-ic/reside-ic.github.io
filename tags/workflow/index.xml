@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>workflow on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/workflow/</link>
+    <description>Recent content in workflow on Reside-IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reside-ic.github.io/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My most used keyboard shortcuts</title>
+      <link>https://reside-ic.github.io/blog/my-most-used-keyboard-shortcuts/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://reside-ic.github.io/blog/my-most-used-keyboard-shortcuts/</guid>
+      <description>Anyone who uses a computer for a significant amount of time each day should spend some time learning keyboard shortcuts - they can save you so much time!
+When I started working as a developer, I learnt keyboard shortcuts through pair programming, asking more experienced programmers what their favourite shortcuts were, and just reading documentation for the IDE (Intelligent Development Editor) I was using (VisualStudio with Resharper at the time, now IntelliJ.</description>
+    </item>
+    
+  </channel>
+</rss>
