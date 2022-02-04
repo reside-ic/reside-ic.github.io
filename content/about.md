@@ -27,6 +27,9 @@ he paints, makes music, is a keen runner and occasional philosophy reader.
 {{< person name="Lekan Anifowoshe"img="lekan.jpg" url="https://github.com/carbowizzy">}}
 Lekan has several years of experience in software engineering. He holds a BSc from Cyprus and Master degree from Sussex. Before joining the team, he worked with continuous update project(CUP) research group at Imperial. If not coding, he enjoys watching and playing lawn tennis.
 {{< /person >}}
+{{< person name="Marie Gronemeyer"img="marie.jpg" url="https://github.com/muppi1993">}}
+Marie studied Medicine and Health Data Analytics & Machine Learning before starting her adventure in software development. She is working on implementing genomic epidemiology tools into a web interface. In her free time, she enjoys cooking, yoga, and various crafts such as pottery and knitting.
+{{< /person >}}
 {{< person name="Nicolas Dolan" img="nick.jpg" url="https://github.com/Nicolas-Dolan">}}
 Nicolas previously worked in medical communications as a medical writer and prior to that edited for The Lancet medical journal. Wanting to take on a new challenge, he retrained at a software engineering immersive run by General Assembly. His hobbies include learning foreign languages and obsessing over artificial intelligence.
 {{< /person >}}
