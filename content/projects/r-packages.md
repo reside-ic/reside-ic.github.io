@@ -3,7 +3,7 @@ date = "2022-03-03"
 title = "R packages"
 +++
 
-The most commonly used language in the department is R, and so we have written many R packages to support research.
+The most commonly used language in the department is R, and so we have written many R packages to support research.  These
 
 ## `cinterpolate` - interpolation from C, for R
 
@@ -22,6 +22,13 @@ A high-level approach to make using encryption from R more accessible; the `cyph
 * Blog posts: [1.1.0](/blog/cyphr-1.1.0/)
 
 (This is also an [rOpenSci](https://ropensci.org/) package.)
+
+## `dust` - fast parallel stochastic simulation
+
+A low-level package which provides tools to help write stochastic models that can be evaluated in parallel.  It contains an implemenation of the [xoshiro](https://prng.di.unimi.it/) random number generators, exists to support large stochastic compartmental models written in [odin](https://mrc-ide.github.io/odin/) using [odin.dust](https://mrc-ide.github.io/odin.dust/).  Models can be run in parallel on a CPU using OpenMP, but also on NVIDIA GPUs using CUDA (see benchmarks for the [particle filter](https://github.com/mrc-ide/dust-bench) and [random number generators](https://github.com/mrc-ide/dust-random-bench))
+
+* [Package webpage](https://mrc-ide.github.io/dust/)
+* [Paper describing the approach](https://wellcomeopenresearch.org/articles/5-288/v2)
 
 ## `dde` - an R package for solving delay differential equations
 
@@ -60,6 +67,13 @@ Lightweight fake tables that automatically conform to a database schema, used to
 
 (This is also an [rOpenSci](https://ropensci.org/) package.)
 
+## `mcstate` - Monte Carlo methods for state space models
+
+Implements some sequential Monte Carlo methods used with state state models, including a bootstrap particle filter, particle MCMC (pmcmc), [SMC^2](https://arxiv.org/abs/1101.1528) and [IF2](https://doi.org/10.1073/pnas.1410597112)
+
+* [Package webpage](https://mrc-ide.github.io/mcstate/)
+* [Paper describing the approach](https://wellcomeopenresearch.org/articles/5-288/v2)
+
 ## `odin` - high level differential equations
 
 A "domain specific language", hosted in R, for representing and compiling ordinary differential equations.  `odin` provides a language that has the same syntax as R but compiles to C (or to R or JavaScript) in order to represent equations at a high level but allow high-performance solutions.  Currently `odin` is being used within the department for research on malaria, measles, HIV and flu.
@@ -84,17 +98,23 @@ An opinionated way of structuring [plumber](https://www.rplumber.io/) APIs (simp
 
 * [Package webpage](https://reside-ic.github.io/porcelain/)
 
-## `traduire` - internationalisation for R packages
+## `rrq` - distributed task queues with Redis
 
-The traduire R package provides a wrapper around the [i18next](https://www.i18next.com/) JavaScript library. It presents an alternative interface to R’s built-in internationalisation functions, with a focus on the ability to change the target language within a session.  We use this to support dynamic translation of [`hintr`](https://github.com/mrc-ide/hintr/) which is a [`porcelain`](https://reside-ic.github.io/porcelain/) API to [naomi](https://naomi.unaids.org/) - see [the naomi project page](naomi.md) for more information.
+Uses [redis](https://redis.io/) to build a task queue, supporting both lightweight tasks and isolated tasks in separate processes.  It can scale to potentially hundreds of workers, and these can be added to or removed from the pool at any time.  Queue operations can be blocking or nonblocking, and run with minimal overhead (on the order of 1/1000s per task).  We use this on our HPC jobs as a less-invasive alternative to MPI, and in projects like [naomi](naomi).
 
-* [Package webpage](https://reside-ic.github.io/traduire/)
+* [Package webpage](https://mrc-ide.github.io/rrq/)
 
 ## `spud` - sharepoint upload and download
 
 Simple interface to Sharepoint allowing uploading and downloading of files.  Much less fully featured than [Microsoft365R](https://cran.r-project.org/package=Microsoft365R) but does not require that the site administrators have enabled exotic API endpoints.
 
 * [Package webpage](https://reside-ic.github.io/spud/)
+
+## `traduire` - internationalisation for R packages
+
+The traduire R package provides a wrapper around the [i18next](https://www.i18next.com/) JavaScript library. It presents an alternative interface to R’s built-in internationalisation functions, with a focus on the ability to change the target language within a session.  We use this to support dynamic translation of [`hintr`](https://github.com/mrc-ide/hintr/) which is a [`porcelain`](https://reside-ic.github.io/porcelain/) API to [naomi](https://naomi.unaids.org/) - see [the naomi project page](naomi) for more information.
+
+* [Package webpage](https://reside-ic.github.io/traduire/)
 
 ## `vaultr` - an R client for Vault
 
@@ -103,24 +123,3 @@ The R package [`vaultr`](https://vimc.github.io/vaultr) is a client for [HashiCo
 * [Package webpage](https://vimc.github.io/vaultr)
 * [CRAN page](https://cran.r-project.org/package=vaultr)
 * Blog posts: [announcement](/blog/vaultr-1.0.2/)
-
-
----
-
-dust
-mcstate
-rrq
-odin.dust
-odin.js (archive now)
-conan
-kelp
-ring
-indivdual
-didehpc & friends
-eigen1
-syncr
-
-specio
-beers
-
-viralload (from dust)

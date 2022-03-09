@@ -1,5 +1,5 @@
 +++
-date = "2019-05-16"
+date = "2021-03-09"
 title = "Projects"
 +++
 
@@ -16,19 +16,13 @@ The [Vaccine Impact Modelling Consortium](https://www.vaccineimpact.org/) coordi
 * interactive data visualisation
 * a web-based system for disseminating results
 
-### Shiny90
+### UNAIDS
 
-[https://shiny90.unaids.org](https://shiny90.unaids.org/)
+With [the HIV inference group](https://hiv-inference.org/) and [UNAIDS](https://unaids.org), we have developed a modern web interface for a model estimating various HIV epidemic indicators, see the [project page](naomi) for more information.
 
-An R Shiny web interface for a model that estimates the proportion of people living 
-with HIV who are aware of their status given national or regional data. For use by countries to estimate
-how close they are to the [UNAIDS 90-90-90 target](https://www.unaids.org/en/resources/909090)
+We have also developed a simpler shiny web interface, [shiny90](https://shiny90.unaids.org/), for a model that estimates the proportion of people living with HIV who are aware of their status given national or regional data. For use by countries to estimate how close they are to the [UNAIDS 90-90-90 target](https://www.unaids.org/en/resources/909090)
 
 * [Paper describing the model](https://www.biorxiv.org/content/10.1101/532010v1)
-
-### Naomi
-
-A web interface for a model estimating various HIV epidemic indicators, see the [project page](naomi) for more information.
 
 ### Custom data collection app
 
@@ -56,19 +50,7 @@ We have a collection of tools for use in science festivals, public engagement ev
 
 ## Standalone software packages
 
-A large (and continually growing) collection of [R packages](r-packages), on their own page
+* A large and continually growing collection of [R packages](r-packages), on their own page.
 
-
-
---
-
-beebop
-wodin
-comet
-
-mint
-shiny short course
-twinkle?
-
-dopri-js
-constellation
+* [constellation](https://github.com/reside-ic/constellation) - simple deployment configuration for a constallation of docker containers (written in Python)
+* [dopri.js](https://github.com/mrc-ide/dopri-js) - simple ODE solver in JavaScript
