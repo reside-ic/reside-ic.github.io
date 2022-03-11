@@ -20,20 +20,6 @@ A small utility R package for interpolation (piecewise constant, linear and spli
 * [CRAN page](https://cran.r-project.org/package=cinterpolate)
 * Blog posts: [announcement](/blog/cinterpolate-1.0.0/)
 
-## `conan` - the librarian
-
-`Conan` creates standalone libraries of R packages, which we use with the [didehpc](http://mrc-ide.github.io/didehpc/) package
-on our departmental HPC clusters. Conan ensures the packages required to run user code on the cluster nodes are available.
-
-* [Package webpage](https://mrc-ide.github.io/conan/)
-
-## `context` - contexts for evaluating R expressions
-
-Links a set of packages, source files and local environment together into a "context", which can then be evaluated as a unit.
-We use this to allow expressions to be executed on HPC cluster nodes.
-
-* [Package webpage](https://mrc-ide.github.io/context/)
-
 ## `cyphr` - easy to use encryption for R
 
 A high-level approach to make using encryption from R more accessible; the `cyphr` package wraps the [`openssl`](https://cran.r-project.org/package=openssl) and [`sodium`](https://cran.r-project.org/package=sodium) packages to provide a common interface, along with abstractions to make encryption easier for data analysts.
@@ -55,12 +41,6 @@ The `dde` package implements a simple solver for delay differential equations (D
 ## `dettl` - ETL (Extract-Transform-Load) support
 
 We wrote this package to support our work with the [Vaccine Impact Modelling Consortium](https://www.vaccineimpact.org/), to allow reviewable and testable data uploads into our databases.
-
-* [Package webpage](https://www.vaccineimpact.org/dettl/)
-
-## `didehpc` - DIDE Cluster Support
-
-Interfaces directly with our departmental HPC clusters from R, giving an interactive-type experience to wrap our batch-type clusters, from within an R session. See also the [conan](https://mrc-ide.github.io/conan), [context](https://mrc-ide.github.io/context) and [queuer](https://mrc-ide.github.io/queuer) packages.
 
 * [Package webpage](https://www.vaccineimpact.org/dettl/)
 

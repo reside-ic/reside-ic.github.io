@@ -48,6 +48,21 @@ We have a collection of tools for use in science festivals, public engagement ev
 * Zombie Spatial Simulator [original](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Zombie_Sim_I) and [simplified](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Zombie_Sim_II) - visualisation of an individual-based spatial epidemic.
 * [Herd Immunity](https://mrcdata.dide.ic.ac.uk/wiki/index.php/Herd_Immunity) - explore vaccination efects in an epidemic simulated by bouncing balls off each other.
 
+## Support for DIDE HPC Clusters
+
+The department has its own high-performance computing clusters running Microsoft
+HPC. Jobs can be launched and managed through Microsoft's own GUIs and command-line 
+tools, but in a department where R is the most widely used language, the 
+[didehpc](https://mrc-ide.github.io/didehpc/) package provides an interactive
+experience from within an R session. 
+
+It uses the [context](https://mrc-ide.github.io/context)
+package to link packages, source code and local environment for running the jobs, and
+the [queuer](https://mrc-ide.github.io/queuer) package for launching and running jobs.
+
+Package management for the repositry the cluster uses is handled by 
+[conan](https://mrc-ide.github.io/conan) the librarian.
+
 ## Standalone software packages
 
 * A large and continually growing collection of [R packages](r-packages), on their own page.
