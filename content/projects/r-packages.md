@@ -3,7 +3,14 @@ date = "2022-03-03"
 title = "R packages"
 +++
 
-The most commonly used language in the department is R, and so we have written many R packages to support research.  These
+The most commonly used language in the department is R, and so we have written many R packages to support research.  These:
+
+## `beers` - interpolation and subdivision for demography
+
+A small package that implements the Beers ordinary and modified methods, notably used by [UNWPP](https://population.un.org/wpp/) 
+to subdivide 5-year age groups into single years of age, and interpolate 5-year time points down to single years of time.
+
+* [Package webpage](https://https://github.com/mrc-ide/beers)
 
 ## `cinterpolate` - interpolation from C, for R
 
@@ -12,6 +19,20 @@ A small utility R package for interpolation (piecewise constant, linear and spli
 * [Package webpage](https://mrc-ide.github.io/cinterpolate)
 * [CRAN page](https://cran.r-project.org/package=cinterpolate)
 * Blog posts: [announcement](/blog/cinterpolate-1.0.0/)
+
+## `conan` - the librarian
+
+`Conan` creates standalone libraries of R packages, which we use with the [didehpc](http://mrc-ide.github.io/didehpc/) package
+on our departmental HPC clusters. Conan ensures the packages required to run user code on the cluster nodes are available.
+
+* [Package webpage](https://mrc-ide.github.io/conan/)
+
+## `context` - contexts for evaluating R expressions
+
+Links a set of packages, source files and local environment together into a "context", which can then be evaluated as a unit.
+We use this to allow expressions to be executed on HPC cluster nodes.
+
+* [Package webpage](https://mrc-ide.github.io/context/)
 
 ## `cyphr` - easy to use encryption for R
 
@@ -22,13 +43,6 @@ A high-level approach to make using encryption from R more accessible; the `cyph
 * Blog posts: [1.1.0](/blog/cyphr-1.1.0/)
 
 (This is also an [rOpenSci](https://ropensci.org/) package.)
-
-## `dust` - fast parallel stochastic simulation
-
-A low-level package which provides tools to help write stochastic models that can be evaluated in parallel.  It contains an implemenation of the [xoshiro](https://prng.di.unimi.it/) random number generators, exists to support large stochastic compartmental models written in [odin](https://mrc-ide.github.io/odin/) using [odin.dust](https://mrc-ide.github.io/odin.dust/).  Models can be run in parallel on a CPU using OpenMP, but also on NVIDIA GPUs using CUDA (see benchmarks for the [particle filter](https://github.com/mrc-ide/dust-bench) and [random number generators](https://github.com/mrc-ide/dust-random-bench))
-
-* [Package webpage](https://mrc-ide.github.io/dust/)
-* [Paper describing the approach](https://wellcomeopenresearch.org/articles/5-288/v2)
 
 ## `dde` - an R package for solving delay differential equations
 
@@ -44,18 +58,31 @@ We wrote this package to support our work with the [Vaccine Impact Modelling Con
 
 * [Package webpage](https://www.vaccineimpact.org/dettl/)
 
-## `ids` - simple random identifiers
+## `didehpc` - DIDE Cluster Support
 
-Random idenfiers in a number of different forms, including random hex strings (e.g., `8fa9afdd5bc04b3732fd07ddde865f48`) to human-readable/semi-memorable phrases (`bombastic_anteater` or `3_bashful_rabbits_spying_obnoxiously`). We use this package anywhere we need random keys.
+Interfaces directly with our departmental HPC clusters from R, giving an interactive-type experience to wrap our batch-type clusters, from within an R session. See also the [conan](https://mrc-ide.github.io/conan), [context](https://mrc-ide.github.io/context) and [queuer](https://mrc-ide.github.io/queuer) packages.
 
-* [Package webpage](https://reside-ic.github.io/ids/)
-* [CRAN page](https://cran.r-project.org/package=ids)
+* [Package webpage](https://www.vaccineimpact.org/dettl/)
+
+## `dust` - fast parallel stochastic simulation
+
+A low-level package which provides tools to help write stochastic models that can be evaluated in parallel.  It contains an implemenation of the [xoshiro](https://prng.di.unimi.it/) random number generators, exists to support large stochastic compartmental models written in [odin](https://mrc-ide.github.io/odin/) using [odin.dust](https://mrc-ide.github.io/odin.dust/).  Models can be run in parallel on a CPU using OpenMP, but also on NVIDIA GPUs using CUDA (see benchmarks for the [particle filter](https://github.com/mrc-ide/dust-bench) and [random number generators](https://github.com/mrc-ide/dust-random-bench))
+
+* [Package webpage](https://mrc-ide.github.io/dust/)
+* [Paper describing the approach](https://wellcomeopenresearch.org/articles/5-288/v2)
 
 ## `fakerbase` - fake database tables for unit testing
 
 Lightweight fake tables that automatically conform to a database schema, used to replace databases in tests.  Currently used in [vimpact](https://github.com/vimc/vimpact/) to replace a complex Postgres database.
 
 * [Package website](https://reside-ic.github.io/fakerbase/)
+
+## `ids` - simple random identifiers
+
+Random idenfiers in a number of different forms, including random hex strings (e.g., `8fa9afdd5bc04b3732fd07ddde865f48`) to human-readable/semi-memorable phrases (`bombastic_anteater` or `3_bashful_rabbits_spying_obnoxiously`). We use this package anywhere we need random keys.
+
+* [Package webpage](https://reside-ic.github.io/ids/)
+* [CRAN page](https://cran.r-project.org/package=ids)
 
 ## `jsonvalidate` - JSON schema validation for R
 
