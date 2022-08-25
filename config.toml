@@ -10,6 +10,7 @@ title = "Reside-IC"
 pluralizelisttitles = false
 DisqusShortname = "reside-ic"
 googleAnalytics = "UA-140418140-1"
+disableKinds = ["taxonomyTerm"]
 
 [permalinks]
 blog = "blog/:slug/"
@@ -20,7 +21,7 @@ share_on_googleplus = false
 dateform = "Jan 2, 2006"
 dateformfull = "Mon Jan 2 2006 15:04:05 MST"
 description = "Research software for infectious disease epidemiology at Imperial College"
-copyright = "Copyright © 2019 Reside-IC"
+copyright = "Copyright © {year} Reside-IC"
 logofile = "img/logo.png"
 faviconfile = "img/logo.png"
 highlightjs = true
