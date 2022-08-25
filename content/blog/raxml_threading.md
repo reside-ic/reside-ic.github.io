@@ -10,7 +10,7 @@ tags:
 
 # Introduction
 
-High-density compute nodes are all the rage at the moment. Our IT manager 
+High-density compute is all the rage at the moment. Our IT manager 
 doesn't get out of bed for less than 32-cores in a compute node. Our current
 favourite build is a pair of 
 [Xeon Gold 6226R](https://ark.intel.com/content/www/us/en/ark/products/199347/intel-xeon-gold-6226r-processor-22m-cache-2-90-ghz.html)
@@ -35,13 +35,13 @@ Because why wouldn't you?
 # Why wouldn't you, indeed.
 
 A decade or so ago, our clusters consisted mainly of 8-core machines, which
-at the time felt like a triumphant performance breakthrough. The performance
-graphs we were used to seeing were often something like this:
+at the time felt like a tremendous breakthrough. The performance
+graphs we were used to seeing often looked something like this:
 
 {{< figure src="/img/raxml_08.png" alt="RAxML with up to 8 cores" >}}
 
-These are sample runs I made using our new nodes this week with a
-bioinformatics tool called [RaXML](https://github.com/stamatak/standard-RAxML).
+These are sample runs I made using our newest nodes this week with a
+bioinformatics tool called [RAxML](https://github.com/stamatak/standard-RAxML).
 It can be compiled to target SSE3, AVX, or AVX2 processor optimisations,
 and with threading enabled. It offers the convenient `-T threads` argument we
 mentioned earlier. 
@@ -62,28 +62,29 @@ assign them work, than they spend executing that work.
 
 # Stacking
 
-So if throwing all our node's resources at a single job doesn't necessarily
-make that single job faster (indeed, perhaps the opposite), then what if we try and
+So if throwing all a node's resources at a single job doesn't necessarily
+make that job faster (indeed, perhaps the opposite), then what if we try and
 maximise throughput instead? Let's try filling a 32-core node with as many 16, 8, or
-4 core jobs as will fit. It might be interesting to "almost fill" a node with 
-three 10-core jobs, leaving a couple of cores spare too. And we'll see how they
-compare with single, similar-sized jobs, to see how much you lose by stacking. For
-simplicity, I am sticking on AVX2.
+4-core jobs that will fit, and look for the best average time-per-job as
+we sdtack thme. For simplicity, I'll limit to AVX2.
 
 {{< figure src="/img/raxml_multi.png" alt="RAxML with jobs stacked on a node" >}}
 
 Here the blue bar shows the solo job we did earlier, where the job (however many
 threads) has the whole node to itself; the other bars show the jobs that we ran 
-simultaneously to fill the node up, and see how it copes with the stack.
+simultaneously to fill the node up, to see how they are affecting by the stacking.
 
-The results are a bit confusing here and there; the 10-core is a bit surprising, 
-and we have more overhead of stacking up 4 and 8 core jobs than we might
-expect. The headline here is that stacking 16-core jobs, or 8-core jobs gets us
-an average of 4.6 hours per job. 4-cores is a bit worse at 4.8 hours per job; 10-cores
-needs a deeper dig, coming out at 5.7 hours per job.
+The results are a bit confusing here and there; the 10-core is surprisingly 
+erratic, and needs some deeper investigation. The overhead of stacking up 4 and 8 core 
+jobs is a bit more than we might; perhaps those jobs are using more of the node than
+we think (as having the operating systme choose processor affinity is an approximate
+science), or perhaps there is something in the code of RAxML that I don't understand.
 
-This is all rather better than throwing all 32 cores at each job, which ends
-up towards 14.
+But the headline here is good even so: by stacking a pair of 16-core jobs, or four 8-core jobs,
+we get an average of 4.6 hours per job, which turns out the best. Just behind are eight
+4-core jobs, coming out at 4.8 hours per job, and our curious 10-core runs end up at about
+5.7 hours. This is all rather better than throwing all our cores at each job, which ended up
+towards 14 hours.
 
 # Conclusions and Limitations
 
@@ -92,11 +93,12 @@ Always take a survey of a few different thread counts to see how performance
 looks. For example, with RAxML, read their 
 [paper](http://sco.h-its.org/exelixis/pubs/Exelixis-RRDR-2010-3.pdf) which
 they mention in the [readme](https://github.com/stamatak/standard-RAxML). But
-also do some tests.
+also do some tests on the HPC hardware you have available.
  
 Here I've looked at just the total end-to-end time. In reality, there
 are number of different stages we can get timings for, and some stages
-prefer one optimisation to another. That would be a longer and more tedious
+prefer one optimisation to another, or perform better in parallel than
+others. That would be a longer and more tedious
 blog post to write, but for a proper profiling we'd want to see how the
 different stages compare, not just the total. And also note I've only taken
 one sample per run.
@@ -107,10 +109,6 @@ an arbitrary dataset I was asked to work with, and ran with just 10 of
 the original 500 bootstraps. RAxML jobs in the wild would take much longer
 (making this sort of performance insight helpful), but may also be variable, if
 our 10 are not representative of the full set.
-
-So My graphs above might be an unfair representation of RaXML for instance.
-But the key is, we could try and find that out before setting many jobs 
-going that might take weeks than they need to.
 
 Lastly, the processor optimisation for AVX increased a little
 compared to SSE3 when the cores were well used, and the differences between 
