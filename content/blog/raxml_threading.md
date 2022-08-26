@@ -77,7 +77,7 @@ simultaneously to fill the node up, to see how they are affecting by the stackin
 The results are a bit confusing here and there; the 10-core is surprisingly 
 erratic, and needs some deeper investigation. The overhead of stacking up 4 and 8 core 
 jobs is a bit more than we might; perhaps those jobs are using more of the node than
-we think (as having the operating systme choose processor affinity is an approximate
+we think (as having the operating system choose processor affinity is an approximate
 science), or perhaps there is something in the code of RAxML that I don't understand.
 
 But the headline here is good even so: by stacking a pair of 16-core jobs, or four 8-core jobs,
