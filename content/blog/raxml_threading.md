@@ -58,7 +58,7 @@ problem...
 .. and we actually start to make things slower - using 32 cores performs
 comparably to using 8. There just isn't enough parallel work for all the
 threads to do; they spend more time waiting for the administrator to
-assign them work, than they spend executing that work.
+assign them work than they spend executing that work.
 
 # Stacking
 
