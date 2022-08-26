@@ -66,7 +66,7 @@ So if throwing all a node's resources at a single job doesn't necessarily
 make that job faster (indeed, perhaps the opposite), then what if we try and
 maximise throughput instead? Let's try filling a 32-core node with as many 16, 8, or
 4-core jobs that will fit, and look for the best average time-per-job as
-we sdtack thme. For simplicity, I'll limit to AVX2.
+we stack them. For simplicity, I'll limit to AVX2.
 
 {{< figure src="/img/raxml_multi.png" alt="RAxML with jobs stacked on a node" >}}
 
