@@ -96,7 +96,7 @@ they mention in the [readme](https://github.com/stamatak/standard-RAxML). But
 also do some tests on the HPC hardware you have available.
  
 Here I've looked at just the total end-to-end time. In reality, there
-are number of different stages we can get timings for, and some stages
+are a number of different stages we can get timings for, and some stages
 prefer one optimisation to another, or perform better in parallel than
 others. That would be a longer and more tedious
 blog post to write, but for a proper profiling we'd want to see how the
