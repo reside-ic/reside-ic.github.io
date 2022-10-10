@@ -13,7 +13,7 @@ tags:
 
 Our deployments at RESIDE typically consist of a python script using [constellation](https://github.com/reside-ic/constellation) to bring up a set of docker containers each of which contains a separate part of the application. We might have one docker image for the web app, one for the database, one for redis, one for an R backend API, and multiple workers. We use [Buildkite](https://buildkite.com/) as part of our CI (continuous integration) process to build these images and test them.
 
-When we want to deploy a new feature to production our process typically involves:
+When we want to deploy a new feature to production our manual process typically involves:
 1. ssh onto the staging server
 1. Run the deployment script
 1. Manually test the app for any issues
@@ -28,7 +28,7 @@ We wanted a way to
 * Deploy automatically to a staging server so we can always review the state of the current master/main
 * Allow researchers to redeploy and see their code changes without having to go through the development team
 
-This blog post covers how we have used Buildkite within RESIDE to support continuous delivery of new features to staging environments. This does not cover details of the deployment script itself but how we have set up Buildkite agents and configured a pipeline so that we can deploy via running a build, have it trigger automatically and deploy specific tags of docker images through build [environment variables](https://buildkite.com/docs/pipelines/environment-variables).
+This blog post covers how we have used Buildkite within RESIDE to support continuous delivery of new features to staging environments. This does not cover details of the deployment script itself but how we have set up Buildkite agents and configured a pipeline so that we can deploy via running a build, have it trigger automatically and deploy specific tags of docker images through [environment variables](https://buildkite.com/docs/pipelines/environment-variables#defining-your-own).
 
 # Setting up Buildkite agent
 
@@ -111,7 +111,7 @@ Buildkite can support more complex [triggers](https://buildkite.com/docs/pipelin
 
 # Controlling deployment
 
-We would also like to have the option to deploy a specific branch of one of our services so we can see the effect of big changes before merging into main. Buildkite gives us a way to do this through [environent variables](https://buildkite.com/docs/pipelines/environment-variables#defining-your-own). Each service that forms part of the app has a CI pipeline that builds a docker image. These are tagged with the branch name and the sha. We can use environment variables to set the tag of the docker image we want to deploy. There are multiple ways to set environment variables but in this example we set them through the pipeline yml. We updated our deployment pipeline to look like
+We would also like to have the option to deploy a specific branch of one of our services so we can see the effect of big changes before merging into main. Buildkite gives us a way to do this through [environment variables](https://buildkite.com/docs/pipelines/environment-variables#defining-your-own). Each service that forms part of the app has a CI pipeline that builds a docker image. These are tagged with the branch name and the sha. We can use environment variables to set the tag of the docker image we want to deploy. There are multiple ways to set environment variables but in this example we set them through the pipeline yml. We updated our deployment pipeline to look like
 
 ```
 env:
