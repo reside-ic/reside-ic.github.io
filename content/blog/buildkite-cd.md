@@ -11,9 +11,10 @@ tags:
 
 # Introduction
 
-Our deployments at RESIDE typically consist of a python script using [constellation](https://github.com/reside-ic/constellation) to bring up a set of docker containers each of which contains a separate part of the application. We might have one docker image for the web app, one for the database, one for redis, one for an R backend API, and multiple workers. We use [Buildkite](https://buildkite.com/) as part of our CI (continuous integration) process to build these images and test them.
+Our deployments at RESIDE typically consist of a bash script or a python script using [constellation](https://github.com/reside-ic/constellation) to bring up a set of docker containers each of which contains a separate part of the application. We might have one docker image for the web app, one for the database, one for redis, one for an R backend API, and multiple workers. We use [Buildkite](https://buildkite.com/) as part of our CI (continuous integration) process to build these images and test them.
 
 When we want to deploy a new feature to production our manual process typically involves:
+
 1. ssh onto the staging server
 1. Run the deployment script
 1. Manually test the app for any issues
@@ -21,11 +22,14 @@ When we want to deploy a new feature to production our manual process typically 
 1. Deploy to production
 1. Manually test the app for any issues
 
-This creates barriers to deployments: there are tedious manual steps involved you need to remember what server the app is running on, what script needs to be run, and how it is run. Additionally, we want to limit access to the machines to avoid accidental breakages. We have researchers on the team who don't work with the command line regularly and want to be able to deploy changes to their part of the code to see the effect it will have on the full app.
+This creates barriers to deployments: there are tedious manual steps involved, you need to remember what server the app is running on, what script needs to be run, and how it is run. Additionally, we want to limit access to the machines to avoid accidental breakages. We have researchers on the team who don't work with the command line regularly and want to be able to deploy changes to their part of the code to see the effect it will have on the full app.
 
-We wanted a way to
+When we make a change to one of the components which forms our app we don't have a process to check how it will affect the other components. It can be hard to predict whether a change in one component will break integration with others, this is exaggerated when we are changing multiple components at the same time. We sometimes only see when we come to deploy that we have made breaking changes to one of the services.
+
+We want a way to
+
 * Reduce the barrier to deployment making it easy and quick to encourage frequent integration and deployment
-* Deploy automatically to a staging server so we can always review the state of the current master/main
+* Deploy automatically to a staging server whenever a component is updated so we can always review how the latest versions of all our components work together
 * Allow researchers to redeploy and see their code changes without having to go through the development team
 
 This blog post covers how we have used Buildkite within RESIDE to support continuous delivery of new features to staging environments. This does not cover details of the deployment script itself but how we have set up Buildkite agents and configured a pipeline so that we can deploy via running a build, have it trigger automatically and deploy specific tags of docker images through [environment variables](https://buildkite.com/docs/pipelines/environment-variables#defining-your-own).
@@ -64,6 +68,7 @@ steps:
 ```
 
 The important parts here are
+
 * The `ssh` command sets the key to use via `-i ~/.ssh/id_deploy`
 * `StrictHostKeyChecking` is set to `accept-new`, this will accept the host key the first time but refuse to connect if the saved key does not match. This will suffice for us because our agents and host server are on a private internal network so we can trust accepting an unknown key the first time we login to the remote server.
 * `<username>@<host>` is be the username and host of the remote server where the app will be deployed
@@ -131,6 +136,8 @@ When we run a build via the Buildkite UI we can then set the environment variabl
 
 <img src="/img/buildkite-cd-run.png" alt="png of pipeline run"/>
 
-# Next steps
+# Summary
 
-We wanted to set up Buildkite deployment pipelines to both simplify deployments and automate repeated manual work. We now have pipelines that will allow us to deploy manually, deploy automatically, and deploy a specified tag of a docker image. When we deploy to the staging instance we still have to manually check the newly deployed version works. This is slow and prone to missing regressions. When we deploy a new feature we manually check it, but we don't necessarily check all other parts of the app. Bugs can be introduced which we only know about when users report issues or we notice errors in the logs. We could take the automation a step further by writing browser tests that run after the deployment.
+We wanted to set up Buildkite deployment pipelines to simplify deployments, automate repetative manual work, and identify when we break compatibility between different components. We now have a pipeline that will allow us to deploy any tag of a docker image in a few clicks from one centralised place. This should encourage frequent integration and enable all members of the development and research teams to release changes. We can also trigger deployments automatically whenever a component is updated, meaning that we can see the latest version of all of the components of the app and how they work together.
+
+When we deploy we still have to manually check the new version works. This is slow and prone to missing regressions. When a new feature is deployed we manually check it, but we don't necessarily check all other parts of the app. Bugs can be introduced which we only know about when users report issues or we notice errors in the logs. We are planning on automatically running browser tests against the newly deployed instances to give us early feedback on any regressions.
