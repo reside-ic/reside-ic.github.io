@@ -36,7 +36,7 @@ Rob started his software career as a web developer in healthcare. He now writes 
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
 Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
 {{< /person >}}
-{{< person name="Mantra Kusumgar" img="quokka.webp" url="https://github.com/weshinsley">}}
+{{< person name="Mantra Kusumgar" img="quokka.webp" url="https://github.com/M-Kusumgar">}}
 Mantra studied Mathematics at university and realised most of it won't be used again so he found more applicable addictions like coding in his spare time. Other addictions include but are not limited to: chess, basketball, K-pop, anime, origami, dancing, acting, escape rooms and much much more!
 {{< /person >}}
 {{< /team >}}
