@@ -27,12 +27,6 @@ he paints, makes music, is a keen runner and occasional philosophy reader.
 {{< person name="Lekan Anifowoshe"img="lekan.jpg" url="https://github.com/carbowizzy">}}
 Lekan has several years of experience in software engineering. He holds a BSc from Cyprus and Master degree from Sussex. Before joining the team, he worked with continuous update project(CUP) research group at Imperial. If not coding, he enjoys watching and playing lawn tennis.
 {{< /person >}}
-{{< person name="Marie Gronemeyer"img="marie.jpg" url="https://github.com/muppi1993">}}
-Marie studied Medicine and Health Data Analytics & Machine Learning before starting her adventure in software development. She is working on implementing genomic epidemiology tools into a web interface. In her free time, she enjoys cooking, yoga, and various crafts such as pottery and knitting.
-{{< /person >}}
-{{< person name="Nicolas Dolan" img="nick.jpg" url="https://github.com/Nicolas-Dolan">}}
-Nicolas previously worked in medical communications as a medical writer and prior to that edited for The Lancet medical journal. Wanting to take on a new challenge, he retrained at a software engineering immersive run by General Assembly. His hobbies include learning foreign languages and obsessing over artificial intelligence.
-{{< /person >}}
 {{< person name="Rich FitzJohn" img="rich.jpg" url="https://richfitz.github.io">}}
 Rich was a computational biologist for 15 years before deciding that catalysing research through software was more fun than doing it himself. He's interested in making reproducibility easier and more accessible while letting scientists focus more on science than engineering. Outside of work he enjoys rock climbing and hiking.
 {{< /person >}}
@@ -42,6 +36,9 @@ Rob started his software career as a web developer in healthcare. He now writes 
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
 Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
 {{< /person >}}
+{{< person name="Mantra Kusumgar" img="quokka.webp" url="https://github.com/M-Kusumgar">}}
+Mantra studied Mathematics at university and realised most of it won't be used again so he found more applicable addictions like coding in his spare time. Other addictions include but are not limited to: chess, basketball, K-pop, anime, origami, dancing, acting, escape rooms and much much more!
+{{< /person >}}
 {{< /team >}}
 
 ## Alumni
@@ -50,3 +47,5 @@ Wes is a computer engineer and scientist, with a Ph.D making tools for ocean mod
 * [Carol Brickley](https://github.com/ceeb950)
 * [James Thompson](https://github.com/JamesThompson1729)
 * [Martin Eden](https://github.com/martineden)
+* [Marie Gronemeyer](https://github.com/muppi1993)
+* [Nicolas Dolan](https://github.com/Nicolas-Dolan)

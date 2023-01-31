@@ -25,6 +25,8 @@
     -webkit-border-radius: 150px !important;
     border-radius: 150px !important;
     margin: 0 !important;
+    height: 150px !important;
+    object-fit: cover;
 }
 
 .person p {
