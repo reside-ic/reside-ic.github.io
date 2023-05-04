@@ -1,6 +1,6 @@
 ---
 author: "Emma Russell"
-date: 2023-05-02
+date: 2023-05-04
 title: Conditionally running Ingest Pipelines with Filebeat, Docker and Elastic
 tags:
  - Elastic
