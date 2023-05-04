@@ -129,7 +129,7 @@ again combined with conditional application.
 
 However, using index patterns is expensive at query time, and Elastic limits what fields can be used in index patterns.
 Furthermore, we really didn't want to have to recreate the existing `nginx` pipeline with some combination of configured
-and scripted processors - we just wanted to use the pipeline for some documents and not others,
+and scripted processors - we just wanted to use the pipeline for some documents and not others.
 
 # A better solution: use nginx pipeline conditionally from a second pipeline #
 
