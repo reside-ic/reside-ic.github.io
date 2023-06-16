@@ -19,46 +19,51 @@ favourite build is a pair of
 workhorse HPC (CPU) node.
 
 Much of the parallel computation in our department is done at the process
-level, rather than the core (or thread) level. Simply stacking up single-core
+level, rather than at the core (or thread) level. Stacking up single-core
 jobs on the node and letting the operating system decide the best use of its
-resources turns out effective both in terms of performance, and in the lack of
-tricky programming (or often, any programming at all) required to get that
-performance.
+resources turns out generally effective both in terms of performance, and 
+especially in the lack of tricky programming (or often, any programming at all) 
+required to get that performance.
 
-Where there is threaded code, various R packages, or OpenMP, or Java threads
-all make it possible without too much fuss if you are careful. Or sometimes
-you might strike it lucky and find that the tool you want to use has a
-ready-made argument for threading - a command-line argument `-T 32` for
-instance, to make maximal use of all the cores on our speedy nodes. 
+Ssometimes you might strike it lucky and find that the tool you want to use has a
+ready-made command-line argument for threading - `-T 32` for example,
+to make maximal use of all the cores on our speedy nodes. 
 Because why wouldn't you?
 
 # Why wouldn't you, indeed.
 
 A decade or so ago, our clusters consisted mainly of 8-core machines, which
 at the time felt like a tremendous breakthrough. The performance
-graphs we were used to seeing often looked something like this:
+graphs we were used to seeing often looked something like these below. On
+the left: how long the jobs take when run with a certain number of cores; on
+the right, the percentage reduction in runtime we get by using a certain number 
+of cores, compared to a baseline. 
 
 {{< figure src="/img/raxml_08.png" alt="RAxML with up to 8 cores" >}}
 
-These are sample runs I made using our newest nodes this week with a
-bioinformatics tool called [RAxML](https://github.com/stamatak/standard-RAxML).
-It can be compiled to target SSE3, AVX, or AVX2 processor optimisations,
-and with threading enabled. It offers the convenient `-T threads` argument we
-mentioned earlier. 
+In an ideal world, if we double the cores used,
+we half the runtime. The _ideal_ line shows that target, which we never
+quite meet, in part because of [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law);
+if there is _any_ sequential code that can't be parallelised, then even a
+perfect parallelising of the rest won't be enough to cut the total runtime
+in half. In reality, achieving _perfect_ parallelisation of _anything_ is not easy.
 
-One of the threads (if you use more than one) acts as an
-administrator, which somewhat explains the lack of gain from 1 to 2 threads;
-after that, from 2 to 6 threads, we're around 90% efficient. Beyond that, the
-gains of more threads are diminishing. But a few years ago, that was where
-the graph ended. Now we have more cores, so let's throw them all at the
-problem...
+So the work here is a bioinformatics tool called [RAxML](https://github.com/stamatak/standard-RAxML),
+which can also be built to target SSE3, AVX, or AVX2 processor optimisations. It 
+offers the convenient `-T threads` argument. Note one of the threads (if you use 
+more than one) acts as an administrator, which somewhat explains the lack of gain 
+from 1 to 2 threads, and is why I've used the 2-thread run to compare to.
+
+Both graphs a decade or so ago would have been accepted as fairly resonable. But 
+now we have more cores, so let's throw them all at the problem and see if we 
+can get closer to the optimum line...
 
 {{< figure src="/img/raxml_032.png" alt="RAxML with over 8 cores" >}}
 
-.. and we actually start to make things slower - using 32 cores performs
-comparably to using 8. There just isn't enough parallel work for all the
-threads to do; they spend more time waiting for the administrator to
-assign them work than they spend executing that work.
+.. but not only do we fail to become optimal; we actually start getting
+worse. Using 32 threads takes about double the time to do the same work,
+compared to using 16. So here the overhead of organising which thread does 
+what, has become larger than the time taken for the threads to do the work. 
 
 # Stacking
 
@@ -66,7 +71,7 @@ So if throwing all a node's resources at a single job doesn't necessarily
 make that job faster (indeed, perhaps the opposite), then what if we try and
 maximise throughput instead? Let's try filling a 32-core node with as many 16, 8, or
 4-core jobs that will fit, and look for the best average time-per-job as
-we stack them. For simplicity, I'll limit to AVX2.
+we stack them. For simplicity, I'll consider only the AVX2 version.
 
 {{< figure src="/img/raxml_multi.png" alt="RAxML with jobs stacked on a node" >}}
 
@@ -76,7 +81,7 @@ simultaneously to fill the node up, to see how they are affecting by the stackin
 
 The results are a bit confusing here and there; the 10-core is surprisingly 
 erratic, and needs some deeper investigation. The overhead of stacking up 4 and 8 core 
-jobs is a bit more than we might; perhaps those jobs are using more of the node than
+jobs is a bit more than we might expect or want; perhaps those jobs are using more of the node than
 we think (as having the operating system choose processor affinity is an approximate
 science), or perhaps there is something in the code of RAxML that I don't understand.
 
@@ -117,10 +122,11 @@ loss of performance with over-threading, or (2) the gains you can get with
 increased throughput, running more coarser-grain work. The jobs here used
 one node, and many more cluster nodes might be available. For many applications,
 that may be a much better angle to pursue from the outset, rather than jumping
-prematurely to more technically difficult optimisations.[^2]
+prematurely to more technically difficult optimisations.[^3]
   
 ---
 
 
 [^1]: A rack of HPC compute nodes contains about 40 slots, 5 of which might go on network switches, and potentially 10 on UPSes.
-[^2]: An almost relevant excuse to reference [Computing Surveys, Vol 6, No 4, December 1974, p268](https://dl.acm.org/doi/10.1145/356635.356640)
+[^2]: For completeness: it is also possible to find super-linear (better then ideal) behaviour. For example, a bottleneck (often I/O) in a single-core piece of code might be alleviated by using another core, or perhaps a memory caching bonus becomes available when the problem size is split over cores. In these cases for example, a two-core version might run in less than half the time of the single-core version. But that is not what we get here...
+[^3]: An almost relevant excuse to reference [Computing Surveys, Vol 6, No 4, December 1974, p268](https://dl.acm.org/doi/10.1145/356635.356640)
