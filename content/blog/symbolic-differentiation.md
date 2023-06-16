@@ -15,10 +15,10 @@ Rscript -e 'rmarkdown::render("symbolic-differentiation.Rmd", output_format=rmar
 
 We are working on [automatic
 differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation)
-of [odin](https://mrc-ide.github.io/odin/) models, and to support this
-we need support for differentiating expressions symbolically, in order
-to write new equations that can be used to numerically propagate
-derivatives of a model.
+of [odin](https://mrc-ide.github.io/odin/) models, which requires
+support for differentiating expressions symbolically, in order to write
+new equations that can be used to numerically propagate derivatives of a
+model.
 
 R already has support for doing this via the `D` function:
 
@@ -26,10 +26,10 @@ R already has support for doing this via the `D` function:
 
     ## 2 * (2 * x) * log(sqrt(x)) + 2 * x^2 * (0.5 * x^-0.5/sqrt(x))
 
-and the [`Deriv`](https://cran.r-project.org/package=Deriv) provides an
-extensible interface. However, `odin` has peculiar syntax with arrays
-and we’re interested in doing trying to differentiate through stochastic
-functions, so a bespoke solution felt useful.
+and the [`Deriv`](https://cran.r-project.org/package=Deriv) package
+provides an extensible interface. However, `odin` has peculiar syntax
+with arrays and we’re interested in trying to differentiate through
+stochastic functions, so a bespoke solution felt useful.
 
 Symbolic differentiation turns out to be surprisingly easy, and quite
 elegant, to implement; this post shows the general idea.
@@ -38,13 +38,13 @@ To start, consider differentiating the expression `x^2 + x^3` with
 respect to `x`. Recall the mechanical rules of differentiation from
 school that we can write this as `d/dx x^2 + d/dx x^3` and then that we
 differentiate functions of the form `x^n` as `n x^(n - 1)` – this is the
-primary insight we need; that the process is recursive as we break down
+primary insight we need: that the process is recursive as we break down
 every operation into smaller chunks and keep on differentiating interior
 expressions with respect to `x` until there’s nothing left.
 
 The simplest possible differentiation rules concern numbers; `d/dx n`
 for any number `n` is zero (that is, the gradient of `n` with respect to
-`x` is zero. Similarly, for any symbol (say `a` but not `a + b`)
+`x` is zero). Similarly, for any symbol (say `a` but not `a + b`)
 *except* `x` the derivative is also zero. And the derivative of `x` with
 respect to `x` is one. With this, we have the edge case for a recursive
 function:
@@ -111,10 +111,10 @@ structure is recursive:
 To apply our differentiation rules we need to describe how to handle
 each function (here, `+` and `*`) and put together the results,
 descending into the subexpressions with `differentiate()` again until we
-git our edge cases.
+get our edge cases.
 
 The rule for differentiating sums is very straightforward, as noted
-above; we take the sum of the derivatives!
+above: we take the sum of the derivatives!
 
     d_plus <- function(expr, name) {
       call("+", differentiate(expr[[2]], name), differentiate(expr[[3]], name))
@@ -164,7 +164,7 @@ or the quotient rule
       b <- expr[[3]]
       da <- differentiate(a, name)
       db <- differentiate(b, name)
-      ## da / b + a * db / (b * b)
+      ## da / b - a * db / (b * b)
       call("-", call("/", da, b), call("/", call("*", a, db), call("*", b, b)))
     }
 
@@ -359,10 +359,10 @@ unary minus
     m_uminus <- function(a) {
       if (is.numeric(a)) {
         -a
-      } else if (length(x) == 2 && identical(x[[1]], quote(`-`))) {
+      } else if (length(a) == 2 && identical(a[[1]], quote(`-`))) {
         a[[2]]
       } else if (is_call(a, "(")) {
-        m_minus(a[[2]])
+        m_uminus(a[[2]])
       } else {
         call("-", a)
       }
@@ -392,7 +392,7 @@ and division
       } else if (is.numeric(b) && b == 0) {
         Inf
       } else if (is.numeric(b) && b == 1) {
-        Inf
+        a
       } else {
         call("/", a, b)
       }
@@ -437,7 +437,7 @@ We can then rewrite all our rules to use these functions instead of
       b <- expr[[3]]
       da <- differentiate(a, name)
       db <- differentiate(b, name)
-      ## da / b + a * db / (b * b)
+      ## da / b - a * db / (b * b)
       m_minus(m_quotient(da, b), m_quotient(m_product(a, db), m_product(b, b)))
     }
 
