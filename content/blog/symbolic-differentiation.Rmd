@@ -212,8 +212,6 @@ and now we can differentiate this new expression:
 differentiate(quote(exp(2 * x)), "x")
 ```
 
-and we're good to go:
-
 ## Improving the implementation by writing sensible expressions
 
 Simplifying the expressions turns out to be much more work than the differentiation. The trick that we use is to avoid using `call()` directly to build expressions and create a simplifying expression builder that applies some simple rules to avoid building overly complicated expressions.  This does not simplify everything, but cuts out the most egregious bits of noise.

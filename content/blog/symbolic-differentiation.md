@@ -252,8 +252,6 @@ and now we can differentiate this new expression:
 
     ## (0 * x + 2 * 1) * exp(2 * x)
 
-and we’re good to go:
-
 Improving the implementation by writing sensible expressions
 ------------------------------------------------------------
 
