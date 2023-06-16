@@ -222,7 +222,12 @@ obviously `0` and `+ -2 * 1` which is just `- 2`). However, the
 expressions agree with those from `D` once evaluated:
 
     eval(differentiate(quote(-2 * x / (x * x - 3 * x)), "x"), list(x = pi))
+
+    ## [1] 99.75819
+
     eval(D(quote(-2 * x / (x * x - 3 * x)), "x"), list(x = pi))
+
+    ## [1] 99.75819
 
 Extending the implementation by adding more rules
 -------------------------------------------------

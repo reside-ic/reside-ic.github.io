@@ -179,7 +179,7 @@ differentiate(quote(-2 * x / (x * x - 3 * x)), "x")
 
 This is fine, except that the generated expressions are fairly ugly, with lots of obviously redundant expressions (e.g., `-0 * x` which is obviously `0` and `+ -2 * 1` which is just `- 2`). However, the expressions agree with those from `D` once evaluated:
 
-```
+```{r}
 eval(differentiate(quote(-2 * x / (x * x - 3 * x)), "x"), list(x = pi))
 eval(D(quote(-2 * x / (x * x - 3 * x)), "x"), list(x = pi))
 ```
