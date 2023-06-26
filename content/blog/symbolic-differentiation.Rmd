@@ -393,4 +393,30 @@ so to simplify subtraction we have to extract the `-` from within two layers of 
 
 Our full implementation can be seen in [this pull request](https://github.com/mrc-ide/odin/pull/298/files), which follows the presentation here fairly closely.
 
+## Why go to this effort?
 
+Given that the `D` function (and the [`Deriv`](https://cran.r-project.org/package=Deriv) package) can do all this (and more) already, it's not very obvious why you might want to this.  We don't really want to differentiate R, but instead the domain specific language that supports odin. This is a [small subset of R](https://mrc-ide.github.io/odin/articles/functions.html) but there are two things that have quite different semantics that we need considerable control over (they're not yet supported in the PR linked above).
+
+Firstly, odin (via [odin.dust](https://mrc-ide.github.io/odin.dust/)) supports converting stochastic models into deterministic ones by taking expectations of the stochastic components; the underlying stochastic support already looks different to the call expected from R. So for example, we might write:
+
+```r
+m <- rbinom(n, p)
+```
+
+to represent a binomial random draw with size `n` and probability `p`; R's first argument (the number of draws to take) does not appear here.  The expectation of this draw is simply `n * p` and we can now easily add rules to our differentiation support to differentiate this part of a model with respect to any other model quantity.
+
+The other tricky part we have is the way that odin interprets array expressions, especially those that contain sums, as these have specific semantics. For example, the valid odin expression
+
+```r
+lambda[] <- beta * sum(s_ij[, i])
+```
+
+could be rewritten as in something more R-ish
+
+```r
+for (i in seq_along(lambda)) {
+  lambda[i] <- beta * sum(s_ij[, i])
+}
+```
+
+and differentiating the odin DSL version requires knowledge of this semantics. The solution to this is left as an exercise to the reader, ad possibly a future blog post...
