@@ -1,7 +1,7 @@
 ---
 author: "Rich FitzJohn"
 title: "Symbolic differentiation in a few lines of code"
-date: 2023-06-16
+date: 2023-06-26
 tags:
 - R
 ---
