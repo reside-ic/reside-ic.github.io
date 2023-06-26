@@ -18,9 +18,9 @@ on various platforms. Typically you'd then include these libraries in projects
 written in C, C++, or Fortan.
 
 Furthermore, recent releases of [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
-have included support for Microsoft's MP. Here, we're going to use that to write some
+have included support for Microsoft MPI. Here, we're going to use that to write some
 MPI code in R for Windows, and run it with multiple local processes, and then using
-multiple nodes on our departmental MS-HPS cluster.
+multiple nodes on our departmental MS-HPC cluster.
 
 # First steps.
 
