@@ -29,7 +29,7 @@ the latest [Rtools](https://cran.r-project.org/bin/windows/Rtools/) and
 [MS-MPI](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi)
 will do it. Test by running `mpiexec` in a terminal, and on Windows check that it really is
 Microsoft's `mpiexec`. Intel's has the same name, and comes with the Intel C++ compiler, but
-Microsoft's must come first in your path, as we are need the `mpiexec` executable we use
+Microsoft's must come first in your path, as we need the `mpiexec` executable we use
 to match the library in Rtools.
 
 On linux, `sudo apt-get install mpich.` is enough; on Mac, [download MPICH](http://www.mpich.org/downloads/) 
