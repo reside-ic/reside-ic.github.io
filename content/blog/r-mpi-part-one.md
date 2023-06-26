@@ -1,7 +1,7 @@
 ---
 author: "Wes Hinsley"
 date: 2023-06-22
-title: MPI from R - Part One
+title: MPI from R - Part One - The Basics
 best: false
 tags:
  - R
