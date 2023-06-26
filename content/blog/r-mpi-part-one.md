@@ -226,7 +226,10 @@ can only give us units of whole nodes. So we made pretty poor use of those nodes
 # End of Part One
 
 Like all MPI work, it feels a little clunky to get started, but it works well enough 
-to be useful. Also note in the examples above, the processes are all dumping their output
+to be useful. We can call MPI functions in both the cpp files, and R files pretty
+simply, which is a good start.
+
+Also note in the examples above, the processes are all dumping their output
 to one file. It works for now because the amount of text is small, but for larger jobs, we
 should output separate files for each process, otherwise the text will eventually get
 interleaved in an untidy, unordered way. For now, file buffering on write is saving us.
