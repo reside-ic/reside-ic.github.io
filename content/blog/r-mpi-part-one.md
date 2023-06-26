@@ -19,11 +19,11 @@ written in C, C++, or Fortran.
 
 Furthermore, recent releases of [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
 have included support for Microsoft MPI. My plan is a couple of blogs on how to get this
-working, some exploration of performance, and some testing / CI. I'll include 
-nodes on how to for what's needed on Windows, linux or Mac to write and build the package, 
-but when describing running on multi-nodes, I'll be limited to our departmental Microsoft
-cluster. Hopefully not many changes should be needed to the launch scripts for running 
-with other cluster platforms.
+working, some exploration of performance, and an attempt at testing / CI. I'll include 
+nodes on what's needed on Windows, linux or Mac to write and build the package, 
+but when running multi-node programs, I'll be limited to our departmental MS-HPC
+cluster. Hopefully the changes needed for launching scripts on other cluster platforms 
+shouldn't be too hard.
 
 # First steps.
 
