@@ -18,9 +18,12 @@ on various platforms. Typically you'd then include these libraries in projects
 written in C, C++, or Fortran.
 
 Furthermore, recent releases of [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
-have included support for Microsoft MPI. Here, we're going to use that to write some
-MPI code in R for Windows, and run it with multiple local processes, and then using
-multiple nodes on our departmental MS-HPC cluster.
+have included support for Microsoft MPI. My plan is a couple of blogs on how to get this
+working, some exploration of performance, and some testing / CI. I'll include 
+nodes on how to for what's needed on Windows, linux or Mac to write and build the package, 
+but when describing running on multi-nodes, I'll be limited to our departmental Microsoft
+cluster. Hopefully not many changes should be needed to the launch scripts for running 
+with other cluster platforms.
 
 # First steps.
 
@@ -29,7 +32,7 @@ the latest [Rtools](https://cran.r-project.org/bin/windows/Rtools/) and
 [MS-MPI](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi)
 will do it. Test by running `mpiexec` in a terminal, and on Windows check that it really is
 Microsoft's `mpiexec`. Intel's has the same name, and comes with the Intel C++ compiler, but
-Microsoft's must come first in your path, as we are need the `mpiexec` executable we use
+Microsoft's must come first in your path, as we need the `mpiexec` executable we use
 to match the library in Rtools.
 
 On linux, `sudo apt-get install mpich.` is enough; on Mac, [download MPICH](http://www.mpich.org/downloads/) 
@@ -53,9 +56,21 @@ work is finished, if you want a neat and successful exit.
 
 # Parallel Hello World
 
-Here come the bits of C++ code, which I'm writing in an R package called `mpitest`.
-We'll need to write wrappers around some MPI functions so we can call them from R.
+I'm going to make an R package called `mpitest`. It's 
+going to use the cpp11 package, so in the `DESCRIPTION` file, I am including
+```
+LinkingTo:
+    cpp11
+```
 
+and conventionally, `R/zzz.R` contains:
+
+```
+##' @useDynLib mpitest, .registration = TRUE
+NULL
+```
+
+Here come the bits of C++ code, which are wrappers around some MPI functions, so we can call them from R.
 We'll firstly define a header, `src/rmpi.h` for the MPI functions we'll wrap.
 ```
 #pragma once
