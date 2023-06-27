@@ -220,8 +220,9 @@ Hello! I am HPC-095 (5/8)
 So, the `8` processes we asked for were spread evenly over `2` nodes which the cluster
 assigned to our job. As it happens, the two nodes actually had 32-cores, but the cluster
 can only give us units of whole nodes. So we made pretty poor use of those nodes, reserving
-32 all cores but only using 4 of them. Perhaps we could have utilised them better by using 
-`mpiexec -n 64` - if we knew in advance that the nodes each would have 32 cores.
+all 32 cores but only using 4 of them. Perhaps we could have utilised them better by using 
+`mpiexec -n 64` - if we knew in advance that the nodes each would have 32 cores, and if
+our algorithm can actually use them well. But that's for a later discussion.
 
 # End of Part One
 
