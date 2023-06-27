@@ -142,20 +142,20 @@ this hack as `/configure` will work for both:
 
 #make the Makevars file
 if [ ! -e "./src/Makevars" ]; then
-touch ./src/Makevars
+  touch ./src/Makevars
 fi
 
 #if mac
 if [[ `uname` -eq Darwin ]] ; then
 
-echo "PKG_CXXFLAGS = -I/usr/include/x86_64-linux-gnu/mpich" > ./src/Makevars
-echo "PKG_LIBS = -lmpich" >> ./src/Makevars
+  echo "PKG_CXXFLAGS = -I/usr/include/x86_64-linux-gnu/mpich" > ./src/Makevars
+  echo "PKG_LIBS = -lmpich" >> ./src/Makevars
 
 #if linux
 elif [[ `uname` -eq Linux ]] ;then
 
-echo "PKG_CXXFLAGS = -I/usr/include/x86_64-linux-gnu/mpich -lmpich" > ./src/Makevars
-echo "PKG_LIBS = -lmpich" >> ./src/Makevars
+  echo "PKG_CXXFLAGS = -I/usr/include/x86_64-linux-gnu/mpich -lmpich" > ./src/Makevars
+  echo "PKG_LIBS = -lmpich" >> ./src/Makevars
 
 fi
 ```
@@ -188,7 +188,6 @@ set R_LIBS=\\homes\wes\R
 set R_LIBS_USER=\\homes\wes\R
 call setr64_4_3_0
 Rscript -e "mpitest:::hello()"
-
 ```
 
 First I am setting environment variables to point to the repo where my
