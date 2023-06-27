@@ -188,7 +188,6 @@ set R_LIBS=\\homes\wes\R
 set R_LIBS_USER=\\homes\wes\R
 call setr64_4_3_0
 Rscript -e "mpitest:::hello()"
-
 ```
 
 First I am setting environment variables to point to the repo where my
