@@ -26,7 +26,7 @@ New versions of the research code and API can be deployed, which include changes
 
 The relevant parts of the metadata for our choropleths are, for each indicator:
 
- - Colour scale: a named colour scale from [d3-scale-chromatic](https://github.com/d3/d3-scale-chromatic). Each scale provides a method for mapping values between 0 and 1 to a colour. For example here is the  interpolateViridis scale: <img src="/img/cscale_viridis.png" alt="interpolateViridis"/>
+ - Colour scale: a named colour scale from [d3-scale-chromatic](https://github.com/d3/d3-scale-chromatic). Each scale provides a method for mapping values between 0 and 1 to a colour. For example here is the  interpolateViridis scale: ![interpolateViridis](/img/cscale_viridis.png)
  - Reverse scale: boolean indicating whether to reverse the colour scale i.e. map each 0-1 value to the scale's value for 1-value.
  - Min and max: the expected min and max values for the indicator. These are mapped to the 0 and 1 values of the colour scale, and data points between are mapped to values between 0 and 1 by interpolation. 
 
@@ -42,7 +42,7 @@ The reason why scales defined for a dataset are often inappropriate for a partic
 
 To solve these issues, we implemented a set of options allowing the user to control the colour range dynamically:
 
-<img src="/img/cscale_options.png" alt="Colour scale user options" style="width:500px;"/>
+![Colour scale user options](/img/cscale_options.png)
 
 These are:
 
@@ -54,13 +54,13 @@ These are:
     - Filtered dataset: Use min and max value in actual dataset, filtered by the current filter set.
 
 Here's an example of how 'Entire dataset' differs from 'Filtered dataset'. In these two images, the colour scale fits the entire dataset, hence is consistent across all filter sets. This means there is typically less colour variation for a given set of filters, but since the colours are fixed to the same values across all sets of filters, it is easy to visually compare the values across both filter sets. 
-<img src="/img/cscale_entire.png" alt="Entire dataset colour scale"/>
+![Entire dataset colour scale](/img/cscale_entire.png)
 
 In the next images, the same two filter sets are shown with 'Filtered dataset' selected. The colour scale is fully used for each filter set so the contrast across shades on the map is maximised and colours are easier to distinguish. However, because the 'meaning' of each colour changes across filter sets, different filter sets cannot easily be visually compared. So this may be a more useful option when the user is interested in examining a single filter set.
-<img src="/img/cscale_filtered.png" alt="Filtered dataset colour scale"/>
+![Filtered dataset colour scale](/img/cscale_filtered.png)
 
 With the option to set the range to arbitrary custom values, users can change the colour scale on the fly to suit their purposes. For example, they may wish to manually narrow the range to maximise variation in a particular area of the map:
-<img src="/img/cscale_zoomed.png" alt="Custom colour scale"/>
+![Custom colour scale](/img/cscale_zoomed.png)
 
 There are many further options which could have given the user additional control, like choosing a different colour scale entirely, or selecting new start and end points within a colour scale. However, we needed to balance user control with a simple, intuitive interface covering the majority of use cases. 
 

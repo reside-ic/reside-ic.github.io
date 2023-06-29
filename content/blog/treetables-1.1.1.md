@@ -7,7 +7,7 @@ tags:
  - Javascript
 ---
 
-<img src="/img/treetables.gif" alt="Gif of plugin in use" />
+![Gif of plugin in use](/img/treetables.gif)
 
 We just released a new npm package [TreeTables](https://www.npmjs.com/package/treetables)
  for displaying tree data when using jQuery

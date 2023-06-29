@@ -25,7 +25,7 @@ Naomi provides visualisations of HIV epidemic indicators
 across a country, at a fine-grained regional level. Users can filter the data by many parameters, 
 e.g. age, sex, year, level of of detail (from the whole country down to individual cities.)
 
-<img src="/img/choropeek.gif" alt="Gif of the map widget in Naomi" />
+![Gif of the map widget in Naomi](/img/choropeek.gif)
 
 The front-end app is written in [Vue.js](https://vuejs.org/) + [Vuex](https://vuex.vuejs.org/) and for the map plots we 
 are using the excellent [Leaflet](https://leafletjs.com/) library. The HIV indicator data and GeoJSON are returned from
@@ -46,14 +46,14 @@ I found the `Bottom-Up` view most instructive -  I could see that around 15% of 
   by a Vue function called `addDep`, and that a function that just read a single value out of the data array was taking 
   over 100ms each time. 
   
-<img src="/img/performance.png" alt="Screenshot of performance profile">
+![Screenshot of performance profile](/img/performance.png)
  
 I used another Chrome tool to see how big the data was: the heap snapshot. You can find this under the 
 memory tab in Chrome dev tools. In the results it was pretty easy to find the data array; it was the largest object in the heap with a retained size
 of 107MB! In this case the original data array coming back from the API was around 4MB. Looking at the items of the array, 
 it became clear what was going on.
 
-<img src="/img/memoryheap.png" alt="Screenshot of heap snapshot">
+![Screenshot of heap snapshot](/img/memoryheap.png)
  
 ## Under the hood
 
@@ -74,12 +74,12 @@ points to the the solution -  if an object is made readonly with `Object.freeze`
 Once we wrapped the API responses with `Object.freeze`, the heap shrank dramatically and so did the rendering time! The 
 array is back down to 4MB in the heap:
 
-<img src="/img/heap2.png" alt="Screenshot of heap snapshot after freezing large objects">
+![Screenshot of heap snapshot after freezing large objects](/img/heap2.png)
 
 Looking at the new performance profile, `addDep` now only take 3% of the time, and that function that looked up an 
 item in the array now takes a much more reasonable 0.1ms. That's 3 orders of magnitude less time.
 
-<img src="/img/performance2.png" alt="Screenshot of performance profile after freezing large objects">
+![Screenshot of performance profile after freezing large objects](/img/performance2.png)
 
 [^1]: The `addDep` function that was taking up so much time when I profiled the app is called whenever a getter is invoked (via `dep.depend()` [here](https://github.com/vuejs/vue/blob/2.6/src/core/observer/index.js#L163)) 
 

@@ -34,14 +34,14 @@ I'm on Linux, but these shortcuts work on Mac and Windows too (on Mac <kbd>ctrl<
 * <kbd>alt-tab</kbd> - toggle between open applications
     * plus use <kbd>↑</kbd> <kbd>↓</kbd> <kbd>→</kbd> <kbd>←</kbd>to toggle between instances of an app
     
-<img src="/img/tabchange.gif" alt="Use alt-tab to toggle between apps" />
+![Use alt-tab to toggle between apps"](/img/tabchange.gif)
 
 * <kbd>ctrl-shift-v</kbd> - paste into the Ubuntu terminal
 
 * <kbd>ctrl-R</kbd> - reverse search commands in the Ubuntu terminal. I only learnt this one recently (thanks Rich!) and it's
 been a game changer!
 
-<img src="/img/ctrlR.gif" alt="Reverse search in the terminal" />
+![Reverse search in the terminal](/img/ctrlR.gif)
     
 ### Browsers
 These work in Chrome, Firefox and IE. Again I use these many many times each day.
@@ -51,7 +51,7 @@ These work in Chrome, Firefox and IE. Again I use these many many times each day
 * <kbd>ctrl-t</kbd> - open a new tab
 * <kbd>ctrl-w</kbd> - close the current tab
 
-<img src="/img/browser.gif" alt="Manage browser tabs" />
+![Manage browser tabs](/img/browser.gif)
 
 * <kbd>ctrl-shift-n</kbd> - open an incognito window
 
@@ -62,7 +62,7 @@ often I use them, but I use them all multiple times every hour!
 
 * <kbd>alt-enter</kbd> - see and select suggested actions to fix an error or warning, improve or optimize the code
 
-<img src="/img/alt-enter.gif" alt="Choose an action with alt-enter in IntelliJ" />
+![Choose an action with alt-enter in IntelliJ](/img/alt-enter.gif)
 
 * <kbd>ctrl-alt-l</kbd> - auto-format your code
 
@@ -72,12 +72,12 @@ often I use them, but I use them all multiple times every hour!
 * <kbd>ctrl-w</kbd> - highlight the current text with increasing scope. Note you might want to assign this one to 
 a different key combo, since <kbd>ctrl-w</kbd> usually means "close window". See below for how to assign shortcuts in IntelliJ.
 
-<img src="/img/scope.gif" alt="Highlight with increasing scopes in IntelliJ" />
+![Highlight with increasing scopes in IntelliJ](/img/scope.gif)
 
 * <kbd>alt-f1</kbd> followed by <kbd>enter</kbd> - jump to the location of the current file in the project menu
 * <kbd>shift-f6</kbd> - rename a file
 
-<img src="/img/rename.gif" alt="Jump to file and rename it in IntelliJ" />
+![Jump to file and rename it in IntelliJ](/img/rename.gif)
 
 ### Customising shortcuts
 You can customise your shortcuts on Ubuntu by going to settings -> devices -> keyboard. Similarly other OS shortcuts 
@@ -90,7 +90,7 @@ action.
 For example, IntelliJ by default assigns <kbd>ctrl-y</kbd> to delete a line. This is unintuitive to me and I want 
 <kbd>ctrl-y</kbd> to redo an action that was undone by <kbd>ctrl-z</kbd>.
 
-<img src="/img/reassign.gif" alt="Assigning a keyboard shortcut in IntelliJ" />
+![Assigning a keyboard shortcut in IntelliJ](/img/reassign.gif)
 
 This is a list of the shortcuts I estimate that I use the most on a daily basis. I'd love to hear which shortcuts 
 other people find indispensable, maybe there are some great ones I'm missing!
