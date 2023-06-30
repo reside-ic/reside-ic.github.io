@@ -134,7 +134,7 @@ plot(runif(10), runif(10), main = "Points aléatoires")
 ```
 ````
 
-<img src="/img/translating-rmd.gif" alt="Translating R Markdown with tabset" />
+![Translating R Markdown with tabset](/img/translating-rmd.gif)
 
 Like using custom blocks, a tabset lets us write R Markdown as we would for a single language. We can still take advantage of syntax highlighting in RStudio and R Markdown managing the formatting of text. Using `.tabset .tabset-dropdown` allows users to switch between languages in the output document via a dropdown menu. This has the same disadvantage as custom blocks, it runs all code and so will be slower than using code chunks.
 

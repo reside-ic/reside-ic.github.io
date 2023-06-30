@@ -59,7 +59,7 @@ CREATE TABLE address (
 );
 ```
 
-<img src="/img/example_db.png" alt="png of database schema"/>
+![png of database schema](/img/example_db.png)
 
 We want to develop a query to pull out the information in a readable form from the above tables. This involves getting the list of constraints from `pg_constraint` then joining `pg_class` and `pg_attribute` on `oid` to pull out the name of the table and column. The difficulty is that conkey and confkey fields are both lists so we need to use `UNNEST` to expand these to get a single row for each constraint. We initially tried to use a `LATERAL` join to retrieve this information from the database using this [stack overflow answer](https://dba.stackexchange.com/a/218969). We're using [Travis](https://travis-ci.org) as our CI system which makes PostgreSQL 9.2 available by default. `LATERAL` join was only introduced in version 9.4 so we need to adapt the query to work with older versions of postgres.
 

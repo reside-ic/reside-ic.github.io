@@ -52,8 +52,7 @@ chown -R buildkite-agent.buildkite-agent $AGENT_SSH
 We then add the public key to the list of authorised keys on the app host server.
 
 We can now start the agent. In the agents list on Buildkite, we can see the agent running with the queue set to `deploy`. We now have an agent listening on a dedicated deploy queue that can run scripts on the app host server. Next, we need to set up the deployment pipelines themselves.
-<img src="/img/buildkite-cd-agent.png" alt="png of agent list"/>
-
+![png of agent list](/img/buildkite-cd-agent.png)
 # Deployment pipeline
 
 We define our deplyoment pipeline using a yml file in at path `./buildkite/deploy-pipeline.yml` with content
@@ -80,7 +79,8 @@ Now we need to add the pipeline to Buildkite. This is a little different to addi
 1. Set the "Git Repository URL" to the repo containing the deployment pipeline
 1. Set the steps to "Read steps from repository" and update the "Commands to run" to use the path to the deployment pipeline `buildkite-agent pipeline upload ./buildkite/deploy-pipeline.yml`
 1. Set the "Agent Targeting Rules" to `queue=deploy`, we can see that this queue matches one of the connected agents
-   <img src="/img/buildkite-cd-pipeline.png" alt="png of pipeline setup"/>
+   ![png of pipeline setup](/img/buildkite-cd-pipeline.png)
+
 1. Click "Create Pipeline"
 1. Skip the webhook setup as we do not want the deployment to be triggered on changes to the repo which contains the pipeline
 1. Go to pipeline settings and update the default branch to "main"
@@ -134,8 +134,7 @@ This will define an env var `TAG` with default value `main` which will then be p
 
 When we run a build via the Buildkite UI we can then set the environment variable in the new build dialog.
 
-<img src="/img/buildkite-cd-run.png" alt="png of pipeline run"/>
-
+![png of pipeline run](/img/buildkite-cd-run.png)
 # Summary
 
 We wanted to set up Buildkite deployment pipelines to simplify deployments, automate repetative manual work, and identify when we break compatibility between different components. We now have a pipeline that will allow us to deploy any tag of a docker image in a few clicks from one centralised place. This should encourage frequent integration and enable all members of the development and research teams to release changes. We can also trigger deployments automatically whenever a component is updated, meaning that we can see the latest version of all of the components of the app and how they work together.

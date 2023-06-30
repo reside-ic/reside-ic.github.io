@@ -82,8 +82,7 @@ it can be used in conjunction with any library at all, not just React.
 The best way to understand Flux is probably to read the [docs](https://facebook.github.io/flux/docs/overview) over at Facebook. 
 But in a nutshell, it's a uni-directional data flow pattern inspired by functional programming:
 
-<img style="width:auto; display: block; margin: 0 auto;" src="/img/flux.png" alt="Diagram explaining the Flux data flow pattern"/> 
-
+![Diagram explaining the Flux data flow pattern](/img/flux.png)
 It can add a lot of boilerplate code to your app, so it's not always the right solution. If you're just writing a handful 
 of mostly independent components, you almost certainly don't need it. If you have a complex, dynamic app with many components
  that need to share state, then it can be really useful.
@@ -106,7 +105,7 @@ absolutely can use Flux with Angular as well.
 Here's how the "Big 3" frameworks of [Vue.js](https://vuejs.org/), [React](https://reactjs.org/) and [Angular](https://angular.io/) (aka Angular 2)
 compare in terms of their features:
 
-<img style="width:auto" src="/img/jstable.png" alt="Comparison between features of Js frameworks" />
+![Comparison between features of Js frameworks](/img/jstable.png)
 
 Picking a framework partly comes down to personal preferences - for example, most people find Vue's syntax a little 
 easier to pick up, and I personally prefer writing HTML to JSX. But then I find React's "Redux" package more 
@@ -120,11 +119,13 @@ just falls behind. At the moment React seems like a solid bet in that it has a l
 Angular is still very widely used but it seems like it's less popular with developers than the other two.
  Vue has fewer downloads than React, but developers are very enthusiastic about it.
  
-<img style="width:auto" src="/img/githubpopularity.png" alt="Comparison between GitHub popularity of Js frameworks"/>
-<img style="width:auto" src="/img/npm.png" alt="Comparison between npm popularity of Js frameworks"/>
-<img style="width:auto" src="/img/devs.png" alt="Comparison between developer popularity of Js frameworks"/>
+![Comparison between popularity of Js frameworks on github, npm and developers](/img/js_combined_popularity.png)
+
+(See [^1], [^2] and [^3]). 
 
 If you're already using a front-end framework, let us know how you made your choice!
+
+---
 
 [^1]: https://www.npmjs.com/
 [^2]: https://github.com/
