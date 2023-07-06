@@ -195,7 +195,7 @@ Some things we can notice here:-
 What if we relax the problem a little. Suppose instead of all processes
 needing all of the results back, only process zero needs the assembled
 bulk. All the other processes could then only allocate memory for the 
-data they create, contribute just that to the MPI call.
+data they create, and contribute just that to the MPI call.
 
 The new function looks like this:-
 
