@@ -86,7 +86,7 @@ double get_mpi_time() {
 
 Now we're ready to write some very naive code, in which a number of
 MPI processes will create some data, and all the MPI processes want to 
-then have their own copy of the all the data from all the processes. 
+then have their own copy of all the data from all the processes. 
 
 We'll do this by having each process creating a large data structure
 at the start, populate their own subset of it, and then perform an
