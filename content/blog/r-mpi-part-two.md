@@ -277,7 +277,7 @@ the total time - in fact we're nowhere near that. But timing no longer gets
 worse as we add processors! So we just need to be giving the processes more
 work to do.
 
-Lastly, node the run on my desktop is a bit quicker than the cluster job. But
+Lastly, note the run on my desktop is a bit quicker than the cluster job. But
 remember here I'm making poor use of the cluster nodes, only giving them one
 process (one core) each. HPC cluster nodes don't really offer you benefit in
 speed for single core; it's the extra RAM and extra cores that give you the
