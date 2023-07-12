@@ -33,7 +33,7 @@ cpp11::sexp new_data(cpp11::doubles x);
 cpp11::sexp get_data(cpp11::external_pointer<std::vector<double>> ptr);
 ```
 
-These two are called from R; the `new_data` function takes a
+These two are called from R: the `new_data` function takes a
 R-flavoured vector of doubles, creates a copy of that vector in C++ world, and 
 gives back to R a _pointer_ to that new vector. R can do nothing with this 
 pointer except give it back to C++ later. The `get_data` function will copy
@@ -95,7 +95,7 @@ zero, we can use a _reduction_ summing over the contributions from
 different proceses.
 
 In `R/source.cpp`, my function, with a little bit of timing, 
-looks like this:-
+looks like this :-
 
 ```
 naive_reduce <- function() {
@@ -141,7 +141,7 @@ In `data/rmpi.h` we declare:-
 void mpi_all_reduce(std::vector<double>* data);
 ```
 
-and we implement it in `data/rmpi.cpp` thus:-
+and we implement it in `data/rmpi.cpp` thus :-
 
 ```
 [[cpp11::register]]
@@ -154,7 +154,7 @@ void mpi_all_reduce(cpp11::external_pointer<std::vector<double>> ptr) {
 Here we are receiving the pointer that R has, to the data that's in C++ land. 
 We convert that to a pointer to actual vector, then we can pass that to 
 `MPI_Allreduce`. Normally, the first argument would be a pointer to where
-the outgoing data lives; the `MPI_IN_PLACE` flag is a special alternative
+the outgoing data lives. The `MPI_IN_PLACE` flag is a special alternative
 that tells MPI the outgoing data is already in the receive buffer (the second
 argument), and to re-use that structure for receiving the result. Without that,
 we would need to double our RAM usage with an extra structure for receiving the
@@ -165,11 +165,11 @@ locally with (for example)
 `mpiexec -n 8 Rscript -e 'mpitest:::naive_reduce()'` - 
 and on our cluster using the same script from part 1, but setting 
 `/numnodes` to be the same as the number of processes - one process
-per computer. Running with between 1 and 8 processes:-
+per computer. Running with between 1 and 8 processes :-
 
 ![Native MPI performance](/img/mpi_2_eg1.png)
 
-Some things we can notice here:-
+Some things we can notice here :-
 
 * The time taken to do the MPI reduction (blue) increases linearly with
   processes when run locally. We'd expect this because each process needs
@@ -197,7 +197,7 @@ needing all of the results back, only process zero needs the assembled
 bulk. All the other processes could then only allocate memory for the 
 data they create, and contribute just that to the MPI call.
 
-The new function looks like this:-
+The new function looks like this :-
 
 ```
 gather <- function() {
@@ -262,26 +262,39 @@ The `MPI_Gather` call assumes all the nodes will contribute the
 same number of bytes - hence the hack earlier to ensure `n` was exactly
 divisible by `size`. A purer solution would use another function
 [MPI_Gatherv](https://www.mpich.org/static/docs/v3.3/www3/MPI_Gatherv.html),
-that allows processees to send different amounts of data, as long as they all
+that allows processes to send different amounts of data, as long as they all
 agree beforehand how much each process will send.
 
 ![Native MPI performance](/img/mpi_2_eg2.png)
 
 And this immediately has the look of something more reasonable. MPI time
 is lower because we're doing less communication, and the scaling is no longer
-messed up by the overheads of getting so much memnory; a larger fraction of
+messed up by the overheads of getting so much memory. A larger fraction of
 the run-time is now parallelisable.
 
 We still don't get much efficiency; doubling the processors doesn't half
-the total time - in fact we're nowhere near that. But timing no longer gets
-worse as we add processors! So we just need to be giving the processes more
-work to do.
+the total time - in fact we're nowhere near that - but at least timing no longer 
+gets worse as we add processors! We just need to be giving the processes more
+work they can do at the same time.
 
-Lastly, note the run on my desktop is a bit quicker than the cluster job. But
-remember here I'm making poor use of the cluster nodes, only giving them one
-process (one core) each. HPC cluster nodes don't really offer you benefit in
-speed for single core; it's the extra RAM and extra cores that give you the
-throughput.
+# Some performance thoughts
+
+The run on my desktop is actually faster than the job on the HPC cluster node. 
+Server processors are often slower than desktops for single core jobs; 
+large RAM, core-count and I/O options are the HPC core strengths. 
+Ignoring MPI for a moment, we generally get the
+best scalability on HPC if we run lots of independent processes on the same node - 
+such as running the same job many times with different seeding - or 
+a process that tries to use many cores, such as a large individual-based
+model where people can be modelled somewhat simultaneously.
+
+The jobs where MPI provides the most benefit might be those where splitting
+a geographical space across different nodes is helpful, with parallel work 
+in each subset. In the past, MPI enabled very large RAM jobs to spread
+across nodes; larger, cheaper machines mean few problems really require that 
+approach now, but even so, an individual-based spatial model split into a region
+per node, with occasional communication between regions, makes a good application 
+for MPI, using both multiple nodes and cores.
 
 # What next?
 
