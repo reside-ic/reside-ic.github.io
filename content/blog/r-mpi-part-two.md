@@ -1,6 +1,6 @@
 ---
 author: "Wes Hinsley"
-date: 2023-06-29
+date: 2023-07-12
 title: MPI from R - Part Two - Simple Comms
 best: false
 tags:
