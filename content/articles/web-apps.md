@@ -64,7 +64,7 @@ We run all of these components within docker containers to provide reliable port
 
 In order to support this architecture, we require the research code to have the following features so that we can build a stable interface to it:
 
-- Source-controlled in github: we maintain the source code for our applications in github repositories, and we require research code to be available in github too, so that we can develop against it, apply automated tests to it within continuous integration and deploy it using docker.
+- Source-controlled in git: we maintain the source code for our applications in git repositories, and we require research code to be available in github too, so that we can develop against it, apply automated tests to it within continuous integration and deploy it using docker.
 
 - Versioned: it's useful to be able surface a version number in the application, of both the research and application code. It's helpful if the research code can provide its own semantic version, but as a minimum we could use a github commit identifier.
 
