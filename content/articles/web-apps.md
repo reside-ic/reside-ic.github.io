@@ -81,7 +81,7 @@ In addition, the research team will need to provide us with a good idea of the p
 
 #  Application Patterns
 
-Almost all of our applications involve the user providing some input (data files, parameter values), triggering some analysis and then observing or downloading results. Different research and different user motivations calls for slightly different user experiences in the app. Here are some examples of different styles of application we have written:
+Almost all of our applications involve the user providing some input (data files, parameter values), triggering some analysis and then observing or downloading results. Different research and different user motivations call for slightly different user experiences in the app. Here are some examples of different styles of applications we have written:
 
 ## Long-running model
 
