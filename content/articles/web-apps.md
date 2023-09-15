@@ -95,7 +95,7 @@ Almost all of our applications involve the user providing some input (data files
 
 ## Model exploration
 
-The WODIN application allows the user to create, edit and explore a model written in [ODIN](https://mrc-ide.github.io/odin/). While this is primarily being used as a teaching tool, it could also be used to present a model (it can include default model code) and allow the user to run it, fit it to data, try their own code tweaks etc.
+[WODIN](https://epimodels.dide.ic.ac.uk/demo/) allows the user to create, edit and explore a model written in [ODIN](https://mrc-ide.github.io/odin/). While this is primarily being used as a teaching tool, it could also be used to present a model (it can include default model code) and allow the user to run it, fit it to data, try their own code tweaks etc.
 ![WODIN](/img/webapp-wodin.png)
 
 ## Applying multiple analyses
