@@ -45,16 +45,16 @@ Cons:
 - handles long-running processes poorly, causing the application to hang
 
 
-In our experience, where an application is written over a single period and then not modified going forward, Shiny has proven a good choice.
-Where an application will need to evolve over time as new features are added, the quick startup time of Shiny is replaced by a slow and
-error-prone development process
+In our experience, Shiny can be a good choice for relatively simple applications with no complex interactivity or scalability requirements,
+and where the application is written over a single period and then not modified going forward.
+Where an application will need to evolve over time as new features are added, the quick startup time of Shiny is replaced
+by a slow and error-prone development process
 
-Shiny's limitations mean that it may not be a good choice for a final application to present to users, but could be a useful prototyping tool,
-allowing the research team to develop ideas for how an application's user interface should be structured and what options it should provide.
+In cases where Shiny's limitations mean that it would not be the best choice for a final application to present to users,
+it can still be a useful prototyping tool, allowing the research team to develop ideas for how an application's user
+interface should be structured and what options it should provide.
 The RESIDE team could then migrate the prototype Shiny app's functionality to a full web application.
 
-However, in cases where a simple application is all that is required, with no complex interactivity or scalability requirements,
-and no need for future changes, a Shiny application may be the best option for the final application too.
 
 # Components of a full research web application
 
