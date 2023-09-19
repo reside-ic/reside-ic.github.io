@@ -45,8 +45,10 @@ Cons:
 - handles long-running processes poorly, causing the application to hang
 
 
-In our experience, Shiny can be a good choice for relatively simple applications with no complex interactivity or scalability requirements,
-and where the application is written over a single period and then not modified going forward.
+In our experience, Shiny can be a good choice for relatively simple applications with no complex interactivity or scalability requirements.
+Within DIDE, we can deploy Shiny apps to our [Shiny server](https://github.com/mrc-ide/twinkle), which can help by providing load 
+balancing .
+Shiny also works well where the application is written over a single period and then not modified going forward.
 Where an application will need to evolve over time as new features are added, the quick startup time of Shiny is replaced
 by a slow and error-prone development process
 
