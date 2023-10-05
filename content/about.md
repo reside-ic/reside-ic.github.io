@@ -3,17 +3,11 @@ date = "2015-08-22"
 title = "About"
 +++
 
-Research Software for Infectious Disease Epidemiology - we are a team of 9 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
+Research Software for Infectious Disease Epidemiology - we are a team of 7 research software engineers working within the [MRC Centre for Global Infectious Disease Analysis](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis) and the [Department of Infectious Disease Epidemiology](https://www.imperial.ac.uk/school-public-health/infectious-disease-epidemiology) at Imperial College London.
  ~
 ## The team
 
 {{< team >}}
-{{< person name="Alex Hill"img="alex.jpg" url="http://www.alexandra-hill.com/">}}
-Alex learnt to code after finishing her logic PhD in 2013 and has worked as a full-stack web developer in a range of 
-industries since then. Her favourite language these days is Kotlin but she has a soft spot for Javascript.
-When not writing code she can often be found gigging as a professional hula hooper (yes, that's a thing!) or messing around 
-with her DJ decks.
-{{< /person >}}
 {{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
 Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
 in start-ups in the wild West Country before bringing her considerable web development expertise to RESIDE.
@@ -49,3 +43,4 @@ Mantra studied Mathematics at university and realised most of it won't be used a
 * [Martin Eden](https://github.com/martineden)
 * [Marie Gronemeyer](https://github.com/muppi1993)
 * [Nicolas Dolan](https://github.com/Nicolas-Dolan)
+* [Alex Hill](https://github.com/hillalex)
