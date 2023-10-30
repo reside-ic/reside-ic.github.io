@@ -18,8 +18,8 @@ Giovanni is a computer scientist and health researcher. The former CTO of a heal
 with the malaria group at Imperial developing individual-based malaria models in C++ and R. Outside of tech,
 he paints, makes music, is a keen runner and occasional philosophy reader.
 {{< /person >}}
-{{< person name="Lekan Anifowoshe"img="lekan.jpg" url="https://github.com/carbowizzy">}}
-Lekan has several years of experience in software engineering. He holds a BSc from Cyprus and Master degree from Sussex. Before joining the team, he worked with continuous update project(CUP) research group at Imperial. If not coding, he enjoys watching and playing lawn tennis.
+{{< person name="Anmol Thapar"img="anmol.jpg" url="https://github.com/absternator">}}
+Anmol is a software engineer who loves building clean UI/UX, scalable backends and robust infrastructure. He is all the way from New Zealand and outside of work loves basketball, snowboarding and the gym. 
 {{< /person >}}
 {{< person name="Rich FitzJohn" img="rich.jpg" url="https://richfitz.github.io">}}
 Rich was a computational biologist for 15 years before deciding that catalysing research through software was more fun than doing it himself. He's interested in making reproducibility easier and more accessible while letting scientists focus more on science than engineering. Outside of work he enjoys rock climbing and hiking.
@@ -44,3 +44,4 @@ Mantra studied Mathematics at university and realised most of it won't be used a
 * [Marie Gronemeyer](https://github.com/muppi1993)
 * [Nicolas Dolan](https://github.com/Nicolas-Dolan)
 * [Alex Hill](https://github.com/hillalex)
+* [Lekan Anifowoshe](https://github.com/carbowizzy)
