@@ -44,4 +44,4 @@ Mantra studied Mathematics at university and realised most of it won't be used a
 * [Marie Gronemeyer](https://github.com/muppi1993)
 * [Nicolas Dolan](https://github.com/Nicolas-Dolan)
 * [Alex Hill](https://github.com/hillalex)
-* [Lekan Anifowoshe](https://github.com/carbowizzy)
+* [Lekan Anifowoshe](https://github.com/LekanAnni)
