@@ -42,7 +42,7 @@ fathom('trackPageview');
 {{ end }}
 
 {{ if eq (getenv "HUGO_USE_ANALYTICS") "true" }}
-  {{ template "_internal/google_analytics_async.html" . }}
+  {{ template "_internal/google_analytics.html" . }}
 {{ end }}
 
 <script>

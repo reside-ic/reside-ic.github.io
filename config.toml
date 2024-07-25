@@ -10,7 +10,7 @@ title = "Reside-IC"
 pluralizelisttitles = false
 DisqusShortname = "reside-ic"
 googleAnalytics = "UA-140418140-1"
-disableKinds = ["taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 [permalinks]
 blog = "blog/:slug/"
