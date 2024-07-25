@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Validation on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/validation/</link>
+    <description>Recent content in Validation on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 30 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/validation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frictionless Data Package Validation in R</title>
+      <link>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</link>
+      <pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</guid>
+      <description>Our work often involves researcher-written models that we want to make available to non-technical users. To ensure that both the model will run and that it will produce a good fit, validating users&amp;rsquo; data and returning actionable error messages is essential. For the UNAIDS Naomi project we collaborate closely with a team that manages data storage for users. They use Frictionless Data Packages for describing the resources that need to be present and validating them.</description>
+    </item>
+  </channel>
+</rss>

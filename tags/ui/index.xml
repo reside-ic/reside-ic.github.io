@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/ui/</link>
+    <description>Recent content in UI on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shades of meaning: visualising geographical data with colour in a data-driven web application</title>
+      <link>https://reside-ic.github.io/blog/shades-of-meaning-visualising-geographical-data-with-colour-in-a-data-driven-web-application/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/shades-of-meaning-visualising-geographical-data-with-colour-in-a-data-driven-web-application/</guid>
+      <description>Colour and maps are two crucial aspects of data visualisation, and putting them together is a classic technique for revealing geographical patterns in data.&#xA;William Smith&amp;#39;s geological map of 1815 If data values are discrete, selecting the colours to use is straightforward - just choose an appropriate colour for each value. For continuous data, a colour scale is required, where any numeric value in the data range can be mapped to a colour, and where the gradations in colour are visually meaningful.</description>
+    </item>
+  </channel>
+</rss>

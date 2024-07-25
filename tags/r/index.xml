@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/r/</link>
+    <description>Recent content in R on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MPI from R - Part One - The Basics</title>
+      <link>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</guid>
+      <description>MPI is a standard for allowing a team of processes to solve a problem together. Various implementations of that standard exist; MPICH is perhaps the most well known. Microsoft MPI mimics MPICH on Windows, as does Intel MPI on various platforms. Typically you&amp;rsquo;d then include these libraries in projects written in C, C++, or Fortran.&#xA;Furthermore, recent releases of Rtools have included support for Microsoft MPI. My plan is a couple of blogs on how to get this working, some exploration of performance, and an attempt at testing / CI.</description>
+    </item>
+    <item>
+      <title>Symbolic differentiation in a few lines of code</title>
+      <link>https://reside-ic.github.io/blog/symbolic-differentiation-in-a-few-lines-of-code/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/symbolic-differentiation-in-a-few-lines-of-code/</guid>
+      <description>We are working on automatic differentiation of odin models, which requires support for differentiating expressions symbolically, in order to write new equations that can be used to numerically propagate derivatives of a model.&#xA;R already has support for doing this via the D function:&#xA;D(quote(2 * x^2 * log(sqrt(x))), &amp;#34;x&amp;#34;) ## 2 * (2 * x) * log(sqrt(x)) + 2 * x^2 * (0.5 * x^-0.5/sqrt(x)) and the Deriv package provides an extensible interface.</description>
+    </item>
+    <item>
+      <title>Frictionless Data Package Validation in R</title>
+      <link>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</link>
+      <pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</guid>
+      <description>Our work often involves researcher-written models that we want to make available to non-technical users. To ensure that both the model will run and that it will produce a good fit, validating users&amp;rsquo; data and returning actionable error messages is essential. For the UNAIDS Naomi project we collaborate closely with a team that manages data storage for users. They use Frictionless Data Packages for describing the resources that need to be present and validating them.</description>
+    </item>
+    <item>
+      <title>R Markdown Internationalisation</title>
+      <link>https://reside-ic.github.io/blog/r-markdown-internationalisation/</link>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/r-markdown-internationalisation/</guid>
+      <description>As part of our work on naomi we&amp;rsquo;ve been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. R Markdown has no built in support for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets each of which has advantages and trade offs around scalability, ease of maintenance and complexity.</description>
+    </item>
+    <item>
+      <title>Debugging memory errors with valgrind and gdb</title>
+      <link>https://reside-ic.github.io/blog/debugging-memory-errors-with-valgrind-and-gdb/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-memory-errors-with-valgrind-and-gdb/</guid>
+      <description>Many R packages use C or C++ code to power performance-critical sections of code. These langauges are easy to shoot yourself in the foot with, as seemingly innocuous code may cause crashes (or just junk output) by reading from memory that is uninitialised or out of range. There are a couple of tools for helping diagnose this sort of issue:&#xA;&amp;ldquo;valgrind&amp;rdquo; is great for tracking down is sort of error as it highlights invalid memory accesses &amp;ldquo;gdb&amp;rdquo; can be used to step through a program, or inspect the internal state after a crash We&amp;rsquo;ve already written about debugging R packages with valgrind and gdb separately here.</description>
+    </item>
+    <item>
+      <title>Sheffield/NVIDIA GPU hackathon</title>
+      <link>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</guid>
+      <description>Last month we attended (virtually) a GPU hackathon hosted by Sheffield and NVIDIA, in order to learn how to create GPU-capable models to accelerate our simulations.&#xA;We are working as part of the centre COVID response on models of COVID-19 transmission within the UK. The epidemiologists working on the model are writing stochastic compartmental models where populations are modelled as &amp;ldquo;Susceptible&amp;rdquo;, &amp;ldquo;Exposed&amp;rdquo;, &amp;ldquo;Infected&amp;rdquo;, &amp;ldquo;Recovered&amp;rdquo;, etc - movement between these compartments happens stochastically using a set of parameters.</description>
+    </item>
+    <item>
+      <title>A warning about warning()</title>
+      <link>https://reside-ic.github.io/blog/a-warning-about-warning/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/a-warning-about-warning/</guid>
+      <description>I believe that warning() should be used very rarely in R - it&amp;rsquo;s a weird function that is partly logging and partly flow control but doesn&amp;rsquo;t do a great job at either. Package authors use warning for a range of conditions ranging from informational through to catastrophic and users are left ignoring warnings due to the former or debugging issues a significant distance from the source due to the latter.</description>
+    </item>
+    <item>
+      <title>Gotta catch &#39;em all</title>
+      <link>https://reside-ic.github.io/blog/gotta-catch-em-all/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/gotta-catch-em-all/</guid>
+      <description>Great packages have great test suites. Packages with C++ are not exceptions. You might be surprised to find how easy it is to add C++ unittests to your package.&#xA;This post will focus on testthat&amp;rsquo;s Catch integration. There are plenty of C++ testing frameworks, each with their own pros and cons. The benefit of this approach is the really low setup cost and no dependency management.&#xA;Set up The first step is to add some boilerplate to your package.</description>
+    </item>
+    <item>
+      <title>cyphr 1.1.0</title>
+      <link>https://reside-ic.github.io/blog/cyphr-1.1.0/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cyphr-1.1.0/</guid>
+      <description>We have released a new version of our cyphr package, which makes data analysis workflows with R much easier. The aim of the package is to make encrypted workflows as easy as:&#xA;d &amp;lt;- cyphr::decrypt(read.csv(&amp;#34;secret-input.csv&amp;#34;), key) ... cyphr::encrypt(write.csv(processed, &amp;#34;secret-output.csv&amp;#34;), key) using modern encryption technologies and taking care of most of the details so that data is not inadvertently leaked.&#xA;This new version has lots of small features which improve the behaviour of its collaborative data process</description>
+    </item>
+    <item>
+      <title>Debugging and Fixing CRAN&#39;s &#39;Additional Checks&#39; errors</title>
+      <link>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</guid>
+      <description>R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work. In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash. Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.</description>
+    </item>
+    <item>
+      <title>Experiments in transforming Excel into R</title>
+      <link>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</guid>
+      <description>Last week was the Health Economics in R Hackathon, bringing together health economists, epidemiologists and research software engineers.&#xA;We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a decision tree model in Excel, the analyst might want to carry out a sensitivity analysis, varying the models&amp;rsquo; parameters to see how the model outcomes vary.</description>
+    </item>
+    <item>
+      <title>gotchaR - Bumps in the road for the learneR driver.</title>
+      <link>https://reside-ic.github.io/blog/gotchar-bumps-in-the-road-for-the-learner-driver./</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/gotchar-bumps-in-the-road-for-the-learner-driver./</guid>
+      <description>I am about 3 years into the journey of learning R. There is a lot to get used to, when my previous landmarks have been languages based around Java, C, Pascal, Basic and some dabblings with assemblers of various breeds. Mostly, my adjustment has been about doing things the way R likes; turning loop-ish code into vector-ish code, using the right base functions properly and thinking about data in columns for a start.</description>
+    </item>
+    <item>
+      <title>Deferring errors with R</title>
+      <link>https://reside-ic.github.io/blog/deferring-errors-with-r/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/deferring-errors-with-r/</guid>
+      <description>How do you run a block of code and collect up all the errors in order to report them back in a batch? This is the sort of thing that might turn up in a validation exercise where we want to check a number of properties of the provided data and then report back in one go all the errors so that the user can fix multiple problems at each upload attempt.</description>
+    </item>
+    <item>
+      <title>jsonvalidate 1.1.0</title>
+      <link>https://reside-ic.github.io/blog/jsonvalidate-1.1.0/</link>
+      <pubDate>Tue, 25 Jun 2019 07:38:50 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/jsonvalidate-1.1.0/</guid>
+      <description>JSON is useful as a data-interchange format, due to the massive popularity of javascript. Basically every language supports reading and writing JSON now, so it makes a nice lowest common denominator.&#xA;When generating JSON from an application, it is useful to be able to describe how the data is structured - so if we return output like&#xA;{ &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: &amp;#34;A green door&amp;#34;, &amp;#34;price&amp;#34;: 12.50, &amp;#34;tags&amp;#34;: [&amp;#34;home&amp;#34;, &amp;#34;green&amp;#34;] } We might describe it in words like:</description>
+    </item>
+    <item>
+      <title>dde 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/dde-1.0.0/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/dde-1.0.0/</guid>
+      <description>Last week we released the first public version of dde. This package implements a method for solving delay differential equations, which we use with odin to model disease dynamics.&#xA;With ordinary differential equations, you express the system of equations as dy/dt = f(y(t), t); the rate of change of the system depends on the current state of the system and the current time, but with delay differential equations dy/dt also depends on y(t - τ), where τ is a length of time back into the past.</description>
+    </item>
+    <item>
+      <title>vaultr 1.0.2</title>
+      <link>https://reside-ic.github.io/blog/vaultr-1.0.2/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/vaultr-1.0.2/</guid>
+      <description>We are pleased to announce the first public release of vaultr, our R client for HashiCorp&amp;rsquo;s &amp;ldquo;vault&amp;rdquo;, a system for storing secrets and sensitive data and enabling these secrets to be used in applications.&#xA;Vault (the server) is a little like a password manager (e.g., LastPass or Bitwarden) but designed for use within applications, rather than for storing personal passwords. With vault, you can have a central source of secrets and sensitive data (ssh keys, database passwords, ssl certificates) that can be used when deploying or using applications.</description>
+    </item>
+    <item>
+      <title>Debugging at the edge of reason</title>
+      <link>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</guid>
+      <description>What do you do if this code&amp;hellip;&#xA;printf(&amp;#34;Before loop\n&amp;#34;); while ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) { printf(&amp;#34;Inside loop\n&amp;#34;); // Other loop code } if (a&amp;gt;0) printf(&amp;#34;a&amp;gt;0\n&amp;#34;); if (b&amp;gt;0) printf(&amp;#34;b&amp;gt;0\n&amp;#34;); if ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) printf(&amp;#34;Both a&amp;gt;0 and b&amp;gt;0!&amp;#34;); &amp;hellip;produces this output?&#xA;Before loop a&amp;gt;0 b&amp;gt;0 Both a&amp;gt;0 and b&amp;gt;0! If a and b are both above zero, then why didn&amp;rsquo;t the while-loop do any iteration; why didn&amp;rsquo;t we see Inside loop in the output?</description>
+    </item>
+    <item>
+      <title>cinterpolate 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</guid>
+      <description>Last week we released the first official version of cinterpolate to available on CRAN. This package provides a minimal set of interpolation methods (piecewise constant, linear and spline) designed to be compatible with R&amp;rsquo;s builtin approx and spline functions, but but callable from C. It will primarily be of interest to people writing R packages that include C or C++.&#xA;When writing an R package with C or C++ extensions, you have to forgo many of the the functions that make operating in a high-level easy.</description>
+    </item>
+    <item>
+      <title>odin 0.2.0</title>
+      <link>https://reside-ic.github.io/blog/odin-0.2.0/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/odin-0.2.0/</guid>
+      <description>After a rather long period of gestation, yesterday I merged in a long-running rewrite of odin. This is a major rework of odin which lays the groundwork for future improvements later this year.&#xA;Odin is our package for working with differential equations at a high level - it includes support for the sort of &amp;ldquo;structured compartmental models&amp;rdquo; that we use a lot in the department, compiling these to C for efficient execution.</description>
+    </item>
+  </channel>
+</rss>

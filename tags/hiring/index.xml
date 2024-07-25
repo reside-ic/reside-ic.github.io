@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hiring on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/hiring/</link>
+    <description>Recent content in Hiring on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 06 Apr 2020 11:50:00 +0100</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/hiring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>We&#39;re hiring: Full-stack web developer</title>
+      <link>https://reside-ic.github.io/blog/hiring-2020-web-developer/</link>
+      <pubDate>Mon, 06 Apr 2020 11:50:00 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/hiring-2020-web-developer/</guid>
+      <description>We are hiring! While many people of the department and some of the RSE group are focussed on COVID-19 at the moment, research and public health action on malaria, HIV, and other diseases continues in the department and we&amp;rsquo;re looking for someone to help us develop web applications that translate research into public health outcomes. Just because one pandemic is raging does not decrease the impact of other diseases - in fact it&amp;rsquo;s more important than ever in this current crisis that these programmes can continue.</description>
+    </item>
+    <item>
+      <title>We&#39;re hiring: R/C&#43;&#43;/Malaria Developer</title>
+      <link>https://reside-ic.github.io/blog/hiring-2019-malaria-developer/</link>
+      <pubDate>Wed, 03 Jul 2019 07:57:16 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/hiring-2019-malaria-developer/</guid>
+      <description>We are hiring! We&amp;rsquo;re looking for a developer to join our team to work with the malaria modelling research group on developing simulation models that will be used to investigate the impact of interventions to prevent the spread of malaria.&#xA;No prior experience with malaria or epidemiology is needed as you&amp;rsquo;ll be working closely with a friendly team of computational researchers. You&amp;rsquo;ll work with the rest of our RSE team who will help you gather requirements from the researchers, understand the existing code, and review your code.</description>
+    </item>
+  </channel>
+</rss>

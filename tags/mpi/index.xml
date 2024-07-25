@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MPI on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/mpi/</link>
+    <description>Recent content in MPI on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/mpi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MPI from R - Part One - The Basics</title>
+      <link>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</guid>
+      <description>MPI is a standard for allowing a team of processes to solve a problem together. Various implementations of that standard exist; MPICH is perhaps the most well known. Microsoft MPI mimics MPICH on Windows, as does Intel MPI on various platforms. Typically you&amp;rsquo;d then include these libraries in projects written in C, C++, or Fortran.&#xA;Furthermore, recent releases of Rtools have included support for Microsoft MPI. My plan is a couple of blogs on how to get this working, some exploration of performance, and an attempt at testing / CI.</description>
+    </item>
+  </channel>
+</rss>

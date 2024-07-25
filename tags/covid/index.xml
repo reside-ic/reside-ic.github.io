@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Covid on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/covid/</link>
+    <description>Recent content in Covid on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 25 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/covid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sheffield/NVIDIA GPU hackathon</title>
+      <link>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</guid>
+      <description>Last month we attended (virtually) a GPU hackathon hosted by Sheffield and NVIDIA, in order to learn how to create GPU-capable models to accelerate our simulations.&#xA;We are working as part of the centre COVID response on models of COVID-19 transmission within the UK. The epidemiologists working on the model are writing stochastic compartmental models where populations are modelled as &amp;ldquo;Susceptible&amp;rdquo;, &amp;ldquo;Exposed&amp;rdquo;, &amp;ldquo;Infected&amp;rdquo;, &amp;ldquo;Recovered&amp;rdquo;, etc - movement between these compartments happens stochastically using a set of parameters.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ELK on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/elk/</link>
+    <description>Recent content in ELK on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/elk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aggregating logs from services deployed with Docker</title>
+      <link>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</guid>
+      <description>Introduction If you&amp;rsquo;re managing a number of applications across multiple servers then having easy access to their logs can make discovering and debugging issues much more efficient. Deploying a system to aggregate and visualise this information greatly reduces the need to identify and log into the relevant server(s) directly, and enables more sophisticated analysis such as error tracing across systems (see 5 Good Reasons to Use a Log Server for more).</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Buildkite on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/buildkite/</link>
+    <description>Recent content in Buildkite on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/buildkite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Delivery with Buildkite</title>
+      <link>https://reside-ic.github.io/blog/continuous-delivery-with-buildkite/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/continuous-delivery-with-buildkite/</guid>
+      <description>Introduction Our deployments at RESIDE typically consist of a bash script or a python script using constellation to bring up a set of docker containers each of which contains a separate part of the application. We might have one docker image for the web app, one for the database, one for redis, one for an R backend API, and multiple workers. We use Buildkite as part of our CI (continuous integration) process to build these images and test them.</description>
+    </item>
+  </channel>
+</rss>

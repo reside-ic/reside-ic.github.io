@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cookiecutter on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/cookiecutter/</link>
+    <description>Recent content in Cookiecutter on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/cookiecutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating project templates using Cookiecutter</title>
+      <link>https://reside-ic.github.io/blog/creating-project-templates-using-cookiecutter/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/creating-project-templates-using-cookiecutter/</guid>
+      <description>Introduction We recently took the opportunity presented by some new projects to build a re-usable web application project template. This post explains our objectives, the implementation, and some reflections on the process.&#xA;Objectives We develop and/or maintain a number of applications that provide web-based user interfaces to research data and scientific models. They all include a Kotlin backend and are built using Gradle but differ in other implementation details:&#xA;Some use a database, whereas others don&amp;rsquo;t need to persist or access data directly The most recent use TypeScript - older ones use vanilla Javascript We mostly use Vue 2, but we have a couple using React We use several server-side HTTP frameworks, reflecting their maturity (and that of Kotlin) when the relevant apps were developed We have standardised on Spring Boot for new apps, but we have also used Spark in the past There are other differences, but this should demonstrate the kind of divergence that we&amp;rsquo;re aiming to address, primarily based on our learnings about each technology or framework since adopting them.</description>
+    </item>
+  </channel>
+</rss>

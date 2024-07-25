@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>I18n on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/i18n/</link>
+    <description>Recent content in I18n on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/i18n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R Markdown Internationalisation</title>
+      <link>https://reside-ic.github.io/blog/r-markdown-internationalisation/</link>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/r-markdown-internationalisation/</guid>
+      <description>As part of our work on naomi we&amp;rsquo;ve been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. R Markdown has no built in support for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets each of which has advantages and trade offs around scalability, ease of maintenance and complexity.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/docker/</link>
+    <description>Recent content in Docker on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conditionally running Ingest Pipelines with Filebeat, Docker and Elastic</title>
+      <link>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</guid>
+      <description>TL;DR - if you want to apply an Ingest Pipeline conditionally in Elastic, consider defining it as a processor in another pipeline and setting its if property.&#xA;Background We use Filebeat to ship application logs to Elastic from our Docker containers. Since we dockerise anything that moves, we have many types of docker container, including containers for Kotlin and JavaScript web applications, for APIs written in R, and for NGINX web proxies.</description>
+    </item>
+    <item>
+      <title>Aggregating logs from services deployed with Docker</title>
+      <link>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</guid>
+      <description>Introduction If you&amp;rsquo;re managing a number of applications across multiple servers then having easy access to their logs can make discovering and debugging issues much more efficient. Deploying a system to aggregate and visualise this information greatly reduces the need to identify and log into the relevant server(s) directly, and enables more sophisticated analysis such as error tracing across systems (see 5 Good Reasons to Use a Log Server for more).</description>
+    </item>
+  </channel>
+</rss>

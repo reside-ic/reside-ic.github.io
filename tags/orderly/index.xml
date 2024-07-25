@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orderly on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/orderly/</link>
+    <description>Recent content in Orderly on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 22 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/orderly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orderly 1.3.0 released to CRAN</title>
+      <link>https://reside-ic.github.io/blog/orderly-1.3.0-released-to-cran/</link>
+      <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/orderly-1.3.0-released-to-cran/</guid>
+      <description>After 18 months of heavy use within VIMC and in the COVID-19 modelling response, we have released orderly 1.3.0 to CRAN. This is a major update with many new features (more than 100 PRs since version 1.0.4 was published in early 2020).&#xA;Orderly is our reproducible research framework, designed to keep track of multiple versions of reports and allow researchers to automatically audit and roll back their data, or construct workflows around long running tasks.</description>
+    </item>
+    <item>
+      <title>orderly 1.0.1 released to CRAN</title>
+      <link>https://reside-ic.github.io/blog/orderly-1.0.1-released-to-cran/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/orderly-1.0.1-released-to-cran/</guid>
+      <description>We are pleased to announce the first public release of orderly, our reproducible reporting framework, implemented as an R package and now available on CRAN.&#xA;The orderly package was designed to help with a common pattern in reporting, where a piece of analysis might be run multiple times (over say a number of weeks or months) and where the inputs to the analysis might change. Any piece of analysis has numerous inputs (data &amp;amp; metadata, source code &amp;amp; packages) and changes in any of these might change the results of the analysis.</description>
+    </item>
+  </channel>
+</rss>
