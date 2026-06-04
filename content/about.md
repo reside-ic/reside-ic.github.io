@@ -37,6 +37,7 @@ Wes is a computer engineer and scientist, with a Ph.D making tools for ocean mod
 
 ## Alumni
 
+* [Paul Liétar](https://github.com/plietar)
 * [Rich FitzJohn](https://richfitz.github.io)
 * [Rob Ashton](https://github.com/r-ash)
 * [Mark Woodbridge](https://markwoodbridge.com/)
