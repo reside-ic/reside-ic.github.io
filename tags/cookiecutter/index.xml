@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cookiecutter on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/cookiecutter/</link>
+    <description>Recent content in Cookiecutter on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/cookiecutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating project templates using Cookiecutter</title>
+      <link>https://reside-ic.github.io/blog/creating-project-templates-using-cookiecutter/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/creating-project-templates-using-cookiecutter/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;We recently took the opportunity presented by some new projects to build a re-usable web application project template.&#xA;This post explains our objectives, the implementation, and some reflections on the process.&lt;/p&gt;&#xA;&lt;h1 id=&#34;objectives&#34;&gt;Objectives&lt;/h1&gt;&#xA;&lt;p&gt;We develop and/or maintain a number of applications that provide web-based user interfaces to research data and&#xA;scientific models. They all include a Kotlin backend and are built using Gradle but differ in other implementation&#xA;details:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Some use a database, whereas others don&amp;rsquo;t need to persist or access data directly&lt;/li&gt;&#xA;&lt;li&gt;The most recent use TypeScript - older ones use vanilla Javascript&lt;/li&gt;&#xA;&lt;li&gt;We mostly use Vue 2, but we have a couple using React&lt;/li&gt;&#xA;&lt;li&gt;We use several server-side HTTP frameworks, reflecting their maturity (and that of Kotlin) when the relevant apps were&#xA;developed&lt;/li&gt;&#xA;&lt;li&gt;We have standardised on Spring Boot for new apps, but we have also used Spark in the past&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;There are other differences, but this should demonstrate the kind of divergence that we&amp;rsquo;re aiming to address, primarily&#xA;based on our learnings about each technology or framework since adopting them. We&amp;rsquo;re also keen to make it easier to&#xA;bootstrap new projects without having to deconstruct existing apps and their (necessary!) idiosyncrasies.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

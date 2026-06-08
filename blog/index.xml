@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Reside-IC</title>
+    <link>https://reside-ic.github.io/blog/</link>
+    <description>Recent content in Blog on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RESIDE update: June 2026</title>
+      <link>https://reside-ic.github.io/blog/reside-update-june-2026/</link>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/reside-update-june-2026/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s been a while since we posted an update - we are still here, we are just (very) infrequent bloggers! Here&amp;rsquo;s a quick run down of some of the things we&amp;rsquo;ve been working on recently.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;a brand new GPU cluster for DIDE&lt;/li&gt;&#xA;&lt;li&gt;a new version of &lt;a href=&#34;https://mint.dide.ic.ac.uk/&#34;&gt;MINT&lt;/a&gt; (Malaria INdicators Tool) backed by neural network-based emulator models, with a new interface for modelling future scenarios. (&lt;a href=&#34;https://github.com/mrc-ide/mint-v2&#34;&gt;github link&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://vaxviz.vaccineimpact.org/&#34;&gt;Vaxviz&lt;/a&gt; - a new visualisation tool to accompany latest paper from the Vaccine Impact Modelling Consortium. (&lt;a href=&#34;https://github.com/vimc/vaxviz&#34;&gt;github link&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/vimc/vimcheck&#34;&gt;Vimcheck&lt;/a&gt; - also for VIMC, an R package for running diagnostic checks on disease burden estimates and on vaccine impact estimates.&lt;/li&gt;&#xA;&lt;li&gt;Daedalus - a &lt;a href=&#34;https://github.com/jameel-institute/Daedalus&#34;&gt;model package&lt;/a&gt; and associated &lt;a href=&#34;https://daedalus.jameel-institute.org&#34;&gt;web application&lt;/a&gt; (&lt;a href=&#34;https://github.com/jameel-institute/daedalus-web-app&#34;&gt;github link&lt;/a&gt;) for projecting and optimising the health, social and economic costs of a pandemic.&lt;/li&gt;&#xA;&lt;li&gt;Daedalus ecosystem - a set of packages that relate to Daedalus; &lt;a href=&#34;https://github.com/jameel-institute/daedalus.data&#34;&gt;daedalus.data&lt;/a&gt; holds data used by Daedalus, &lt;a href=&#34;https://github.com/jameel-institute/daedalus.compare&#34;&gt;daedalus.compare&lt;/a&gt; allows running multiple &lt;a href=&#34;https://github.com/jameel-institute/daedalus.api&#34;&gt;daedalus.api&lt;/a&gt; connects the R/C++ model to the Daedalus Explore web application, &lt;a href=&#34;https://github.com/jameel-institute/Daedalus.jl&#34;&gt;Daedalus.jl&lt;/a&gt; is an emerging port of Daedalus to Julia.&lt;/li&gt;&#xA;&lt;li&gt;EpiEconShocks.jl - a &lt;a href=&#34;https://github.com/jameel-institute/EpiEconShocks.jl&#34;&gt;Julia package&lt;/a&gt; for calculating the labour productivity and consumption losses due to a pandemic, and a way to model the impacts of these losses on the global economy using the &lt;a href=&#34;https://www.gtap.agecon.purdue.edu/default.asp&#34;&gt;Global Trade Analysis Project model&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/mrc-ide/wodin/blob/main/config-static/README.md&#34;&gt;Skadi (aka Static Wodin)&lt;/a&gt; - this project provides a framework of web components for running, and parameterising &lt;a href=&#34;https://github.com/mrc-ide/odin&#34;&gt;odin&lt;/a&gt; models. It uses components developed initially for our Wodin teaching platform, but allows them to be flexibly composed and included in arbitrary web pages, allowing for a greater range of options in presenting these models interactively while providing narrative context as required.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/mrc-ide/skadi-chart&#34;&gt;Skadi chart&lt;/a&gt; - to support Skadi, we&amp;rsquo;ve also been developing our own charting library to replace plotly. This is a structured thin wrapper around &lt;a href=&#34;https://d3js.org/&#34;&gt;d3&lt;/a&gt; which provides us with the flexibility required to develop the visualisations we want.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/mrc-ide/chronofix&#34;&gt;chronofix&lt;/a&gt; - a package for cleaning and correcting datasets which include manually entered dates&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/polio-nanopore/piranhaNET&#34;&gt;PiranhaNET&lt;/a&gt; (WIP) - a new GUI for the &lt;a href=&#34;https://github.com/polio-nanopore/piranha&#34;&gt;Piranha&lt;/a&gt; package analysing sequences for detection of poliovirus. This will be provided as a desktop electron application and an online web application.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>MPI from R - Part One - The Basics</title>
+      <link>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Message_Passing_Interface&#34;&gt;MPI&lt;/a&gt; is a&#xA;standard for allowing a team of processes to solve a problem together. Various&#xA;implementations of that standard exist; &lt;a href=&#34;https://www.mpich.org/&#34;&gt;MPICH&lt;/a&gt; is&#xA;perhaps the most well known. &lt;a href=&#34;https://github.com/Microsoft/Microsoft-MPI&#34;&gt;Microsoft MPI&lt;/a&gt;&#xA;mimics MPICH on Windows, as does &lt;a href=&#34;https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.1crzpx&#34;&gt;Intel MPI&lt;/a&gt;&#xA;on various platforms. Typically you&amp;rsquo;d then include these libraries in projects&#xA;written in C, C++, or Fortran.&lt;/p&gt;&#xA;&lt;p&gt;Furthermore, recent releases of &lt;a href=&#34;https://cran.r-project.org/bin/windows/Rtools/&#34;&gt;Rtools&lt;/a&gt;&#xA;have included support for Microsoft MPI. My plan is a couple of blogs on how to get this&#xA;working, some exploration of performance, and an attempt at testing / CI. I&amp;rsquo;ll include&#xA;nodes on what&amp;rsquo;s needed on Windows, linux or Mac to write and build the package,&#xA;but when running multi-node programs, I&amp;rsquo;ll be limited to our departmental MS-HPC&#xA;cluster. Hopefully the changes needed for launching scripts on other cluster platforms&#xA;shouldn&amp;rsquo;t be too hard.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Symbolic differentiation in a few lines of code</title>
+      <link>https://reside-ic.github.io/blog/symbolic-differentiation-in-a-few-lines-of-code/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/symbolic-differentiation-in-a-few-lines-of-code/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;We are working on &lt;a href=&#34;https://en.wikipedia.org/wiki/Automatic_differentiation&#34;&gt;automatic&#xA;differentiation&lt;/a&gt;&#xA;of &lt;a href=&#34;https://mrc-ide.github.io/odin/&#34;&gt;odin&lt;/a&gt; models, which requires&#xA;support for differentiating expressions symbolically, in order to write&#xA;new equations that can be used to numerically propagate derivatives of a&#xA;model.&lt;/p&gt;&#xA;&lt;p&gt;R already has support for doing this via the &lt;code&gt;D&lt;/code&gt; function:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;D&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;quote&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x^2 &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sqrt&lt;/span&gt;(x))), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## 2 * (2 * x) * log(sqrt(x)) + 2 * x^2 * (0.5 * x^-0.5/sqrt(x))&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;and the &lt;a href=&#34;https://cran.r-project.org/package=Deriv&#34;&gt;&lt;code&gt;Deriv&lt;/code&gt;&lt;/a&gt; package&#xA;provides an extensible interface. However, &lt;code&gt;odin&lt;/code&gt; has peculiar syntax&#xA;with arrays and we’re interested in trying to differentiate through&#xA;stochastic functions, so a bespoke solution felt useful.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conditionally running Ingest Pipelines with Filebeat, Docker and Elastic</title>
+      <link>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</guid>
+      <description>&lt;p&gt;&lt;em&gt;TL;DR - if you want to apply an Ingest Pipeline conditionally in Elastic, consider defining it as a processor in another&#xA;pipeline and setting its &lt;code&gt;if&lt;/code&gt; property.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;We use &lt;a href=&#34;https://www.elastic.co/beats/filebeat&#34;&gt;Filebeat&lt;/a&gt; to ship application logs to &lt;a href=&#34;https://www.elastic.co/&#34;&gt;Elastic&lt;/a&gt;&#xA;from our &lt;a href=&#34;https://www.docker.com/nginx&#34;&gt;Docker&lt;/a&gt; containers. Since we dockerise anything that moves,&#xA;we have many types of docker container, including containers for Kotlin and JavaScript web applications, for APIs written&#xA;in R, and for &lt;a href=&#34;https://www.nginx.com/&#34;&gt;NGINX&lt;/a&gt; web proxies. Each type of container logs messages in a different format.&#xA;Some of our applications ship JSON logs with the fields nicely separated out, however many of our logs have raw &lt;code&gt;message&lt;/code&gt;&#xA;fields in various formats.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Frictionless Data Package Validation in R</title>
+      <link>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</link>
+      <pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</guid>
+      <description>&lt;p&gt;Our work often involves researcher-written models that we want to make available to non-technical users. To ensure that both the model will run and that it will produce a good fit, validating users&amp;rsquo; data and returning actionable error messages is essential. For the &lt;a href=&#34;https://reside-ic.github.io/projects/naomi&#34;&gt;UNAIDS Naomi project&lt;/a&gt; we collaborate closely with a team that manages data storage for users. They use &lt;a href=&#34;https://frictionlessdata.io/&#34;&gt;Frictionless Data Packages&lt;/a&gt; for describing the resources that need to be present and validating them. When users upload their data to our application, we run separate validation code written in R. It would be ideal to validate with a common code base to avoid duplicated work and ensure consistency in messaging.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Continuous Delivery with Buildkite</title>
+      <link>https://reside-ic.github.io/blog/continuous-delivery-with-buildkite/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/continuous-delivery-with-buildkite/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Our deployments at RESIDE typically consist of a bash script or a python script using &lt;a href=&#34;https://github.com/reside-ic/constellation&#34;&gt;constellation&lt;/a&gt; to bring up a set of docker containers each of which contains a separate part of the application. We might have one docker image for the web app, one for the database, one for redis, one for an R backend API, and multiple workers. We use &lt;a href=&#34;https://buildkite.com/&#34;&gt;Buildkite&lt;/a&gt; as part of our CI (continuous integration) process to build these images and test them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>R Markdown Internationalisation</title>
+      <link>https://reside-ic.github.io/blog/r-markdown-internationalisation/</link>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/r-markdown-internationalisation/</guid>
+      <description>&lt;p&gt;As part of our work on &lt;a href=&#34;../../projects/naomi&#34;&gt;naomi&lt;/a&gt; we&amp;rsquo;ve been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. &lt;a href=&#34;https://rmarkdown.rstudio.com/docs/&#34;&gt;R Markdown&lt;/a&gt; has no built in support for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets each of which has advantages and trade offs around scalability, ease of maintenance and complexity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Orderly 1.3.0 released to CRAN</title>
+      <link>https://reside-ic.github.io/blog/orderly-1.3.0-released-to-cran/</link>
+      <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/orderly-1.3.0-released-to-cran/</guid>
+      <description>&lt;p&gt;After 18 months of heavy use within &lt;a href=&#34;https://www.vaccineimpact.org/&#34;&gt;VIMC&lt;/a&gt; and in the &lt;a href=&#34;https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/covid-19-response-team-2020-2021-report/&#34;&gt;COVID-19 modelling response&lt;/a&gt;, we have released &lt;a href=&#34;https://cran.r-project.org/package=orderly&#34;&gt;orderly 1.3.0 to CRAN&lt;/a&gt;. This is a major update with many new features (more than 100 PRs since version 1.0.4 was published in early 2020).&lt;/p&gt;&#xA;&lt;p&gt;Orderly is our &lt;a href=&#34;https://www.vaccineimpact.org/orderly/articles/orderly.html&#34;&gt;reproducible research framework&lt;/a&gt;, designed to keep track of multiple versions of reports and allow researchers to automatically audit and roll back their data, or construct workflows around long running tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debugging memory errors with valgrind and gdb</title>
+      <link>https://reside-ic.github.io/blog/debugging-memory-errors-with-valgrind-and-gdb/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-memory-errors-with-valgrind-and-gdb/</guid>
+      <description>&lt;p&gt;Many R packages use C or C++ code to power performance-critical sections of code. These langauges are easy to shoot yourself in the foot with, as seemingly innocuous code may cause crashes (or just junk output) by reading from memory that is uninitialised or out of range.  There are a couple of tools for helping diagnose this sort of issue:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&amp;ldquo;valgrind&amp;rdquo; is great for tracking down is sort of error as it highlights invalid memory accesses&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;gdb&amp;rdquo; can be used to step through a program, or inspect the internal state after a crash&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;We&amp;rsquo;ve already written about debugging R packages with valgrind and gdb separately &lt;a href=&#34;https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/&#34;&gt;here&lt;/a&gt;. This post shows how to use them together so that you can use gdb to inspect the state of a program at the point where valgrind has noticed that there&amp;rsquo;s an error.  The process is a bit weird, but does work!  NB: this will likely only work on Linux (not Windows or macOS).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creating project templates using Cookiecutter</title>
+      <link>https://reside-ic.github.io/blog/creating-project-templates-using-cookiecutter/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/creating-project-templates-using-cookiecutter/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;We recently took the opportunity presented by some new projects to build a re-usable web application project template.&#xA;This post explains our objectives, the implementation, and some reflections on the process.&lt;/p&gt;&#xA;&lt;h1 id=&#34;objectives&#34;&gt;Objectives&lt;/h1&gt;&#xA;&lt;p&gt;We develop and/or maintain a number of applications that provide web-based user interfaces to research data and&#xA;scientific models. They all include a Kotlin backend and are built using Gradle but differ in other implementation&#xA;details:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Some use a database, whereas others don&amp;rsquo;t need to persist or access data directly&lt;/li&gt;&#xA;&lt;li&gt;The most recent use TypeScript - older ones use vanilla Javascript&lt;/li&gt;&#xA;&lt;li&gt;We mostly use Vue 2, but we have a couple using React&lt;/li&gt;&#xA;&lt;li&gt;We use several server-side HTTP frameworks, reflecting their maturity (and that of Kotlin) when the relevant apps were&#xA;developed&lt;/li&gt;&#xA;&lt;li&gt;We have standardised on Spring Boot for new apps, but we have also used Spark in the past&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;There are other differences, but this should demonstrate the kind of divergence that we&amp;rsquo;re aiming to address, primarily&#xA;based on our learnings about each technology or framework since adopting them. We&amp;rsquo;re also keen to make it easier to&#xA;bootstrap new projects without having to deconstruct existing apps and their (necessary!) idiosyncrasies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aggregating logs from services deployed with Docker</title>
+      <link>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re managing a number of applications across multiple servers then having easy access to their logs can make&#xA;discovering and debugging issues much more efficient. Deploying a system to aggregate and visualise this information&#xA;greatly reduces the need to identify and log into the relevant server(s) directly, and enables more sophisticated&#xA;analysis such as error tracing across systems (see &lt;a href=&#34;https://dzone.com/articles/5-good-reasons-to-use-a-log-server&#34;&gt;5 Good Reasons to Use a Log Server&lt;/a&gt; for more).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sheffield/NVIDIA GPU hackathon</title>
+      <link>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</guid>
+      <description>&lt;p&gt;Last month we attended (virtually) a GPU hackathon hosted by Sheffield and NVIDIA, in order to learn how to create GPU-capable models to accelerate our simulations.&lt;/p&gt;&#xA;&lt;p&gt;We are working as part of the centre &lt;a href=&#34;https://reside-ic.github.io/projects/covid&#34;&gt;COVID response&lt;/a&gt; on models of COVID-19 transmission within the UK. The epidemiologists working on the model are writing &lt;a href=&#34;https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#Deterministic_versus_stochastic_epidemic_models&#34;&gt;stochastic compartmental models&lt;/a&gt; where populations are modelled as &amp;ldquo;Susceptible&amp;rdquo;, &amp;ldquo;Exposed&amp;rdquo;, &amp;ldquo;Infected&amp;rdquo;, &amp;ldquo;Recovered&amp;rdquo;, etc - movement between these compartments happens stochastically using a set of parameters. The model is a continuous time Markov chain (the next state only depends on the current state) which is solved by splitting each day into four equal time intervals. Parameters themselves are fit in an inference process, which involves running the model many times. The core of this is both &lt;a href=&#34;https://en.wikipedia.org/wiki/Embarrassingly_parallel&#34;&gt;&amp;ldquo;embarrassingly parallel&amp;rdquo;&lt;/a&gt; and has the potential to use over a million threads, and so we wanted to know if we could develop a system that could use the massive parallelism that GPUs might provide.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A warning about warning()</title>
+      <link>https://reside-ic.github.io/blog/a-warning-about-warning/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/a-warning-about-warning/</guid>
+      <description>&lt;p&gt;I believe that &lt;code&gt;warning()&lt;/code&gt; should be used very rarely in R - it&amp;rsquo;s a weird function that is partly logging and partly flow control but doesn&amp;rsquo;t do a great job at either. Package authors use &lt;code&gt;warning&lt;/code&gt; for a range of conditions ranging from informational through to catastrophic and users are left ignoring warnings due to the former or debugging issues a significant distance from the source due to the latter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shades of meaning: visualising geographical data with colour in a data-driven web application</title>
+      <link>https://reside-ic.github.io/blog/shades-of-meaning-visualising-geographical-data-with-colour-in-a-data-driven-web-application/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/shades-of-meaning-visualising-geographical-data-with-colour-in-a-data-driven-web-application/</guid>
+      <description>&lt;p&gt;Colour and maps are two crucial aspects of data visualisation, and putting them together is a classic technique for revealing geographical patterns in data.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.nhm.ac.uk/discover/first-geological-map-of-britain.html&#34;&gt;&lt;figure&gt;&lt;img src=&#34;https://reside-ic.github.io/img/cscale_smith_map.jpg&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;h4&gt;William Smith&amp;#39;s geological map of 1815&lt;/h4&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;If data values are discrete, selecting the colours to use is straightforward - just choose an appropriate colour for each value. For continuous data, a colour scale is required, where any numeric value in the data range can be mapped to a colour, and where the gradations in colour are visually meaningful.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>We&#39;re hiring: Full-stack web developer</title>
+      <link>https://reside-ic.github.io/blog/hiring-2020-web-developer/</link>
+      <pubDate>Mon, 06 Apr 2020 11:50:00 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/hiring-2020-web-developer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.imperial.ac.uk/jobs/description/MED01818/research-software-engineer-web-development/&#34;&gt;We are hiring!&lt;/a&gt;  While many people of the department and some of the RSE group are focussed on COVID-19 at the moment, research and public health action on  malaria, HIV, and other diseases continues in the department and we&amp;rsquo;re looking for someone to help us develop web applications that translate research into public health outcomes.  Just because one pandemic is raging does not decrease the impact of other diseases - in fact it&amp;rsquo;s more important than ever in this current crisis that these programmes can continue.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gotta catch &#39;em all</title>
+      <link>https://reside-ic.github.io/blog/gotta-catch-em-all/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/gotta-catch-em-all/</guid>
+      <description>&lt;p&gt;Great packages have great test suites. Packages with C++ are not exceptions. You&#xA;might be surprised to find how easy it is to add C++ unittests to your package.&lt;/p&gt;&#xA;&lt;p&gt;This post will focus on &lt;a href=&#34;https://github.com/r-lib/testthat&#34;&gt;testthat&lt;/a&gt;&amp;rsquo;s&#xA;&lt;a href=&#34;https://github.com/catchorg/Catch2&#34;&gt;Catch&lt;/a&gt; integration.&#xA;There are plenty of C++ testing frameworks, each with their own pros and cons.&#xA;The benefit of this approach is the really low setup cost and no dependency&#xA;management.&lt;/p&gt;&#xA;&lt;h1 id=&#34;set-up&#34;&gt;Set up&lt;/h1&gt;&#xA;&lt;p&gt;The first step is to add some boilerplate to your package. Enter&#xA;&lt;code&gt;testthat::use_catch()&lt;/code&gt;. Make sure to follow the instructions in the command&#xA;output to configure your package correctly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cyphr 1.1.0</title>
+      <link>https://reside-ic.github.io/blog/cyphr-1.1.0/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cyphr-1.1.0/</guid>
+      <description>&lt;p&gt;We have released a new version of our &lt;a href=&#34;https://docs.ropensci.org/cyphr/&#34;&gt;cyphr&lt;/a&gt; package, which makes data analysis workflows with R much easier.  The aim of the package is to make encrypted workflows as easy as:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;d &amp;lt;- cyphr::decrypt(read.csv(&amp;#34;secret-input.csv&amp;#34;), key)&#xA;...&#xA;cyphr::encrypt(write.csv(processed, &amp;#34;secret-output.csv&amp;#34;), key)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;using &lt;a href=&#34;https://github.com/jeroen/sodium&#34;&gt;modern encryption technologies&lt;/a&gt; and taking care of most of the details so that data is not inadvertently leaked.&lt;/p&gt;&#xA;&lt;p&gt;This new version has lots of small features which improve the behaviour of its &lt;a href=&#34;https://docs.ropensci.org/cyphr/articles/data.html&#34;&gt;collaborative data process&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Front-end Javascript Frameworks - A Beginner&#39;s Guide</title>
+      <link>https://reside-ic.github.io/blog/front-end-javascript-frameworks-a-beginners-guide/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/front-end-javascript-frameworks-a-beginners-guide/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve put together a little resource for RSEs (or anyone else!) who are writing browser&#xA;based apps and want to be using the latest Javascript web technologies, but aren&amp;rsquo;t sure&#xA;where to start.&lt;/p&gt;&#xA;&lt;p&gt;The full &lt;!-- raw HTML omitted --&gt;poster&lt;!-- raw HTML omitted --&gt; was presented&#xA;at &lt;a href=&#34;https://rslondon.ac.uk/&#34;&gt;RSLondonSouthEast&lt;/a&gt; on 6th February.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-use-a-framework&#34;&gt;Why use a framework?&lt;/h2&gt;&#xA;&lt;p&gt;This StackOverflow blog is an excellent overview of the advantages and disadvantages of using a framework:&#xA;&lt;a href=&#34;https://stackoverflow.blog/2020/02/03/is-it-time-for-a-front-end-framework/&#34;&gt;Is it time for a front end framework?&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RSlondonSE 2020</title>
+      <link>https://reside-ic.github.io/blog/rslondonse-2020/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/rslondonse-2020/</guid>
+      <description>&lt;p&gt;Last Thursday, almost all of RESIDE went to &lt;a href=&#34;https://rslondon.ac.uk/rslondonse-2020/&#34;&gt;RSLondonSE&lt;/a&gt;, a small and friendly one-day meeting of RSEs.&lt;/p&gt;&#xA;&lt;p&gt;We presented two posters - in &lt;a href=&#34;https://reside-ic.github.io/resources/jsbeginnersguide.pdf&#34;&gt;the first&lt;/a&gt; we outline the basic idea behind three common JavaScript frameworks (Angular, React and Vue.js) and reasons for choosing one over another.  We will rework this poster as a more detailed blog post or article and also as a standalone seminar later this year.&lt;/p&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://reside-ic.github.io/resources/RSLondonSE-hint-poster.pdf&#34;&gt;other poster&lt;/a&gt;, we present the ideas behind our &lt;a href=&#34;https://reside-ic.github.io/projects/naomi&#34;&gt;Naomi&lt;/a&gt; project, where we developed a pattern for exposing research software &amp;ldquo;as a service&amp;rdquo; using HTTP APIs and a modern web front end (written in Vue.js amongst other things).  We think this is a general pattern, though most of the software for Naomi is bespoke.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Handling long arrays performantly in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</guid>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;Use &lt;code&gt;Object.freeze&lt;/code&gt; on large objects that don&amp;rsquo;t have to be reactive. If you want to know a bit more about why this works&#xA;and how big a performance gain it is, read on.&lt;/p&gt;&#xA;&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;Reactive JavaScript frameworks like &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt; are amazing for developing Single Page Apps like the one&#xA;in our project &lt;a href=&#34;https://reside-ic.github.io/projects/#naomi&#34;&gt;Naomi&lt;/a&gt;. Everything is connected as if by magic - when data changes, the UI updates. But that magic&#xA;has overheads associated with it that need to be understood to optimise for performance where large-ish datasets are&#xA;being handled. We found when using Vue naively that our app couldn&amp;rsquo;t handle a 10MB dataset performantly, but&#xA;understanding how reactivity works in Vue helped us to find the fix.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debugging and Fixing CRAN&#39;s &#39;Additional Checks&#39; errors</title>
+      <link>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</guid>
+      <description>&lt;p&gt;R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.  However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it&amp;rsquo;s not always obvious how or where to start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My most used keyboard shortcuts</title>
+      <link>https://reside-ic.github.io/blog/my-most-used-keyboard-shortcuts/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/my-most-used-keyboard-shortcuts/</guid>
+      <description>&lt;p&gt;Anyone who uses a computer for a significant amount of time each day should&#xA;spend some time learning keyboard shortcuts - they can save you so much time!&lt;/p&gt;&#xA;&lt;p&gt;When I started working as a developer, I learnt keyboard shortcuts through pair programming,&#xA;asking more experienced programmers what their favourite shortcuts were, and just reading&#xA;documentation for the IDE (Intelligent Development Editor) I was using&#xA;(&lt;a href=&#34;https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019&#34;&gt;VisualStudio&lt;/a&gt;&#xA;with &lt;a href=&#34;https://www.jetbrains.com/help/resharper/Reference__Keyboard_Shortcuts.html&#34;&gt;Resharper&lt;/a&gt; at the time,&#xA;now &lt;a href=&#34;https://www.jetbrains.com/help/idea/mastering-keyboard-shortcuts.html&#34;&gt;IntelliJ&lt;/a&gt;.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A custom directive for translations in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/a-custom-directive-for-translations-in-vue.js/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/a-custom-directive-for-translations-in-vue.js/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve spent the last few months developing &lt;a href=&#34;https://reside-ic.github.io/projects/#naomi&#34;&gt;Naomi&lt;/a&gt; - a web app for interfacing with&#xA;an HIV model developed by researchers at &lt;a href=&#34;https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis&#34;&gt;GIDA&lt;/a&gt;&#xA;in association with &lt;a href=&#34;https://www.unaids.org/en&#34;&gt;UNAIDS&lt;/a&gt;. To support the West African countries who are the users of Naomi we are providing two language modes - French and English.&lt;/p&gt;&#xA;&lt;p&gt;The front-end of the app is written in &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt; and makes use of &lt;a href=&#34;https://vuex.vuejs.org/&#34;&gt;Vuex&lt;/a&gt;,&#xA;a &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;flux&lt;/a&gt; library for Vue. There are two ways we could have implemented&#xA;translations in Vue - with components or directives. We opted for the latter; I&amp;rsquo;ll explain why and how!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Experiments in transforming Excel into R</title>
+      <link>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</guid>
+      <description>&lt;p&gt;Last week was the &lt;a href=&#34;https://n8thangreen.wixsite.com/hermes-hack-london&#34;&gt;Health Economics in R Hackathon&lt;/a&gt;, bringing together health economists, epidemiologists and research software engineers.&lt;/p&gt;&#xA;&lt;p&gt;We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a &lt;a href=&#34;https://en.wikipedia.org/wiki/Decision_tree&#34;&gt;decision tree model&lt;/a&gt; in Excel, the analyst might want to carry out a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sensitivity_analysis&#34;&gt;sensitivity analysis&lt;/a&gt;, varying the models&amp;rsquo; parameters to see how the model outcomes vary.  Doing this requires knowledge of &lt;a href=&#34;https://en.wikipedia.org/wiki/Visual_Basic_for_Applications&#34;&gt;Visual Basic&lt;/a&gt; and reportedly is quite slow to run.  We wanted to create a proof-of-concept package that would take an Excel model like this and convert it into an R function, where it could be more easily manipulable, &lt;em&gt;accelerating&lt;/em&gt; the researchers&amp;rsquo; ability to do their work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>orderly 1.0.1 released to CRAN</title>
+      <link>https://reside-ic.github.io/blog/orderly-1.0.1-released-to-cran/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/orderly-1.0.1-released-to-cran/</guid>
+      <description>&lt;p&gt;We are pleased to announce the first public release of &lt;a href=&#34;https://vimc.github.io/orderly&#34;&gt;&lt;code&gt;orderly&lt;/code&gt;&lt;/a&gt;, our reproducible reporting framework, implemented as an R package and now available on CRAN.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;orderly&lt;/code&gt; package was designed to help with a common pattern in reporting, where a piece of analysis might be run multiple times (over say a number of weeks or months) and where the inputs to the analysis might change.  Any piece of analysis has numerous inputs (data &amp;amp; metadata, source code &amp;amp; packages) and changes in any of these might change the results of the analysis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gotchaR - Bumps in the road for the learneR driver.</title>
+      <link>https://reside-ic.github.io/blog/gotchar-bumps-in-the-road-for-the-learner-driver./</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/gotchar-bumps-in-the-road-for-the-learner-driver./</guid>
+      <description>&lt;p&gt;I am about 3 years into the journey of learning R. There is a lot to get used to,&#xA;when my previous landmarks have been languages based around Java, C, Pascal, Basic&#xA;and some dabblings with assemblers of various breeds. Mostly, my adjustment has been&#xA;about doing things the way R likes; turning loop-ish code into vector-ish code, using&#xA;the right base functions properly and thinking about data in columns for a start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>All carrot, no stick - virtuous circles and useful tools</title>
+      <link>https://reside-ic.github.io/blog/all-carrot-no-stick-virtuous-circles-and-useful-tools/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/all-carrot-no-stick-virtuous-circles-and-useful-tools/</guid>
+      <description>&lt;p&gt;A vicious circle of software use might go something like this:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;A user employs a suite of generic software tools, together with their own domain knowledge and sense of good practice,&#xA;to design their own workflow to get a task done. This workflow starts off with the best of intentions, but really only&#xA;exists in the user&amp;rsquo;s head. Consequently, as time goes on, as deadlines threaten, corners are cut. Next, the cutting of&#xA;those corners becomes habitual, and the workflow degenerates. Essential outputs are still produced, but steps ensuring&#xA;transparency and validation may become confused or omitted. Good intentions become a distant, guilty memory.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deferring errors with R</title>
+      <link>https://reside-ic.github.io/blog/deferring-errors-with-r/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/deferring-errors-with-r/</guid>
+      <description>&lt;p&gt;How do you run a block of code and collect up all the errors in order to report them back in a batch?  This is the sort of thing that might turn up in a validation exercise where we want to check a number of properties of the provided data and then report back in one go all the errors so that the user can fix multiple problems at each upload attempt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Querying for foreign key constraints</title>
+      <link>https://reside-ic.github.io/blog/querying-for-foreign-key-constraints/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/querying-for-foreign-key-constraints/</guid>
+      <description>&lt;p&gt;Over the past few months we&amp;rsquo;ve been developing a &lt;a href=&#34;https://github.com/vimc/dettl&#34;&gt;tool to assist with database import from R&lt;/a&gt;. As part of that we want to automate some of the import steps to both reduce the development work needed for each import and to make code review easier.&lt;/p&gt;&#xA;&lt;p&gt;We want to be able to take a list of data frames in R and append those to the relevant tables in the database automatically. Some of the tables contain columns with foreign key constraints so need to ensure that any links between data frames in R are reflected in the database once the data has been uploaded. The difficulty arises when we are referencing autogenerated columns and we do not know the value the autogenerated column will take once the data is uploaded. We&amp;rsquo;ve decided to use a temporary identifier for the columns within R which we will update after the referenced table is updated. To enable this we need to know which columns of which tables are referenced by a foreign key constraint. This blog post covers how to query PostgreSQL and SQLite databases to retrieve that information.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>We&#39;re hiring: R/C&#43;&#43;/Malaria Developer</title>
+      <link>https://reside-ic.github.io/blog/hiring-2019-malaria-developer/</link>
+      <pubDate>Wed, 03 Jul 2019 07:57:16 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/hiring-2019-malaria-developer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.imperial.ac.uk/jobs/description/MED01335/senior-research-software-engineer/&#34;&gt;We are hiring!&lt;/a&gt;  We&amp;rsquo;re looking for a developer to join &lt;a href=&#34;https://reside-ic.github.io/about/&#34;&gt;our team&lt;/a&gt; to work with &lt;a href=&#34;https://www.imperial.ac.uk/malaria-modelling&#34;&gt;the malaria modelling research group&lt;/a&gt; on developing simulation models that will be used to investigate the impact of interventions to prevent the spread of malaria.&lt;/p&gt;&#xA;&lt;p&gt;No prior experience with malaria or epidemiology is needed as you&amp;rsquo;ll be working closely with a friendly team of computational researchers.  You&amp;rsquo;ll work with the rest of our RSE team who will help you gather requirements from the researchers, understand the existing code, and review your code.  You&amp;rsquo;ll also work with us as we plan other projects within the &lt;a href=&#34;https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis&#34;&gt;MRC Centre for Global Infectious Disease Analysis&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jsonvalidate 1.1.0</title>
+      <link>https://reside-ic.github.io/blog/jsonvalidate-1.1.0/</link>
+      <pubDate>Tue, 25 Jun 2019 07:38:50 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/jsonvalidate-1.1.0/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.w3schools.com/js/js_json_intro.asp&#34;&gt;JSON&lt;/a&gt; is useful as a data-interchange format, due to the massive popularity of javascript.  Basically every language supports reading and writing JSON now, so it makes a nice lowest common denominator.&lt;/p&gt;&#xA;&lt;p&gt;When generating JSON from an application, it is useful to be able to describe how the data is structured - so if we return output like&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{&#xA;    &amp;#34;id&amp;#34;: 1,&#xA;    &amp;#34;name&amp;#34;: &amp;#34;A green door&amp;#34;,&#xA;    &amp;#34;price&amp;#34;: 12.50,&#xA;    &amp;#34;tags&amp;#34;: [&amp;#34;home&amp;#34;, &amp;#34;green&amp;#34;]&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We might describe it in words like:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jQuery TreeTables 1.1.1</title>
+      <link>https://reside-ic.github.io/blog/jquery-treetables-1.1.1/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/jquery-treetables-1.1.1/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://reside-ic.github.io/img/treetables.gif&#34; alt=&#34;Gif of plugin in use&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;We just released a new npm package &lt;a href=&#34;https://www.npmjs.com/package/treetables&#34;&gt;TreeTables&lt;/a&gt;&#xA;for displaying tree data when using jQuery&#xA;&lt;a href=&#34;https://datatables.net/&#34;&gt;DataTables&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;DataTables is a powerful and extremely well established plugin for&#xA;displaying tabular data, but has no native support for&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Tree_(data_structure)&#34;&gt;tree (nested) data&lt;/a&gt;.&#xA;Examples of tree data include family trees, phylogenetic trees,&#xA;and organisational hierarchies.&lt;/p&gt;&#xA;&lt;p&gt;The TreeTables plugin adds that support with an interface that is almost&#xA;identical to that of DataTables.&lt;/p&gt;&#xA;&lt;p&gt;Features include:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>dde 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/dde-1.0.0/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/dde-1.0.0/</guid>
+      <description>&lt;p&gt;Last week we released the first public version of &lt;a href=&#34;https://mrc-ide.github.io/dde/&#34;&gt;&lt;code&gt;dde&lt;/code&gt;&lt;/a&gt;.  This package implements a method for solving &lt;a href=&#34;https://en.wikipedia.org/wiki/Delay_differential_equation&#34;&gt;delay differential equations&lt;/a&gt;, which we use with &lt;a href=&#34;https://mrc-ide.github.io/odin&#34;&gt;&lt;code&gt;odin&lt;/code&gt;&lt;/a&gt; to model disease dynamics.&lt;/p&gt;&#xA;&lt;p&gt;With ordinary differential equations, you express the system of equations as &lt;em&gt;dy/dt = f(y(t), t)&lt;/em&gt;; the rate of change of the system depends on the current state of the system and the current time, but with delay differential equations &lt;em&gt;dy/dt&lt;/em&gt; also depends on &lt;em&gt;y(t - τ)&lt;/em&gt;, where &lt;em&gt;τ&lt;/em&gt; is a length of time back into the past.  In general these are hard to solve numerically but there is a large class of useful equations with constant delays that are both interesting and tractable.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>vaultr 1.0.2</title>
+      <link>https://reside-ic.github.io/blog/vaultr-1.0.2/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/vaultr-1.0.2/</guid>
+      <description>&lt;p&gt;We are pleased to announce the first public release of &lt;code&gt;vaultr&lt;/code&gt;, our R client for &lt;a href=&#34;https://vaultproject.io&#34;&gt;HashiCorp&amp;rsquo;s &amp;ldquo;vault&amp;rdquo;&lt;/a&gt;, a system for storing secrets and sensitive data and enabling these secrets to be used in applications.&lt;/p&gt;&#xA;&lt;p&gt;Vault (the server) is a little like a password manager (e.g., &lt;a href=&#34;https://www.lastpass.com/business-password-manager&#34;&gt;LastPass&lt;/a&gt; or &lt;a href=&#34;https://bitwarden.com/&#34;&gt;Bitwarden&lt;/a&gt;) but designed for use within applications, rather than for storing personal passwords.  With vault, you can have a central source of secrets and sensitive data (ssh keys, database passwords, ssl certificates) that can be used when deploying or using applications.  This makes it much easier to avoid writing these secrets to disk in plain text while still allowing automated use of secrets.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debugging at the edge of reason</title>
+      <link>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</guid>
+      <description>&lt;p&gt;What do you do if this code&amp;hellip;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;printf(&amp;#34;Before loop\n&amp;#34;);&#xA;while ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) {&#xA;  printf(&amp;#34;Inside loop\n&amp;#34;);&#xA;  // Other loop code&#xA;}&#xA;if (a&amp;gt;0) printf(&amp;#34;a&amp;gt;0\n&amp;#34;);&#xA;if (b&amp;gt;0) printf(&amp;#34;b&amp;gt;0\n&amp;#34;);&#xA;if ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) printf(&amp;#34;Both a&amp;gt;0 and b&amp;gt;0!&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip;produces this output?&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Before loop&#xA;a&amp;gt;0&#xA;b&amp;gt;0&#xA;Both a&amp;gt;0 and b&amp;gt;0!&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; are both above zero, then why didn&amp;rsquo;t the while-loop do any&#xA;iteration; why didn&amp;rsquo;t we see &lt;code&gt;Inside loop&lt;/code&gt; in the output?&lt;/p&gt;&#xA;&lt;p&gt;This was a situation we were in with&#xA;&lt;a href=&#34;https://github.com/mrc-ide/dde&#34;&gt;DDE&lt;/a&gt; 0.9.0, but only on Windows,&#xA;and only when compiled with 32-bit gcc. With 64-bits, or linux, the loop&#xA;behaved itself perfectly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrating YouTrack and GitHub workflows</title>
+      <link>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</guid>
+      <description>&lt;p&gt;Like most technical teams we use an issue tracker to manage our work. Our tool of choice for&#xA;this is &lt;a href=&#34;https://www.jetbrains.com/youtrack/&#34;&gt;YouTrack&lt;/a&gt;. We also make extensive use of GitHub and to synchronise our&#xA;workflow across the two platforms we name our git branches with YouTrack ticket ids, so every pull request&#xA;corresponds to a ticket. This naming convention makes it easier to track work in progress across the two platforms,&#xA;plus the custom tool we use to deploy our software can use git to look at which branches have been merged in and auto-update&#xA;the corresponding YouTrack tickets.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cinterpolate 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</guid>
+      <description>&lt;p&gt;Last week we released the first official version of &lt;a href=&#34;https://mrc-ide.github.io/cinterpolate/&#34;&gt;&lt;code&gt;cinterpolate&lt;/code&gt;&lt;/a&gt; to &lt;a href=&#34;https://cran.r-project.org/package=cinterpolate&#34;&gt;available on CRAN&lt;/a&gt;.  This package provides a minimal set of interpolation methods (piecewise constant, linear and spline) designed to be compatible with R&amp;rsquo;s builtin &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/stats/html/approxfun.html&#34;&gt;&lt;code&gt;approx&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/stats/html/splinefun.html&#34;&gt;&lt;code&gt;spline&lt;/code&gt;&lt;/a&gt; functions, but but callable from C. It will primarily be of interest to people writing R packages that include C or C++.&lt;/p&gt;&#xA;&lt;p&gt;When writing an R package with C or C++ extensions, you have to forgo many of the the functions that make operating in a high-level easy.  R&amp;rsquo;s C API (and Rcpp, which reflects it) includes &lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-exts.html#Numerical-analysis-subroutines&#34;&gt;lots of helper functions&lt;/a&gt; for common tasks but this is a small list compared to what you might want to do from R.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>odin 0.2.0</title>
+      <link>https://reside-ic.github.io/blog/odin-0.2.0/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/odin-0.2.0/</guid>
+      <description>&lt;p&gt;After a rather long period of gestation, yesterday I merged in a &lt;a href=&#34;https://github.com/mrc-ide/odin/pull/156&#34;&gt;long-running rewrite of odin&lt;/a&gt;.  This is a major rework of odin which lays the groundwork for future improvements later this year.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mrc-ide.github.io/odin&#34;&gt;Odin&lt;/a&gt; is our package for working with differential equations at a high level - it includes support for the sort of &amp;ldquo;structured &lt;a href=&#34;https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology&#34;&gt;compartmental models&lt;/a&gt;&amp;rdquo; that we use a lot in the department, compiling these to C for efficient execution.  Over the last few years of development the code had become increasingly complicated and difficult to extend as new features had been added on top of previous features.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metrics at Imperial*</title>
+      <link>https://reside-ic.github.io/blog/metrics-at-imperial/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/metrics-at-imperial/</guid>
+      <description>&lt;p&gt;What metrics should a software team be recording to measure their performance? Should these metrics have a different&#xA;focus for RSE teams in general, and ourselves in particular?&lt;/p&gt;&#xA;&lt;p&gt;In previous jobs in a more commercial setting, I had become accustomed to thinking about &amp;lsquo;metrics&amp;rsquo; in two broad&#xA;categories - firstly those defining the performance and health of online systems (number of requests served, click&#xA;through rate, uptime etc), and secondly those measuring the productivity of the team in making additions and&#xA;improvements to those systems (story point burndown, number of open bugs, feature leadtime).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

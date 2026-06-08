@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/docker/</link>
+    <description>Recent content in Docker on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conditionally running Ingest Pipelines with Filebeat, Docker and Elastic</title>
+      <link>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</guid>
+      <description>&lt;p&gt;&lt;em&gt;TL;DR - if you want to apply an Ingest Pipeline conditionally in Elastic, consider defining it as a processor in another&#xA;pipeline and setting its &lt;code&gt;if&lt;/code&gt; property.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;We use &lt;a href=&#34;https://www.elastic.co/beats/filebeat&#34;&gt;Filebeat&lt;/a&gt; to ship application logs to &lt;a href=&#34;https://www.elastic.co/&#34;&gt;Elastic&lt;/a&gt;&#xA;from our &lt;a href=&#34;https://www.docker.com/nginx&#34;&gt;Docker&lt;/a&gt; containers. Since we dockerise anything that moves,&#xA;we have many types of docker container, including containers for Kotlin and JavaScript web applications, for APIs written&#xA;in R, and for &lt;a href=&#34;https://www.nginx.com/&#34;&gt;NGINX&lt;/a&gt; web proxies. Each type of container logs messages in a different format.&#xA;Some of our applications ship JSON logs with the fields nicely separated out, however many of our logs have raw &lt;code&gt;message&lt;/code&gt;&#xA;fields in various formats.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aggregating logs from services deployed with Docker</title>
+      <link>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/aggregating-logs-from-services-deployed-with-docker/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re managing a number of applications across multiple servers then having easy access to their logs can make&#xA;discovering and debugging issues much more efficient. Deploying a system to aggregate and visualise this information&#xA;greatly reduces the need to identify and log into the relevant server(s) directly, and enables more sophisticated&#xA;analysis such as error tracing across systems (see &lt;a href=&#34;https://dzone.com/articles/5-good-reasons-to-use-a-log-server&#34;&gt;5 Good Reasons to Use a Log Server&lt;/a&gt; for more).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

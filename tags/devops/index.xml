@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/devops/</link>
+    <description>Recent content in DevOps on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conditionally running Ingest Pipelines with Filebeat, Docker and Elastic</title>
+      <link>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/conditionally-running-ingest-pipelines-with-filebeat-docker-and-elastic/</guid>
+      <description>&lt;p&gt;&lt;em&gt;TL;DR - if you want to apply an Ingest Pipeline conditionally in Elastic, consider defining it as a processor in another&#xA;pipeline and setting its &lt;code&gt;if&lt;/code&gt; property.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;We use &lt;a href=&#34;https://www.elastic.co/beats/filebeat&#34;&gt;Filebeat&lt;/a&gt; to ship application logs to &lt;a href=&#34;https://www.elastic.co/&#34;&gt;Elastic&lt;/a&gt;&#xA;from our &lt;a href=&#34;https://www.docker.com/nginx&#34;&gt;Docker&lt;/a&gt; containers. Since we dockerise anything that moves,&#xA;we have many types of docker container, including containers for Kotlin and JavaScript web applications, for APIs written&#xA;in R, and for &lt;a href=&#34;https://www.nginx.com/&#34;&gt;NGINX&lt;/a&gt; web proxies. Each type of container logs messages in a different format.&#xA;Some of our applications ship JSON logs with the fields nicely separated out, however many of our logs have raw &lt;code&gt;message&lt;/code&gt;&#xA;fields in various formats.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Continuous Delivery with Buildkite</title>
+      <link>https://reside-ic.github.io/blog/continuous-delivery-with-buildkite/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/continuous-delivery-with-buildkite/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Our deployments at RESIDE typically consist of a bash script or a python script using &lt;a href=&#34;https://github.com/reside-ic/constellation&#34;&gt;constellation&lt;/a&gt; to bring up a set of docker containers each of which contains a separate part of the application. We might have one docker image for the web app, one for the database, one for redis, one for an R backend API, and multiple workers. We use &lt;a href=&#34;https://buildkite.com/&#34;&gt;Buildkite&lt;/a&gt; as part of our CI (continuous integration) process to build these images and test them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RSlondonSE 2020</title>
+      <link>https://reside-ic.github.io/blog/rslondonse-2020/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/rslondonse-2020/</guid>
+      <description>&lt;p&gt;Last Thursday, almost all of RESIDE went to &lt;a href=&#34;https://rslondon.ac.uk/rslondonse-2020/&#34;&gt;RSLondonSE&lt;/a&gt;, a small and friendly one-day meeting of RSEs.&lt;/p&gt;&#xA;&lt;p&gt;We presented two posters - in &lt;a href=&#34;https://reside-ic.github.io/resources/jsbeginnersguide.pdf&#34;&gt;the first&lt;/a&gt; we outline the basic idea behind three common JavaScript frameworks (Angular, React and Vue.js) and reasons for choosing one over another.  We will rework this poster as a more detailed blog post or article and also as a standalone seminar later this year.&lt;/p&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://reside-ic.github.io/resources/RSLondonSE-hint-poster.pdf&#34;&gt;other poster&lt;/a&gt;, we present the ideas behind our &lt;a href=&#34;https://reside-ic.github.io/projects/naomi&#34;&gt;Naomi&lt;/a&gt; project, where we developed a pattern for exposing research software &amp;ldquo;as a service&amp;rdquo; using HTTP APIs and a modern web front end (written in Vue.js amongst other things).  We think this is a general pattern, though most of the software for Naomi is bespoke.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrating YouTrack and GitHub workflows</title>
+      <link>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</guid>
+      <description>&lt;p&gt;Like most technical teams we use an issue tracker to manage our work. Our tool of choice for&#xA;this is &lt;a href=&#34;https://www.jetbrains.com/youtrack/&#34;&gt;YouTrack&lt;/a&gt;. We also make extensive use of GitHub and to synchronise our&#xA;workflow across the two platforms we name our git branches with YouTrack ticket ids, so every pull request&#xA;corresponds to a ticket. This naming convention makes it easier to track work in progress across the two platforms,&#xA;plus the custom tool we use to deploy our software can use git to look at which branches have been merged in and auto-update&#xA;the corresponding YouTrack tickets.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metrics at Imperial*</title>
+      <link>https://reside-ic.github.io/blog/metrics-at-imperial/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/metrics-at-imperial/</guid>
+      <description>&lt;p&gt;What metrics should a software team be recording to measure their performance? Should these metrics have a different&#xA;focus for RSE teams in general, and ourselves in particular?&lt;/p&gt;&#xA;&lt;p&gt;In previous jobs in a more commercial setting, I had become accustomed to thinking about &amp;lsquo;metrics&amp;rsquo; in two broad&#xA;categories - firstly those defining the performance and health of online systems (number of requests served, click&#xA;through rate, uptime etc), and secondly those measuring the productivity of the team in making additions and&#xA;improvements to those systems (story point burndown, number of open bugs, feature leadtime).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

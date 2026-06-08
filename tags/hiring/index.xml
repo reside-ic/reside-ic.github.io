@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hiring on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/hiring/</link>
+    <description>Recent content in Hiring on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 06 Apr 2020 11:50:00 +0100</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/hiring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>We&#39;re hiring: Full-stack web developer</title>
+      <link>https://reside-ic.github.io/blog/hiring-2020-web-developer/</link>
+      <pubDate>Mon, 06 Apr 2020 11:50:00 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/hiring-2020-web-developer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.imperial.ac.uk/jobs/description/MED01818/research-software-engineer-web-development/&#34;&gt;We are hiring!&lt;/a&gt;  While many people of the department and some of the RSE group are focussed on COVID-19 at the moment, research and public health action on  malaria, HIV, and other diseases continues in the department and we&amp;rsquo;re looking for someone to help us develop web applications that translate research into public health outcomes.  Just because one pandemic is raging does not decrease the impact of other diseases - in fact it&amp;rsquo;s more important than ever in this current crisis that these programmes can continue.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>We&#39;re hiring: R/C&#43;&#43;/Malaria Developer</title>
+      <link>https://reside-ic.github.io/blog/hiring-2019-malaria-developer/</link>
+      <pubDate>Wed, 03 Jul 2019 07:57:16 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/hiring-2019-malaria-developer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.imperial.ac.uk/jobs/description/MED01335/senior-research-software-engineer/&#34;&gt;We are hiring!&lt;/a&gt;  We&amp;rsquo;re looking for a developer to join &lt;a href=&#34;https://reside-ic.github.io/about/&#34;&gt;our team&lt;/a&gt; to work with &lt;a href=&#34;https://www.imperial.ac.uk/malaria-modelling&#34;&gt;the malaria modelling research group&lt;/a&gt; on developing simulation models that will be used to investigate the impact of interventions to prevent the spread of malaria.&lt;/p&gt;&#xA;&lt;p&gt;No prior experience with malaria or epidemiology is needed as you&amp;rsquo;ll be working closely with a friendly team of computational researchers.  You&amp;rsquo;ll work with the rest of our RSE team who will help you gather requirements from the researchers, understand the existing code, and review your code.  You&amp;rsquo;ll also work with us as we plan other projects within the &lt;a href=&#34;https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis&#34;&gt;MRC Centre for Global Infectious Disease Analysis&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

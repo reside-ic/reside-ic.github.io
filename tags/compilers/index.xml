@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compilers on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/compilers/</link>
+    <description>Recent content in Compilers on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debugging at the edge of reason</title>
+      <link>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</guid>
+      <description>&lt;p&gt;What do you do if this code&amp;hellip;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;printf(&amp;#34;Before loop\n&amp;#34;);&#xA;while ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) {&#xA;  printf(&amp;#34;Inside loop\n&amp;#34;);&#xA;  // Other loop code&#xA;}&#xA;if (a&amp;gt;0) printf(&amp;#34;a&amp;gt;0\n&amp;#34;);&#xA;if (b&amp;gt;0) printf(&amp;#34;b&amp;gt;0\n&amp;#34;);&#xA;if ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) printf(&amp;#34;Both a&amp;gt;0 and b&amp;gt;0!&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip;produces this output?&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Before loop&#xA;a&amp;gt;0&#xA;b&amp;gt;0&#xA;Both a&amp;gt;0 and b&amp;gt;0!&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; are both above zero, then why didn&amp;rsquo;t the while-loop do any&#xA;iteration; why didn&amp;rsquo;t we see &lt;code&gt;Inside loop&lt;/code&gt; in the output?&lt;/p&gt;&#xA;&lt;p&gt;This was a situation we were in with&#xA;&lt;a href=&#34;https://github.com/mrc-ide/dde&#34;&gt;DDE&lt;/a&gt; 0.9.0, but only on Windows,&#xA;and only when compiled with 32-bit gcc. With 64-bits, or linux, the loop&#xA;behaved itself perfectly.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

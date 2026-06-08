@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MPI on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/mpi/</link>
+    <description>Recent content in MPI on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/mpi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MPI from R - Part One - The Basics</title>
+      <link>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Message_Passing_Interface&#34;&gt;MPI&lt;/a&gt; is a&#xA;standard for allowing a team of processes to solve a problem together. Various&#xA;implementations of that standard exist; &lt;a href=&#34;https://www.mpich.org/&#34;&gt;MPICH&lt;/a&gt; is&#xA;perhaps the most well known. &lt;a href=&#34;https://github.com/Microsoft/Microsoft-MPI&#34;&gt;Microsoft MPI&lt;/a&gt;&#xA;mimics MPICH on Windows, as does &lt;a href=&#34;https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.1crzpx&#34;&gt;Intel MPI&lt;/a&gt;&#xA;on various platforms. Typically you&amp;rsquo;d then include these libraries in projects&#xA;written in C, C++, or Fortran.&lt;/p&gt;&#xA;&lt;p&gt;Furthermore, recent releases of &lt;a href=&#34;https://cran.r-project.org/bin/windows/Rtools/&#34;&gt;Rtools&lt;/a&gt;&#xA;have included support for Microsoft MPI. My plan is a couple of blogs on how to get this&#xA;working, some exploration of performance, and an attempt at testing / CI. I&amp;rsquo;ll include&#xA;nodes on what&amp;rsquo;s needed on Windows, linux or Mac to write and build the package,&#xA;but when running multi-node programs, I&amp;rsquo;ll be limited to our departmental MS-HPC&#xA;cluster. Hopefully the changes needed for launching scripts on other cluster platforms&#xA;shouldn&amp;rsquo;t be too hard.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

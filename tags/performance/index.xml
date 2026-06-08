@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/performance/</link>
+    <description>Recent content in Performance on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handling long arrays performantly in Vue.js</title>
+      <link>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/handling-long-arrays-performantly-in-vue.js/</guid>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;Use &lt;code&gt;Object.freeze&lt;/code&gt; on large objects that don&amp;rsquo;t have to be reactive. If you want to know a bit more about why this works&#xA;and how big a performance gain it is, read on.&lt;/p&gt;&#xA;&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;Reactive JavaScript frameworks like &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue.js&lt;/a&gt; are amazing for developing Single Page Apps like the one&#xA;in our project &lt;a href=&#34;https://reside-ic.github.io/projects/#naomi&#34;&gt;Naomi&lt;/a&gt;. Everything is connected as if by magic - when data changes, the UI updates. But that magic&#xA;has overheads associated with it that need to be understood to optimise for performance where large-ish datasets are&#xA;being handled. We found when using Vue naively that our app couldn&amp;rsquo;t handle a 10MB dataset performantly, but&#xA;understanding how reactivity works in Vue helped us to find the fix.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

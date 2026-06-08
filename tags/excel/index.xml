@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/excel/</link>
+    <description>Recent content in Excel on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 19 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Experiments in transforming Excel into R</title>
+      <link>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</guid>
+      <description>&lt;p&gt;Last week was the &lt;a href=&#34;https://n8thangreen.wixsite.com/hermes-hack-london&#34;&gt;Health Economics in R Hackathon&lt;/a&gt;, bringing together health economists, epidemiologists and research software engineers.&lt;/p&gt;&#xA;&lt;p&gt;We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a &lt;a href=&#34;https://en.wikipedia.org/wiki/Decision_tree&#34;&gt;decision tree model&lt;/a&gt; in Excel, the analyst might want to carry out a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sensitivity_analysis&#34;&gt;sensitivity analysis&lt;/a&gt;, varying the models&amp;rsquo; parameters to see how the model outcomes vary.  Doing this requires knowledge of &lt;a href=&#34;https://en.wikipedia.org/wiki/Visual_Basic_for_Applications&#34;&gt;Visual Basic&lt;/a&gt; and reportedly is quite slow to run.  We wanted to create a proof-of-concept package that would take an Excel model like this and convert it into an R function, where it could be more easily manipulable, &lt;em&gt;accelerating&lt;/em&gt; the researchers&amp;rsquo; ability to do their work.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
