@@ -30,9 +30,6 @@ Mantra studied Mathematics at university and realised most of it won't be used a
 {{< person name="Pratik Gupte" img="pratik.jpg" url="https://github.com/pratikunterwegs">}}
 Pratik got his PhD in ecology and evolutionary biology, but following Covid, decided to help develop epidemic preparedness tools as a research software engineer. At Imperial, he supports the EPPI and VIMC groups. He enjoys cycling, hiking, gardening, and playing WoW.
 {{< /person >}}
-{{< person name="Rich FitzJohn" img="rich.jpg" url="https://richfitz.github.io">}}
-Rich was a computational biologist for 15 years before deciding that catalysing research through software was more fun than doing it himself. He's interested in making reproducibility easier and more accessible while letting scientists focus more on science than engineering. Outside of work he enjoys rock climbing and hiking.
-{{< /person >}}
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
 Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
 {{< /person >}}
@@ -40,6 +37,8 @@ Wes is a computer engineer and scientist, with a Ph.D making tools for ocean mod
 
 ## Alumni
 
+* [Paul Liétar](https://github.com/plietar)
+* [Rich FitzJohn](https://richfitz.github.io)
 * [Rob Ashton](https://github.com/r-ash)
 * [Mark Woodbridge](https://markwoodbridge.com/)
 * [Carol Brickley](https://github.com/ceeb950)
