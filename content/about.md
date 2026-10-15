@@ -19,16 +19,11 @@ Emma started out coding laboratory process control for combinatorial chemistry, 
 in start-ups in the wild West Country before bringing her considerable web development expertise to RESIDE.
 Outside of work she spends time singing with two choirs and sometimes making stained glass.
 {{< /person >}}
-{{< person name="Giovanni Charles" img="giovanni.jpg" url="https://github.com/giovannic">}}
-Giovanni is a computer scientist and health researcher. The former CTO of a health tech startup he now works
-with the malaria group at Imperial developing individual-based malaria models in C++ and R. Outside of tech,
-he paints, makes music, is a keen runner and occasional philosophy reader.
-{{< /person >}}
 {{< person name="Mantra Kusumgar" img="quokka.webp" url="https://github.com/M-Kusumgar">}}
 Mantra studied Mathematics at university and realised most of it won't be used again so he found more applicable addictions like coding in his spare time. Other addictions include but are not limited to: chess, basketball, K-pop, anime, origami, dancing, acting, escape rooms and much much more!
 {{< /person >}}
-{{< person name="Pratik Gupte" img="pratik.jpg" url="https://github.com/pratikunterwegs">}}
-Pratik got his PhD in ecology and evolutionary biology, but following Covid, decided to help develop epidemic preparedness tools as a research software engineer. At Imperial, he supports the EPPI and VIMC groups. He enjoys cycling, hiking, gardening, and playing WoW.
+{{< person name="Mudar Tayy" img="mudar.jpg" url="https://github.com/Zleman">}}
+Mudar builds web applications that make infectious disease models and data usable by researchers and policymakers. He's leading the development of an interactive map of antimalarial drug resistance across Africa, and develops tools for dengue and other arbovirus research. Outside of work he's curious about quantum computing and behavioural science.
 {{< /person >}}
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
 Wes is a computer engineer and scientist, with a Ph.D making tools for ocean modelling, and then moving to modelling epidemics. He enjoys problem solving, Advent Of Code, (especially on 40-year old hardware), and making interactive and graphical teaching games. By night, he plays music and squash, and makes very good tea.
@@ -48,3 +43,5 @@ Wes is a computer engineer and scientist, with a Ph.D making tools for ocean mod
 * [Nicolas Dolan](https://github.com/Nicolas-Dolan)
 * [Alex Hill](https://github.com/hillalex)
 * [Lekan Anifowoshe](https://github.com/LekanAnni)
+* [Giovanni Charles](https://github.com/giovannic)
+* [Pratik Gupte](https://github.com/pratikunterwegs)
