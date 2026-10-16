@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Reside-IC</title>
+    <link>https://reside-ic.github.io/articles/</link>
+    <description>Recent content in Articles on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RESIDE-IC Web Applications</title>
+      <link>https://reside-ic.github.io/articles/web-apps/</link>
+      <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/articles/web-apps/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;This page describes some aspects to think about when considering a new RESIDE web application to present research:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;why a research team might want a web application&lt;/li&gt;&#xA;&lt;li&gt;whether a Shiny app or full web application would better meet their needs&lt;/li&gt;&#xA;&lt;li&gt;the components of a full research web application&lt;/li&gt;&#xA;&lt;li&gt;what we require from research in order to build an interface to it which a new web application can use&lt;/li&gt;&#xA;&lt;li&gt;some different patterns of application we can provide&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;why-have-a-web-application&#34;&gt;Why have a web application?&lt;/h1&gt;&#xA;&lt;p&gt;..as opposed to making research code available for users to download and run themselves?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pull Request review process</title>
+      <link>https://reside-ic.github.io/articles/pull-requests/</link>
+      <pubDate>Tue, 05 Mar 2019 14:53:37 -0700</pubDate>
+      <guid>https://reside-ic.github.io/articles/pull-requests/</guid>
+      <description>&lt;p&gt;Our pull request review process is an ongoing work-in-progress.  This document outlines the timeline, expectations, general points and ongoing issues.  Some of it is particular to how we work (using YouTrack and TeamCity in addition to GitHub) but it may be of use to others.&lt;/p&gt;&#xA;&lt;h3 id=&#34;expectations&#34;&gt;Expectations&lt;/h3&gt;&#xA;&lt;p&gt;What the different parties expect to get out of the PR review process&lt;/p&gt;&#xA;&lt;h4 id=&#34;author&#34;&gt;Author&lt;/h4&gt;&#xA;&lt;p&gt;All authors appreciate feedback on:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What have I done wrong, or what could I do better?&lt;/li&gt;&#xA;&lt;li&gt;What have I overlooked? Are there corner cases I have missed?&lt;/li&gt;&#xA;&lt;li&gt;What tests are missing?&lt;/li&gt;&#xA;&lt;li&gt;Is my code readable and idiomatic?&lt;/li&gt;&#xA;&lt;li&gt;For UI code, how is the look and feel?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Expected time to initial response is 1/2 a day to 1 day (the review might not be completed in this time, but this should be indicated).  Once the review process is started, re-review is expected to be quicker as it should address ever-smaller issues.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cinterpolate on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/cinterpolate/</link>
+    <description>Recent content in Cinterpolate on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/cinterpolate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cinterpolate 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</guid>
+      <description>&lt;p&gt;Last week we released the first official version of &lt;a href=&#34;https://mrc-ide.github.io/cinterpolate/&#34;&gt;&lt;code&gt;cinterpolate&lt;/code&gt;&lt;/a&gt; to &lt;a href=&#34;https://cran.r-project.org/package=cinterpolate&#34;&gt;available on CRAN&lt;/a&gt;.  This package provides a minimal set of interpolation methods (piecewise constant, linear and spline) designed to be compatible with R&amp;rsquo;s builtin &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/stats/html/approxfun.html&#34;&gt;&lt;code&gt;approx&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/stats/html/splinefun.html&#34;&gt;&lt;code&gt;spline&lt;/code&gt;&lt;/a&gt; functions, but but callable from C. It will primarily be of interest to people writing R packages that include C or C++.&lt;/p&gt;&#xA;&lt;p&gt;When writing an R package with C or C++ extensions, you have to forgo many of the the functions that make operating in a high-level easy.  R&amp;rsquo;s C API (and Rcpp, which reflects it) includes &lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-exts.html#Numerical-analysis-subroutines&#34;&gt;lots of helper functions&lt;/a&gt; for common tasks but this is a small list compared to what you might want to do from R.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/web/</link>
+    <description>Recent content in Web on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RESIDE-IC Web Applications</title>
+      <link>https://reside-ic.github.io/articles/web-apps/</link>
+      <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/articles/web-apps/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;This page describes some aspects to think about when considering a new RESIDE web application to present research:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;why a research team might want a web application&lt;/li&gt;&#xA;&lt;li&gt;whether a Shiny app or full web application would better meet their needs&lt;/li&gt;&#xA;&lt;li&gt;the components of a full research web application&lt;/li&gt;&#xA;&lt;li&gt;what we require from research in order to build an interface to it which a new web application can use&lt;/li&gt;&#xA;&lt;li&gt;some different patterns of application we can provide&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;why-have-a-web-application&#34;&gt;Why have a web application?&lt;/h1&gt;&#xA;&lt;p&gt;..as opposed to making research code available for users to download and run themselves?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

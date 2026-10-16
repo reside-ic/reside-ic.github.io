@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angular on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/angular/</link>
+    <description>Recent content in Angular on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 27 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Front-end Javascript Frameworks - A Beginner&#39;s Guide</title>
+      <link>https://reside-ic.github.io/blog/front-end-javascript-frameworks-a-beginners-guide/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/front-end-javascript-frameworks-a-beginners-guide/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve put together a little resource for RSEs (or anyone else!) who are writing browser&#xA;based apps and want to be using the latest Javascript web technologies, but aren&amp;rsquo;t sure&#xA;where to start.&lt;/p&gt;&#xA;&lt;p&gt;The full &lt;!-- raw HTML omitted --&gt;poster&lt;!-- raw HTML omitted --&gt; was presented&#xA;at &lt;a href=&#34;https://rslondon.ac.uk/&#34;&gt;RSLondonSouthEast&lt;/a&gt; on 6th February.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-use-a-framework&#34;&gt;Why use a framework?&lt;/h2&gt;&#xA;&lt;p&gt;This StackOverflow blog is an excellent overview of the advantages and disadvantages of using a framework:&#xA;&lt;a href=&#34;https://stackoverflow.blog/2020/02/03/is-it-time-for-a-front-end-framework/&#34;&gt;Is it time for a front end framework?&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

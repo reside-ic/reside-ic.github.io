@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/r/</link>
+    <description>Recent content in R on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MPI from R - Part One - The Basics</title>
+      <link>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/mpi-from-r-part-one-the-basics/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Message_Passing_Interface&#34;&gt;MPI&lt;/a&gt; is a&#xA;standard for allowing a team of processes to solve a problem together. Various&#xA;implementations of that standard exist; &lt;a href=&#34;https://www.mpich.org/&#34;&gt;MPICH&lt;/a&gt; is&#xA;perhaps the most well known. &lt;a href=&#34;https://github.com/Microsoft/Microsoft-MPI&#34;&gt;Microsoft MPI&lt;/a&gt;&#xA;mimics MPICH on Windows, as does &lt;a href=&#34;https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.1crzpx&#34;&gt;Intel MPI&lt;/a&gt;&#xA;on various platforms. Typically you&amp;rsquo;d then include these libraries in projects&#xA;written in C, C++, or Fortran.&lt;/p&gt;&#xA;&lt;p&gt;Furthermore, recent releases of &lt;a href=&#34;https://cran.r-project.org/bin/windows/Rtools/&#34;&gt;Rtools&lt;/a&gt;&#xA;have included support for Microsoft MPI. My plan is a couple of blogs on how to get this&#xA;working, some exploration of performance, and an attempt at testing / CI. I&amp;rsquo;ll include&#xA;nodes on what&amp;rsquo;s needed on Windows, linux or Mac to write and build the package,&#xA;but when running multi-node programs, I&amp;rsquo;ll be limited to our departmental MS-HPC&#xA;cluster. Hopefully the changes needed for launching scripts on other cluster platforms&#xA;shouldn&amp;rsquo;t be too hard.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Symbolic differentiation in a few lines of code</title>
+      <link>https://reside-ic.github.io/blog/symbolic-differentiation-in-a-few-lines-of-code/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/symbolic-differentiation-in-a-few-lines-of-code/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;We are working on &lt;a href=&#34;https://en.wikipedia.org/wiki/Automatic_differentiation&#34;&gt;automatic&#xA;differentiation&lt;/a&gt;&#xA;of &lt;a href=&#34;https://mrc-ide.github.io/odin/&#34;&gt;odin&lt;/a&gt; models, which requires&#xA;support for differentiating expressions symbolically, in order to write&#xA;new equations that can be used to numerically propagate derivatives of a&#xA;model.&lt;/p&gt;&#xA;&lt;p&gt;R already has support for doing this via the &lt;code&gt;D&lt;/code&gt; function:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;D&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;quote&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x^2 &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sqrt&lt;/span&gt;(x))), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## 2 * (2 * x) * log(sqrt(x)) + 2 * x^2 * (0.5 * x^-0.5/sqrt(x))&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;and the &lt;a href=&#34;https://cran.r-project.org/package=Deriv&#34;&gt;&lt;code&gt;Deriv&lt;/code&gt;&lt;/a&gt; package&#xA;provides an extensible interface. However, &lt;code&gt;odin&lt;/code&gt; has peculiar syntax&#xA;with arrays and we’re interested in trying to differentiate through&#xA;stochastic functions, so a bespoke solution felt useful.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Frictionless Data Package Validation in R</title>
+      <link>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</link>
+      <pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/frictionless-data-package-validation-in-r/</guid>
+      <description>&lt;p&gt;Our work often involves researcher-written models that we want to make available to non-technical users. To ensure that both the model will run and that it will produce a good fit, validating users&amp;rsquo; data and returning actionable error messages is essential. For the &lt;a href=&#34;https://reside-ic.github.io/projects/naomi&#34;&gt;UNAIDS Naomi project&lt;/a&gt; we collaborate closely with a team that manages data storage for users. They use &lt;a href=&#34;https://frictionlessdata.io/&#34;&gt;Frictionless Data Packages&lt;/a&gt; for describing the resources that need to be present and validating them. When users upload their data to our application, we run separate validation code written in R. It would be ideal to validate with a common code base to avoid duplicated work and ensure consistency in messaging.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>R Markdown Internationalisation</title>
+      <link>https://reside-ic.github.io/blog/r-markdown-internationalisation/</link>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/r-markdown-internationalisation/</guid>
+      <description>&lt;p&gt;As part of our work on &lt;a href=&#34;../../projects/naomi&#34;&gt;naomi&lt;/a&gt; we&amp;rsquo;ve been asked to produce reports from R which can be distributed to country teams across Sub-Saharan Africa in English, French and Portuguese. &lt;a href=&#34;https://rmarkdown.rstudio.com/docs/&#34;&gt;R Markdown&lt;/a&gt; has no built in support for translating documents, but there are many options available to make this possible. This post covers 3 possible approaches: code chunks, custom blocks and tabsets each of which has advantages and trade offs around scalability, ease of maintenance and complexity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debugging memory errors with valgrind and gdb</title>
+      <link>https://reside-ic.github.io/blog/debugging-memory-errors-with-valgrind-and-gdb/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-memory-errors-with-valgrind-and-gdb/</guid>
+      <description>&lt;p&gt;Many R packages use C or C++ code to power performance-critical sections of code. These langauges are easy to shoot yourself in the foot with, as seemingly innocuous code may cause crashes (or just junk output) by reading from memory that is uninitialised or out of range.  There are a couple of tools for helping diagnose this sort of issue:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&amp;ldquo;valgrind&amp;rdquo; is great for tracking down is sort of error as it highlights invalid memory accesses&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;gdb&amp;rdquo; can be used to step through a program, or inspect the internal state after a crash&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;We&amp;rsquo;ve already written about debugging R packages with valgrind and gdb separately &lt;a href=&#34;https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/&#34;&gt;here&lt;/a&gt;. This post shows how to use them together so that you can use gdb to inspect the state of a program at the point where valgrind has noticed that there&amp;rsquo;s an error.  The process is a bit weird, but does work!  NB: this will likely only work on Linux (not Windows or macOS).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sheffield/NVIDIA GPU hackathon</title>
+      <link>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/sheffield/nvidia-gpu-hackathon/</guid>
+      <description>&lt;p&gt;Last month we attended (virtually) a GPU hackathon hosted by Sheffield and NVIDIA, in order to learn how to create GPU-capable models to accelerate our simulations.&lt;/p&gt;&#xA;&lt;p&gt;We are working as part of the centre &lt;a href=&#34;https://reside-ic.github.io/projects/covid&#34;&gt;COVID response&lt;/a&gt; on models of COVID-19 transmission within the UK. The epidemiologists working on the model are writing &lt;a href=&#34;https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#Deterministic_versus_stochastic_epidemic_models&#34;&gt;stochastic compartmental models&lt;/a&gt; where populations are modelled as &amp;ldquo;Susceptible&amp;rdquo;, &amp;ldquo;Exposed&amp;rdquo;, &amp;ldquo;Infected&amp;rdquo;, &amp;ldquo;Recovered&amp;rdquo;, etc - movement between these compartments happens stochastically using a set of parameters. The model is a continuous time Markov chain (the next state only depends on the current state) which is solved by splitting each day into four equal time intervals. Parameters themselves are fit in an inference process, which involves running the model many times. The core of this is both &lt;a href=&#34;https://en.wikipedia.org/wiki/Embarrassingly_parallel&#34;&gt;&amp;ldquo;embarrassingly parallel&amp;rdquo;&lt;/a&gt; and has the potential to use over a million threads, and so we wanted to know if we could develop a system that could use the massive parallelism that GPUs might provide.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A warning about warning()</title>
+      <link>https://reside-ic.github.io/blog/a-warning-about-warning/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/a-warning-about-warning/</guid>
+      <description>&lt;p&gt;I believe that &lt;code&gt;warning()&lt;/code&gt; should be used very rarely in R - it&amp;rsquo;s a weird function that is partly logging and partly flow control but doesn&amp;rsquo;t do a great job at either. Package authors use &lt;code&gt;warning&lt;/code&gt; for a range of conditions ranging from informational through to catastrophic and users are left ignoring warnings due to the former or debugging issues a significant distance from the source due to the latter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gotta catch &#39;em all</title>
+      <link>https://reside-ic.github.io/blog/gotta-catch-em-all/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/gotta-catch-em-all/</guid>
+      <description>&lt;p&gt;Great packages have great test suites. Packages with C++ are not exceptions. You&#xA;might be surprised to find how easy it is to add C++ unittests to your package.&lt;/p&gt;&#xA;&lt;p&gt;This post will focus on &lt;a href=&#34;https://github.com/r-lib/testthat&#34;&gt;testthat&lt;/a&gt;&amp;rsquo;s&#xA;&lt;a href=&#34;https://github.com/catchorg/Catch2&#34;&gt;Catch&lt;/a&gt; integration.&#xA;There are plenty of C++ testing frameworks, each with their own pros and cons.&#xA;The benefit of this approach is the really low setup cost and no dependency&#xA;management.&lt;/p&gt;&#xA;&lt;h1 id=&#34;set-up&#34;&gt;Set up&lt;/h1&gt;&#xA;&lt;p&gt;The first step is to add some boilerplate to your package. Enter&#xA;&lt;code&gt;testthat::use_catch()&lt;/code&gt;. Make sure to follow the instructions in the command&#xA;output to configure your package correctly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cyphr 1.1.0</title>
+      <link>https://reside-ic.github.io/blog/cyphr-1.1.0/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cyphr-1.1.0/</guid>
+      <description>&lt;p&gt;We have released a new version of our &lt;a href=&#34;https://docs.ropensci.org/cyphr/&#34;&gt;cyphr&lt;/a&gt; package, which makes data analysis workflows with R much easier.  The aim of the package is to make encrypted workflows as easy as:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;d &amp;lt;- cyphr::decrypt(read.csv(&amp;#34;secret-input.csv&amp;#34;), key)&#xA;...&#xA;cyphr::encrypt(write.csv(processed, &amp;#34;secret-output.csv&amp;#34;), key)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;using &lt;a href=&#34;https://github.com/jeroen/sodium&#34;&gt;modern encryption technologies&lt;/a&gt; and taking care of most of the details so that data is not inadvertently leaked.&lt;/p&gt;&#xA;&lt;p&gt;This new version has lots of small features which improve the behaviour of its &lt;a href=&#34;https://docs.ropensci.org/cyphr/articles/data.html&#34;&gt;collaborative data process&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debugging and Fixing CRAN&#39;s &#39;Additional Checks&#39; errors</title>
+      <link>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-and-fixing-crans-additional-checks-errors/</guid>
+      <description>&lt;p&gt;R packages that are published on CRAN are tested every night on a variety of platforms and on the development version of R to ensure that they continue to work.  In addition, packages that contain compiled code (C, C++ or Fortran) are put through a raft of additional checks to ensure that the compiled code will not cause R to crash.  Once an issue is found, the package maintainer gets an email and usually a fairly short window to fix the package before it is removed from CRAN.  However, replicating the error locally can require installation of all sorts of esoteric tools (and a copy of the development version of R from source) and it&amp;rsquo;s not always obvious how or where to start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Experiments in transforming Excel into R</title>
+      <link>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/experiments-in-transforming-excel-into-r/</guid>
+      <description>&lt;p&gt;Last week was the &lt;a href=&#34;https://n8thangreen.wixsite.com/hermes-hack-london&#34;&gt;Health Economics in R Hackathon&lt;/a&gt;, bringing together health economists, epidemiologists and research software engineers.&lt;/p&gt;&#xA;&lt;p&gt;We learned that complex spreadsheet models are common in health economics, and that the users of these models feel constrained by what they can achieve with them - having constructed a &lt;a href=&#34;https://en.wikipedia.org/wiki/Decision_tree&#34;&gt;decision tree model&lt;/a&gt; in Excel, the analyst might want to carry out a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sensitivity_analysis&#34;&gt;sensitivity analysis&lt;/a&gt;, varying the models&amp;rsquo; parameters to see how the model outcomes vary.  Doing this requires knowledge of &lt;a href=&#34;https://en.wikipedia.org/wiki/Visual_Basic_for_Applications&#34;&gt;Visual Basic&lt;/a&gt; and reportedly is quite slow to run.  We wanted to create a proof-of-concept package that would take an Excel model like this and convert it into an R function, where it could be more easily manipulable, &lt;em&gt;accelerating&lt;/em&gt; the researchers&amp;rsquo; ability to do their work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gotchaR - Bumps in the road for the learneR driver.</title>
+      <link>https://reside-ic.github.io/blog/gotchar-bumps-in-the-road-for-the-learner-driver./</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/gotchar-bumps-in-the-road-for-the-learner-driver./</guid>
+      <description>&lt;p&gt;I am about 3 years into the journey of learning R. There is a lot to get used to,&#xA;when my previous landmarks have been languages based around Java, C, Pascal, Basic&#xA;and some dabblings with assemblers of various breeds. Mostly, my adjustment has been&#xA;about doing things the way R likes; turning loop-ish code into vector-ish code, using&#xA;the right base functions properly and thinking about data in columns for a start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deferring errors with R</title>
+      <link>https://reside-ic.github.io/blog/deferring-errors-with-r/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/deferring-errors-with-r/</guid>
+      <description>&lt;p&gt;How do you run a block of code and collect up all the errors in order to report them back in a batch?  This is the sort of thing that might turn up in a validation exercise where we want to check a number of properties of the provided data and then report back in one go all the errors so that the user can fix multiple problems at each upload attempt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jsonvalidate 1.1.0</title>
+      <link>https://reside-ic.github.io/blog/jsonvalidate-1.1.0/</link>
+      <pubDate>Tue, 25 Jun 2019 07:38:50 +0100</pubDate>
+      <guid>https://reside-ic.github.io/blog/jsonvalidate-1.1.0/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.w3schools.com/js/js_json_intro.asp&#34;&gt;JSON&lt;/a&gt; is useful as a data-interchange format, due to the massive popularity of javascript.  Basically every language supports reading and writing JSON now, so it makes a nice lowest common denominator.&lt;/p&gt;&#xA;&lt;p&gt;When generating JSON from an application, it is useful to be able to describe how the data is structured - so if we return output like&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{&#xA;    &amp;#34;id&amp;#34;: 1,&#xA;    &amp;#34;name&amp;#34;: &amp;#34;A green door&amp;#34;,&#xA;    &amp;#34;price&amp;#34;: 12.50,&#xA;    &amp;#34;tags&amp;#34;: [&amp;#34;home&amp;#34;, &amp;#34;green&amp;#34;]&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We might describe it in words like:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>dde 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/dde-1.0.0/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/dde-1.0.0/</guid>
+      <description>&lt;p&gt;Last week we released the first public version of &lt;a href=&#34;https://mrc-ide.github.io/dde/&#34;&gt;&lt;code&gt;dde&lt;/code&gt;&lt;/a&gt;.  This package implements a method for solving &lt;a href=&#34;https://en.wikipedia.org/wiki/Delay_differential_equation&#34;&gt;delay differential equations&lt;/a&gt;, which we use with &lt;a href=&#34;https://mrc-ide.github.io/odin&#34;&gt;&lt;code&gt;odin&lt;/code&gt;&lt;/a&gt; to model disease dynamics.&lt;/p&gt;&#xA;&lt;p&gt;With ordinary differential equations, you express the system of equations as &lt;em&gt;dy/dt = f(y(t), t)&lt;/em&gt;; the rate of change of the system depends on the current state of the system and the current time, but with delay differential equations &lt;em&gt;dy/dt&lt;/em&gt; also depends on &lt;em&gt;y(t - τ)&lt;/em&gt;, where &lt;em&gt;τ&lt;/em&gt; is a length of time back into the past.  In general these are hard to solve numerically but there is a large class of useful equations with constant delays that are both interesting and tractable.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>vaultr 1.0.2</title>
+      <link>https://reside-ic.github.io/blog/vaultr-1.0.2/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/vaultr-1.0.2/</guid>
+      <description>&lt;p&gt;We are pleased to announce the first public release of &lt;code&gt;vaultr&lt;/code&gt;, our R client for &lt;a href=&#34;https://vaultproject.io&#34;&gt;HashiCorp&amp;rsquo;s &amp;ldquo;vault&amp;rdquo;&lt;/a&gt;, a system for storing secrets and sensitive data and enabling these secrets to be used in applications.&lt;/p&gt;&#xA;&lt;p&gt;Vault (the server) is a little like a password manager (e.g., &lt;a href=&#34;https://www.lastpass.com/business-password-manager&#34;&gt;LastPass&lt;/a&gt; or &lt;a href=&#34;https://bitwarden.com/&#34;&gt;Bitwarden&lt;/a&gt;) but designed for use within applications, rather than for storing personal passwords.  With vault, you can have a central source of secrets and sensitive data (ssh keys, database passwords, ssl certificates) that can be used when deploying or using applications.  This makes it much easier to avoid writing these secrets to disk in plain text while still allowing automated use of secrets.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debugging at the edge of reason</title>
+      <link>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/debugging-at-the-edge-of-reason/</guid>
+      <description>&lt;p&gt;What do you do if this code&amp;hellip;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;printf(&amp;#34;Before loop\n&amp;#34;);&#xA;while ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) {&#xA;  printf(&amp;#34;Inside loop\n&amp;#34;);&#xA;  // Other loop code&#xA;}&#xA;if (a&amp;gt;0) printf(&amp;#34;a&amp;gt;0\n&amp;#34;);&#xA;if (b&amp;gt;0) printf(&amp;#34;b&amp;gt;0\n&amp;#34;);&#xA;if ((a&amp;gt;0) &amp;amp;&amp;amp; (b&amp;gt;0)) printf(&amp;#34;Both a&amp;gt;0 and b&amp;gt;0!&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip;produces this output?&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Before loop&#xA;a&amp;gt;0&#xA;b&amp;gt;0&#xA;Both a&amp;gt;0 and b&amp;gt;0!&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; are both above zero, then why didn&amp;rsquo;t the while-loop do any&#xA;iteration; why didn&amp;rsquo;t we see &lt;code&gt;Inside loop&lt;/code&gt; in the output?&lt;/p&gt;&#xA;&lt;p&gt;This was a situation we were in with&#xA;&lt;a href=&#34;https://github.com/mrc-ide/dde&#34;&gt;DDE&lt;/a&gt; 0.9.0, but only on Windows,&#xA;and only when compiled with 32-bit gcc. With 64-bits, or linux, the loop&#xA;behaved itself perfectly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cinterpolate 1.0.0</title>
+      <link>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/cinterpolate-1.0.0/</guid>
+      <description>&lt;p&gt;Last week we released the first official version of &lt;a href=&#34;https://mrc-ide.github.io/cinterpolate/&#34;&gt;&lt;code&gt;cinterpolate&lt;/code&gt;&lt;/a&gt; to &lt;a href=&#34;https://cran.r-project.org/package=cinterpolate&#34;&gt;available on CRAN&lt;/a&gt;.  This package provides a minimal set of interpolation methods (piecewise constant, linear and spline) designed to be compatible with R&amp;rsquo;s builtin &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/stats/html/approxfun.html&#34;&gt;&lt;code&gt;approx&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/stats/html/splinefun.html&#34;&gt;&lt;code&gt;spline&lt;/code&gt;&lt;/a&gt; functions, but but callable from C. It will primarily be of interest to people writing R packages that include C or C++.&lt;/p&gt;&#xA;&lt;p&gt;When writing an R package with C or C++ extensions, you have to forgo many of the the functions that make operating in a high-level easy.  R&amp;rsquo;s C API (and Rcpp, which reflects it) includes &lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-exts.html#Numerical-analysis-subroutines&#34;&gt;lots of helper functions&lt;/a&gt; for common tasks but this is a small list compared to what you might want to do from R.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>odin 0.2.0</title>
+      <link>https://reside-ic.github.io/blog/odin-0.2.0/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/odin-0.2.0/</guid>
+      <description>&lt;p&gt;After a rather long period of gestation, yesterday I merged in a &lt;a href=&#34;https://github.com/mrc-ide/odin/pull/156&#34;&gt;long-running rewrite of odin&lt;/a&gt;.  This is a major rework of odin which lays the groundwork for future improvements later this year.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mrc-ide.github.io/odin&#34;&gt;Odin&lt;/a&gt; is our package for working with differential equations at a high level - it includes support for the sort of &amp;ldquo;structured &lt;a href=&#34;https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology&#34;&gt;compartmental models&lt;/a&gt;&amp;rdquo; that we use a lot in the department, compiling these to C for efficient execution.  Over the last few years of development the code had become increasingly complicated and difficult to extend as new features had been added on top of previous features.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

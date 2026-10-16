@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile on Reside-IC</title>
+    <link>https://reside-ic.github.io/tags/agile/</link>
+    <description>Recent content in Agile on Reside-IC</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reside-ic.github.io/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integrating YouTrack and GitHub workflows</title>
+      <link>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://reside-ic.github.io/blog/integrating-youtrack-and-github-workflows/</guid>
+      <description>&lt;p&gt;Like most technical teams we use an issue tracker to manage our work. Our tool of choice for&#xA;this is &lt;a href=&#34;https://www.jetbrains.com/youtrack/&#34;&gt;YouTrack&lt;/a&gt;. We also make extensive use of GitHub and to synchronise our&#xA;workflow across the two platforms we name our git branches with YouTrack ticket ids, so every pull request&#xA;corresponds to a ticket. This naming convention makes it easier to track work in progress across the two platforms,&#xA;plus the custom tool we use to deploy our software can use git to look at which branches have been merged in and auto-update&#xA;the corresponding YouTrack tickets.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
