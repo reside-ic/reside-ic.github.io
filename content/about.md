@@ -14,6 +14,12 @@ Anmol is a software engineer who loves building clean UI/UX, scalable backends a
 {{< person name="David Mears" img="david_mears.jpg" url="https://github.com/david-mears-2">}}
 David is a software engineer with experience in government and the private sector. Besides code, some things he likes doing are playing music, singing in choirs, and improv acting.
 {{< /person >}}
+{{< person name="Ed Knock" img="ed.jpg" url="https://github.com/edknock">}}
+Ed is a data science software developer with a background in mathematics and statistics. He has extensive
+experience in epidemic modelling, most notably on COVID-19 in the UK. He likes cats, cinema (particularly
+Italian horror and Hong Kong action cinema), metal, prog and cycling (though he finds he has far more time
+to watch it than do it himself these days).
+{{< /person >}}
 {{< person name="Emma Russell" img="emma.jpg" url="https://github.com/EmmaLRussell">}}
 Emma started out coding laboratory process control for combinatorial chemistry, then survived several years 
 in start-ups in the wild West Country before bringing her considerable web development expertise to RESIDE.
