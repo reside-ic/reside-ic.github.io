@@ -28,7 +28,7 @@ Outside of work she spends time singing with two choirs and sometimes making sta
 {{< person name="Mantra Kusumgar" img="quokka.webp" url="https://github.com/M-Kusumgar">}}
 Mantra studied Mathematics at university and realised most of it won't be used again so he found more applicable addictions like coding in his spare time. Other addictions include but are not limited to: chess, basketball, K-pop, anime, origami, dancing, acting, escape rooms and much much more!
 {{< /person >}}
-{{< person name="Mudar Tayy" img="mudar.jpg" url="https://github.com/Zleman">}}
+{{< person name="Mudar Tayy" img="mudar.jpg" url="https://github.com/MudarTayy">}}
 Mudar builds web applications that make infectious disease models and data usable by researchers and policymakers. He's leading the development of an interactive map of antimalarial drug resistance across Africa, and develops tools for dengue and other arbovirus research. Outside of work he's curious about quantum computing and behavioural science.
 {{< /person >}}
 {{< person name="Wes Hinsley" img="wes.jpg" url="https://github.com/weshinsley">}}
